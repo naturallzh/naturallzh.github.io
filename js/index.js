@@ -7,7 +7,8 @@ var vm = new Vue({
 	computed: {},
 	methods: {
 		goToTest: function () {
-			location.href = 'html/test.html';
+			//window.location.href = 'html/test.html';
+			window.open('html/test.html');
 		}
 	}
 });
