@@ -6,4 +6,9 @@ html, body {
   background: blueviolet;
   display: flex; }
 
+.btn {
+  height: 100px;
+  width: 100px;
+  background: white; }
+
 /*# sourceMappingURL=index.css.map */
