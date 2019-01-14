@@ -1,0 +1,9 @@
+html, body {
+  height: 100%; }
+
+#main-body {
+  height: 100%;
+  background: blueviolet;
+  display: flex; }
+
+/*# sourceMappingURL=mainStyleSheet.css.map */
