@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAAW;EACV,MAAM,EAAE,IAAI;;AAGb,kBAAmB;EAClB,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,OAAO",
+"sources": ["compare_page.scss"],
+"names": [],
+"file": "compare_page.css"
+}

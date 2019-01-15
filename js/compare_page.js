@@ -1,5 +1,5 @@
 var vm = new Vue({
-	el: '#main-body',
+	el: '#compare_page-body',
 	data: {
 		test1: "welcome as well!"
 	},
