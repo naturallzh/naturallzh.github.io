@@ -12,9 +12,9 @@
 </head>
 <body>
 <div id="index-body" v-cloak>
-    <div class="btn-base btn-search" @click="openPage(url.searchList,'_blank')" @mouseover="test()" @mouseout="test2()">Search</div>
-    <div class="btn-base btn-newList" @click="openPage(url.newList,'_blank')">New List</div>
-    <div class="btn-base btn-comparePage" @click="openPage(url.comparePage,'_blank')">Compare Page</div>
+    <div class="btn-base btn-search" @click="test()" @mouseover="" @mouseout="" :class="[testData?'fly-out-top':'']">Search</div>
+    <div class="btn-base btn-newList" @click="" :class="[testData?'fly-out-top':'']">New List</div>
+    <div class="btn-base btn-comparePage" @click="" :class="[testData?'fly-out-top':'']">Compare Page</div>
 </div>
 </body>
 <script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>

@@ -20,4 +20,10 @@ html, body {
 .btn-comparePage {
   top: 600px; }
 
+.fly-out-top {
+  transition-property: top;
+  top: 100px;
+  transition-timing-function: linear;
+  transition-duration: 3000ms; }
+
 /*# sourceMappingURL=index.css.map */
