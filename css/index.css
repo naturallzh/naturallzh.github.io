@@ -4,26 +4,3 @@ html, body {
 #index-body {
   height: 100%;
   background: #00c3e2; }
-
-.btn-search, .btn-newList, .btn-comparePage {
-  position: fixed;
-  top: 200px;
-  left: 50%;
-  height: 50px;
-  width: 200px;
-  font-size: 20px;
-  line-height: 50px; }
-
-.btn-newList {
-  top: 400px; }
-
-.btn-comparePage {
-  top: 600px; }
-
-.fly-out-top {
-  transition-property: top;
-  top: 100px;
-  transition-timing-function: linear;
-  transition-duration: 3000ms; }
-
-/*# sourceMappingURL=index.css.map */
