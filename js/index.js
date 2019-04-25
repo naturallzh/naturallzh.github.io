@@ -1,6 +1,7 @@
 let vm = new Vue({
   el: '#index-body',
   data: {
+    show: true,
   },
 
   beforeCreate: function () {
@@ -33,5 +34,9 @@ let vm = new Vue({
   */
 
   computed: {},
-  methods: {}
+  methods: {
+    changeShow: function () {
+      this.show = !this.show;
+    }
+  }
 });

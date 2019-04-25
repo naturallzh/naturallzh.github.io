@@ -1,12 +1,21 @@
 Vue.component('auto-refresh', {
-  template: '<div id="btn-refresh" @click="changeState"><div id="progress-bar"></div><span class="value">{{delay}}</span><span class="value">{{windowSize[0]}} * {{windowSize[1]}}</span><span class="value">({{mousePos[0]}},{{mousePos[1]}})</span></div>',
+  template:
+    '<div id="btn-refresh" @click="changeState">' +
+      '<transition name="progress-bar-decrease">' +
+        '<div id="progress-bar" v-if="showProgressBar"></div>' +
+      '</transition>' +
+      '<span class="value">{{delay}}</span>' +
+      '<span class="value">{{windowSize[0]}} * {{windowSize[1]}}</span>' +
+      '<span class="value">({{mousePos[0]}} , {{mousePos[1]}})</span>' +
+    '</div>',
 
   data: function () {
     return {
       refreshTimer: null,
-      timeCount: 0,
-      windowSize: [null,null],
+      windowSize: [],
       mousePos: ["-","-"],
+      progressBarStyleObj: {},
+      showProgressBar: true,
     }
   },
   props: {
@@ -27,10 +36,6 @@ Vue.component('auto-refresh', {
   computed: {
   },
   watch: {
-    timeCount() {
-      $("#progress-bar")[0].style.height = (1-this.timeCount/this.delay)*100 + "%";
-      if (this.timeCount === this.delay) {window.location.reload()}
-    }
   },
   methods: {
     changeState: function () {
@@ -50,13 +55,16 @@ Vue.component('auto-refresh', {
 
   beforeCreate () {},
   created () {
-    this.refreshTimer = setInterval(()=>{this.timeCount += 100},100);
     this.getWindowSize();
     //this.getMousePos();
+    this.refreshTimer = setTimeout(()=>{window.location.reload()},this.delay);
 
     window.addEventListener('resize', this.getWindowSize);
     window.addEventListener('mousemove', this.getMousePos);
   },
   beforeMount () {},
-  mounted (){},
+  mounted (){
+    //setStyle("#progress-bar",[0],"height:10%");
+    this.showProgressBar = false;
+  },
 });

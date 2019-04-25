@@ -3,8 +3,9 @@ function openPage(url, tar) {
   window.open(url, tar);
 }
 
-//自动刷新页面
-function autoReload(delay) {
-  delay = delay?delay:1000;
-  setInterval(()=>{window.location.reload()},delay);
+// 设置元素属性
+function setStyle(name,indexArr,styleStr) {
+  for (let i=0;i<indexArr.length;i++) {
+    $(name)[indexArr[i]].style.cssText = styleStr;
+  }
 }

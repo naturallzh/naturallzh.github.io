@@ -19,10 +19,18 @@
   }
   #progress-bar {
     width: 100%;
-    height: 100%;
     background: red;
     position: absolute;
     bottom: 0;
     z-index: -2;
+  }
+  .progress-bar-decrease-leave {
+    height: 100%;
+  }
+  .progress-bar-decrease-leave-active {
+    transition: all 3s linear;
+  }
+  .progress-bar-decrease-leave-to {
+    height: 0;
   }
 }
