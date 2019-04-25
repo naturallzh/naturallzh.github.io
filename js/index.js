@@ -1,7 +1,6 @@
 let vm = new Vue({
   el: '#index-body',
   data: {
-    count:{num:200},
   },
 
   beforeCreate: function () {
@@ -16,7 +15,6 @@ let vm = new Vue({
   },
   mounted: function (){
     // console.log('---mounted---');
-    this.countDown();
   },
 
   /*
@@ -35,10 +33,5 @@ let vm = new Vue({
   */
 
   computed: {},
-  methods: {
-    countDown: function () {
-      this.count.num--;
-      setTimeout(this.countDown,330);
-    }
-  }
+  methods: {}
 });
