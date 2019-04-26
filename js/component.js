@@ -13,7 +13,7 @@ Vue.component('auto-refresh', {
     return {
       refreshTimer: null,
       windowSize: [],
-      mousePos: ["-","-"],
+      mousePos: [" - "," - "],
       progressBarStyleObj: {},
       showProgressBar: true,
     }
