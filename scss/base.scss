@@ -28,13 +28,4 @@
   }
   .full-height {height: 100%}
   .zero-height {height: 0}
-  .progress-bar-decrease-leave {
-    height: 100%;
-  }
-  .progress-bar-decrease-leave-active {
-    transition: all 3s linear;
-  }
-  .progress-bar-decrease-leave-to {
-    height: 0;
-  }
 }

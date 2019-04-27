@@ -27,9 +27,3 @@
     height: 100%; }
   #btn-refresh .zero-height {
     height: 0; }
-  #btn-refresh .progress-bar-decrease-leave {
-    height: 100%; }
-  #btn-refresh .progress-bar-decrease-leave-active {
-    transition: all 3s linear; }
-  #btn-refresh .progress-bar-decrease-leave-to {
-    height: 0; }
