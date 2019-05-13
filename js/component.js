@@ -96,3 +96,30 @@ Vue.component('auto-refresh', {
   mounted (){
   },
 });
+
+Vue.component('top-bar', {
+  template:
+    '<div>' +
+      '<div id="top-bar-blank"></div>' +
+      '<div id="top-bar-front"></div>' +
+    '</div>',
+
+  data: function () {
+    return {
+    }
+  },
+  props: {
+  },
+  computed: {
+  },
+  watch: {
+  },
+  methods: {
+  },
+
+  beforeCreate () {},
+  created () {},
+  beforeMount () {},
+  mounted (){
+  },
+});
