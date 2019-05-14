@@ -93,15 +93,17 @@ Vue.component('auto-refresh', {
     window.addEventListener('mousemove', this.getMousePos);
   },
   beforeMount () {},
-  mounted (){
-  },
+  mounted () {},
 });
 
 Vue.component('top-bar', {
   template:
-    '<div>' +
+    '<div id="top-bar">' +
       '<div id="top-bar-blank"></div>' +
-      '<div id="top-bar-front"></div>' +
+      '<div id="top-bar-front">' +
+        '<div id="top-bar-left"></div>' +
+        '<div id="top-bar-right"></div>' +
+      '</div>' +
     '</div>',
 
   data: function () {
@@ -120,6 +122,42 @@ Vue.component('top-bar', {
   beforeCreate () {},
   created () {},
   beforeMount () {},
+  mounted (){},
+});
+
+Vue.component('blank-block', {
+  template:
+    '<div id="blank-block"></div>',
+
+  data: function () {
+    return {
+    }
+  },
+  props: {
+    width: {
+      type: String,
+      default: "20px"
+    },
+    height: {
+      type: String,
+      default: "20px"
+    },
+    color: {
+      type: String,
+    },
+  },
+  computed: {
+  },
+  watch: {
+  },
+  methods: {
+  },
+
+  beforeCreate () {},
+  created () {
+  },
+  beforeMount () {},
   mounted (){
+    setStyle("#blank-block",[0],"width:" + this.width + ";height:" + this.height + ";background:" + this.color);
   },
 });

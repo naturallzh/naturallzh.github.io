@@ -3,6 +3,8 @@ html, body {
 }
 
 #notes-body {
+	min-width: 680px;
 	min-height: 100%;
 	background: white;
+	position: relative;
 }
