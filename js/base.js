@@ -9,3 +9,7 @@ function setStyle(name,indexArr,styleStr) {
     $(name)[indexArr[i]].style.cssText = styleStr;
   }
 }
+
+function report() {
+  console.log("CLICK");
+}

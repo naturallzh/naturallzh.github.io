@@ -110,14 +110,10 @@ Vue.component('top-bar', {
     return {
     }
   },
-  props: {
-  },
-  computed: {
-  },
-  watch: {
-  },
-  methods: {
-  },
+  props: {},
+  computed: {},
+  watch: {},
+  methods: {},
 
   beforeCreate () {},
   created () {},

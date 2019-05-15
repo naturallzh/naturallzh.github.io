@@ -1,19 +1,22 @@
 let vm = new Vue({
   el: '#notes-body',
   data: {
-    windowWidth: document.body.offsetWidth,
+    wideScr: document.body.offsetWidth > 1050,
+    menuData: [],
   },
   created: function () {
-    window.addEventListener('resize', this.getWindowWidth);
+    window.addEventListener('resize', this.checkWinWid);
+    this.menuData = [
+      {},
+      {},
+      {}
+    ];
   },
-  computed: {},
+  computed: {
+  },
   methods: {
-    getWindowWidth: function () {
-      this.windowWidth = document.body.offsetWidth;
+    checkWinWid: function () {
+      this.wideScr = document.body.offsetWidth > 1050;
     },
-
-    report: function () {
-      console.log("CLICK");
-    }
   }
 });

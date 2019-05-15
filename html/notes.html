@@ -15,19 +15,17 @@
   <top-bar></top-bar>
   <auto-refresh switch="off"></auto-refresh>
 
-  <div id="menu-box" v-if="windowWidth>1050">
-    <div id="menu-list">
-      <blank-block height="30px"></blank-block>
-      123
-      <blank-block height="50px"></blank-block>
+  <div id="menu-part" v-if="wideScr">
+    <div id="menu-box">
+      <div id="menu-body">
+      </div>
     </div>
   </div>
 
   <div id="text-part">
-    <div id="text-left-blank" v-if="windowWidth>1050"></div>
+    <div id="text-left-blank" v-if="wideScr"></div>
     <div id="text-box">
       <div id="text-body">
-
       </div>
     </div>
   </div>
