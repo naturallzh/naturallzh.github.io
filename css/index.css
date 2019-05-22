@@ -33,14 +33,14 @@ html, body {
 #index-body .display-board .display-box .header .bottom-up {
   right: 10px;
   position: absolute;
-  bottom: 10px;
+  bottom: 7px;
   border: 15px solid;
   border-color: transparent transparent #999;
 }
 #index-body .display-board .display-box .header .bottom-down {
   right: 10px;
   position: absolute;
-  top: 10px;
+  top: 7px;
   border: 15px solid;
   border-color: #999 transparent transparent;
 }
@@ -58,7 +58,7 @@ html, body {
 }
 
 .fade-up-enter, .fade-up-leave-to {
-  transform: translateY(-15px);
+  transform: translateY(-20px);
   opacity: 0;
 }
 
@@ -67,7 +67,7 @@ html, body {
 }
 
 .fade-down-enter, .fade-down-leave-to {
-  transform: translateY(15px);
+  transform: translateY(20px);
   opacity: 0;
 }
 
