@@ -12,6 +12,14 @@
 <body>
 <div id="index-body" v-cloak>
   <auto-refresh switch="off"></auto-refresh>
+  <div class="display-board">
+    <div class="display-box" v-for="(item, index) in displayData">
+      <div class="header">
+        <div class="text">{{item.title}}</div>
+        <div class="bottom-up"></div>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 
