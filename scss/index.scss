@@ -1,5 +1,6 @@
 html, body {
 	height: 100%;
+	cursor: default;
 }
 
 #index-body {
@@ -51,6 +52,10 @@ html, body {
 					list-style-type: disc;
 					list-style-position: inside;
 					font-family: "Times New Roman",serif;
+				}
+				.list-item:hover {
+					transition: all 0.3s;
+					text-shadow: rgba(51, 51, 51, 0.7) 1px 1px 5px;
 				}
 			}
 		}
