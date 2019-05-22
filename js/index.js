@@ -41,17 +41,23 @@ let vm = new Vue({
       this.displayData = [
         {
           title: "title1",
-          body: ["asdqwe","qweqwe","gggee"]
+          body: ["asdqwe","qweqwe","gggee","qaq"],
+          open: false,
         },
         {
-          title: "title2",
-          body: ["5584","6722","361"]
+          title: "标题2",
+          body: ["5584","6722","361"],
+          open: true,
         },
         {
-          title: "title3",
-          body: ["皇家华戒","杨弓","收割刀"]
+          title: "暗黑3",
+          body: ["皇家华戒","杨弓","收割刀","收割刀","收割刀"],
+          open: true,
         }
       ];
+    },
+    switchState: function (idx) {
+      this.displayData[idx].open = !this.displayData[idx].open;
     }
   }
 });

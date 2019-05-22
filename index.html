@@ -13,11 +13,25 @@
 <div id="index-body" v-cloak>
   <auto-refresh switch="off"></auto-refresh>
   <div class="display-board">
-    <div class="display-box" v-for="(item, index) in displayData">
+    <div class="display-box" v-for="(item1, index1) in displayData">
       <div class="header">
-        <div class="text">{{item.title}}</div>
-        <div class="bottom-up"></div>
+        <div class="text">{{item1.title}}</div>
+        <transition name="fade-up">
+          <div class="bottom-up" v-show="item1.open" @click="switchState(index1)"></div>
+        </transition>
+        <transition name="fade-down">
+          <div class="bottom-down" v-show="!item1.open" @click="switchState(index1)"></div>
+        </transition>
       </div>
+      <transition name="switch-content">
+        <div class="content" v-show="item1.open">
+          <ul>
+            <li class="list-item" v-for="(item2, index2) in item1.body">
+              {{item2}}
+            </li>
+          </ul>
+        </div>
+      </transition>
     </div>
   </div>
 </div>
