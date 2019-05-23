@@ -18,6 +18,7 @@
   <div id="menu-part" v-if="wideScr">
     <div id="menu-box">
       <div id="menu-body">
+        <a v-for="(item,index) in menuData" class="menu-item" :href="item.anchorName">{{item.title}}</a>
       </div>
     </div>
   </div>
@@ -26,7 +27,7 @@
     <div id="text-left-blank" v-if="wideScr"></div>
     <div id="text-box">
       <div id="text-body">
-        <div class="mt-10 clr-r">点击图片可以查看原图 查看图片时点击右侧按钮可以下载图片至本地</div>
+        <div class="mt-10 clr-r">首次载入时较慢 点击图片可以查看原图 查看图片时点击右侧按钮可以下载图片至本地</div>
         <div class="sub-box" style="background: rgba(255,0,0,0.15);">
           <div class="title">平面图部分</div>
           <div class="text">客厅、主卧、主卧卫生间墙面交界处整平</div>
@@ -41,21 +42,32 @@
           <div class="separate-line"></div>
           <div class="text">干区面盆、墙面、隔断平移，腾出空间将门改为平开</div>
           <image-view url="../source/image/deco_modify/plane-4.png"></image-view>
+          <div id="anchor-2"></div>
         </div>
 
         <div class="sub-box" style="background: rgba(0,255,0,0.15);">
           <div class="title">供水部分</div>
           <div class="text">2个阳台各增加1个水龙头，次卧水龙头带阀门</div>
           <image-view url="../source/image/deco_modify/water_supply.png"></image-view>
+          <div id="anchor-3"></div>
         </div>
 
         <div class="sub-box" style="background: rgba(0,0,255,0.15);margin-bottom: 20px">
           <div class="title">灯具和开关部分</div>
-          <div class="text">待填</div>
+          <div class="text">门口的开关只控制进门处顶部灯光，不与卫生间干区灯光联动</div>
+          <div class="text">餐厅开关移至餐厅内 避免与客厅开关混淆，吊顶和大灯分开控制</div>
+          <div class="text">客厅电视机墙无需灯光，考虑设置吊顶灯光，吊顶和大灯分开控制</div>
+          <div class="text">客厅阳台开关置于阳台内侧</div>
+          <div class="text">书房阳台开关置于阳台内测</div>
+          <div class="text">主卧床头开关收至一处(仍为2个，分别控制大灯和进门灯光)</div>
+          <div class="text">客厅厕所湿区有一盏灯，一个浴霸，开关均置于内侧，分开控制</div>
+          <div class="text">客厅厕所干区镜前灯与顶部灯光分开控制，取消与门口灯光的联动</div>
+          <div class="text">主卧厕所镜前灯和顶部灯光分开控制</div>
           <image-view url="../source/image/deco_modify/light_wire.png"></image-view>
+          <div id="anchor-4"></div>
         </div>
 
-        <div class="sub-box" style="background: rgba(0,0,255,0.15);margin-bottom: 20px">
+        <div class="sub-box" style="background: rgba(0,255,255,0.15);margin-bottom: 20px">
           <div class="title">插座部分</div>
           <div class="text">厨房共增加4个五孔插座</div>
           <div class="text">进门处共增加3个五孔插座</div>
@@ -79,6 +91,15 @@
           <image-view url="../source/image/deco_modify/plug-6.png"></image-view>
           <div class="separate-line"></div>
           <div class="notice"></div>
+          <div id="anchor-5"></div>
+        </div>
+
+        <div class="sub-box" style="background: rgba(255,255,0,0.15);">
+          <div class="title">电视机墙面部分</div>
+          <div class="text">使用传统白墙设计</div>
+          <div class="text">无需书架</div>
+          <div class="text">电视机下方放置电视柜</div>
+          <image-view url="../source/image/deco_modify/tv_wall.png"></image-view>
         </div>
 
       </div>

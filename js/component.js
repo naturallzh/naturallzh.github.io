@@ -161,7 +161,7 @@ Vue.component('blank-block', {
 Vue.component('image-view', {
   template:
     '<div id="image-view-block">' +
-      '<div id="small-pic" @click="showFull()" :style="bgImgStyle"></div>' +
+      '<img id="small-pic" @click="showFull()" :src="url" />' +
       '<div class="mask56 bg" @click="closeFull()" v-show="showFullPic">' +
         '<img id="full-pic" :src="url"/>' +
         '<a id="download-btn" download="" @click.stop @touchmove.prevent :href="url">' +
