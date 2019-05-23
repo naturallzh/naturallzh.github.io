@@ -7,7 +7,7 @@ let vm = new Vue({
   created: function () {
     window.addEventListener('resize', this.checkWinWid);
     this.menuData = [
-      {title:"平面图", anchorName:"#deco-body"},
+      {title:"平面图", anchorName:"#anchor-1"},
       {title:"供水", anchorName:"#anchor-2"},
       {title:"灯具和开关", anchorName:"#anchor-3"},
       {title:"插座", anchorName:"#anchor-4"},
