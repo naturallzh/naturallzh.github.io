@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../css/init.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/base.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/fully_prime_date.css"/>
+</head>
+
+<body>
+<div id="fpd-body" v-cloak>
+  <div id="text-part">
+    <p>好吧那就姑且把这种日期称为"全素日"——fully prime date，简称FPD</p>
+    <p>假设一个日期为ABCD年EF月GH日，将其年月日的数字按照以下规律组合</p>
+    <ul>
+      <li>ABCDEFGH</li>
+      <li>BCDEFGH</li>
+      <li>CDEFGH</li>
+      <li>DEFGH</li>
+      <li>EFGH</li>
+      <li>FGH</li>
+      <li>GH</li>
+      <li>H</li>
+    </ul>
+    <p>如果生成的8个数据均为质数，则称该日期为FPD</p>
+    <div class="separate-line"></div>
+    <p>从"月日"的数字进行考察，每年最多有366天，对于不同的年份来说，"月日"所能生成的4个数据是相同的</p>
+    <p>则FPD必然从以下"月日"的日期中产生</p>
+    <ul>
+      <li v-for="(item1,index1) in primeMD">{{item1}}</li>
+    </ul>
+    <div class="separate-line"></div>
+    <p>以下是从公元1世纪至公元100世纪的所有FPD</p>
+    <ul>
+      <li v-for="(item2,index2) in FPDList">{{item2}}</li>
+    </ul>
+  </div>
+</div>
+</body>
+
+<script type="text/javascript" src="../lib/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../lib/vue.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/fully_prime_date.js"></script>
+</html>
