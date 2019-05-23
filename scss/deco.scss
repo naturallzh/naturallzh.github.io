@@ -1,0 +1,41 @@
+html, body {
+	height: 100%;
+}
+
+#deco-body {
+	min-width: 680px;
+	min-height: 100%;
+	background: white;
+	position: relative;
+}
+
+.sub-box {
+	display: flex;
+	flex-direction: column;
+	background: rgba(255,0,0,0.15);
+	padding:10px;
+	margin-top: 20px;
+	.title {
+		font-weight: bold;
+		font-size: 30px;
+		line-height: 50px;
+		color: #222;
+		margin-bottom: 10px;
+	}
+	.text {
+		font-size: 18px;
+		line-height: 24px;
+		color: #333;
+	}
+	.notice {
+		font-size: 20px;
+		line-height: 24px;
+		color: red;
+		font-weight: bold;
+	}
+	.separate-line {
+		margin: 10px 0;
+		height: 2px;
+		background: #999;
+	}
+}
