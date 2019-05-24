@@ -3,12 +3,15 @@ let vm = new Vue({
   data: {
     primeList: [2,3,5,7],     // 质数表 页面创建时扩充为1-10000之间
     primeMD: [],              // 符合质数"月日"的日期 元素为num 懒得补零
-    FPDList: [],
+    FPDList: [],              // 顺序记录 无分割 速度慢 放弃
+    FPDListInIdx: [],         // 以指数增长的年份分割列表
+    FPDListInCtr: [],         // 以世纪为单位分割列表
   },
   created: function () {
     this.generatePrimeList();
     this.generatePrimeMD();
-    this.generateFPDList();
+    //this.generateFPDList();
+    this.generateFPDListInIdx();
   },
   computed: {},
   methods: {
@@ -86,6 +89,38 @@ let vm = new Vue({
           isFPD?this.FPDList.push(y*10000 + PMDArr[i]):"";
         }
       }
+    },
+
+    // 生成以指数增长的年份分割列表
+    generateFPDListInIdx: function () {
+      const outputArr = [];
+      let baseArr = [];
+      let isFPD;
+      let num;
+      outputArr[0] = this.primeMD;
+      for (let idx = 1; idx < 7; idx++) {
+        baseArr = baseArr.concat(outputArr[idx-1]);
+        outputArr[idx] = [];
+        for (let y = 1; y < 10; y++) {
+          for (let n = 0; n < baseArr.length; n++) {
+            isFPD = true;
+            num = y*Math.pow(10,idx+3) + baseArr[n];
+            for (let i = 0; i < this.primeList.length; i++) {
+              if (this.primeList[i] * this.primeList[i] > num) {break;}
+              if (num % this.primeList[i] === 0) {
+                isFPD = false;
+                break;
+              }
+            }
+            isFPD?outputArr[idx].push(num):"";
+          }
+        }
+        this.FPDListInIdx = outputArr;
+      }
+    },
+
+    // 生成以世纪为单位分割列表
+    generateFPDListInCtr: function () {
     },
 
   }
