@@ -33,6 +33,12 @@
     </ul>
     <div class="separate-line"></div>
     <p>以下是将年份按指数增长的方式分割显示的所有FPD</p>
+    <div style="display: flex;margin: 5px;">
+      <input placeholder="请输入年份位数" v-model="inputYIdx" type="number">
+      <button style="margin: 0 5px" @click="submitYIdx()">提交</button>
+    </div>
+    <p class="clr-r" v-for="(item4,index4) in FPDListInIdx">{{index4 + "--" +item4.length}}</p>
+    <div class="separate-line"></div>
     <ul v-for="(item2,index2) in FPDListInIdx">
       <p class="clr-r">{{item2.length}}</p>
       <li v-for="(item3,index3) in item2">{{item3}}</li>

@@ -6,12 +6,13 @@ let vm = new Vue({
     FPDList: [],              // 顺序记录 无分割 速度慢 放弃
     FPDListInIdx: [],         // 以指数增长的年份分割列表
     FPDListInCtr: [],         // 以世纪为单位分割列表
+    inputYIdx: "",             // 输入的年份的位数
   },
   created: function () {
     this.generatePrimeList();
     this.generatePrimeMD();
     //this.generateFPDList();
-    this.generateFPDListInIdx();
+    this.generateFPDListInIdx(6);
   },
   computed: {},
   methods: {
@@ -92,13 +93,15 @@ let vm = new Vue({
     },
 
     // 生成以指数增长的年份分割列表
-    generateFPDListInIdx: function () {
+    generateFPDListInIdx: function (yIdx) {
+      yIdx = parseInt(yIdx);
       const outputArr = [];
       let baseArr = [];
       let isFPD;
       let num;
       outputArr[0] = this.primeMD;
-      for (let idx = 1; idx < 7; idx++) {
+      for (let idx = 1; idx < yIdx+1; idx++) {
+        console.log(idx);
         baseArr = baseArr.concat(outputArr[idx-1]);
         outputArr[idx] = [];
         for (let y = 1; y < 10; y++) {
@@ -115,13 +118,18 @@ let vm = new Vue({
             isFPD?outputArr[idx].push(num):"";
           }
         }
-        this.FPDListInIdx = outputArr;
       }
+      console.log("计算结束");
+      this.FPDListInIdx = outputArr;
     },
 
     // 生成以世纪为单位分割列表
     generateFPDListInCtr: function () {
     },
+
+    submitYIdx: function () {
+      this.generateFPDListInIdx(this.inputYIdx);
+    }
 
   }
 });
