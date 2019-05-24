@@ -12,7 +12,7 @@ let vm = new Vue({
     this.generatePrimeList();
     this.generatePrimeMD();
     //this.generateFPDList();
-    this.generateFPDListInIdx(6);
+    this.generateFPDListInIdx(4);
   },
   computed: {},
   methods: {
