@@ -41,6 +41,17 @@ let vm = new Vue({
         }
         isPrime?this.primeList.push(i):"";
       }
+      const primeArr3 = this.primeList;
+      for (let i = 10001; i < 1000000; i++) {
+        isPrime = true;
+        for (let j = 0; j < primeArr3.length; j++) {
+          if (i % primeArr3[j] === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        isPrime?this.primeList.push(i):"";
+      }
     },
 
     // 生成质数"日月"的日期列表
