@@ -37,6 +37,7 @@ let vm = new Vue({
 
   computed: {},
   methods: {
+
     setDisplayData: function () {
       this.displayData = [
         {
@@ -56,8 +57,15 @@ let vm = new Vue({
         }
       ];
     },
+
     switchState: function (idx) {
       this.displayData[idx].open = !this.displayData[idx].open;
+    },
+
+    reportSize: function (idx) {
+      const hei = document.getElementsByClassName("content")[idx].offsetHeight;
+      console.log(hei);
     }
+
   }
 });
