@@ -1,7 +1,6 @@
 let vm = new Vue({
   el: '#demo-body',
   data: {
-    show: true,
     displayData: [],
   },
   created: function () {
@@ -29,15 +28,6 @@ let vm = new Vue({
         }
       ];
     },
-
-    switchState: function (idx) {
-      this.displayData[idx].open = !this.displayData[idx].open;
-    },
-
-    reportSize: function (idx) {
-      const hei = document.getElementsByClassName("content")[idx].offsetHeight;
-      console.log(hei);
-    }
 
   }
 });

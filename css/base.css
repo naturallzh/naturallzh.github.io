@@ -156,3 +156,67 @@
         margin-top: 40px;
         border: 30px solid;
         border-color: #999 transparent transparent; }
+
+#display-board-block {
+  display: flex;
+  flex-direction: column;
+  width: 200px; }
+  #display-board-block .header {
+    width: 100%;
+    height: 30px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; }
+    #display-board-block .header .text {
+      color: #333;
+      font-size: 18px;
+      margin-left: 10px;
+      font-family: "Times New Roman",serif; }
+    #display-board-block .header .bottom-up {
+      right: 10px;
+      position: absolute;
+      bottom: 7px;
+      border: 15px solid;
+      border-color: transparent transparent #999; }
+    #display-board-block .header .bottom-down {
+      right: 10px;
+      position: absolute;
+      top: 7px;
+      border: 15px solid;
+      border-color: #999 transparent transparent; }
+  #display-board-block .content {
+    border-top: 1px solid #aaa;
+    width: 100%;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column; }
+    #display-board-block .content .list-item {
+      margin: 10px 0 0 10px;
+      list-style-type: disc;
+      list-style-position: inside;
+      font-family: "Times New Roman",serif;
+      transition: all 0.5s;
+      font-size: 16px; }
+    #display-board-block .content .list-item:hover {
+      transition: all 0.5s;
+      text-shadow: rgba(51, 51, 51, 0.7) 1px 1px 7px; }
+  #display-board-block .fade-up-enter, #display-board-block .fade-up-leave-to {
+    transform: translateY(-20px) scale(0.3, 0.3);
+    opacity: 0; }
+  #display-board-block .fade-up-enter-active, #display-board-block .fade-up-leave-active {
+    transition: all 0.5s; }
+  #display-board-block .fade-down-enter, #display-board-block .fade-down-leave-to {
+    transform: translateY(20px) scale(0.3, 0.3);
+    opacity: 0;
+    width: 0; }
+  #display-board-block .fade-down-enter-active, #display-board-block .fade-down-leave-active {
+    transition: all 0.5s; }
+  #display-board-block .switch-content-enter, #display-board-block .switch-content-leave-to {
+    max-height: 0;
+    opacity: 0; }
+  #display-board-block .switch-content-enter-active, #display-board-block .switch-content-leave-active {
+    transition: all 0.5s; }
+  #display-board-block .switch-content-enter-to, #display-board-block .switch-content-leave {
+    max-height: 200px; }
