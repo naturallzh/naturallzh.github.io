@@ -1,0 +1,8 @@
+html, body {
+  height: 100%;
+}
+
+#pic-adjust-body {
+  min-height: 100%;
+  background: #6dfff8;
+}
