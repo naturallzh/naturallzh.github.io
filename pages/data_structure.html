@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../css/init.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/base.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/data_structure.css"/>
+</head>
+
+<body>
+<div id="data-structure-body" v-cloak>
+  <div class="list-item" style="background: #b7b7b7">
+    <span style="margin-left: 10px">INPUT</span>
+    <span style="margin-right: 10px">TYPEOF</span>
+  </div>
+  <div v-for="(item,index) in dataArr" class="list-item">
+    <span style="margin-left: 10px">{{item.name}}</span>
+    <span style="margin-right: 10px">{{typeof item.value}}</span>
+  </div>
+</div>
+</body>
+
+<script type="text/javascript" src="../lib/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../lib/vue.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/component.js"></script>
+<script type="text/javascript" src="../js/data_stucture.js"></script>
+</html>
