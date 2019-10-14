@@ -46,6 +46,7 @@ let vm = new Vue({
       // ctx.strokeStyle="#000";
       ctx.fillStyle = lingrad;
       ctx.lineWidth = 1;
+      ctx.globalCompositeOperation = "destination-over";
       // ctx.moveTo(0, height / 2);
       ctx.moveTo(0, A*Math.sin(Q) +H);
 
@@ -61,8 +62,6 @@ let vm = new Vue({
       ctx.closePath();
       ctx.fill();
       // ctx.stroke();
-
-      ctx.globalCompositeOperation = "destination-over";
 
       ctx.beginPath();
       // ctx.strokeStyle="#000";
