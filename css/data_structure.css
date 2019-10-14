@@ -1,17 +1,14 @@
 html, body {
-  height: 100%;
-}
+  height: 100%; }
 
 #data-structure-body {
   min-height: 100%;
-  background: #b2b2b2;
-}
-#data-structure-body .list-item {
-  width: 300px;
-  background: #bfbfbf;
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px;
-  line-height: 30px;
-  border-bottom: 1px solid #999;
-}
+  background: #b2b2b2; }
+  #data-structure-body .list-item {
+    width: 300px;
+    background: #bfbfbf;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 30px;
+    border-bottom: 1px solid #999; }
