@@ -13,10 +13,11 @@
   <div id="drag-body" v-cloak>
     <div class="list-block" id="listBlock">
       <div class="list-item"
-           v-for="(floorItem,floorIdx) in listData"
-           :style="floorIdx===0?'border-top: 1px solid #999;':''">
-        {{floorItem}}
+           v-for="(floorItem,floorIdx) in listData">
+        <div class="normal-block" v-show="!floorItem.mode">{{floorItem.value}}</div>
+        <div class="blank-block" v-show="floorItem.mode"></div>
       </div>
+      <div class="float-block" v-show="dragParas.mode" id="floatBlock">{{dragParas.childBlock.value}}</div>
     </div>
   </div>
 </body>
