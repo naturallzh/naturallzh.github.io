@@ -2,30 +2,27 @@ let vm = new Vue({
   el: '#BLANK-PAGE-body',
   data: {
   },
+
   beforeCreate () {
-    // console.log('---beforeCreate---');
   },
   created () {
-    // console.log('---created---');
   },
   beforeMount () {
-    // console.log('---beforeMount---');
   },
   mounted () {
-    // console.log('---mounted---');
   },
 
   /*
-  beforeUpdate () {
+  beforeUpdate(){
     console.log('---beforeUpdate---');
   },
-  updated () {
+  updated(){
     console.log('---updated---');
   },
-  beforeDestory () {
+  beforeDestory(){
     console.log("---beforeDestory---");
   },
-  destoryed () {
+  destoryed(){
     console.log("---destoryed---");
   },
   */

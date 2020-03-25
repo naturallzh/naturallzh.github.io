@@ -1,0 +1,15 @@
+html, body {
+	height: 100%;
+}
+
+#index-body {
+	min-height: 100%;
+	background: #084fb2;
+	display: flex;
+	flex-direction: column;
+	.test-bar {
+		width: 100px;
+		height: 100px;
+		background: red;
+	}
+}

@@ -3,18 +3,13 @@ let vm = new Vue({
   data: {
   },
 
-  beforeCreate: function () {
-    // 可以简写成 beforeCreate(){} es6新特性 下同
-    // console.log('---beforeCreate---');
+  beforeCreate () {
   },
-  created: function () {
-    // console.log('---created---');
+  created () {
   },
-  beforeMount: function (){
-    // console.log('---beforeMount---');
+  beforeMount () {
   },
-  mounted: function (){
-    // console.log('---mounted---');
+  mounted () {
   },
 
   /*
