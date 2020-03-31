@@ -11,236 +11,136 @@ let vm = new Vue({
   beforeMount () {
   },
   mounted () {
-    var dom = document.getElementById("container");
-    var myChart = echarts.init(dom);
-    var app = {};
-    option = null;
-
-    option = {
-      backgroundColor: 'transparent',
-      title: {
-        text: '新型冠状病毒肺炎(Corona Virus Disease 2019)世界数据一览',
-        link: '',
-        subtext: '数据来源：全国新型肺炎疫情实时数据接口',
-        sublink: 'https://github.com/BlankerL/DXY-COVID-19-Crawler',
-        left: 'center',
-        textStyle: {
-          color: '#fff'
-        }
-      },
-      tooltip : {
-        trigger: 'item'
-      },
-      bmap: {
-        center: [104.114129, 37.550339],
-        zoom: 5,
-        roam: true,
-        mapStyle: {
-          styleJson: [
-            {
-              "featureType": "water",
-              "elementType": "all",
-              "stylers": {
-                "color": "#044161"
-              }
-            },
-            {
-              "featureType": "land",
-              "elementType": "all",
-              "stylers": {
-                "color": "#004981"
-              }
-            },
-            {
-              "featureType": "boundary",
-              "elementType": "geometry",
-              "stylers": {
-                "color": "#064f85"
-              }
-            },
-            {
-              "featureType": "railway",
-              "elementType": "all",
-              "stylers": {
-                "visibility": "off"
-              }
-            },
-            {
-              "featureType": "highway",
-              "elementType": "geometry",
-              "stylers": {
-                "visibility": "off"
-              }
-            },
-            {
-              "featureType": "highway",
-              "elementType": "geometry.fill",
-              "stylers": {
-                "color": "#005b96",
-                "lightness": 1
-              }
-            },
-            {
-              "featureType": "highway",
-              "elementType": "labels",
-              "stylers": {
-                "visibility": "off"
-              }
-            },
-            {
-              "featureType": "arterial",
-              "elementType": "geometry",
-              "stylers": {
-                "color": "#004981"
-              }
-            },
-            {
-              "featureType": "arterial",
-              "elementType": "geometry.fill",
-              "stylers": {
-                "color": "#00508b"
-              }
-            },
-            {
-              "featureType": "poi",
-              "elementType": "all",
-              "stylers": {
-                "visibility": "off"
-              }
-            },
-            {
-              "featureType": "green",
-              "elementType": "all",
-              "stylers": {
-                "color": "#056197",
-                "visibility": "off"
-              }
-            },
-            {
-              "featureType": "subway",
-              "elementType": "all",
-              "stylers": {
-                "visibility": "off"
-              }
-            },
-            {
-              "featureType": "manmade",
-              "elementType": "all",
-              "stylers": {
-                "visibility": "off"
-              }
-            },
-            {
-              "featureType": "local",
-              "elementType": "all",
-              "stylers": {
-                "visibility": "off"
-              }
-            },
-            {
-              "featureType": "arterial",
-              "elementType": "labels",
-              "stylers": {
-                "visibility": "off"
-              }
-            },
-            {
-              "featureType": "boundary",
-              "elementType": "geometry.fill",
-              "stylers": {
-                "color": "#029fd4"
-              }
-            },
-            {
-              "featureType": "building",
-              "elementType": "all",
-              "stylers": {
-                "color": "#1a5787"
-              }
-            },
-            {
-              "featureType": "label",
-              "elementType": "all",
-              "stylers": {
-                "visibility": "off"
-              }
-            }
-          ]
-        }
-      },
-      series : [
-        {
-          name: 'pm2.5',
-          type: 'scatter',
-          coordinateSystem: 'bmap',
-          // data: convertData(data),
-          data: [],
-          symbolSize: function (val) {
-            return val[2] / 10;
-          },
-          label: {
-            formatter: '{b}',
-            position: 'right'
-          },
-          itemStyle: {
-            color: '#ddb926'
-          },
-          emphasis: {
-            label: {
-              show: true
-            }
-          }
-        },
-        {
-          name: 'Top 5',
-          type: 'effectScatter',
-          coordinateSystem: 'bmap',
-          // data: convertData(data.sort(function (a, b) {
-          //   return b.value - a.value;
-          // }).slice(0, 6)),
-          data: [],
-          symbolSize: function (val) {
-            return val[2] / 10;
-          },
-          showEffectOn: 'emphasis',
-          rippleEffect: {
-            brushType: 'stroke'
-          },
-          hoverAnimation: true,
-          label: {
-            formatter: '{b}',
-            position: 'right',
-            show: true
-          },
-          itemStyle: {
-            color: '#f4e925',
-            shadowBlur: 10,
-            shadowColor: '#333'
-          },
-          zlevel: 1
-        },
-        {
-          type: 'custom',
-          coordinateSystem: 'bmap',
-          // renderItem: renderItem,
-          itemStyle: {
-            opacity: 0.5
-          },
-          animation: false,
-          silent: true,
-          data: [0],
-          z: -10
-        }
-      ]
-    };
-    if (option && typeof option === "object") {
-      myChart.setOption(option, true);
-    }
+    this.initMap();
   },
 
   computed: {
   },
   methods: {
+    initMap: function () {
+      let dom = document.getElementById("map-container");
+      let myChart = echarts.init(dom);
+
+      let option = {
+        backgroundColor: 'transparent',
+        title: {
+          text: '新型冠状病毒肺炎(Corona Virus Disease 2019)世界数据一览',
+          link: 'https://github.com/naturallzh/naturallzh.github.io/tree/master/pages/COVID_19_display',
+          subtext: '数据来源：全国新型肺炎疫情实时数据接口',
+          sublink: 'https://github.com/BlankerL/DXY-COVID-19-Crawler',
+          left: 'center',
+          top: 20,
+          textStyle: {
+            color: '#fff'
+          }
+        },
+        tooltip : {
+          trigger: 'item'
+        },
+        geo3D: {
+          map: 'world',
+          environment: '#aaa',
+          shading: 'lambert',
+          light: {
+            main: {
+              intensity: 5,
+              shadow: true,
+              shadowQuality: 'high',
+              alpha: 30
+            },
+            ambient: {
+              intensity: 0
+            },
+            ambientCubemap: {
+              texture: 'data-gl/asset/canyon.hdr',
+              exposure: 1,
+              diffuseIntensity: 0.5
+            }
+          },
+          viewControl: {
+            distance: 50,
+            panMouseButton: 'left',
+            rotateMouseButton: 'right'
+          },
+          groundPlane: {
+            show: true,
+            color: '#666'
+          },
+          postEffect: {
+            enable: true,
+            bloom: {
+              enable: false
+            },
+            SSAO: {
+              radius: 1,
+              intensity: 1,
+              enable: true
+            },
+            depthOfField: {
+              enable: false,
+              focalRange: 10,
+              blurRadius: 10,
+              fstop: 1
+            }
+          },
+          temporalSuperSampling: {
+            enable: true
+          },
+          itemStyle: {
+            color: '#ddd',
+            borderWidth: 0.7,
+            borderColor: '#aaa',
+          },
+
+          regionHeight: 0.5
+        },
+        series : [
+          {
+            name: 'pm2.5',
+            type: 'scatter',
+            coordinateSystem: 'bmap',
+            // data: convertData(data),
+            data: [],
+            symbolSize: function (val) {
+              return val[2] / 10;
+            },
+            label: {
+              formatter: '{b}',
+              position: 'right'
+            },
+            itemStyle: {
+              color: '#ddb926'
+            },
+            emphasis: {
+              label: {
+                show: true
+              }
+            }
+          }
+        ],
+        // bmap: {
+        //   center: [104.114129, 37.550339],
+        //   zoom: 5,
+        //   roam: true,
+        //   mapStyle: {
+        //     styleJson: [],
+        //   }
+        // },
+      };
+
+      myChart.setOption(option, true);
+
+      // $.ajax({
+      //   url: 'bmapStyle.json',
+      //   type: 'get',
+      //   dataType: 'json',
+      //   success: function (ret) {
+      //     option.bmap.mapStyle.styleJson = ret;
+      //     myChart.setOption(option, true);
+      //   }
+      // });
+
+    }
   }
 });
 

@@ -1,0 +1,121 @@
+[
+	{
+		"featureType": "water",
+		"elementType": "all",
+		"stylers": {
+			"color": "#055"
+		}
+	},
+	{
+		"featureType": "land",
+		"elementType": "all",
+		"stylers": {
+			"color": "#191919"
+		}
+	},
+	{
+		"featureType": "boundary",
+		"elementType": "geometry",
+		"stylers": {
+			"color": "#064f85"
+		}
+	},
+	{
+		"featureType": "boundary",
+		"elementType": "geometry.fill",
+		"stylers": {
+			"color": "#029fd4"
+		}
+	},
+	{
+		"featureType": "railway",
+		"elementType": "all",
+		"stylers": {
+			"visibility": "off"
+		}
+	},
+	{
+		"featureType": "highway",
+		"elementType": "geometry",
+		"stylers": {
+			"visibility": "off"
+		}
+	},
+	{
+		"featureType": "highway",
+		"elementType": "labels",
+		"stylers": {
+			"visibility": "off"
+		}
+	},
+	{
+		"featureType": "arterial",
+		"elementType": "geometry",
+		"stylers": {
+			"visibility": "off"
+		}
+	},
+	{
+		"featureType": "arterial",
+		"elementType": "geometry.fill",
+		"stylers": {
+			"visibility": "off"
+		}
+	},
+	{
+		"featureType": "arterial",
+		"elementType": "labels",
+		"stylers": {
+			"visibility": "off"
+		}
+	},
+	{
+		"featureType": "poi",
+		"elementType": "all",
+		"stylers": {
+			"visibility": "off"
+		}
+	},
+	{
+		"featureType": "green",
+		"elementType": "all",
+		"stylers": {
+			"visibility": "off"
+		}
+	},
+	{
+		"featureType": "subway",
+		"elementType": "all",
+		"stylers": {
+			"visibility": "off"
+		}
+	},
+	{
+		"featureType": "manmade",
+		"elementType": "all",
+		"stylers": {
+			"visibility": "off"
+		}
+	},
+	{
+		"featureType": "local",
+		"elementType": "all",
+		"stylers": {
+			"visibility": "off"
+		}
+	},
+	{
+		"featureType": "building",
+		"elementType": "all",
+		"stylers": {
+			"visibility": "off"
+		}
+	},
+	{
+		"featureType": "label",
+		"elementType": "all",
+		"stylers": {
+			"visibility": "off"
+		}
+	}
+]
