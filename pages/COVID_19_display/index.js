@@ -22,7 +22,7 @@ let vm = new Vue({
       let myChart = echarts.init(dom);
 
       let option = {
-        backgroundColor: 'transparent',
+        backgroundColor: '#414141',
         title: {
           text: '新型冠状病毒肺炎(Corona Virus Disease 2019)世界数据一览',
           link: 'https://github.com/naturallzh/naturallzh.github.io/tree/master/pages/COVID_19_display',
@@ -37,108 +37,22 @@ let vm = new Vue({
         tooltip : {
           trigger: 'item'
         },
-        geo3D: {
-          map: 'world',
-          environment: '#aaa',
-          shading: 'lambert',
-          light: {
-            main: {
-              intensity: 5,
-              shadow: true,
-              shadowQuality: 'high',
-              alpha: 30
-            },
-            ambient: {
-              intensity: 0
-            },
-            ambientCubemap: {
-              texture: 'data-gl/asset/canyon.hdr',
-              exposure: 1,
-              diffuseIntensity: 0.5
-            }
-          },
-          viewControl: {
-            distance: 50,
-            panMouseButton: 'left',
-            rotateMouseButton: 'right'
-          },
-          groundPlane: {
-            show: true,
-            color: '#666'
-          },
-          postEffect: {
-            enable: true,
-            bloom: {
-              enable: false
-            },
-            SSAO: {
-              radius: 1,
-              intensity: 1,
-              enable: true
-            },
-            depthOfField: {
-              enable: false,
-              focalRange: 10,
-              blurRadius: 10,
-              fstop: 1
-            }
-          },
-          temporalSuperSampling: {
-            enable: true
-          },
-          itemStyle: {
-            color: '#ddd',
-            borderWidth: 0.7,
-            borderColor: '#aaa',
-          },
-
-          regionHeight: 0.5
-        },
-        series : [
-          {
-            name: 'pm2.5',
-            type: 'scatter',
-            coordinateSystem: 'bmap',
-            // data: convertData(data),
-            data: [],
-            symbolSize: function (val) {
-              return val[2] / 10;
-            },
-            label: {
-              formatter: '{b}',
-              position: 'right'
-            },
-            itemStyle: {
-              color: '#ddb926'
-            },
-            emphasis: {
-              label: {
-                show: true
-              }
-            }
-          }
-        ],
-        // bmap: {
-        //   center: [104.114129, 37.550339],
-        //   zoom: 5,
-        //   roam: true,
-        //   mapStyle: {
-        //     styleJson: [],
-        //   }
-        // },
+        // geo: {},
+        series : [],
       };
 
-      myChart.setOption(option, true);
+      // myChart.setOption(option, true);
 
-      // $.ajax({
-      //   url: 'bmapStyle.json',
-      //   type: 'get',
-      //   dataType: 'json',
-      //   success: function (ret) {
-      //     option.bmap.mapStyle.styleJson = ret;
-      //     myChart.setOption(option, true);
-      //   }
-      // });
+      $.ajax({
+        url: 'seriesMapSettings.json',
+        type: 'get',
+        dataType: 'json',
+        success: function (ret) {
+          // option.geo = ret;
+          option.series[0] = ret;
+          myChart.setOption(option, true);
+        }
+      });
 
     }
   }
