@@ -1,32 +1,4 @@
-$seriesMapSettings = {
-	"type": "map",
-	"map": "world",
-	"roam": true,
-	"itemStyle": {
-		"areaColor": "#ECECEC",
-		"borderWidth": 1,
-		"borderColor": "#aaa"
-	},
-	"scaleLimit": {
-		"min": 1,
-		"max": 10
-	},
-	"nameMap": {
-		"China": "中国"
-	},
-	"emphasis": {
-		"label": {
-			"show": false
-		},
-		"itemStyle": {
-			"areaColor": "#ECECEC",
-			"borderWidth": 2,
-			"borderColor": "#00ccee"
-		}
-	}
-};
-
-$nameMap = {
+$nameMapWorld = {
 	"Singapore Rep.": "新加坡",
 	"Dominican Rep.": "多米尼加",
 	"Palestine": "巴勒斯坦",
@@ -213,4 +185,37 @@ $nameMap = {
 	"Zambia": "赞比亚",
 	"Zimbabwe": "津巴布韦",
 	"Comoros": "科摩罗"
+};
+
+$seriesMapSettingsWorld = {
+	name: "国内数据",
+	"type": "map",
+	"map": "china",
+	"roam": true,
+	"itemStyle": {
+		"areaColor": "#ECECEC",
+		"borderWidth": 1,
+		"borderColor": "#aaa"
+	},
+	"scaleLimit": {
+		"min": 1,
+		"max": 10
+	},
+	"emphasis": {
+		"label": {
+			"show": false
+		},
+		"itemStyle": {
+			"areaColor": "#ECECEC",
+			"borderWidth": 2,
+			"borderColor": "#00ccee"
+		}
+	},
+	tooltip: {
+		formatter: "{c}"
+	},
+	data: [
+		{name: "辽宁", value:[20,30,40]}
+	],
+	nameMap: $nameMapWorld
 };

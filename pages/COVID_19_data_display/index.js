@@ -39,8 +39,7 @@ let vm = new Vue({
         series : [],
       };
 
-      option.series[0] = $seriesMapSettings;
-      option.series[0].nameMap = $nameMap;
+      option.series[0] = $seriesMapSettingsWorld;
       myChart.setOption(option, true);
     }
   }
