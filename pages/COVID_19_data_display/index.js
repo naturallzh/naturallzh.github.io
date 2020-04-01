@@ -3,7 +3,6 @@ let vm = new Vue({
   data: {
   },
 
-
   beforeCreate () {
   },
   created () {
@@ -37,23 +36,12 @@ let vm = new Vue({
         tooltip : {
           trigger: 'item'
         },
-        // geo: {},
         series : [],
       };
 
-      // myChart.setOption(option, true);
-
-      $.ajax({
-        url: 'seriesMapSettings.json',
-        type: 'get',
-        dataType: 'json',
-        success: function (ret) {
-          // option.geo = ret;
-          option.series[0] = ret;
-          myChart.setOption(option, true);
-        }
-      });
-
+      option.series[0] = $seriesMapSettings;
+      option.series[0].nameMap = $nameMap;
+      myChart.setOption(option, true);
     }
   }
 });
