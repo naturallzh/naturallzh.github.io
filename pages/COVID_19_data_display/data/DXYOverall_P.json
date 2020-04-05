@@ -1,0 +1,18 @@
+[
+    {
+        "currentConfirmedCount": 2355,
+        "currentConfirmedIncr": -201,
+        "confirmedCount": 82930,
+        "confirmedIncr": 55,
+        "suspectedCount": 913,
+        "suspectedIncr": 25,
+        "curedCount": 77237,
+        "curedIncr": 253,
+        "deadCount": 3338,
+        "deadIncr": 3,
+        "seriousCount": 1024,
+        "seriousIncr": -6,
+        "updateTime": 1586074277783,
+        "updateTimeStr": "2020年4月5日 16:11:17"
+    }
+]

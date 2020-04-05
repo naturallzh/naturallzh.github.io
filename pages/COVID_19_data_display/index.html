@@ -13,6 +13,9 @@
 <body>
 <div id="index-body" v-cloak>
   <div id="map-container"></div>
+  <div style="width: 40px;height: 40px;position: fixed;left: 10px;top: 10px;background: white;user-select: none" @click="changeDataScale()">
+    {{dataScaleMode==1?'绝对数值':'每百万人'}}
+  </div>
 </div>
 </body>
 

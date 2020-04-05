@@ -187,35 +187,50 @@ $nameMapWorld = {
 	"Comoros": "科摩罗"
 };
 
-$seriesMapSettingsWorld = {
-	name: "国内数据",
-	"type": "map",
-	"map": "china",
-	"roam": true,
-	"itemStyle": {
-		"areaColor": "#ECECEC",
-		"borderWidth": 1,
-		"borderColor": "#aaa"
-	},
-	"scaleLimit": {
-		"min": 1,
-		"max": 10
-	},
-	"emphasis": {
-		"label": {
-			"show": false
-		},
-		"itemStyle": {
-			"areaColor": "#ECECEC",
-			"borderWidth": 2,
-			"borderColor": "#00ccee"
+$optionChina = {
+	backgroundColor: '#414141',
+	title: {
+		text: '新型冠状病毒肺炎(Corona Virus Disease 2019)世界数据一览',
+		link: 'https://github.com/naturallzh/naturallzh.github.io/tree/master/pages/COVID_19_display',
+		subtext: '数据来源：全国新型肺炎疫情实时数据接口',
+		sublink: 'https://github.com/BlankerL/DXY-COVID-19-Crawler',
+		left: 'center',
+		top: 20,
+		textStyle: {
+			color: '#fff'
 		}
 	},
-	tooltip: {
-		formatter: "{c}"
+	tooltip : {
+		trigger: 'item'
 	},
-	data: [
-		{name: "辽宁", value:[20,30,40]}
+	series : [
+		{
+			name: "国内数据",
+			"type": "map",
+			"map": "china",
+			"roam": true,
+			"itemStyle": {
+				"areaColor": "#ECECEC",
+				"borderWidth": 1,
+				"borderColor": "#aaa"
+			},
+			"scaleLimit": {
+				"min": 1,
+				"max": 10
+			},
+			"emphasis": {
+				"label": {
+					"show": false
+				},
+				"itemStyle": {
+					"areaColor": "#ECECEC",
+					"borderWidth": 2,
+					"borderColor": "#00ccee"
+				}
+			},
+			tooltip: {},
+			data: [],
+			nameMap: $nameMapWorld
+		}
 	],
-	nameMap: $nameMapWorld
 };
