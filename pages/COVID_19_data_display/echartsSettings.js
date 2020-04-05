@@ -191,7 +191,7 @@ $optionChina = {
 	backgroundColor: '#414141',
 	title: {
 		text: '新型冠状病毒肺炎(Corona Virus Disease 2019)世界数据一览',
-		link: 'https://github.com/naturallzh/naturallzh.github.io/tree/master/pages/COVID_19_display',
+		link: 'https://github.com/naturallzh/naturallzh.github.io/tree/master/pages/COVID_19_data_display',
 		subtext: '数据来源：全国新型肺炎疫情实时数据接口',
 		sublink: 'https://github.com/BlankerL/DXY-COVID-19-Crawler',
 		left: 'center',
