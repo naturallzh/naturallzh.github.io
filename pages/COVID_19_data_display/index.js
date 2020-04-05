@@ -1,9 +1,10 @@
 let vm = new Vue({
   el: '#index-body',
   data: {
-    dataScaleMode: 0,   // 1为显示绝对数据 2为每百万人数据
     myChart: null,      // 地图DOM
     mapOption: {},      // 地图配置项
+    dataScaleMode: -1,  // 0为显示绝对数据 1为每百万人数据
+    visualType: null,   // 显示的数据类型 currentConfirmedCount confirmedCount suspectedCount curedCount deadCount
   },
 
   beforeCreate () {
@@ -64,38 +65,38 @@ let vm = new Vue({
     },
 
     changeDataScale: function () {
-      if (this.dataScaleMode===0) {this.dataScaleMode = 1}
-      else {this.dataScaleMode = 3 - this.dataScaleMode}
-      switch (this.dataScaleMode) {
-        case 1:
-          this.mapOption.series[0].tooltip.formatter = function (params) {
-            const data = params.data;
-            let str = "<p>"+data.name+"</p>"+
-              "<p>当前确诊："+data.currentConfirmedCount+"</p>"+
-              "<p>累计确诊："+data.confirmedCount+"</p>"+
-              "<p>疑似病例："+data.suspectedCount+"</p>"+
-              "<p>治愈病例："+data.curedCount+"</p>"+
-              "<p>死亡病例："+data.deadCount+"</p>"+
-              "<p>最后更新："+data.updateTimeStr+"</p>";
-            return str;
-          };
-          this.updateMap();
-          return;
-        case 2:
-          this.mapOption.series[0].tooltip.formatter = function (params) {
-            const data = params.data;
-            let str = "<p>"+data.name+"</p>"+
-              "<p>当前确诊："+(data.currentConfirmedCount/data.pop*100).toFixed(3)+"</p>"+
-              "<p>累计确诊："+(data.confirmedCount/data.pop*100).toFixed(3)+"</p>"+
-              "<p>疑似病例："+(data.suspectedCount/data.pop*100).toFixed(3)+"</p>"+
-              "<p>治愈病例："+(data.curedCount/data.pop*100).toFixed(3)+"</p>"+
-              "<p>死亡病例："+(data.deadCount/data.pop*100).toFixed(3)+"</p>"+
-              "<p>最后更新："+data.updateTimeStr+"</p>";
-            return str;
-          };
-          this.updateMap();
-          return;
-      }
+      const _this = this;
+      this.dataScaleMode = 1 - this.dataScaleMode;
+      if (this.dataScaleMode!==0&&this.dataScaleMode!==1) {this.dataScaleMode = 0}
+
+      this.mapOption.series[0].tooltip.formatter = function (params) {
+        if (!params.data) {return;}
+        const data = params.data;
+        const tooltipStrArr = processTooltipStrArr();
+        let str = '';
+        for (let i=0;i<tooltipStrArr.length;i++) {
+          str += "<p>"+tooltipStrArr[i]+"</p>"
+        }
+        return str;
+        function processTooltipStrArr() {
+          const res = [];
+          res[0] = data.name + (_this.dataScaleMode===0?' (绝对数值)':' (每百万人)');
+          res[1] = '当前确诊：' + numCalc(data.currentConfirmedCount);
+          res[2] = '累计确诊：' + numCalc(data.confirmedCount);
+          res[3] = '疑似病例：' + numCalc(data.suspectedCount);
+          res[4] = '治愈病例：' + numCalc(data.curedCount);
+          res[5] = '死亡病例：' + numCalc(data.deadCount);
+          res[6] = '最后更新：' + data.updateTimeStr;
+          return res;
+        }
+        function numCalc(num) {
+          num = _this.dataScaleMode===0?num:num/data.pop*100;
+          num = num.toFixed(2);
+          if (num-parseInt(num)===0) {return parseInt(num)}
+          else {return num}
+        }
+      };
+      this.updateMap();
     },
 
     updateMap: function () {
