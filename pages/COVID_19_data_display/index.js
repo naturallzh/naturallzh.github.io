@@ -86,7 +86,7 @@ let vm = new Vue({
           res[3] = '疑似病例：' + numCalc(data.suspectedCount);
           res[4] = '治愈病例：' + numCalc(data.curedCount);
           res[5] = '死亡病例：' + numCalc(data.deadCount);
-          res[6] = '最后更新：' + data.updateTimeStr;
+          //res[6] = '最后更新：' + data.updateTimeStr;
           return res;
         }
         function numCalc(num) {
