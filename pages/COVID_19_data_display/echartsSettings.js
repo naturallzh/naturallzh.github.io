@@ -205,7 +205,7 @@ $optionChina = {
 	},
 	visualMap: {
 		min: 0,
-		max: 900,
+		max: 600,
 		realtime: false,
 		calculable: true,
 		inRange: {
