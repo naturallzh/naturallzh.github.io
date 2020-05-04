@@ -24,14 +24,14 @@ let vm = new Vue({
     fun1: function (arr) {
       for (let i=0;i<arr.length-1;i++) {
         if (arr[i][0]!==arr[i+1][0]) {
-         console.log("");
+          console.log("");
           return
         }
       }
       let outputStr = arr[0][0];
       let strLen = 1;
       let subStr = "";
-        for (let i=0;i<arr[0].length-1;i++) {
+      for (let i=0;i<arr[0].length-1;i++) {
         let flag = true;
         for (let j=1;j<arr[0].length-i;j++) {
           subStr = arr[0].slice(i,j+i+1);
@@ -47,7 +47,7 @@ let vm = new Vue({
           }
         }
       }
-        console.log(outputStr);
+      console.log(outputStr);
     },
     fun2: function (subStr,str2) {
       if (subStr.length>str2.length) {return false}
