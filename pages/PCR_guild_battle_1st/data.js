@@ -25,7 +25,7 @@ const DATA_nameMap = [
 	{name: "魂魄妖梦", id: 1420580320323},
 	{name: "上杉谦信", id: 1314847096371},
 	{name: "Ron洛神", id: 1087383237195},
-	{name: "长夜星烁", id: 1135487787534},
+	{name: "长星夜烁", id: 1135487787534},
 	{name: "翻车大队长", id: 1291097389101},
 	{name: "海豹", id: 1081885841947},
 	{name: "老公", id: 1271928496391},
@@ -101,7 +101,7 @@ const DATA_actionData =
 			day: 1,
 			bossIdx: 4,
 			log: [
-				{name: "长夜星烁", damage: 888363},
+				{name: "长星夜烁", damage: 888363},
 				{name: "香浓朱古力", damage: 770474},
 				{name: "一起学猫叫", damage: 695918},
 				{name: "Ron洛神", damage: 533188},
@@ -201,6 +201,12 @@ const DATA_actionData =
 				{name: "以摸多", damage: 262455},
 				{name: "Ron洛神", damage: 205731},
 				{name: "翻车大队长", damage: 252999},
+				{name: "翻车大队长", damage: 177711},
+				{name: "翻车大队长", damage: 324516},
+				{name: "一起学猫叫", damage: 422363},
+				{name: "香浓朱古力", damage: 415656},
+				{name: "一起学猫叫", damage: 325660},
+				{name: "一起学猫叫", damage: 258237},
 			]
 		}
 
