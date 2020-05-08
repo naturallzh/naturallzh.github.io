@@ -3,6 +3,48 @@ html, body {
 }
 
 #index-body {
-	min-height: 100%;
+	height: 100%;
 	background: #78c3ea;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.gen-sit-box {
+	height: 100%;
+	width: 300px;
+	background: white;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	overflow: auto;
+	box-sizing: border-box;
+}
+
+.today-detail {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.4);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	.mob-box {
+		height: 60%;
+		width: 15%;
+		background: white;
+		flex-shrink: 0;
+		overflow: auto;
+		display: flex;
+		flex-direction: column;
+		.log-item {
+			width: 100%;
+			border: 1px solid black;
+			box-sizing: border-box;
+			padding: 5px;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
 }

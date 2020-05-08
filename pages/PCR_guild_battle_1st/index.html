@@ -6,13 +6,33 @@
   <title></title>
   <link rel="stylesheet" type="text/css" href="../../lib/init.css"/>
   <link rel="stylesheet" type="text/css" href="../../lib/base.css"/>
-  <link rel="stylesheet" type="text/css" href="../../lib/note_public.css"/>
 
   <link rel="stylesheet" type="text/css" href="index.css"/>
 </head>
 
 <body>
 <div id="index-body" v-cloak>
+  <div class="gen-sit-box">
+    <div>当前周目：{{genSit.curRound}}</div>
+    <div>当前Boss：{{genSit.curBoss}}号</div>
+    <div>
+      <span>已出刀数：{{genSit.actions[0].doneNum}}</span>
+      <span style="border: 1px solid black" @click="shiftTodayDetail">详情点击</span>
+    </div>
+    <div>未出刀数：{{genSit.actions[0].todoNum}}</div>
+    <div v-for="(todoItem,todoIdx) in genSit.actions[0].todo">
+      <span>{{todoItem.name}}</span>
+      <span>{{todoItem.todoNum}}</span>
+    </div>
+  </div>
+  <div class="today-detail" @click="shiftTodayDetail" v-show="showTodayDetail">
+    <div class="mob-box" v-for="(mobData,mobIdx) in genSit.actions.slice(1)" @click.stop>
+      <div class="log-item" v-for="(logItem,logIdx) in mobData.log">
+        <span>{{logItem.name}}</span>
+        <span>{{logItem.damage}}</span>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 
@@ -20,5 +40,6 @@
 <script type="text/javascript" src="../../lib/vue.js"></script>
 <script type="text/javascript" src="../../lib/base.js"></script>
 
+<script type="text/javascript" src="data.js"></script>
 <script type="text/javascript" src="index.js"></script>
 </html>
