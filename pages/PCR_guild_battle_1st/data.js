@@ -200,6 +200,7 @@ const DATA_actionData =
 				{name: "Ron洛神", damage: 329517},
 				{name: "以摸多", damage: 262455},
 				{name: "Ron洛神", damage: 205731},
+				{name: "翻车大队长", damage: 252999},
 			]
 		}
 
