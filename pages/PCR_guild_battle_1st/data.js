@@ -344,6 +344,13 @@ const DATA_actionData =
 			log: [
 				{name: "长星夜烁", damage: 13587},
 				{name: "骡逃兵", damage: 425050},
+				{name: "机智的阿斗", damage: 358737},
+				{name: "机智的阿斗", damage: 284371},
+				{name: "机智的阿斗", damage: 233123},
+				{name: "黑椿", damage: 306620},
+				{name: "爱丽丝", damage: 249811},
+				{name: "向井蓝", damage: 252815},
+				{name: "上杉谦信", damage: 146539},
 			]
 		}
 	];
