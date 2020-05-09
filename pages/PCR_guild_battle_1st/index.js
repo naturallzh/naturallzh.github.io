@@ -6,7 +6,6 @@ let vm = new Vue({
     combineRule: [],
     actionData: [],
 
-    genSit: null,   // general situation
     time: {
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
@@ -14,6 +13,13 @@ let vm = new Vue({
       updateTime: new Date(2020,4,9,11,1),
       countdownTimer: null,
     },
+    genSit: null,   // general situation
+    combineParas: {
+      remainHealth: "",
+      damageA: "",
+      damageB: "",
+    },
+
 
     popupFlags: {
       showTodayDetail: false,
@@ -21,21 +27,37 @@ let vm = new Vue({
     },
   },
 
+  computed: {
+    combineRes: function () {
+      const _this = this;
+      let {remainHealth, damageA, damageB} = this.combineParas;
+      let res = [];
+      const flag1 = remainHealth==parseInt(remainHealth);
+      const flag2 = damageA==parseInt(damageA);
+      const flag3 = damageB==parseInt(damageB);
+      const flag4 = (parseInt(damageA) + parseInt(damageB)) > parseInt(remainHealth);
+      const flag5 = parseInt(remainHealth)>0 && parseInt(damageA)>0 && parseInt(damageB)>0;
+      if (flag1 && flag2 && flag3 && flag4 && flag5) {
+        const num1 = parseInt(damageB)/(parseInt(remainHealth)-parseInt(damageA));
+        const num2 = parseInt(damageA)/(parseInt(remainHealth)-parseInt(damageB));
+        res = [calcRefund(num1),calcRefund(num2)];
+      }
+
+      function calcRefund(num) {
+        for (let i=0;i<_this.combineRule.length-1;i++) {
+          if (num<_this.combineRule[i+1].factor) {
+            return _this.combineRule[i+1].refund;
+          }
+        }
+        return 90;
+      }
+      return res;
+    }
+  },
+
   beforeCreate () {},
   created () {
-    this.genSit = {
-      curBossIdx: 1,
-      remainHealth: "",
-      remainHealthPer: "",
-      actions: [
-        {
-          todo: [],
-          doneNum: 0,
-          todoNum: 90,
-        }
-      ]
-    };
-    this.importData();
+    this.initData();
   },
   beforeMount () {},
 
@@ -49,11 +71,22 @@ let vm = new Vue({
     clearInterval(countdownTimer);
   },
 
-  computed: {},
-
   methods: {
 
-    importData: function () {
+    initData: function () {
+      this.genSit = {
+        curBossIdx: 1,
+        remainHealth: "",
+        remainHealthPer: "",
+        actions: [
+          {
+            todo: [],
+            doneNum: 0,
+            todoNum: 90,
+          }
+        ]
+      };
+
       this.nameMap = DATA_nameMap;
       this.mobParas = DATA_mobParas;
       this.combineRule = DATA_combineRule;

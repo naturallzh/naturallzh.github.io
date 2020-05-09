@@ -34,6 +34,26 @@
 
   <div class="combine-calc">
     <h2>合刀计算器</h2>
+    <div>
+      <span>剩余血量 </span>
+      <input v-model="combineParas.remainHealth">
+    </div>
+    <div>
+      <span>刀一伤害 </span>
+      <input v-model="combineParas.damageA">
+    </div>
+    <div>
+      <span>刀二伤害 </span>
+      <input v-model="combineParas.damageB">
+    </div>
+    <div v-show="combineRes.length===2">
+      <span>一先二尾 </span>
+      <span>{{combineRes[0]}}秒</span>
+    </div>
+    <div v-show="combineRes.length===2">
+      <span>二先一尾 </span>
+      <span>{{combineRes[1]}}秒</span>
+    </div>
   </div>
 
   <div class="today-detail" @click="shiftTodayDetail" v-show="popupFlags.showTodayDetail">

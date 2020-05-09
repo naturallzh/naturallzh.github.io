@@ -45,6 +45,7 @@ const DATA_mobParas = [
 ];
 
 const DATA_combineRule = [
+	{factor:1, refund: 10},
 	{factor:1.1, refund: 29},
 	{factor:1.2, refund: 35},
 	{factor:1.3, refund: 41},
@@ -282,6 +283,7 @@ const DATA_actionData =
 				{name: "骡逃兵", damage: 380819},
 				{name: "向井蓝", damage: 340326},
 				{name: "向井蓝", damage: 217891},
+				{name: "宋寂", damage: 333782},
 			]
 		}
 	]
