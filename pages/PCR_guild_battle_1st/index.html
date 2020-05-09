@@ -19,8 +19,8 @@
     <div>最后更新时间：{{processDateStr(time.updateTime)}}</div>
     <div>当前北京时间：{{processDateStr(time.curTime)}}</div>
     <div>剩余时间：{{ms2timeStr(time.endTime-time.curTime)}}</div>
-    <div>当前周目：{{genSit.curRound}}</div>
-    <div>当前Boss：{{genSit.curBoss}}号</div>
+    <div>当前周目：{{mobParas[genSit.curBossIdx-1].round}}</div>
+    <div>当前Boss：{{mobParas[genSit.curBossIdx-1].bossNum}}号 ~ {{mobParas[genSit.curBossIdx-1].name}}</div>
     <div>剩余血量：{{genSit.remainHealth}} ~ {{genSit.remainHealthPer}}%</div>
     <div>
       <span>已出刀数：{{genSit.actions[0].doneNum}}</span>
@@ -30,6 +30,10 @@
       <span>未出刀数：{{genSit.actions[0].todoNum}}</span>
       <span style="border: 1px solid black" @click="shiftTodayTodo">详情点击</span>
     </div>
+  </div>
+
+  <div class="combine-calc">
+    <h2>合刀计算器</h2>
   </div>
 
   <div class="today-detail" @click="shiftTodayDetail" v-show="popupFlags.showTodayDetail">

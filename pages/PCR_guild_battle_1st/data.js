@@ -32,16 +32,32 @@ const DATA_nameMap = [
 ];
 
 const DATA_mobParas = [
-	{bossIdx: 1, health: 6000000, scoreFactor: 1},
-	{bossIdx: 2, health: 8000000, scoreFactor: 1},
-	{bossIdx: 3, health: 10000000, scoreFactor: 1.1},
-	{bossIdx: 4, health: 12000000, scoreFactor: 1.1},
-	{bossIdx: 5, health: 20000000, scoreFactor: 1.2},
-	{bossIdx: 6, health: 6000000, scoreFactor: 1.2},
-	{bossIdx: 7, health: 8000000, scoreFactor: 1.2},
-	{bossIdx: 8, health: 10000000, scoreFactor: 1.5},
-	{bossIdx: 9, health: 12000000, scoreFactor: 1.7},
-	{bossIdx: 10, health: 20000000, scoreFactor: 2},
+	{bossIdx: 1, health: 6000000, scoreFactor: 1, name: "龙", round: 1, bossNum: 1},
+	{bossIdx: 2, health: 8000000, scoreFactor: 1, name: "鸟", round: 1, bossNum: 2},
+	{bossIdx: 3, health: 10000000, scoreFactor: 1.1, name: "花", round: 1, bossNum: 3},
+	{bossIdx: 4, health: 12000000, scoreFactor: 1.1, name: "熊", round: 1, bossNum: 4},
+	{bossIdx: 5, health: 20000000, scoreFactor: 1.2, name: "羊", round: 1, bossNum: 5},
+	{bossIdx: 6, health: 6000000, scoreFactor: 1.2, name: "龙", round: 2, bossNum: 1},
+	{bossIdx: 7, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 2, bossNum: 2},
+	{bossIdx: 8, health: 10000000, scoreFactor: 1.5, name: "花", round: 2, bossNum: 3},
+	{bossIdx: 9, health: 12000000, scoreFactor: 1.7, name: "熊", round: 2, bossNum: 4},
+	{bossIdx: 10, health: 20000000, scoreFactor: 2, name: "羊", round: 2, bossNum: 5},
+];
+
+const DATA_combineRule = [
+	{factor:1.1, refund: 29},
+	{factor:1.2, refund: 35},
+	{factor:1.3, refund: 41},
+	{factor:1.4, refund: 46},
+	{factor:1.5, refund: 50},
+	{factor:1.6, refund: 54},
+	{factor:1.7, refund: 58},
+	{factor:1.8, refund: 60},
+	{factor:1.9, refund: 63},
+	{factor:2, refund: 65},
+	{factor:3, refund: 80},
+	{factor:4, refund: 88},
+	{factor:4.3, refund: 90},
 ];
 
 const DATA_actionData =
@@ -253,6 +269,19 @@ const DATA_actionData =
 				{name: "海豹", damage: 347675},
 				{name: "以摸多", damage: 508313},
 				{name: "海豹", damage: 380476},
+				{name: "海豹", damage: 172960},
+				{name: "好好先生", damage: 225404},
+				{name: "池霜", damage: 323961},
+				{name: "向井蓝", damage: 437643},
+			]
+		},
+		{
+			day: 3,
+			bossIdx: 7,
+			log: [
+				{name: "骡逃兵", damage: 380819},
+				{name: "向井蓝", damage: 340326},
+				{name: "向井蓝", damage: 217891},
 			]
 		}
 	]

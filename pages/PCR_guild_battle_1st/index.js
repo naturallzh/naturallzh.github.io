@@ -3,13 +3,16 @@ let vm = new Vue({
   data: {
     nameMap: [],
     mobParas: [],
+    combineRule: [],
     actionData: [],
+
     genSit: null,   // general situation
     time: {
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
-      updateTime: new Date(2020,4,9,9,47),
+      updateTime: new Date(2020,4,9,10,50),
+      countdownTimer: null,
     },
 
     popupFlags: {
@@ -21,8 +24,7 @@ let vm = new Vue({
   beforeCreate () {},
   created () {
     this.genSit = {
-      curRound: "",
-      curBoss: "",
+      curBossIdx: 1,
       remainHealth: "",
       remainHealthPer: "",
       actions: [
@@ -40,6 +42,11 @@ let vm = new Vue({
   mounted () {
     this.checkData();
     this.processGenSit();
+    this.countdownTimer = setInterval(()=>{this.time.curTime = new Date()},498);
+  },
+
+  destroyed () {
+    clearInterval(countdownTimer);
   },
 
   computed: {},
@@ -49,6 +56,7 @@ let vm = new Vue({
     importData: function () {
       this.nameMap = DATA_nameMap;
       this.mobParas = DATA_mobParas;
+      this.combineRule = DATA_combineRule;
       this.actionData = DATA_actionData;
     },
 
@@ -57,7 +65,6 @@ let vm = new Vue({
       const nameMap = this.nameMap;
       const mobParas = this.mobParas;
       const actionData = this.actionData;
-      const genSit = this.genSit;
 
       for (let i=0; i<actionData.length; i++) {
         for (let j=0; j<actionData[i].log.length; j++) {
@@ -68,13 +75,13 @@ let vm = new Vue({
         }
       }
       console.log("name check finish");
-      console.log("==============================");
+      console.log("%==============================%");
 
       let healthSum = 0;
       let curBossIdx = 1;
       for (let i=0; i<actionData.length; i++) {
         if (actionData[i].bossIdx !== curBossIdx) {
-          console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
+          // console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
           healthSum = 0;
           curBossIdx = actionData[i].bossIdx;
         }
@@ -84,9 +91,9 @@ let vm = new Vue({
       }
       this.genSit.remainHealth = mobParas[curBossIdx-1].health-healthSum;
       this.genSit.remainHealthPer = (this.genSit.remainHealth/mobParas[curBossIdx-1].health*100).toFixed(2);
-      console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
-      console.log("mob health check finish");
-      console.log("==============================");
+      // console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
+      // console.log("mob health check finish");
+      // console.log("%==============================%");
 
       function checkName(nameStr) {
         for (let i=0; i<nameMap.length; i++) {
@@ -102,11 +109,9 @@ let vm = new Vue({
       const actionData = this.actionData;
       const nameMap = this.nameMap;
       const time = this.time;
+      const genSit = this.genSit;
 
-      const curBossIdx = actionData[actionData.length-1].bossIdx;
-      let genSit = this.genSit;
-      genSit.curRound = Math.ceil(curBossIdx / 5);
-      genSit.curBoss = curBossIdx - (genSit.curRound - 1) * 5;
+      genSit.curBossIdx = actionData[actionData.length-1].bossIdx;
       genSit.actions = actionNumCount();
 
       this.genSit = genSit;
@@ -168,7 +173,7 @@ let vm = new Vue({
       const M = Math.floor(ms/1000/60);
       ms -= M*1000*60;
       const S = Math.floor(ms/1000);
-      timeStr = D+"天"+H+":"+M+":"+S;
+      timeStr = D+"天 "+(H>10?"":"0")+H+":"+(M>10?"":"0")+M+":"+(S>10?"":"0")+S;
       return timeStr;
     },
 
