@@ -9,6 +9,7 @@ let vm = new Vue({
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
+      updateTime: new Date(2020,4,9,8,50),
     },
     showTodayDetail: false,
   },
@@ -18,6 +19,7 @@ let vm = new Vue({
     this.genSit = {
       curRound: "",
       curBoss: "",
+      remainHealth: "",
       actions: [
         {
           todo: [],
@@ -25,12 +27,13 @@ let vm = new Vue({
           todoNum: 90,
         }
       ]
-    }
+    };
+    this.importData();
+    this.time.updateTimeStr = this.processDateStr(this.time.updateTime);
   },
   beforeMount () {},
 
   mounted () {
-    this.importData();
     this.checkData();
     this.processGenSit();
   },
@@ -50,6 +53,7 @@ let vm = new Vue({
       const nameMap = this.nameMap;
       const mobParas = this.mobParas;
       const actionData = this.actionData;
+      const genSit = this.genSit;
 
       for (let i=0; i<actionData.length; i++) {
         for (let j=0; j<actionData[i].log.length; j++) {
@@ -74,6 +78,7 @@ let vm = new Vue({
           healthSum += actionData[i].log[j].damage;
         }
       }
+      this.genSit.remainHealth = mobParas[curBossIdx-1].health-healthSum;
       console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
       console.log("mob health check finish");
       console.log("==============================");
@@ -94,7 +99,7 @@ let vm = new Vue({
       const time = this.time;
 
       const curBossIdx = actionData[actionData.length-1].bossIdx;
-      let genSit = {};
+      let genSit = this.genSit;
       genSit.curRound = Math.ceil(curBossIdx / 5);
       genSit.curBoss = curBossIdx - (genSit.curRound - 1) * 5;
       genSit.actions = actionNumCount();
@@ -137,6 +142,16 @@ let vm = new Vue({
         }
         return actionsArr;
       }
+    },
+
+    processDateStr: function (dateObj) {
+      let dateStr = "";
+      dateStr += dateObj.getFullYear() + "年";
+      dateStr += (dateObj.getMonth()+1) + "月";
+      dateStr += dateObj.getDate() + "日 ";
+      dateStr += dateObj.getHours() + ":";
+      dateStr += dateObj.getMinutes()<10?"0"+dateObj.getMinutes():dateObj.getMinutes();
+      return dateStr;
     },
 
     shiftTodayDetail: function () {
