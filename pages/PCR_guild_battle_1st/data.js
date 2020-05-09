@@ -31,6 +31,19 @@ const DATA_nameMap = [
 	{name: "老公", id: 1271928496391},
 ];
 
+const DATA_mobParas = [
+	{bossIdx: 1, health: 6000000, scoreFactor: 1},
+	{bossIdx: 2, health: 8000000, scoreFactor: 1},
+	{bossIdx: 3, health: 10000000, scoreFactor: 1.1},
+	{bossIdx: 4, health: 12000000, scoreFactor: 1.1},
+	{bossIdx: 5, health: 20000000, scoreFactor: 1.2},
+	{bossIdx: 6, health: 6000000, scoreFactor: 1.2},
+	{bossIdx: 7, health: 8000000, scoreFactor: 1.2},
+	{bossIdx: 8, health: 10000000, scoreFactor: 1.5},
+	{bossIdx: 9, health: 12000000, scoreFactor: 1.7},
+	{bossIdx: 10, health: 20000000, scoreFactor: 2},
+];
+
 const DATA_actionData =
 	[
 		// D1
@@ -207,8 +220,34 @@ const DATA_actionData =
 				{name: "香浓朱古力", damage: 415656},
 				{name: "一起学猫叫", damage: 325660},
 				{name: "一起学猫叫", damage: 258237},
+				{name: "香浓朱古力", damage: 304403},
+				{name: "香浓朱古力", damage: 219828},
+				{name: "长星夜烁", damage: 384801},
+				{name: "长星夜烁", damage: 131181},
 			]
-		}
+		},
+		{
+			day: 2,
+			bossIdx: 6,
+			log: [
+				{name: "长星夜烁", damage: 192176},
+				{name: "长星夜烁", damage: 200736},
+			]
+		},
 
 		// D3
+		{
+			day: 3,
+			bossIdx: 6,
+			log: [
+				{name: "魂魄妖梦", damage: 318540},
+				{name: "老公", damage: 283858},
+				{name: "打个大西瓜", damage: 553699},
+				{name: "打个大西瓜", damage: 443608},
+				{name: "爱莉杏菜", damage: 287151},
+				{name: "爱莉杏菜", damage: 301933},
+				{name: "爱莉杏菜", damage: 203509},
+				{name: "初心如故", damage: 458458},
+			]
+		}
 	]

@@ -2,6 +2,7 @@ let vm = new Vue({
   el: '#index-body',
   data: {
     nameMap: [],
+    mobParas: [],
     actionData: [],
     genSit: {},   // general situation
     time: {
@@ -40,12 +41,14 @@ let vm = new Vue({
 
     importData: function () {
       this.nameMap = DATA_nameMap;
+      this.mobParas = DATA_mobParas;
       this.actionData = DATA_actionData;
     },
 
     // 检查输入(人名和伤害)
     checkData: function () {
       const nameMap = this.nameMap;
+      const mobParas = this.mobParas;
       const actionData = this.actionData;
 
       for (let i=0; i<actionData.length; i++) {
@@ -63,7 +66,7 @@ let vm = new Vue({
       let curBossIdx = 1;
       for (let i=0; i<actionData.length; i++) {
         if (actionData[i].bossIdx !== curBossIdx) {
-          console.log("boss-" + curBossIdx + ": " + healthSum);
+          console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
           healthSum = 0;
           curBossIdx = actionData[i].bossIdx;
         }
@@ -71,7 +74,7 @@ let vm = new Vue({
           healthSum += actionData[i].log[j].damage;
         }
       }
-      console.log("boss-" + curBossIdx + ": " + healthSum);
+      console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
       console.log("mob health check finish");
       console.log("==============================");
 
