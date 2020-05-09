@@ -248,6 +248,11 @@ const DATA_actionData =
 				{name: "爱莉杏菜", damage: 301933},
 				{name: "爱莉杏菜", damage: 203509},
 				{name: "初心如故", damage: 458458},
+				{name: "初心如故", damage: 360125},
+				{name: "宋寂", damage: 284991},
+				{name: "海豹", damage: 347675},
+				{name: "以摸多", damage: 508313},
+				{name: "海豹", damage: 380476},
 			]
 		}
 	]

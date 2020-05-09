@@ -4,14 +4,18 @@ let vm = new Vue({
     nameMap: [],
     mobParas: [],
     actionData: [],
-    genSit: {},   // general situation
+    genSit: null,   // general situation
     time: {
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
-      updateTime: new Date(2020,4,9,8,50),
+      updateTime: new Date(2020,4,9,9,47),
     },
-    showTodayDetail: false,
+
+    popupFlags: {
+      showTodayDetail: false,
+      showTodayTodo: false,
+    },
   },
 
   beforeCreate () {},
@@ -20,6 +24,7 @@ let vm = new Vue({
       curRound: "",
       curBoss: "",
       remainHealth: "",
+      remainHealthPer: "",
       actions: [
         {
           todo: [],
@@ -29,7 +34,6 @@ let vm = new Vue({
       ]
     };
     this.importData();
-    this.time.updateTimeStr = this.processDateStr(this.time.updateTime);
   },
   beforeMount () {},
 
@@ -79,6 +83,7 @@ let vm = new Vue({
         }
       }
       this.genSit.remainHealth = mobParas[curBossIdx-1].health-healthSum;
+      this.genSit.remainHealthPer = (this.genSit.remainHealth/mobParas[curBossIdx-1].health*100).toFixed(2);
       console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
       console.log("mob health check finish");
       console.log("==============================");
@@ -154,8 +159,24 @@ let vm = new Vue({
       return dateStr;
     },
 
+    ms2timeStr: function (ms) {
+      let timeStr = "";
+      const D = Math.floor(ms/1000/3600/24);
+      ms -= D*1000*3600*24;
+      const H = Math.floor(ms/1000/3600);
+      ms -= H*1000*3600;
+      const M = Math.floor(ms/1000/60);
+      ms -= M*1000*60;
+      const S = Math.floor(ms/1000);
+      timeStr = D+"天"+H+":"+M+":"+S;
+      return timeStr;
+    },
+
     shiftTodayDetail: function () {
-      this.showTodayDetail = !this.showTodayDetail;
+      this.popupFlags.showTodayDetail = !this.popupFlags.showTodayDetail;
+    },
+    shiftTodayTodo: function () {
+      this.popupFlags.showTodayTodo = !this.popupFlags.showTodayTodo;
     }
   }
 });
