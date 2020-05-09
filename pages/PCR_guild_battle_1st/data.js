@@ -311,6 +311,39 @@ const DATA_actionData =
 			log: [
 				{name: "池霜", damage: 56278},
 				{name: "宋寂", damage: 540821},
+				{name: "灼眼的Saber", damage: 490812},
+				{name: "以摸多", damage: 396865},
+				{name: "金色之泪", damage: 325567},
+				{name: "以摸多", damage: 227681},
+				{name: "金色之泪", damage: 194464},
+				{name: "黑椿", damage: 532486},
+				{name: "老公", damage: 257666},
+				{name: "好好先生", damage: 528302},
+				{name: "夜雨纷扬", damage: 473562},
+				{name: "Lemon", damage: 406266},
+				{name: "Alpha", damage: 405046},
+				{name: "Lemon", damage: 300733},
+				{name: "Lemon", damage: 227147},
+				{name: "Alpha", damage: 364708},
+				{name: "魂魄妖梦", damage: 374781},
+				{name: "Alpha", damage: 298662},
+				{name: "魂魄妖梦", damage: 248659},
+				{name: "手手", damage: 614501},
+				{name: "池霜", damage: 572226},
+				{name: "咸鱼", damage: 480111},
+				{name: "长星夜烁", damage: 386057},
+				{name: "咸鱼", damage: 273856},
+				{name: "手手", damage: 457399},
+				{name: "长星夜烁", damage: 358428},
+				{name: "长星夜烁", damage: 206916},
+			]
+		},
+		{
+			day: 3,
+			bossIdx: 9,
+			log: [
+				{name: "长星夜烁", damage: 13587},
+				{name: "骡逃兵", damage: 425050},
 			]
 		}
 	];
