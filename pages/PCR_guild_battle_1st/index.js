@@ -11,7 +11,7 @@ let vm = new Vue({
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
-      updateTime: new Date(2020,4,9,10,50),
+      updateTime: new Date(2020,4,9,11,1),
       countdownTimer: null,
     },
 
@@ -137,16 +137,16 @@ let vm = new Vue({
               else {
                 actionsArr[0].doneNum++;
                 actionsArr[0].todoNum--;
-              }
-              // 以上是尾刀校正
-              for (let k=0; k<actionsArr[0].todo.length; k++) {
-                if (actionsArr[0].todo[k].name === actionData[i].log[j].name) {
-                  actionsArr[0].todo[k].todoNum--;
-                  if (actionsArr[0].todo[k].todoNum===0) {
-                    actionsArr[0].todo.splice(k,1);
+                for (let k=0; k<actionsArr[0].todo.length; k++) {
+                  if (actionsArr[0].todo[k].name === actionData[i].log[j].name) {
+                    actionsArr[0].todo[k].todoNum--;
+                    if (actionsArr[0].todo[k].todoNum===0) {
+                      actionsArr[0].todo.splice(k,1);
+                    }
                   }
                 }
               }
+              // 以上是尾刀校正
             }
           }
         }
