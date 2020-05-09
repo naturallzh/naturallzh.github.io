@@ -310,6 +310,7 @@ const DATA_actionData =
 			bossIdx: 8,
 			log: [
 				{name: "池霜", damage: 56278},
+				{name: "宋寂", damage: 540821},
 			]
 		}
 	];
