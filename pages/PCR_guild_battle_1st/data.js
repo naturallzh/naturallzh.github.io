@@ -302,6 +302,14 @@ const DATA_actionData =
 				{name: "灼眼的Saber", damage: 465640},
 				{name: "咸鱼", damage: 466556},
 				{name: "打个大西瓜", damage: 295771},
+				{name: "池霜", damage: 417271},
+			]
+		},
+		{
+			day: 3,
+			bossIdx: 8,
+			log: [
+				{name: "池霜", damage: 56278},
 			]
 		}
-	]
+	];
