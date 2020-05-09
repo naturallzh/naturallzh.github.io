@@ -68,7 +68,7 @@ let vm = new Vue({
   },
 
   destroyed () {
-    clearInterval(countdownTimer);
+    clearInterval(this.countdownTimer);
   },
 
   methods: {
