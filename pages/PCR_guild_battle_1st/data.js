@@ -297,6 +297,11 @@ const DATA_actionData =
 				{name: "手手", damage: 307026},
 				{name: "夜雨纷扬", damage: 314072},
 				{name: "夜雨纷扬", damage: 457513},
+				{name: "黑椿", damage: 318212},
+				{name: "我群最菜", damage: 395867},
+				{name: "灼眼的Saber", damage: 465640},
+				{name: "咸鱼", damage: 466556},
+				{name: "打个大西瓜", damage: 295771},
 			]
 		}
 	]
