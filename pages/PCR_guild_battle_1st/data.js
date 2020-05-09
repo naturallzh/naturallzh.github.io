@@ -284,6 +284,19 @@ const DATA_actionData =
 				{name: "向井蓝", damage: 340326},
 				{name: "向井蓝", damage: 217891},
 				{name: "宋寂", damage: 333782},
+				{name: "金色之泪", damage: 470557},
+				{name: "好好先生", damage: 406420},
+				{name: "初心如故", damage: 247532},
+				{name: "Ron洛神", damage: 336381},
+				{name: "灼眼的Saber", damage: 255401},
+				{name: "Ron洛神", damage: 356492},
+				{name: "上杉谦信", damage: 275462},
+				{name: "上杉谦信", damage: 209072},
+				{name: "爱丽丝", damage: 430455},
+				{name: "爱丽丝", damage: 301482},
+				{name: "手手", damage: 307026},
+				{name: "夜雨纷扬", damage: 314072},
+				{name: "夜雨纷扬", damage: 457513},
 			]
 		}
 	]
