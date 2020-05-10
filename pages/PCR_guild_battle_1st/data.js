@@ -391,6 +391,24 @@ const DATA_actionData =
 				{name: "好好先生", damage: 275101},
 				{name: "长星夜烁", damage: 170178},
 				{name: "长星夜烁", damage: 395082},
+				{name: "上杉谦信", damage: 110302},
+				{name: "池霜", damage: 436056},
+				{name: "黑椿", damage: 402568},
+			]
+		},
+		{
+			day: 4,
+			bossIdx: 10,
+			log: [
+				{name: "初心如故", damage: 466171},
+				{name: "初心如故", damage: 422991},
+				{name: "黑椿", damage: 408369},
+				{name: "我群最菜", damage: 439316},
+				{name: "我群最菜", damage: 394440},
+				{name: "黑椿", damage: 473487},
+				{name: "好好先生", damage: 561640},
+				{name: "池霜", damage: 561994},
+				{name: "黑椿", damage: 296857},
 			]
 		}
 	];
