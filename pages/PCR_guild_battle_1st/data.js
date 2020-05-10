@@ -467,6 +467,10 @@ const DATA_actionData =
 				{name: "我群最菜", damage: 278780},
 				{name: "Alpha", damage: 281018},
 				{name: "Alpha", damage: 307780},
+				{name: "金色之泪", damage: 246676},
+				{name: "一起学猫叫", damage: 478394},
+				{name: "一起学猫叫", damage: 313586},
+				{name: "一起学猫叫", damage: 233692},
 			]
 		}
 	];
