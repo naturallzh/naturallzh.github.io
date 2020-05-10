@@ -389,6 +389,8 @@ const DATA_actionData =
 				{name: "魂魄妖梦", damage: 313321},
 				{name: "好好先生", damage: 423138},
 				{name: "好好先生", damage: 275101},
+				{name: "长星夜烁", damage: 170178},
+				{name: "长星夜烁", damage: 395082},
 			]
 		}
 	];
