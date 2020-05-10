@@ -421,6 +421,8 @@ const DATA_actionData =
 				{name: "手手", damage: 360170},
 				{name: "灼眼的Saber", damage: 258708},
 				{name: "宋寂", damage: 507306},
+				{name: "宋寂", damage: 354252},
+				{name: "宋寂", damage: 259626},
 			]
 		}
 	];
