@@ -10,7 +10,7 @@ let vm = new Vue({
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
-      updateTime: new Date(2020,4,10,23,27),
+      updateTime: new Date(2020,4,10,23,43),
       countdownTimer: null,
     },
     genSit: null,   // general situation
