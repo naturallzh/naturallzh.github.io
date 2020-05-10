@@ -473,6 +473,9 @@ const DATA_actionData =
 				{name: "一起学猫叫", damage: 233692},
 				{name: "老公", damage: 283685},
 				{name: "老公", damage: 121575},
+				{name: "金色之泪", damage: 229565},
+				{name: "向井蓝", damage: 280332},
+				{name: "Ron洛神", damage: 440733},
 			]
 		}
 	];
