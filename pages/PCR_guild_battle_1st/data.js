@@ -380,6 +380,15 @@ const DATA_actionData =
 				{name: "海豹", damage: 189797},
 				{name: "骡逃兵", damage: 309817},
 				{name: "老公", damage: 235626},
+				{name: "爱莉杏菜", damage: 403668},
+				{name: "爱莉杏菜", damage: 228050},
+				{name: "爱莉杏菜", damage: 198225},
+				{name: "打个大西瓜", damage: 409571},
+				{name: "打个大西瓜", damage: 271246},
+				{name: "初心如故", damage: 220193},
+				{name: "魂魄妖梦", damage: 313321},
+				{name: "好好先生", damage: 423138},
+				{name: "好好先生", damage: 275101},
 			]
 		}
 	];
