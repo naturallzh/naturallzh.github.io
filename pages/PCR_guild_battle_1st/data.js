@@ -476,6 +476,8 @@ const DATA_actionData =
 				{name: "金色之泪", damage: 229565},
 				{name: "向井蓝", damage: 280332},
 				{name: "Ron洛神", damage: 440733},
+				{name: "Ron洛神", damage: 302136},
+				{name: "Ron洛神", damage: 222864},
 			]
 		}
 	];
