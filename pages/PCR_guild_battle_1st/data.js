@@ -42,6 +42,11 @@ const DATA_mobParas = [
 	{bossIdx: 8, health: 10000000, scoreFactor: 1.5, name: "花", round: 2, bossNum: 3},
 	{bossIdx: 9, health: 12000000, scoreFactor: 1.7, name: "熊", round: 2, bossNum: 4},
 	{bossIdx: 10, health: 20000000, scoreFactor: 2, name: "羊", round: 2, bossNum: 5},
+	{bossIdx: 11, health: 6000000, scoreFactor: 1.2, name: "龙", round: 3, bossNum: 1},
+	{bossIdx: 12, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 3, bossNum: 2},
+	{bossIdx: 13, health: 10000000, scoreFactor: 1.5, name: "花", round: 3, bossNum: 3},
+	{bossIdx: 14, health: 12000000, scoreFactor: 1.7, name: "熊", round: 3, bossNum: 4},
+	{bossIdx: 15, health: 20000000, scoreFactor: 2, name: "羊", round: 3, bossNum: 5},
 ];
 
 const DATA_combineRule = [
@@ -443,6 +448,25 @@ const DATA_actionData =
 				{name: "翻车大队长", damage: 285663},
 				{name: "翻车大队长", damage: 377615},
 				{name: "夜雨纷扬", damage: 303444},
+				{name: "Lemon", damage: 375159},
+				{name: "乐活", damage: 377124},
+				{name: "Lemon", damage: 243792},
+				{name: "魂魄妖梦", damage: 290869},
+				{name: "Lemon", damage: 242605},
+				{name: "魂魄妖梦", damage: 380432},
+				{name: "乐活", damage: 243386},
+				{name: "金色之泪", damage: 435695},
+				{name: "乐活", damage: 231768},
+				{name: "金色之泪", damage: 267434},
+			]
+		},
+		{
+			day: 4,
+			bossIdx: 11,
+			log: [
+				{name: "我群最菜", damage: 278780},
+				{name: "Alpha", damage: 281018},
+				{name: "Alpha", damage: 307780},
 			]
 		}
 	];
