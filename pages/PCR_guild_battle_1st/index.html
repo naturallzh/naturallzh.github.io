@@ -67,7 +67,7 @@
 
   <div class="today-detail" @click="shiftTodayTodo" v-show="popupFlags.showTodayTodo">
     <div class="mob-box" @click.stop>
-      <div class="log-item" v-for="(todoItem,todoIdx) in genSit.actions[0].todo">
+      <div class="log-item" v-for="(todoItem,todoIdx) in genSit.actions[0].todo" v-if="todoItem.todoNum!==0">
         <span>{{todoItem.name}}</span>
         <span>{{todoItem.todoNum}}</span>
       </div>

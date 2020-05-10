@@ -10,7 +10,7 @@ let vm = new Vue({
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
-      updateTime: new Date(2020,4,10,16,58),
+      updateTime: new Date(2020,4,10,21,6),
       countdownTimer: null,
     },
     genSit: null,   // general situation
@@ -174,7 +174,7 @@ let vm = new Vue({
                   if (actionsArr[0].todo[k].name === actionData[i].log[j].name) {
                     actionsArr[0].todo[k].todoNum--;
                     if (actionsArr[0].todo[k].todoNum===0) {
-                      actionsArr[0].todo.splice(k,1);
+                      // actionsArr[0].todo.splice(k,1);
                     }
                   }
                 }
