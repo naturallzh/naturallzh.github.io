@@ -10,7 +10,7 @@ let vm = new Vue({
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
-      updateTime: new Date(2020,4,9,23,1),
+      updateTime: new Date(2020,4,10,10,6),
       countdownTimer: null,
     },
     genSit: null,   // general situation
@@ -114,7 +114,7 @@ let vm = new Vue({
       let curBossIdx = 1;
       for (let i=0; i<actionData.length; i++) {
         if (actionData[i].bossIdx !== curBossIdx) {
-          // console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
+          console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
           healthSum = 0;
           curBossIdx = actionData[i].bossIdx;
         }
@@ -124,9 +124,9 @@ let vm = new Vue({
       }
       this.genSit.remainHealth = mobParas[curBossIdx-1].health-healthSum;
       this.genSit.remainHealthPer = (this.genSit.remainHealth/mobParas[curBossIdx-1].health*100).toFixed(2);
-      // console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
-      // console.log("mob health check finish");
-      // console.log("%==============================%");
+      console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
+      console.log("mob health check finish");
+      console.log("%==============================%");
 
       function checkName(nameStr) {
         for (let i=0; i<nameMap.length; i++) {

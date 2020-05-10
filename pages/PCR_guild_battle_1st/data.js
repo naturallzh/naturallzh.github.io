@@ -359,6 +359,27 @@ const DATA_actionData =
 				{name: "翻车大队长", damage: 137617},
 				{name: "翻车大队长", damage: 218257},
 				{name: "翻车大队长", damage: 274610},
+				{name: "Ron洛神", damage: 183598},
+				{name: "香浓朱古力", damage: 364277},
+				{name: "一起学猫叫", damage: 461800},
+				{name: "一起学猫叫", damage: 264909},
+				{name: "一起学猫叫", damage: 242172},
+				{name: "香浓朱古力", damage: 202325},
+				{name: "香浓朱古力", damage: 222814},
+				{name: "老公", damage: 83489},
+				{name: "骡逃兵", damage: 212702},
+			]
+		},
+		{
+			day: 4,
+			bossIdx: 9,
+			log: [
+				{name: "爱丽丝", damage: 378950},
+				{name: "海豹", damage: 305285},
+				{name: "海豹", damage: 283931},
+				{name: "海豹", damage: 189797},
+				{name: "骡逃兵", damage: 309817},
+				{name: "老公", damage: 235626},
 			]
 		}
 	];
