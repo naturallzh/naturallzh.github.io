@@ -409,6 +409,18 @@ const DATA_actionData =
 				{name: "好好先生", damage: 561640},
 				{name: "池霜", damage: 561994},
 				{name: "黑椿", damage: 296857},
+				{name: "骡逃兵", damage: 545541},
+				{name: "灼眼的Saber", damage: 410395},
+				{name: "夜雨纷扬", damage: 538568},
+				{name: "骡逃兵", damage: 312460},
+				{name: "灼眼的Saber", damage: 459134},
+				{name: "手手", damage: 553066},
+				{name: "池霜", damage: 314189},
+				{name: "爱丽丝", damage: 296343},
+				{name: "手手", damage: 455738},
+				{name: "手手", damage: 360170},
+				{name: "灼眼的Saber", damage: 258708},
+				{name: "宋寂", damage: 507306},
 			]
 		}
 	];
