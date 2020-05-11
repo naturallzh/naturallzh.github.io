@@ -9,7 +9,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,4,12,0,56),
+      updateTime: new Date(2020,4,12,2,17),
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
@@ -69,6 +69,8 @@ let vm = new Vue({
   mounted () {
     this.loadingMask = false;
     this.checkData();
+
+    this.playerTotalDamageByDay([1]);
   },
 
   destroyed () {
@@ -222,12 +224,57 @@ let vm = new Vue({
     },
 
     playerTotalDamageByDay: function (dateArr) {
+      return
       const nameMap = this.nameMap;
       const mobParas = this.mobParas;
       const actionData = this.actionData;
-      for (let i=0;i<dateArr.length;i++) {
-        for (let j=0;j<actionData.length;j++) {}
+
+      const outputArr = [];
+      for (let i=0;i<nameMap.length;i++) {
+        outputArr[i] = {
+          name: nameMap[i].name,
+          total: 0,
+          detail: []
+        }
       }
+
+      let dateIdx = 0;
+      for (let i=0;i<actionData.length;i++) {
+        if (dateArr[dateIdx] < actionData[i].day) {dateIdx++}
+        if (dateIdx>dateArr.length-1) {break;}
+        if (dateArr[dateIdx] > actionData[i].day) {continue}
+
+        for (let j=0;j<actionData[i].log.length;j++) {
+          for (let k=0;k<outputArr.length;k++) {
+            if (actionData[i].log[j].name===outputArr[k].name) {
+              outputArr[k].total += actionData[i].log[j].realDamage?actionData[i].log[j].realDamage:actionData[i].log[j].damage;
+            }
+          }
+        }
+      }
+
+      // 排序
+      let resArr = [];
+      resArr[0] = outputArr[0];
+      for (let i=1;i<outputArr.length;i++) {
+        if (outputArr[i].total > resArr[0].total) {
+          resArr.splice(0,0,outputArr[i]);
+          continue;
+        }
+        if (outputArr[i].total < resArr[resArr.length-1].total) {
+          resArr.push(outputArr[i]);
+          continue;
+        }
+        for (let j=0;j<resArr.length-1;j++) {
+          if (outputArr[i].total > resArr[j+1].total && outputArr[i].total < resArr[j].total) {
+            resArr.splice(j+1,0,outputArr[i]);
+            break;
+          }
+        }
+      }
+
+      return resArr;
+
     },
 
     shiftHistoryLogDone: function (date) {

@@ -93,6 +93,16 @@
     </div>
   </div>
 
+  <div class="damage-figure">
+    <div class="figure-box">
+      <div class="display-item" v-for="(playerData) in playerTotalDamageByDay([1,2,3,4,5])">
+        <div class="name-box">{{playerData.name}}</div>
+        <div class="damage-bar" :style="'width:'+(playerData.total/playerTotalDamageByDay([1,2,3,4,5])[0].total*80)+'%'"></div>
+        <div>{{playerData.total}}</div>
+      </div>
+    </div>
+  </div>
+
 </div>
 </body>
 
