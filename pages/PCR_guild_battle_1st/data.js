@@ -563,6 +563,12 @@ const DATA_actionData =
 				{name: "我群最菜", damage: 397949},
 				{name: "香浓朱古力", damage: 187413},
 				{name: "手手", damage: 444902},
+				{name: "灼眼的Saber", damage: 418521},
+				{name: "机智的阿斗", damage: 360912},
+				{name: "魂魄妖梦", damage: 328665},
+				{name: "骡逃兵", damage: 370130},
+				{name: "魂魄妖梦", damage: 359509},
+				{name: "魂魄妖梦", damage: 179488},
 			]
 		},
 	];
