@@ -58,7 +58,7 @@
 
   <div class="gen-sit-box" v-if="genSit">
     <h2>历史记录</h2>
-    <div>一周目没有详细记录每刀伤害</div>
+    <div>第一天没有详细记录每刀伤害</div>
     <div>实际上90刀出满了</div>
     <div v-for="(historyDate) in historyDateObj.dateArr">
       <span style="border: 1px solid black" @click="shiftHistoryLogDone(historyDate-1)">第{{historyDate}}天已出{{actionLogByDay(historyDate).doneNum}}</span>
