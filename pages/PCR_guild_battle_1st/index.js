@@ -7,7 +7,7 @@ let vm = new Vue({
     actionData: [],
 
     time: {
-      updateTime: new Date(2020,4,11,23,15),
+      updateTime: new Date(2020,4,11,23,27),
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
@@ -123,6 +123,9 @@ let vm = new Vue({
           healthSum += actionData[i].log[j].damage;
           if (actionData[i].log[j].damage>maxDamage) {
             maxDamage = actionData[i].log[j].damage;
+          }
+          if (actionData[i].log[j].damage===0) {
+            actionData[i].log[j].desc = "吞刀";
           }
         }
         actionData[i].maxDamage = maxDamage;
