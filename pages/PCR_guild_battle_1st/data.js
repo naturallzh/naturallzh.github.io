@@ -559,6 +559,10 @@ const DATA_actionData =
 			bossIdx: 14,
 			log: [
 				{name: "黑椿", damage: 425608},
+				{name: "我群最菜", damage: 389624},
+				{name: "我群最菜", damage: 397949},
+				{name: "香浓朱古力", damage: 187413},
+				{name: "手手", damage: 444902},
 			]
 		},
 	];
