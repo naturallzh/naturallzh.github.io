@@ -479,6 +479,24 @@ const DATA_actionData =
 				{name: "Ron洛神", damage: 440733},
 				{name: "Ron洛神", damage: 302136},
 				{name: "Ron洛神", damage: 222864},
+				{name: "香浓朱古力", damage: 423186},
+				{name: "香浓朱古力", damage: 342974},
+				{name: "香浓朱古力", damage: 260514},
+				{name: "以摸多", damage: 262553},
 			]
-		}
+		},
+		{
+			day: 5,
+			bossIdx: 11,
+			log: [
+				{name: "灼眼的Saber", damage: 290683},
+				{name: "初心如故", damage: 399274},
+			]
+		},
+		{
+			day: 5,
+			bossIdx: 12,
+			log: [
+			]
+		},
 	];
