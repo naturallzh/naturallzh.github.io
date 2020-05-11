@@ -515,6 +515,9 @@ const DATA_actionData =
 				{name: "初心如故", damage: 27222},
 				{name: "爱丽丝", damage: 326716},
 				{name: "机智的阿斗", damage: 263196},
+				{name: "向井蓝", damage: 418635},
+				{name: "黑椿", damage: 321814},
+				{name: "咸鱼", damage: 288047},
 			]
 		},
 	];
