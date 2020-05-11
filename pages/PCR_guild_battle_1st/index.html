@@ -13,6 +13,12 @@
 <body>
 <div id="index-body" v-cloak>
 
+  <div class="loadingMask" v-if="loadingMask">
+    <span style="font-size: 200%;margin-bottom: 20px">载入中...</span>
+    <span>初次载入可能较慢 请耐心等待</span>
+    <span>如长时间没有响应 可ctrl+f5强制刷新页面</span>
+  </div>
+
   <div class="gen-sit-box" v-if="genSit">
     <div>活动开始时间：{{processDateStr(time.startTime)}}</div>
     <div>活动结束时间：{{processDateStr(time.endTime)}}</div>
@@ -81,8 +87,8 @@
   <div class="today-detail" @click="shiftHistoryLogTodo" v-show="popupFlags.historyLogTodo">
     <div class="mob-box" @click.stop>
       <div class="log-item" v-for="(todoItem,todoIdx) in actionLogByDay(historyDateObj.curSelect+1).todo" v-if="todoItem.todoNum!==0">
-        <span>{{todoItem.name}}</span>
-        <span>{{todoItem.todoNum}}</span>
+        <span style="margin-left: 5px">{{todoItem.name}}</span>
+        <span style="margin-right: 5px">{{todoItem.todoNum}}</span>
       </div>
     </div>
   </div>

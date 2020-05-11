@@ -6,8 +6,10 @@ let vm = new Vue({
     combineRule: [],
     actionData: [],
 
+    loadingMask: true,
+
     time: {
-      updateTime: new Date(2020,4,11,23,27),
+      updateTime: new Date(2020,4,11,23,44),
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
@@ -65,6 +67,7 @@ let vm = new Vue({
 
   beforeMount () {},
   mounted () {
+    this.loadingMask = false;
     this.checkData();
   },
 
@@ -226,12 +229,5 @@ let vm = new Vue({
       this.popupFlags.historyLogTodo = !this.popupFlags.historyLogTodo;
       this.historyDateObj.curSelect = date;
     },
-
-    shiftTodayDetail: function () {
-      this.popupFlags.showTodayDetail = !this.popupFlags.showTodayDetail;
-    },
-    shiftTodayTodo: function () {
-      this.popupFlags.showTodayTodo = !this.popupFlags.showTodayTodo;
-    }
   }
 });

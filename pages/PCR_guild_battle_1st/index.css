@@ -9,6 +9,18 @@ html, body {
   padding: 50px;
   box-sizing: border-box;
   flex-wrap: wrap; }
+  #index-body .loadingMask {
+    width: 100%;
+    height: 100%;
+    background: rgba(135, 135, 135, 0.95);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
 
 .gen-sit-box, .combine-calc, .history-log {
   width: 300px;

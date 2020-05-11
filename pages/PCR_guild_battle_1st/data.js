@@ -375,6 +375,8 @@ const DATA_actionData =
 				{name: "骡逃兵", damage: 212702},
 			]
 		},
+
+		// D4
 		{
 			day: 4,
 			bossIdx: 9,
@@ -485,6 +487,8 @@ const DATA_actionData =
 				{name: "以摸多", damage: 262553},
 			]
 		},
+
+		// D5
 		{
 			day: 5,
 			bossIdx: 11,
@@ -585,6 +589,8 @@ const DATA_actionData =
 				{name: "以摸多", damage: 221521},
 				{name: "翻车大队长", damage: 261217},
 				{name: "打个大西瓜", damage: 424186},
+				{name: "翻车大队长", damage: 143966},
+				{name: "翻车大队长", damage: 286043},
 			]
 		},
 	];
