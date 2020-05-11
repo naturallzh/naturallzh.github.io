@@ -497,6 +497,8 @@ const DATA_actionData =
 			day: 5,
 			bossIdx: 12,
 			log: [
+				{name: "爱丽丝", damage: 425031},
+				{name: "夜雨纷扬", damage: 524332},
 			]
 		},
 	];
