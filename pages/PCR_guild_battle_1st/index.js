@@ -225,8 +225,8 @@ let vm = new Vue({
       const nameMap = this.nameMap;
       const mobParas = this.mobParas;
       const actionData = this.actionData;
-      for (let i=0;i<actionData.length;i++) {
-        for (let j=0;j<dateArr.length;j++) {}
+      for (let i=0;i<dateArr.length;i++) {
+        for (let j=0;j<actionData.length;j++) {}
       }
     },
 

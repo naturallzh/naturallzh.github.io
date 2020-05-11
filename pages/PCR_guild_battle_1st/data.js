@@ -592,6 +592,13 @@ const DATA_actionData =
 				{name: "翻车大队长", damage: 143966},
 				{name: "翻车大队长", damage: 286043},
 				{name: "老公", damage: 57265},
+				{name: "一起学猫叫", damage: 401844},
+				{name: "香浓朱古力", damage: 369111},
+				{name: "Ron洛神", damage: 372858},
+				{name: "一起学猫叫", damage: 293994},
+				{name: "Ron洛神", damage: 284932},
+				{name: "Ron洛神", damage: 209397},
+				{name: "一起学猫叫", damage: 244480},
 			]
 		},
 	];
