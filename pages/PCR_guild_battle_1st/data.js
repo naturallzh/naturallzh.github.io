@@ -569,6 +569,12 @@ const DATA_actionData =
 				{name: "骡逃兵", damage: 370130},
 				{name: "魂魄妖梦", damage: 359509},
 				{name: "魂魄妖梦", damage: 179488},
+				{name: "骡逃兵", damage: 205437},
+				{name: "金色之泪", damage: 208324},
+				{name: "长星夜烁", damage: 490652},
+				{name: "老公", damage: 227183},
+				{name: "长星夜烁", damage: 381776},
+				{name: "长星夜烁", damage: 179964},
 			]
 		},
 	];
