@@ -221,6 +221,15 @@ let vm = new Vue({
       return actionLog;
     },
 
+    playerTotalDamageByDay: function (dateArr) {
+      const nameMap = this.nameMap;
+      const mobParas = this.mobParas;
+      const actionData = this.actionData;
+      for (let i=0;i<actionData.length;i++) {
+        for (let j=0;j<dateArr.length;j++) {}
+      }
+    },
+
     shiftHistoryLogDone: function (date) {
       this.popupFlags.historyLogDone = !this.popupFlags.historyLogDone;
       this.historyDateObj.curSelect = date;

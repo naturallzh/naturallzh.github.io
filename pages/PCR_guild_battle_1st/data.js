@@ -591,6 +591,7 @@ const DATA_actionData =
 				{name: "打个大西瓜", damage: 424186},
 				{name: "翻车大队长", damage: 143966},
 				{name: "翻车大队长", damage: 286043},
+				{name: "老公", damage: 57265},
 			]
 		},
 	];
