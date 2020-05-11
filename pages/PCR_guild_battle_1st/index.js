@@ -7,10 +7,10 @@ let vm = new Vue({
     actionData: [],
 
     time: {
+      updateTime: new Date(2020,4,11,11,13),
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
-      updateTime: new Date(2020,4,11,10,2),
       countdownTimer: null,
     },
     genSit: null,   // general situation
@@ -58,17 +58,17 @@ let vm = new Vue({
   beforeCreate () {},
   created () {
     this.initData();
+    this.time.countdownTimer = setInterval(()=>{this.time.curTime = new Date()},498);
   },
   beforeMount () {},
 
   mounted () {
     this.checkData();
     this.processGenSit();
-    this.countdownTimer = setInterval(()=>{this.time.curTime = new Date()},498);
   },
 
   destroyed () {
-    clearInterval(this.countdownTimer);
+    clearInterval(this.time.countdownTimer);
   },
 
   methods: {
@@ -206,7 +206,7 @@ let vm = new Vue({
       const M = Math.floor(ms/1000/60);
       ms -= M*1000*60;
       const S = Math.floor(ms/1000);
-      timeStr = D+"天 "+(H>10?"":"0")+H+":"+(M>10?"":"0")+M+":"+(S>10?"":"0")+S;
+      timeStr = D+"天 "+(H>=10?"":"0")+H+":"+(M>=10?"":"0")+M+":"+(S>=10?"":"0")+S;
       return timeStr;
     },
 

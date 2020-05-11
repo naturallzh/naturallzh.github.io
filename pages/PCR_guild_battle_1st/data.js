@@ -499,6 +499,10 @@ const DATA_actionData =
 			log: [
 				{name: "爱丽丝", damage: 425031},
 				{name: "夜雨纷扬", damage: 524332},
+				{name: "宋寂", damage: 268610},
+				{name: "夜雨纷扬", damage: 325471},
+				{name: "好好先生", damage: 468794},
+				{name: "好好先生", damage: 493446},
 			]
 		},
 	];
