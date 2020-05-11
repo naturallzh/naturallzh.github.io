@@ -518,6 +518,47 @@ const DATA_actionData =
 				{name: "向井蓝", damage: 418635},
 				{name: "黑椿", damage: 321814},
 				{name: "咸鱼", damage: 288047},
+				{name: "咸鱼", damage: 518144},
+				{name: "池霜", damage: 518240},
+				{name: "黑椿", damage: 166900},
+			]
+		},
+		{
+			day: 5,
+			bossIdx: 13,
+			log: [
+				{name: "黑椿", damage: 347180},
+				{name: "上杉谦信", damage: 277781},
+				{name: "池霜", damage: 609201},
+				{name: "上杉谦信", damage: 213432},
+				{name: "咸鱼", damage: 537397},
+				{name: "初心如故", damage: 494507},
+				{name: "打个大西瓜", damage: 568581},
+				{name: "乐活", damage: 393586},
+				{name: "夜雨纷扬", damage: 468915},
+				{name: "乐活", damage: 215876},
+				{name: "灼眼的Saber", damage: 493268},
+				{name: "爱丽丝", damage: 263045},
+				{name: "金色之泪", damage: 393195},
+				{name: "初心如故", damage: 227360},
+				{name: "手手", damage: 646508},
+				{name: "金色之泪", damage: 349754},
+				{name: "宋寂", damage: 563009},
+				{name: "向井蓝", damage: 350897},
+				{name: "Alpha", damage: 598752},
+				{name: "手手", damage: 343402},
+				{name: "乐活", damage: 218641},
+				{name: "骡逃兵", damage: 584665},
+				{name: "好好先生", damage: 556393},
+				{name: "机智的阿斗", damage: 284475},
+				{name: "香浓朱古力", damage: 180},
+			]
+		},
+		{
+			day: 5,
+			bossIdx: 14,
+			log: [
+				{name: "黑椿", damage: 425608},
 			]
 		},
 	];
