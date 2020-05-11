@@ -575,6 +575,11 @@ const DATA_actionData =
 				{name: "老公", damage: 227183},
 				{name: "长星夜烁", damage: 381776},
 				{name: "长星夜烁", damage: 179964},
+				{name: "上杉谦信", damage: 243218},
+				{name: "宋寂", damage: 291000},
+				{name: "Lemon", damage: 386428},
+				{name: "Lemon", damage: 258638},
+				{name: "Lemon", damage: 231029},
 			]
 		},
 	];

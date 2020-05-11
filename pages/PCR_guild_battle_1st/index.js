@@ -7,7 +7,7 @@ let vm = new Vue({
     actionData: [],
 
     time: {
-      updateTime: new Date(2020,4,11,20,35),
+      updateTime: new Date(2020,4,11,22,2),
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
