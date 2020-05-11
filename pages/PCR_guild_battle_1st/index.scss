@@ -56,11 +56,12 @@ html, body {
 			width: 100%;
 			border: 1px solid black;
 			box-sizing: border-box;
-			padding: 5px;
+			padding: 5px 0;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			flex-shrink: 0;
+			position: relative;
 		}
 	}
 }

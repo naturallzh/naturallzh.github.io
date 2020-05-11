@@ -580,6 +580,11 @@ const DATA_actionData =
 				{name: "Lemon", damage: 386428},
 				{name: "Lemon", damage: 258638},
 				{name: "Lemon", damage: 231029},
+				{name: "以摸多", damage: 445631},
+				{name: "以摸多", damage: 372926},
+				{name: "以摸多", damage: 221521},
+				{name: "翻车大队长", damage: 261217},
+				{name: "打个大西瓜", damage: 424186},
 			]
 		},
 	];

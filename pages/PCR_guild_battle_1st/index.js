@@ -7,7 +7,7 @@ let vm = new Vue({
     actionData: [],
 
     time: {
-      updateTime: new Date(2020,4,11,22,2),
+      updateTime: new Date(2020,4,11,23,15),
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
@@ -118,20 +118,26 @@ let vm = new Vue({
       let healthSum = 0;
       let curBossIdx = 1;
       for (let i=0; i<actionData.length; i++) {
-        if (actionData[i].bossIdx !== curBossIdx) {
-          const remainHealth = (mobParas[curBossIdx-1].health-healthSum);
-          if (remainHealth === 0 && actionData[i-1].day>1) {
-            actionData[i-1].log[actionData[i-1].log.length-1].desc = "尾刀";
+        let maxDamage = 0;
+        for (let j=0; j<actionData[i].log.length; j++) {
+          healthSum += actionData[i].log[j].damage;
+          if (actionData[i].log[j].damage>maxDamage) {
+            maxDamage = actionData[i].log[j].damage;
           }
-          else if (remainHealth < 0 && actionData[i-1].day>1) {
-            actionData[i-1].log[actionData[i-1].log.length-1].desc = "合刀";
+        }
+        actionData[i].maxDamage = maxDamage;
+        const remainHealth = (mobParas[curBossIdx-1].health-healthSum);
+        if (remainHealth <= 0) {
+          if (remainHealth === 0 && actionData[i].day>1) {
+            actionData[i].log[actionData[i].log.length-1].desc = "尾刀";
+          }
+          else if (remainHealth < 0 && actionData[i].day>1) {
+            actionData[i].log[actionData[i].log.length-1].desc = "合刀";
+            actionData[i].log[actionData[i].log.length-1].realDamage = actionData[i].log[actionData[i].log.length-1].damage + remainHealth;
           }
           console.log("boss-" + curBossIdx + ": " + remainHealth);
           healthSum = 0;
-          curBossIdx = actionData[i].bossIdx;
-        }
-        for (let j=0; j<actionData[i].log.length; j++) {
-          healthSum += actionData[i].log[j].damage;
+          curBossIdx++;
         }
       }
       this.genSit.remainHealth = mobParas[curBossIdx-1].health-healthSum;
