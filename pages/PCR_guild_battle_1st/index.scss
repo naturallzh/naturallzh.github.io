@@ -12,7 +12,7 @@ html, body {
 	flex-wrap: wrap;
 }
 
-.gen-sit-box {
+.gen-sit-box, .combine-calc, .history-log {
 	width: 300px;
 	height: 300px;
 	background: white;
@@ -22,18 +22,6 @@ html, body {
 	overflow: auto;
 	box-sizing: border-box;
 	margin: 0 20px;
-}
-
-.combine-calc {
-	margin: 0 20px;
-	width: 300px;
-	height: 300px;
-	background: white;
-	display: flex;
-	flex-direction: column;
-	padding: 20px;
-	overflow: auto;
-	box-sizing: border-box;
 }
 
 .today-detail {
@@ -54,6 +42,16 @@ html, body {
 		overflow: auto;
 		display: flex;
 		flex-direction: column;
+		.title {
+			width: 100%;
+			border: 1px solid black;
+			box-sizing: border-box;
+			padding: 5px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-shrink: 0;
+		}
 		.log-item {
 			width: 100%;
 			border: 1px solid black;
@@ -61,6 +59,7 @@ html, body {
 			padding: 5px;
 			display: flex;
 			justify-content: space-between;
+			align-items: center;
 			flex-shrink: 0;
 		}
 	}

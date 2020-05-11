@@ -20,15 +20,15 @@
     <div>当前北京时间：{{processDateStr(time.curTime)}}</div>
     <div>剩余时间：{{ms2timeStr(time.endTime-time.curTime)}}</div>
     <div>当前周目：{{mobParas[genSit.curBossIdx-1].round}}</div>
-    <div>当前Boss：{{mobParas[genSit.curBossIdx-1].bossNum}}号 ~ {{mobParas[genSit.curBossIdx-1].name}}</div>
+    <div>当前Boss：{{mobParas[genSit.curBossIdx-1].bossNum}}号 ~ {{mobParas[genSit.curBossIdx-1].name}} ~ 总第{{genSit.curBossIdx}}号</div>
     <div>剩余血量：{{genSit.remainHealth}} ~ {{genSit.remainHealthPer}}%</div>
     <div>
-      <span>已出刀数：{{genSit.actions[0].doneNum}}</span>
-      <span style="border: 1px solid black" @click="shiftTodayDetail">详情点击</span>
+      <span>已出刀数：{{actionLogByDay(genSit.curDay).doneNum}}</span>
+      <span style="border: 1px solid black" @click="shiftHistoryLogDone(genSit.curDay-1)">详情点击</span>
     </div>
     <div>
-      <span>未出刀数：{{genSit.actions[0].todoNum}}</span>
-      <span style="border: 1px solid black" @click="shiftTodayTodo">详情点击</span>
+      <span>未出刀数：{{actionLogByDay(genSit.curDay).todoNum}}</span>
+      <span style="border: 1px solid black" @click="shiftHistoryLogTodo(genSit.curDay-1)">详情点击</span>
     </div>
   </div>
 
@@ -56,18 +56,30 @@
     </div>
   </div>
 
-  <div class="today-detail" @click="shiftTodayDetail" v-show="popupFlags.showTodayDetail">
-    <div class="mob-box" v-for="(mobData,mobIdx) in genSit.actions.slice(1)" @click.stop>
+  <div class="gen-sit-box" v-if="genSit">
+    <h2>历史记录</h2>
+    <div>一周目没有详细记录每刀伤害</div>
+    <div>实际上90刀出满了</div>
+    <div v-for="(historyDate) in historyDateObj.dateArr">
+      <span style="border: 1px solid black" @click="shiftHistoryLogDone(historyDate-1)">第{{historyDate}}天已出{{actionLogByDay(historyDate).doneNum}}</span>
+      <span style="border: 1px solid black" @click="shiftHistoryLogTodo(historyDate-1)">第{{historyDate}}天未出{{actionLogByDay(historyDate).todoNum}}</span>
+    </div>
+  </div>
+
+  <div class="today-detail" @click="shiftHistoryLogDone" v-show="popupFlags.historyLogDone">
+    <div class="mob-box" v-for="(mobData,mobIdx) in actionLogByDay(historyDateObj.curSelect+1).done" @click.stop>
+      <div class="title">{{mobParas[mobData.bossIdx-1].round}}周目 {{mobParas[mobData.bossIdx-1].bossNum}}号 {{mobParas[mobData.bossIdx-1].name}} 总第{{mobParas[mobData.bossIdx-1].bossIdx}}号</div>
       <div class="log-item" v-for="(logItem,logIdx) in mobData.log">
         <span>{{logItem.name}}</span>
+        <span>{{logItem.desc}}</span>
         <span>{{logItem.damage}}</span>
       </div>
     </div>
   </div>
 
-  <div class="today-detail" @click="shiftTodayTodo" v-show="popupFlags.showTodayTodo">
+  <div class="today-detail" @click="shiftHistoryLogTodo" v-show="popupFlags.historyLogTodo">
     <div class="mob-box" @click.stop>
-      <div class="log-item" v-for="(todoItem,todoIdx) in genSit.actions[0].todo" v-if="todoItem.todoNum!==0">
+      <div class="log-item" v-for="(todoItem,todoIdx) in actionLogByDay(historyDateObj.curSelect+1).todo" v-if="todoItem.todoNum!==0">
         <span>{{todoItem.name}}</span>
         <span>{{todoItem.todoNum}}</span>
       </div>

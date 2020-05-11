@@ -19,11 +19,13 @@ let vm = new Vue({
       damageA: "",
       damageB: "",
     },
-
+    historyDateObj: {},
 
     popupFlags: {
       showTodayDetail: false,
       showTodayTodo: false,
+      historyLogDone: false,
+      historyLogTodo: false,
     },
   },
 
@@ -60,11 +62,10 @@ let vm = new Vue({
     this.initData();
     this.time.countdownTimer = setInterval(()=>{this.time.curTime = new Date()},498);
   },
-  beforeMount () {},
 
+  beforeMount () {},
   mounted () {
     this.checkData();
-    this.processGenSit();
   },
 
   destroyed () {
@@ -74,23 +75,27 @@ let vm = new Vue({
   methods: {
 
     initData: function () {
-      this.genSit = {
-        curBossIdx: 1,
-        remainHealth: "",
-        remainHealthPer: "",
-        actions: [
-          {
-            todo: [],
-            doneNum: 0,
-            todoNum: 90,
-          }
-        ]
-      };
-
       this.nameMap = DATA_nameMap;
       this.mobParas = DATA_mobParas;
       this.combineRule = DATA_combineRule;
       this.actionData = DATA_actionData;
+
+      this.genSit = {
+        curDay: Math.ceil((this.time.curTime - this.time.startTime)/1000/3600/24),
+        curBossIdx: this.actionData[this.actionData.length-1].bossIdx,
+        remainHealth: "",
+        remainHealthPer: "",
+      };
+
+      this.historyDateObj = {
+        curSelect: 0,
+        dateArr: [],
+      };
+      for (let i=1;i<=this.genSit.curDay;i++) {
+        this.historyDateObj.dateArr[i-1] = i;
+      }
+
+      //this.genSit.curBossIdx = this.actionData[this.actionData.length-1].bossIdx;
     },
 
     // 检查输入(人名和伤害)
@@ -114,7 +119,14 @@ let vm = new Vue({
       let curBossIdx = 1;
       for (let i=0; i<actionData.length; i++) {
         if (actionData[i].bossIdx !== curBossIdx) {
-          console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
+          const remainHealth = (mobParas[curBossIdx-1].health-healthSum);
+          if (remainHealth === 0 && actionData[i-1].day>1) {
+            actionData[i-1].log[actionData[i-1].log.length-1].desc = "尾刀";
+          }
+          else if (remainHealth < 0 && actionData[i-1].day>1) {
+            actionData[i-1].log[actionData[i-1].log.length-1].desc = "合刀";
+          }
+          console.log("boss-" + curBossIdx + ": " + remainHealth);
           healthSum = 0;
           curBossIdx = actionData[i].bossIdx;
         }
@@ -135,55 +147,6 @@ let vm = new Vue({
           }
         }
         return false;
-      }
-    },
-
-    processGenSit: function () {
-      const actionData = this.actionData;
-      const nameMap = this.nameMap;
-      const time = this.time;
-      const genSit = this.genSit;
-
-      genSit.curBossIdx = actionData[actionData.length-1].bossIdx;
-      genSit.actions = actionNumCount();
-
-      this.genSit = genSit;
-      //console.log(genSit.actions);
-
-      function actionNumCount() {
-        const curDay = Math.ceil((time.curTime - time.startTime)/1000/3600/24)
-        let actionsArr = [];
-        actionsArr[0] = {
-          todo: [],
-          doneNum: 0,
-          todoNum: 90,
-        };
-        for (let i=0; i<nameMap.length; i++) {
-          actionsArr[0].todo[i] = {name: nameMap[i].name, todoNum: 3};
-        }
-
-        for (let i=0; i<actionData.length; i++) {
-          if (actionData[i].day === curDay) {
-            actionsArr.push(actionData[i]);
-            for (let j=0; j<actionData[i].log.length; j++) {
-              if (j===actionData[i].log.length-1 && i<actionData.length-1) {}
-              else {
-                actionsArr[0].doneNum++;
-                actionsArr[0].todoNum--;
-                for (let k=0; k<actionsArr[0].todo.length; k++) {
-                  if (actionsArr[0].todo[k].name === actionData[i].log[j].name) {
-                    actionsArr[0].todo[k].todoNum--;
-                    if (actionsArr[0].todo[k].todoNum===0) {
-                      // actionsArr[0].todo.splice(k,1);
-                    }
-                  }
-                }
-              }
-              // 以上是尾刀校正
-            }
-          }
-        }
-        return actionsArr;
       }
     },
 
@@ -208,6 +171,51 @@ let vm = new Vue({
       const S = Math.floor(ms/1000);
       timeStr = D+"天 "+(H>=10?"":"0")+H+":"+(M>=10?"":"0")+M+":"+(S>=10?"":"0")+S;
       return timeStr;
+    },
+
+    actionLogByDay: function (date) {
+
+      const actionData = this.actionData;
+      const nameMap = this.nameMap;
+
+      const actionLog = {
+        todo: [],
+        done: [],
+        todoNum: 0,
+        doneNum: 0,
+      };
+
+      for (let i=0; i<nameMap.length; i++) {
+        actionLog.todo[i] = {name: nameMap[i].name, todoNum: 3};
+        actionLog.todoNum += 3;
+      }
+
+      for (let i=0; i<actionData.length; i++) {
+        if (actionData[i].day !== date) {continue;}
+        actionLog.done.push(actionData[i]);
+        for (let j=0; j<actionData[i].log.length; j++) {
+          if (actionData[i].log[j].desc==="合刀" || actionData[i].log[j].desc==="尾刀") {}
+          else {
+            actionLog.doneNum++;
+            actionLog.todoNum--;
+            for (let k=0; k<actionLog.todo.length; k++) {
+              if (actionLog.todo[k].name === actionData[i].log[j].name) {
+                actionLog.todo[k].todoNum--;
+              }
+            }
+          }
+        }
+      }
+      return actionLog;
+    },
+
+    shiftHistoryLogDone: function (date) {
+      this.popupFlags.historyLogDone = !this.popupFlags.historyLogDone;
+      this.historyDateObj.curSelect = date;
+    },
+    shiftHistoryLogTodo: function (date) {
+      this.popupFlags.historyLogTodo = !this.popupFlags.historyLogTodo;
+      this.historyDateObj.curSelect = date;
     },
 
     shiftTodayDetail: function () {
