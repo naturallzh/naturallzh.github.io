@@ -9,7 +9,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,4,13,0,18),
+      updateTime: new Date(2020,4,13,1,21),
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
@@ -258,6 +258,17 @@ let vm = new Vue({
           for (let k=0;k<outputArr.length;k++) {
             if (actionData[i].log[j].name===outputArr[k].name) {
               outputArr[k].total += actionData[i].log[j].realDamage?actionData[i].log[j].realDamage:actionData[i].log[j].damage;
+              let flag = true;
+              for (let l=0;l<outputArr[k].detail.length;l++) {
+                if (outputArr[k].detail[l].bossIdx===actionData[i].bossIdx) {
+                  outputArr[k].detail[l].damage += actionData[i].log[j].realDamage?actionData[i].log[j].realDamage:actionData[i].log[j].damage;
+                  flag = false;
+                  break;
+                }
+              }
+              if (flag) {
+                outputArr[k].detail.push({bossIdx: actionData[i].bossIdx, damage: actionData[i].log[j].realDamage?actionData[i].log[j].realDamage:actionData[i].log[j].damage});
+              }
             }
           }
         }
@@ -282,7 +293,8 @@ let vm = new Vue({
           }
         }
       }
-      //this.damageFigureData = resArr;
+      // this.damageFigureData = resArr;
+      // console.log(resArr)
       return resArr;
     },
 

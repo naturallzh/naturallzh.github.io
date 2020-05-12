@@ -112,7 +112,10 @@ html, body {
 			.damage-bar {
 				height: 70%;
 				background: red;
-				margin-right: 5px;
+				font-size: 70%;
+				text-align: center;
+				border: 1px solid black;
+				box-sizing: border-box;
 			}
 		}
 	}

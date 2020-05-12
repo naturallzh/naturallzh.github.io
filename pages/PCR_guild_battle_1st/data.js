@@ -32,26 +32,26 @@ const DATA_nameMap = [
 ];
 
 const DATA_mobParas = [
-	{bossIdx: 1, health: 6000000, scoreFactor: 1, name: "龙", round: 1, bossNum: 1},
-	{bossIdx: 2, health: 8000000, scoreFactor: 1, name: "鸟", round: 1, bossNum: 2},
-	{bossIdx: 3, health: 10000000, scoreFactor: 1.1, name: "花", round: 1, bossNum: 3},
-	{bossIdx: 4, health: 12000000, scoreFactor: 1.1, name: "熊", round: 1, bossNum: 4},
-	{bossIdx: 5, health: 20000000, scoreFactor: 1.2, name: "羊", round: 1, bossNum: 5},
-	{bossIdx: 6, health: 6000000, scoreFactor: 1.2, name: "龙", round: 2, bossNum: 1},
-	{bossIdx: 7, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 2, bossNum: 2},
-	{bossIdx: 8, health: 10000000, scoreFactor: 1.5, name: "花", round: 2, bossNum: 3},
-	{bossIdx: 9, health: 12000000, scoreFactor: 1.7, name: "熊", round: 2, bossNum: 4},
-	{bossIdx: 10, health: 20000000, scoreFactor: 2, name: "羊", round: 2, bossNum: 5},
-	{bossIdx: 11, health: 6000000, scoreFactor: 1.2, name: "龙", round: 3, bossNum: 1},
-	{bossIdx: 12, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 3, bossNum: 2},
-	{bossIdx: 13, health: 10000000, scoreFactor: 1.5, name: "花", round: 3, bossNum: 3},
-	{bossIdx: 14, health: 12000000, scoreFactor: 1.7, name: "熊", round: 3, bossNum: 4},
-	{bossIdx: 15, health: 20000000, scoreFactor: 2, name: "羊", round: 3, bossNum: 5},
-	{bossIdx: 16, health: 6000000, scoreFactor: 1.2, name: "龙", round: 4, bossNum: 1},
-	{bossIdx: 17, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 4, bossNum: 2},
-	{bossIdx: 18, health: 10000000, scoreFactor: 1.5, name: "花", round: 4, bossNum: 3},
-	{bossIdx: 19, health: 12000000, scoreFactor: 1.7, name: "熊", round: 4, bossNum: 4},
-	{bossIdx: 20, health: 20000000, scoreFactor: 2, name: "羊", round: 4, bossNum: 5},
+	{bossIdx: 1, health: 6000000, scoreFactor: 1, name: "龙", round: 1, bossNum: 1, bgC: "background: #300"},
+	{bossIdx: 2, health: 8000000, scoreFactor: 1, name: "鸟", round: 1, bossNum: 2, bgC: "background: #c00"},
+	{bossIdx: 3, health: 10000000, scoreFactor: 1.1, name: "花", round: 1, bossNum: 3, bgC: "background: #600"},
+	{bossIdx: 4, health: 12000000, scoreFactor: 1.1, name: "熊", round: 1, bossNum: 4, bgC: "background: #f00"},
+	{bossIdx: 5, health: 20000000, scoreFactor: 1.2, name: "羊", round: 1, bossNum: 5, bgC: "background: #900"},
+	{bossIdx: 6, health: 6000000, scoreFactor: 1.2, name: "龙", round: 2, bossNum: 1, bgC: "background: #300"},
+	{bossIdx: 7, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 2, bossNum: 2, bgC: "background: #c00"},
+	{bossIdx: 8, health: 10000000, scoreFactor: 1.5, name: "花", round: 2, bossNum: 3, bgC: "background: #600"},
+	{bossIdx: 9, health: 12000000, scoreFactor: 1.7, name: "熊", round: 2, bossNum: 4, bgC: "background: #f00"},
+	{bossIdx: 10, health: 20000000, scoreFactor: 2, name: "羊", round: 2, bossNum: 5, bgC: "background: #900"},
+	{bossIdx: 11, health: 6000000, scoreFactor: 1.2, name: "龙", round: 3, bossNum: 1, bgC: "background: #311"},
+	{bossIdx: 12, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 3, bossNum: 2, bgC: "background: #c11"},
+	{bossIdx: 13, health: 10000000, scoreFactor: 1.5, name: "花", round: 3, bossNum: 3, bgC: "background: #611"},
+	{bossIdx: 14, health: 12000000, scoreFactor: 1.7, name: "熊", round: 3, bossNum: 4, bgC: "background: #f11"},
+	{bossIdx: 15, health: 20000000, scoreFactor: 2, name: "羊", round: 3, bossNum: 5, bgC: "background: #911"},
+	{bossIdx: 16, health: 6000000, scoreFactor: 1.2, name: "龙", round: 4, bossNum: 1, bgC: "background: #311"},
+	{bossIdx: 17, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 4, bossNum: 2, bgC: "background: #c11"},
+	{bossIdx: 18, health: 10000000, scoreFactor: 1.5, name: "花", round: 4, bossNum: 3, bgC: "background: #611"},
+	{bossIdx: 19, health: 12000000, scoreFactor: 1.7, name: "熊", round: 4, bossNum: 4, bgC: "background: #f11"},
+	{bossIdx: 20, health: 20000000, scoreFactor: 2, name: "羊", round: 4, bossNum: 5, bgC: "background: #911"},
 ];
 
 const DATA_combineRule = [
@@ -714,6 +714,11 @@ const DATA_actionData = [
 			{name: "翻车大队长", damage: 360320},
 			{name: "翻车大队长", damage: 250053},
 			{name: "翻车大队长", damage: 165540},
+			{name: "香浓朱古力", damage: 251948},
+			{name: "香浓朱古力", damage: 323802},
+			{name: "Ron洛神", damage: 434055},
+			{name: "Ron洛神", damage: 334906},
+			{name: "Ron洛神", damage: 226787},
 		]
 	}
 ];

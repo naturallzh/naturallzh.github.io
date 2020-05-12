@@ -98,6 +98,8 @@
 
   <div class="damage-figure" style="display: flex" v-if="popupFlags.damageFigure" @click="shiftDamageFigure">
     <div class="figure-box" @click.stop>
+      <div>分数只有极其有限的参考价值，不能作为任何评判标准！</div>
+      <div>颜色鲜红的那部分伤害在某种程度上"含金量"更高，暗红的反之。同样只有极其有限的参考价值！</div>
       <div style="display: flex">
         <div v-for="(dateItem) in historyDateObj.dateArr" style="display: flex;align-items: center;margin-right: 10px">
           <input type="checkbox" v-model="damageFigurePara[dateItem-1]">
@@ -106,8 +108,12 @@
       </div>
       <div class="display-item" v-for="(playerData) in damageFigureData">
         <div class="name-box">{{playerData.name}}</div>
-        <div class="damage-bar" :style="'width:'+(damageFigureData[0].total===0?0:(playerData.total/damageFigureData[0].total*80))+'%'"></div>
-        <div>{{playerData.total}}</div>
+<!--        <div class="damage-bar" :style="'width:'+(damageFigureData[0].total===0?0:(playerData.total/damageFigureData[0].total*80))+'%'"></div>-->
+        <div class="damage-bar" v-for="(damageItem) in playerData.detail"
+          :style="'width:'+(damageFigureData[0].total===0?0:(damageItem.damage/damageFigureData[0].total*80))+'%;'+mobParas[damageItem.bossIdx-1].bgC">
+          {{damageItem.damage}}
+        </div>
+        <div style="margin-left: 20px">{{playerData.total}}</div>
       </div>
     </div>
   </div>
