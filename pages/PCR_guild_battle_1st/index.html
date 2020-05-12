@@ -97,7 +97,7 @@
   </div>
 
   <div class="damage-figure" style="display: flex" v-if="popupFlags.damageFigure" @click="shiftDamageFigure">
-    <div class="figure-box" style="overflow: auto" @click.stop>
+    <div class="figure-box" @click.stop>
       <div style="display: flex">
         <div v-for="(dateItem) in historyDateObj.dateArr" style="display: flex;align-items: center;margin-right: 10px">
           <input type="checkbox" v-model="damageFigurePara[dateItem-1]">
