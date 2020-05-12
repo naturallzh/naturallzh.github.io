@@ -47,6 +47,11 @@ const DATA_mobParas = [
 	{bossIdx: 13, health: 10000000, scoreFactor: 1.5, name: "花", round: 3, bossNum: 3},
 	{bossIdx: 14, health: 12000000, scoreFactor: 1.7, name: "熊", round: 3, bossNum: 4},
 	{bossIdx: 15, health: 20000000, scoreFactor: 2, name: "羊", round: 3, bossNum: 5},
+	{bossIdx: 16, health: 6000000, scoreFactor: 1.2, name: "龙", round: 4, bossNum: 1},
+	{bossIdx: 17, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 4, bossNum: 2},
+	{bossIdx: 18, health: 10000000, scoreFactor: 1.5, name: "花", round: 4, bossNum: 3},
+	{bossIdx: 19, health: 12000000, scoreFactor: 1.7, name: "熊", round: 4, bossNum: 4},
+	{bossIdx: 20, health: 20000000, scoreFactor: 2, name: "羊", round: 4, bossNum: 5},
 ];
 
 const DATA_combineRule = [
@@ -662,6 +667,18 @@ const DATA_actionData =
 				{name: "长星夜烁", damage: 407885},
 				{name: "长星夜烁", damage: 423719},
 				{name: "长星夜烁", damage: 164696},
+				{name: "咸鱼", damage: 501208},
+			]
+		},
+		{
+			day: 6,
+			bossIdx: 15,
+			log: [
+				{name: "咸鱼", damage: 59585},
+				{name: "机智的阿斗", damage: 320082},
+				{name: "宋寂", damage: 273749},
+				{name: "初心如故", damage: 240635},
+				{name: "灼眼的Saber", damage: 299073},
 			]
 		}
 	];
