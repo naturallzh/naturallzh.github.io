@@ -616,6 +616,7 @@ const DATA_actionData =
 				{name: "骡逃兵", damage: 597429},
 				{name: "池霜", damage: 578296},
 				{name: "池霜", damage: 455827},
+				{name: "夜雨纷扬", damage: 560166},
 			]
 		}
 	];
