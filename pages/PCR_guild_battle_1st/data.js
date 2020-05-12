@@ -672,7 +672,7 @@ const DATA_actionData =
 		},
 		{
 			day: 6,
-			bossIdx: 15,
+			bossIdx: 16,
 			log: [
 				{name: "咸鱼", damage: 59585},
 				{name: "机智的阿斗", damage: 320082},
@@ -686,6 +686,26 @@ const DATA_actionData =
 				{name: "黑椿", damage: 337249},
 				{name: "咸鱼", damage: 309020},
 				{name: "打个大西瓜", damage: 313241},
+				{name: "老公", damage: 274761},
+				{name: "老公", damage: 302479},
+				{name: "好好先生", damage: 291972},
+				{name: "老公", damage: 186321},
+				{name: "一起学猫叫", damage: 235557},
+				{name: "上杉谦信", damage: 216668},
+				{name: "乐活", damage: 238388},
+				{name: "上杉谦信", damage: 254405},
+				{name: "池霜", damage: 328652},
+				{name: "乐活", damage: 199148},
+			]
+		},
+		{
+			day: 6,
+			bossIdx: 17,
+			log: [
+				{name: "上杉谦信", damage: 165664},
+				{name: "咸鱼", damage: 458261},
+				{name: "一起学猫叫", damage: 280667},
+				{name: "香浓朱古力", damage: 454576},
 			]
 		}
 	];
