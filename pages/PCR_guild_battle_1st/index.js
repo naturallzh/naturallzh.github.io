@@ -23,7 +23,6 @@ let vm = new Vue({
     },
     historyDateObj: {},
     damageFigurePara: [],
-    //damageFigureData: [],
 
     popupFlags: {
       damageFigure: false,
@@ -60,7 +59,7 @@ let vm = new Vue({
     },
 
     damageFigureData :function () {
-      return this.playerTotalDamageByDay(this.damageFigurePara)
+      return this.playerTotalDamageByDay(this.damageFigurePara);
     }
   },
 
@@ -74,7 +73,6 @@ let vm = new Vue({
   mounted () {
     this.loadingMask = false;
     this.checkData();
-    //this.playerTotalDamageByDay(this.damageFigurePara);
   },
 
   destroyed () {
@@ -105,8 +103,6 @@ let vm = new Vue({
         this.damageFigurePara[i-1] = false;
       }
       this.damageFigurePara[this.genSit.curDay-1] = true;
-
-      //this.genSit.curBossIdx = this.actionData[this.actionData.length-1].bossIdx;
     },
 
     // 检查输入(人名和伤害)
@@ -231,7 +227,6 @@ let vm = new Vue({
     },
 
     playerTotalDamageByDay: function (dateArr) {
-      console.log(dateArr)
       const nameMap = this.nameMap;
       const mobParas = this.mobParas;
       const actionData = this.actionData;

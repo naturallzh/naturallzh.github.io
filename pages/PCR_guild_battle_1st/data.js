@@ -707,6 +707,9 @@ const DATA_actionData =
 				{name: "一起学猫叫", damage: 280667},
 				{name: "香浓朱古力", damage: 454576},
 				{name: "一起学猫叫", damage: 520453},
+				{name: "骡逃兵", damage: 369359},
+				{name: "骡逃兵", damage: 278875},
+				{name: "Alpha", damage: 284843},
 			]
 		}
 	];
