@@ -624,6 +624,14 @@ const DATA_actionData =
 				{name: "Alpha", damage: 611616},
 				{name: "宋寂", damage: 498151},
 				{name: "打个大西瓜", damage: 537106},
+				{name: "打个大西瓜", damage: 427416},
+				{name: "我群最菜", damage: 570011},
+				{name: "宋寂", damage: 365497},
+				{name: "好好先生", damage: 536685},
+				{name: "灼眼的Saber", damage: 487540},
+				{name: "好好先生", damage: 459927},
+				{name: "以摸多", damage: 491034},
+				{name: "以摸多", damage: 474644},
 			]
 		}
 	];

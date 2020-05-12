@@ -9,7 +9,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,4,12,11,6),
+      updateTime: new Date(2020,4,12,12,26),
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
@@ -22,10 +22,11 @@ let vm = new Vue({
       damageB: "",
     },
     historyDateObj: {},
+    damageFigurePara: [],
+    //damageFigureData: [],
 
     popupFlags: {
-      showTodayDetail: false,
-      showTodayTodo: false,
+      damageFigure: false,
       historyLogDone: false,
       historyLogTodo: false,
     },
@@ -56,6 +57,10 @@ let vm = new Vue({
         return 90;
       }
       return res;
+    },
+
+    damageFigureData :function () {
+      return this.playerTotalDamageByDay(this.damageFigurePara)
     }
   },
 
@@ -69,8 +74,7 @@ let vm = new Vue({
   mounted () {
     this.loadingMask = false;
     this.checkData();
-
-    this.playerTotalDamageByDay([1]);
+    //this.playerTotalDamageByDay(this.damageFigurePara);
   },
 
   destroyed () {
@@ -98,7 +102,9 @@ let vm = new Vue({
       };
       for (let i=1;i<=this.genSit.curDay;i++) {
         this.historyDateObj.dateArr[i-1] = i;
+        this.damageFigurePara[i-1] = false;
       }
+      this.damageFigurePara[this.genSit.curDay-1] = true;
 
       //this.genSit.curBossIdx = this.actionData[this.actionData.length-1].bossIdx;
     },
@@ -225,10 +231,18 @@ let vm = new Vue({
     },
 
     playerTotalDamageByDay: function (dateArr) {
-      return
+      console.log(dateArr)
       const nameMap = this.nameMap;
       const mobParas = this.mobParas;
       const actionData = this.actionData;
+
+      const dateArr2Num = [];
+      for (let i=0;i<dateArr.length;i++) {
+        if (dateArr[i]) {
+          dateArr2Num.push(i+1);
+        }
+      }
+      dateArr = dateArr2Num;
 
       const outputArr = [];
       for (let i=0;i<nameMap.length;i++) {
@@ -258,11 +272,11 @@ let vm = new Vue({
       let resArr = [];
       resArr[0] = outputArr[0];
       for (let i=1;i<outputArr.length;i++) {
-        if (outputArr[i].total > resArr[0].total) {
+        if (outputArr[i].total >= resArr[0].total) {
           resArr.splice(0,0,outputArr[i]);
           continue;
         }
-        if (outputArr[i].total < resArr[resArr.length-1].total) {
+        if (outputArr[i].total <= resArr[resArr.length-1].total) {
           resArr.push(outputArr[i]);
           continue;
         }
@@ -273,9 +287,8 @@ let vm = new Vue({
           }
         }
       }
-
+      //this.damageFigureData = resArr;
       return resArr;
-
     },
 
     shiftHistoryLogDone: function (date) {
@@ -286,5 +299,8 @@ let vm = new Vue({
       this.popupFlags.historyLogTodo = !this.popupFlags.historyLogTodo;
       this.historyDateObj.curSelect = date;
     },
+    shiftDamageFigure: function () {
+      this.popupFlags.damageFigure = !this.popupFlags.damageFigure;
+    }
   }
 });
