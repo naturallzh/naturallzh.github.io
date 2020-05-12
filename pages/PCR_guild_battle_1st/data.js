@@ -602,4 +602,20 @@ const DATA_actionData =
 				{name: "香浓朱古力", damage: 330979},
 			]
 		},
+		{
+			day: 6,
+			bossIdx: 14,
+			log: [
+				{name: "初心如故", damage: 313280},
+			]
+		},
+		{
+			day: 6,
+			bossIdx: 15,
+			log: [
+				{name: "骡逃兵", damage: 597429},
+				{name: "池霜", damage: 578296},
+				{name: "池霜", damage: 455827},
+			]
+		}
 	];

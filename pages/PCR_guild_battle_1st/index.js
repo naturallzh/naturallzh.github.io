@@ -9,7 +9,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,4,12,2,17),
+      updateTime: new Date(2020,4,12,9,20),
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
@@ -148,6 +148,7 @@ let vm = new Vue({
           curBossIdx++;
         }
       }
+      this.genSit.curBossIdx = curBossIdx;
       this.genSit.remainHealth = mobParas[curBossIdx-1].health-healthSum;
       this.genSit.remainHealthPer = (this.genSit.remainHealth/mobParas[curBossIdx-1].health*100).toFixed(2);
       console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
