@@ -602,6 +602,8 @@ const DATA_actionData =
 				{name: "香浓朱古力", damage: 330979},
 			]
 		},
+
+		// D6
 		{
 			day: 6,
 			bossIdx: 14,
@@ -617,6 +619,11 @@ const DATA_actionData =
 				{name: "池霜", damage: 578296},
 				{name: "池霜", damage: 455827},
 				{name: "夜雨纷扬", damage: 560166},
+				{name: "初心如故", damage: 88460},
+				{name: "初心如故", damage: 520370},
+				{name: "Alpha", damage: 611616},
+				{name: "宋寂", damage: 498151},
+				{name: "打个大西瓜", damage: 537106},
 			]
 		}
 	];
