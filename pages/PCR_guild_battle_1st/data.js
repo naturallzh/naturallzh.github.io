@@ -756,6 +756,24 @@ const DATA_actionData = [
 			{name: "翻车大队长", damage: 276109},
 			{name: "一起学猫叫", damage: 309167},
 			{name: "一起学猫叫", damage: 324189},
+			{name: "好好先生", damage: 597422},
+			{name: "骡逃兵", damage: 579788},
+			{name: "夜雨纷扬", damage: 532841},
+			{name: "机智的阿斗", damage: 493099},
+			{name: "池霜", damage: 171603},
+		]
+	},
+	{
+		day: 7,
+		bossIdx: 19,
+		log: [
+			{name: "池霜", damage: 242149},
+			{name: "海豹", damage: 280832},
+			{name: "骡逃兵", damage: 322732},
+			{name: "黑椿", damage: 434224},
+			{name: "咸鱼", damage: 477648},
+			{name: "黑椿", damage: 441596},
+			{name: "初心如故", damage: 440605},
 		]
 	}
 ];
