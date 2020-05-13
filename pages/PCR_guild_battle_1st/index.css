@@ -5,7 +5,7 @@ div, span, p {
   user-select: none; }
 
 #index-body {
-  background-image: url(bg.jpg);
+  background-image: url(./bg.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
   height: 100%;
