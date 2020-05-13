@@ -800,6 +800,18 @@ const DATA_actionData = [
 			{name: "上杉谦信", damage: 183489},
 			{name: "一起学猫叫", damage: 451936},
 			{name: "上杉谦信", damage: 157564},
+			{name: "魂魄妖梦", damage: 319906},
+			{name: "魂魄妖梦", damage: 393064},
+			{name: "老公", damage: 301870},
+		]
+	},
+	{
+		day: 7,
+		bossIdx: 20,
+		log: [
+			{name: "老公", damage: 35705},
+			{name: "魂魄妖梦", damage: 292195},
+			{name: "老公", damage: 242595},
 		]
 	}
 ];
