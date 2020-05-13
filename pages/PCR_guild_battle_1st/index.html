@@ -37,7 +37,7 @@
       <div style="position: absolute;background: limegreen;height: 100%" :style="'width:'+(genSit.remainHealthPer)+'%'"></div>
       <span style="position: relative;">剩余血量：{{genSit.remainHealth}} ~ {{genSit.remainHealthPer}}%</span>
     </div>
-    <div>
+    <div style="margin: 5px 0">
       <span>已出刀数：{{actionLogByDay(genSit.curDay).doneNum}}</span>
       <span class="btn" @click="shiftHistoryLogDone(genSit.curDay-1)">详情点击</span>
     </div>
@@ -78,9 +78,9 @@
     <h2>历史记录</h2>
     <div>第一天没有详细记录每刀伤害</div>
     <div>实际上90刀出满了</div>
-    <div v-for="(historyDate) in historyDateObj.dateArr">
-      <span class="btn" @click="shiftHistoryLogDone(historyDate-1)">第{{historyDate}}天已出{{actionLogByDay(historyDate).doneNum}}</span>
-      <span class="btn" @click="shiftHistoryLogTodo(historyDate-1)">第{{historyDate}}天未出{{actionLogByDay(historyDate).todoNum}}</span>
+    <div v-for="(historyDate) in historyDateObj.dateArr" style="margin-bottom: 5px">
+      <span class="btn" @click="shiftHistoryLogDone(historyDate-1)">第{{historyDate}}天已出：{{actionLogByDay(historyDate).doneNum}}</span>
+      <span class="btn" @click="shiftHistoryLogTodo(historyDate-1)">第{{historyDate}}天未出：{{actionLogByDay(historyDate).todoNum}}</span>
     </div>
   </div>
 
