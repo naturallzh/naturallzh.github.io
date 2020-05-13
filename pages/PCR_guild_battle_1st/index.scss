@@ -2,6 +2,10 @@ html, body {
 	height: 100%;
 }
 
+div, span, p {
+	user-select: none;
+}
+
 #index-body {
 	height: 100%;
 	background: #78c3ea;
