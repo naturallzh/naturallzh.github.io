@@ -20,21 +20,30 @@
   </div>
 
   <div class="gen-sit-box" v-if="genSit">
+    <h2>状态概览</h2>
     <div>活动开始时间：{{processDateStr(time.startTime)}}</div>
     <div>活动结束时间：{{processDateStr(time.endTime)}}</div>
     <div>最后更新时间：{{processDateStr(time.updateTime)}}</div>
     <div>当前北京时间：{{processDateStr(time.curTime)}}</div>
-    <div>剩余时间：{{ms2timeStr(time.endTime-time.curTime)}}</div>
+    <div style="position: relative">
+      <div style="position: absolute;background: rgba(128,128,128,0.35);height: 100%;width: 100%"></div>
+      <div style="position: absolute;background: limegreen;height: 100%" :style="'width:'+((time.endTime-time.curTime)/(time.endTime-time.startTime)*100)+'%'"></div>
+      <span style="position: relative;">剩余时间：{{ms2timeStr(time.endTime-time.curTime)}}</span>
+    </div>
     <div>当前周目：{{mobParas[genSit.curBossIdx-1].round}}</div>
     <div>当前Boss：{{mobParas[genSit.curBossIdx-1].bossNum}}号 ~ {{mobParas[genSit.curBossIdx-1].name}} ~ 总第{{genSit.curBossIdx}}号</div>
-    <div>剩余血量：{{genSit.remainHealth}} ~ {{genSit.remainHealthPer}}%</div>
+    <div style="position: relative">
+      <div style="position: absolute;background: rgba(128,128,128,0.35);height: 100%;width: 100%"></div>
+      <div style="position: absolute;background: limegreen;height: 100%" :style="'width:'+(genSit.remainHealthPer)+'%'"></div>
+      <span style="position: relative;">剩余血量：{{genSit.remainHealth}} ~ {{genSit.remainHealthPer}}%</span>
+    </div>
     <div>
       <span>已出刀数：{{actionLogByDay(genSit.curDay).doneNum}}</span>
-      <span style="border: 1px solid black" @click="shiftHistoryLogDone(genSit.curDay-1)">详情点击</span>
+      <span class="btn" @click="shiftHistoryLogDone(genSit.curDay-1)">详情点击</span>
     </div>
     <div>
       <span>未出刀数：{{actionLogByDay(genSit.curDay).todoNum}}</span>
-      <span style="border: 1px solid black" @click="shiftHistoryLogTodo(genSit.curDay-1)">详情点击</span>
+      <span class="btn" @click="shiftHistoryLogTodo(genSit.curDay-1)">详情点击</span>
     </div>
   </div>
 
@@ -61,8 +70,8 @@
       <span>{{combineRes[1]}}秒</span>
     </div>
 
-    <h2>总伤害查询</h2>
-    <div style="border: 1px solid black;text-align: center" @click="shiftDamageFigure">点击显示图表</div>
+    <h2 style="margin-top: 20px">总伤害查询</h2>
+    <span class="btn" @click="shiftDamageFigure">点击显示图表</span>
   </div>
 
   <div class="gen-sit-box" v-if="genSit">
@@ -70,8 +79,8 @@
     <div>第一天没有详细记录每刀伤害</div>
     <div>实际上90刀出满了</div>
     <div v-for="(historyDate) in historyDateObj.dateArr">
-      <span style="border: 1px solid black" @click="shiftHistoryLogDone(historyDate-1)">第{{historyDate}}天已出{{actionLogByDay(historyDate).doneNum}}</span>
-      <span style="border: 1px solid black" @click="shiftHistoryLogTodo(historyDate-1)">第{{historyDate}}天未出{{actionLogByDay(historyDate).todoNum}}</span>
+      <span class="btn" @click="shiftHistoryLogDone(historyDate-1)">第{{historyDate}}天已出{{actionLogByDay(historyDate).doneNum}}</span>
+      <span class="btn" @click="shiftHistoryLogTodo(historyDate-1)">第{{historyDate}}天未出{{actionLogByDay(historyDate).todoNum}}</span>
     </div>
   </div>
 
