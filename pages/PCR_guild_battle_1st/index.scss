@@ -25,12 +25,13 @@ div, span, p {
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		color: white;
 	}
 }
 
 .gen-sit-box, .combine-calc, .history-log {
 	width: 340px;
-	height: 330px;
+	height: 350px;
 	background: rgba(255, 255, 255, 0.7);
 	display: flex;
 	flex-direction: column;
@@ -47,7 +48,7 @@ div, span, p {
 	}
 	.btn {
 		border: 1px solid black;
-		padding: 3px;
+		padding: 1px;
 		font-size: 15px;
 		text-align: center;
 	}
@@ -140,9 +141,11 @@ div, span, p {
 				height: 70%;
 				background: red;
 				font-size: 70%;
-				text-align: center;
 				border: 1px solid black;
 				box-sizing: border-box;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 		}
 	}
