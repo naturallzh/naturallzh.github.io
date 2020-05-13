@@ -719,6 +719,33 @@ const DATA_actionData = [
 			{name: "Ron洛神", damage: 434055},
 			{name: "Ron洛神", damage: 334906},
 			{name: "Ron洛神", damage: 226787},
+			{name: "以摸多", damage: 290936},
+		]
+	},
+	{
+		day: 7,
+		bossIdx: 17,
+		log: [
+			{name: "初心如故", damage: 238449},
+			{name: "爱丽丝", damage: 424158},
+			{name: "池霜", damage: 341733},
+			{name: "骡逃兵", damage: 270554},
+			{name: "咸鱼", damage: 306822},
+			{name: "灼眼的Saber", damage: 324397},
+			{name: "我群最菜", damage: 217709},
+		]
+	},
+	{
+		day: 7,
+		bossIdx: 18,
+		log: [
+			{name: "海豹", damage: 530302},
+			{name: "海豹", damage: 290791},
+			{name: "宋寂", damage: 559678},
+			{name: "池霜", damage: 619821},
+			{name: "初心如故", damage: 561094},
+			{name: "打个大西瓜", damage: 565878},
+			{name: "咸鱼", damage: 611262},
 		]
 	}
 ];
