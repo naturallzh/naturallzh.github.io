@@ -880,6 +880,37 @@ const DATA_actionData = [
 		log: [
 			{name: "我群最菜", damage: 476287},
 			{name: "黑椿", damage: 332733},
+			{name: "初心如故", damage: 485136},
+			{name: "翻车大队长", damage: 354448},
+			{name: "夜雨纷扬", damage: 329644},
+			{name: "机智的阿斗", damage: 439456},
+			{name: "翻车大队长", damage: 237367},
+			{name: "机智的阿斗", damage: 381294},
+			{name: "骡逃兵", damage: 285319},
+			{name: "Alpha", damage: 296496},
+			{name: "机智的阿斗", damage: 284638},
+			{name: "一起学猫叫", damage: 323839},
+			{name: "好好先生", damage: 344519},
+			{name: "乐活", damage: 421477},
+			{name: "乐活", damage: 323015},
+			{name: "打个大西瓜", damage: 325280},
+			{name: "Ron洛神", damage: 459216},
+		]
+	},
+	{
+		day: 8,
+		bossIdx: 22,
+		log: [
+			{name: "Ron洛神", damage: 99064},
+			{name: "Ron洛神", damage: 274137},
+			{name: "以摸多", damage: 440065},
+			{name: "乐活", damage: 244716},
+			{name: "爱丽丝", damage: 398293},
+			{name: "池霜", damage: 534634},
+			{name: "池霜", damage: 347057},
+			{name: "一起学猫叫", damage: 524823},
+			{name: "夜雨纷扬", damage: 552449},
+			{name: "向井蓝", damage: 493479},
 		]
 	}
 ];
