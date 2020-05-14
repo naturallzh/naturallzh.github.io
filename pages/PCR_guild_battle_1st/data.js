@@ -873,5 +873,13 @@ const DATA_actionData = [
 			{name: "黑椿", damage: 510050},
 			{name: "机智的阿斗", damage: 545998},
 		]
+	},
+	{
+		day: 8,
+		bossIdx: 21,
+		log: [
+			{name: "我群最菜", damage: 476287},
+			{name: "黑椿", damage: 332733},
+		]
 	}
 ];
