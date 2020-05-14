@@ -152,3 +152,11 @@ div, span, p {
 		}
 	}
 }
+
+.showFigure-enter-active, .showFigure-leave-active {
+	transition: all 0.5s;
+}
+.showFigure-enter, .showFigure-leave-to {
+	height: 40%;
+	opacity: 0;
+}

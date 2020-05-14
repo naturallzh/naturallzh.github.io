@@ -137,3 +137,10 @@ div, span, p {
         display: flex;
         align-items: center;
         justify-content: center; }
+
+.showFigure-enter-active, .showFigure-leave-active {
+  transition: all 0.5s; }
+
+.showFigure-enter, .showFigure-leave-to {
+  height: 40%;
+  opacity: 0; }
