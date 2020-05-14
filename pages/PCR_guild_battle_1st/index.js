@@ -67,12 +67,12 @@ let vm = new Vue({
   created () {
     this.initData();
     this.time.countdownTimer = setInterval(()=>{this.time.curTime = new Date()},498);
+    this.checkData();
   },
 
   beforeMount () {},
   mounted () {
     this.loadingMask = false;
-    this.checkData();
   },
 
   destroyed () {
