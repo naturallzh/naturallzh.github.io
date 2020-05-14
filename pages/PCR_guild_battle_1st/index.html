@@ -13,11 +13,13 @@
 <body>
 <div id="index-body" v-cloak>
 
-  <div class="loadingMask" v-if="loadingMask">
-    <span style="font-size: 200%;margin-bottom: 20px">载入中...</span>
-    <span>初次载入可能较慢 请耐心等待</span>
-    <span>如长时间没有响应 可ctrl+f5强制刷新页面</span>
-  </div>
+  <transition name="showFigure">
+    <div class="loadingMask" v-if="loadingMask">
+      <span style="font-size: 200%;margin-bottom: 20px">载入中...</span>
+      <span>初次载入可能较慢 请耐心等待</span>
+      <span>如长时间没有响应 可ctrl+f5强制刷新页面</span>
+    </div>
+  </transition>
 
   <div class="gen-sit-box" v-if="genSit">
     <h2>状态概览</h2>
