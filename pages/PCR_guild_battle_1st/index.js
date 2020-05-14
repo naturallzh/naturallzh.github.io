@@ -9,7 +9,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,4,14,20,44),
+      updateTime: new Date(2020,4,14,21,34),
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
@@ -78,8 +78,22 @@ let vm = new Vue({
 
   beforeCreate () {},
   created () {
+    if (new Date() > this.time.endTime) {
+      this.time.curTime = this.time.endTime;
+    }
+    else {
+      this.time.countdownTimer = setInterval(()=>{
+        if (new Date() > this.time.endTime) {
+          this.time.curTime = this.time.endTime;
+          clearInterval(this.time.countdownTimer);
+        }
+        else {
+          this.time.curTime = new Date();
+        }
+      },498);
+    }
+
     this.initData();
-    this.time.countdownTimer = setInterval(()=>{this.time.curTime = new Date()},498);
     this.checkData();
   },
 
