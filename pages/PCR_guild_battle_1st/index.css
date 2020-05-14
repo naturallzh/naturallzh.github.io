@@ -28,7 +28,47 @@ div, span, p {
     align-items: center;
     flex-direction: column;
     color: white; }
+    #index-body .loadingMask .circle-image-1 {
+      width: 25%;
+      height: 0;
+      padding-bottom: 25%;
+      position: absolute;
+      background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.8));
+      border-radius: 50%;
+      animation-name: loadingCircle;
+      animation-duration: 5s;
+      animation-iteration-count: infinite; }
+    #index-body .loadingMask .circle-image-2 {
+      width: 20%;
+      height: 0;
+      padding-bottom: 20%;
+      position: absolute;
+      background: #878787;
+      border-radius: 50%; }
+    #index-body .loadingMask .dot-1, #index-body .loadingMask .dot-2, #index-body .loadingMask .dot-3 {
+      position: relative;
+      animation-name: dotJumping;
+      animation-duration: 2s;
+      animation-iteration-count: infinite; }
+    #index-body .loadingMask .dot-2 {
+      animation-delay: 400ms; }
+    #index-body .loadingMask .dot-3 {
+      animation-delay: 800ms; }
 
+@keyframes loadingCircle {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
+@keyframes dotJumping {
+  from {
+    top: 0; }
+  30% {
+    top: -10px; }
+  60% {
+    top: 0; }
+  to {
+    top: 0; } }
 .gen-sit-box, .combine-calc, .history-log {
   width: 340px;
   height: 350px;
