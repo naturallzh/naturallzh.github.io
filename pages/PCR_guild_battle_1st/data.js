@@ -921,6 +921,14 @@ const DATA_actionData = [
 			{name: "金色之泪", damage: 489362},
 			{name: "金色之泪", damage: 312827},
 			{name: "金色之泪", damage: 200491},
+			{name: "长星夜烁", damage: 417041},
+		]
+	},
+	{
+		day: 8,
+		bossIdx: 23,
+		log: [
+			{name: "长星夜烁", damage: 117943},
 		]
 	}
 ];
