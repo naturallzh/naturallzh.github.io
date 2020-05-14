@@ -47,7 +47,7 @@ div, span, p {
     margin: 2px 0; }
   .gen-sit-box .btn, .combine-calc .btn, .history-log .btn {
     border: 1px solid black;
-    padding: 1px;
+    padding: 1px 2px;
     font-size: 15px;
     text-align: center; }
   .gen-sit-box .btn:hover, .combine-calc .btn:hover, .history-log .btn:hover {
