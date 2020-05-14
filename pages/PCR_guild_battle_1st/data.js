@@ -825,6 +825,26 @@ const DATA_actionData = [
 			{name: "长星夜烁", damage: 223841},
 			{name: "香浓朱古力", damage: 350605},
 			{name: "香浓朱古力", damage: 288459},
+			{name: "Ron洛神", damage: 426912},
+			{name: "Ron洛神", damage: 339305},
+			{name: "Ron洛神", damage: 226856},
+			{name: "以摸多", damage: 472505},
+			{name: "以摸多", damage: 472046},
+			{name: "以摸多", damage: 293554},
+		]
+	},
+	{
+		day: 8,
+		bossIdx: 20,
+		log: [
+			{name: "向井蓝", damage: 254171},
+			{name: "向井蓝", damage: 413553},
+			{name: "手手", damage: 617350},
+			{name: "初心如故", damage: 486202},
+			{name: "爱丽丝", damage: 389897},
+			{name: "骡逃兵", damage: 586881},
+			{name: "以摸多", damage: 472426},
+			{name: "池霜", damage: 600979},
 		]
 	}
 ];
