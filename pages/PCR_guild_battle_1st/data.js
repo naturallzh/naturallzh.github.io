@@ -52,6 +52,11 @@ const DATA_mobParas = [
 	{bossIdx: 18, health: 10000000, scoreFactor: 1.5, name: "花", round: 4, bossNum: 3, bgC: "background: #611"},
 	{bossIdx: 19, health: 12000000, scoreFactor: 1.7, name: "熊", round: 4, bossNum: 4, bgC: "background: #f11"},
 	{bossIdx: 20, health: 20000000, scoreFactor: 2, name: "羊", round: 4, bossNum: 5, bgC: "background: #911"},
+	{bossIdx: 21, health: 6000000, scoreFactor: 1.2, name: "龙", round: 5, bossNum: 1, bgC: "background: #322"},
+	{bossIdx: 22, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 5, bossNum: 2, bgC: "background: #c22"},
+	{bossIdx: 23, health: 10000000, scoreFactor: 1.5, name: "花", round: 5, bossNum: 3, bgC: "background: #622"},
+	{bossIdx: 24, health: 12000000, scoreFactor: 1.7, name: "熊", round: 5, bossNum: 4, bgC: "background: #f22"},
+	{bossIdx: 25, health: 20000000, scoreFactor: 2, name: "羊", round: 5, bossNum: 5, bgC: "background: #922"},
 ];
 
 const DATA_combineRule = [
@@ -864,6 +869,9 @@ const DATA_actionData = [
 			{name: "老公", damage: 224282},
 			{name: "打个大西瓜", damage: 457675},
 			{name: "我群最菜", damage: 563528},
+			{name: "翻车大队长", damage: 454383},
+			{name: "黑椿", damage: 510050},
+			{name: "机智的阿斗", damage: 545998},
 		]
 	}
 ];
