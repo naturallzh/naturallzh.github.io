@@ -105,7 +105,7 @@
     </div>
   </div>
 
-  <div class="damage-figure" style="display: flex" v-if="popupFlags.damageFigure" @click="shiftDamageFigure">
+  <div class="damage-figure" style="display: flex" v-show="popupFlags.damageFigure" @click="shiftDamageFigure">
     <div class="figure-box" @click.stop>
       <div>伤害值只有极其有限的参考价值，不能作为任何评判标准！</div>
       <div>颜色鲜红的那部分伤害在某种程度上"含金量"更高，暗红的反之。同样只有极其有限的参考价值！</div>
