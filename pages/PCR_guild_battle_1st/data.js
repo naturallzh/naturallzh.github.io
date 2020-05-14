@@ -929,6 +929,14 @@ const DATA_actionData = [
 		bossIdx: 23,
 		log: [
 			{name: "长星夜烁", damage: 117943},
+			{name: "长星夜烁", damage: 444619},
+			{name: "魂魄妖梦", damage: 336092},
+			{name: "魂魄妖梦", damage: 396003},
+			{name: "夜雨纷扬", damage: 597211},
+			{name: "魂魄妖梦", damage: 258086},
+			{name: "长星夜烁", damage: 221614},
+			{name: "一起学猫叫", damage: 335800},
+			{name: "宋寂", damage: 282167},
 		]
 	}
 ];
