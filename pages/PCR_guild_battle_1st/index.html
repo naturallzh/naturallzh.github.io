@@ -98,7 +98,7 @@
   </div>
 
   <transition name="showFigure">
-    <div class="today-detail" @click="shiftHistoryLogDone" v-show="popupFlags.historyLogDone">
+    <div class="today-detail" @click="shiftHistoryLogDone(null)" v-show="popupFlags.historyLogDone">
       <div class="mob-box" v-for="(mobData,mobIdx) in actionLogByDay(historyDateObj.curSelect+1).done" @click.stop>
         <div class="title">{{mobParas[mobData.bossIdx-1].round}}周目 {{mobParas[mobData.bossIdx-1].bossNum}}号 {{mobParas[mobData.bossIdx-1].name}} 总第{{mobParas[mobData.bossIdx-1].bossIdx}}号 {{mobData.log.length}}刀</div>
         <div class="log-item" v-for="(logItem,logIdx) in mobData.log">
@@ -112,7 +112,7 @@
   </transition>
 
   <transition name="showFigure">
-    <div class="today-detail" @click="shiftHistoryLogTodo" v-show="popupFlags.historyLogTodo">
+    <div class="today-detail" @click="shiftHistoryLogTodo(null)" v-show="popupFlags.historyLogTodo">
       <div class="mob-box" @click.stop>
         <div class="log-item" v-for="(todoItem,todoIdx) in actionLogByDay(historyDateObj.curSelect+1).todo" v-if="todoItem.todoNum!==0">
           <div style="position: absolute;height: 100%;background: rgba(50,205,50,0.3);z-index: 0" :style="'width:'+(todoItem.todoNum*100/3)+'%'"></div>

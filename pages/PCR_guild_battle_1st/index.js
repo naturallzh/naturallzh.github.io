@@ -9,7 +9,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,4,14,21,34),
+      updateTime: new Date(2020,4,14,21,46),
       startTime: new Date(2020,4,7,5),
       curTime: new Date(),
       endTime: new Date(2020,4,14,23,59),
@@ -335,11 +335,11 @@ let vm = new Vue({
 
     shiftHistoryLogDone: function (date) {
       this.popupFlags.historyLogDone = !this.popupFlags.historyLogDone;
-      this.historyDateObj.curSelect = date;
+      date?this.historyDateObj.curSelect = date:"";
     },
     shiftHistoryLogTodo: function (date) {
       this.popupFlags.historyLogTodo = !this.popupFlags.historyLogTodo;
-      this.historyDateObj.curSelect = date;
+      date?this.historyDateObj.curSelect = date:"";
     },
     shiftDamageFigure: function () {
       this.popupFlags.damageFigure = !this.popupFlags.damageFigure;
