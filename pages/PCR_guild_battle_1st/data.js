@@ -943,6 +943,7 @@ const DATA_actionData = [
 			{name: "爱莉杏菜", damage: 432559},
 			{name: "爱莉杏菜", damage: 419546},
 			{name: "爱莉杏菜", damage: 304482},
+			{name: "黑椿", damage: 466087},
 		]
 	}
 ];
