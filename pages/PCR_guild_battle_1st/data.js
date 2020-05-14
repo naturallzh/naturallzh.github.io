@@ -850,6 +850,8 @@ const DATA_actionData = [
 			{name: "Lemon", damage: 250770},
 			{name: "宋寂", damage: 398292},
 			{name: "宋寂", damage: 522647},
+			{name: "海豹", damage: 474862},
+			{name: "海豹", damage: 340361},
 		]
 	}
 ];
