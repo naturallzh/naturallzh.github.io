@@ -70,9 +70,7 @@ let vm = new Vue({
         }
         return flag;
       },
-      set: function () {
-
-      }
+      set: function () {}
     }
   },
 
@@ -100,6 +98,12 @@ let vm = new Vue({
   beforeMount () {},
   mounted () {
     this.loadingMask = false;
+
+    // boss伤害分数系数
+    const dateNumArr = [4,5,6,7,8];
+    const nameArr = ["Alpha"];
+    // const res = this.calcBossContributeFactor(dateNumArr, nameArr);
+    // console.log(res);
   },
 
   destroyed () {
@@ -335,14 +339,125 @@ let vm = new Vue({
 
     shiftHistoryLogDone: function (date) {
       this.popupFlags.historyLogDone = !this.popupFlags.historyLogDone;
-      date?this.historyDateObj.curSelect = date:"";
+      date!==null?this.historyDateObj.curSelect = date:"";
     },
     shiftHistoryLogTodo: function (date) {
       this.popupFlags.historyLogTodo = !this.popupFlags.historyLogTodo;
-      date?this.historyDateObj.curSelect = date:"";
+      date!==null?this.historyDateObj.curSelect = date:"";
     },
     shiftDamageFigure: function () {
       this.popupFlags.damageFigure = !this.popupFlags.damageFigure;
+    },
+
+    // 计算代数余子式
+    calcCofactor: function (arr, i, j) {
+      const resArr = [];  // 剩余矩阵
+      for (let m=0;m<arr.length;m++) {
+        if (m===i) {continue}
+        const colArr = [];
+        for (let n=0;n<arr[0].length;n++) {
+          if (n===j) {continue}
+          colArr.push(arr[m][n])
+        }
+        resArr.push(colArr);
+      }
+
+      // 代数余子式前面的 (-1)^(i+1 + j+1)系数
+      const factor = (i+j+2)%2===0?1:-1;
+      return factor * this.calcDet(resArr);
+    },
+
+    // 计算行列式
+    calcDet: function (arr) {
+      if (arr.length===1) {return arr[0]}
+      let res = 0;
+      for (let j=0;j<arr.length;j++) {
+          res += arr[0][j] * this.calcCofactor(arr, 0, j);
+      }
+      return res;
+    },
+
+    // 计算伴随矩阵
+    calcAdjointMatrix: function (arr) {
+      const resArr = [];
+      for (let i=0;i<arr.length;i++) {
+        resArr[i] = [];
+        for (let j=0;j<arr.length;j++) {
+          resArr[i][j] = this.calcCofactor(arr, j, i);
+        }
+      }
+      return resArr;
+    },
+
+    // 计算多元一次方程的解
+    calcMatrixFactor: function (arrA, arrB) {
+      const resArr = [];
+      const adjointMatrixA = this.calcAdjointMatrix(arrA);
+      const detA = this.calcDet(arrA);
+      for (let i=0;i<adjointMatrixA.length;i++) {
+        let sum = 0;
+        for (let j=0;j<arrB.length;j++) {
+          sum += adjointMatrixA[i][j] * arrB[j];
+        }
+        resArr[i] = sum/detA;
+      }
+      return resArr;
+    },
+
+    // 计算BOSS伤害贡献值系数
+    calcBossContributeFactor: function (dateNumArr, nameArr) {
+      const N = 5;
+      const DAY = this.genSit.curDay;
+
+      // 将dateNumArr转换成为[[t,f,f,f],[f,t,f,f],[f,f,t,f],[f,f,f,t]]形式
+      const dateArr = [];
+      for (let i=0;i<dateNumArr.length;i++) {
+        dateArr[i] = [];
+        for (let j=0;j<DAY;j++) {
+          dateArr[i][j] = j + 1 === dateNumArr[i];
+        }
+      }
+
+      const dataArrAll = [];
+      for (let i=0;i<5;i++) {
+        dataArrAll[i] = [];
+        const dataAll = this.playerTotalDamageByDay(dateArr[i]);
+        for (let j=0;j<dataAll.length;j++) {
+          for (let k=0;k<nameArr.length;k++) {
+            if (dataAll[j].name === nameArr[k]) {
+              dataAll[j].matrixASub = [0,0,0,0,0];
+              for (let l=0;l<dataAll[j].detail.length;l++) {
+                dataAll[j].matrixASub[(dataAll[j].detail[l].bossIdx-1)%5] += dataAll[j].detail[l].damage;
+              }
+              dataArrAll[i].push(dataAll[j]);
+            }
+          }
+        }
+      }
+
+      const dataArr = [];
+      for (let i=0;i<nameArr.length;i++) {
+        dataArr[i] = {};
+        dataArr[i].name = nameArr[i];
+        dataArr[i].matrixA = [];
+        dataArr[i].matrixB = [];
+        for (let j=0;j<5;j++) {
+          for (let k=0;k<dataArrAll[j].length;k++) {
+            if (dataArrAll[j][k].name === dataArr[i].name) {
+              dataArr[i].matrixA.push(dataArrAll[j][k].matrixASub);
+              dataArr[i].matrixB.push(1);
+            }
+          }
+        }
+        dataArr[i].factorArr = this.calcMatrixFactor(dataArr[i].matrixA,dataArr[i].matrixB);
+        for (let j=1;j<5;j++) {
+          dataArr[i].factorArr[j] = dataArr[i].factorArr[j]/dataArr[i].factorArr[0];
+        }
+        dataArr[i].factorArr[0] = 1;
+      }
+      console.log(dataArr[0].matrixA);
+      console.log(dataArr[0].factorArr);
     }
+
   }
 });
