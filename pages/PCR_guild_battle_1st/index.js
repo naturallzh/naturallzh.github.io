@@ -100,8 +100,8 @@ let vm = new Vue({
     this.loadingMask = false;
 
     // boss伤害分数系数
-    const dateNumArr = [4,5,6,7,8];
-    const nameArr = ["Alpha"];
+    // const dateNumArr = [4,5,6,7,8];
+    // const nameArr = ["池霜"];
     // const res = this.calcBossContributeFactor(dateNumArr, nameArr);
     // console.log(res);
   },
@@ -445,15 +445,16 @@ let vm = new Vue({
           for (let k=0;k<dataArrAll[j].length;k++) {
             if (dataArrAll[j][k].name === dataArr[i].name) {
               dataArr[i].matrixA.push(dataArrAll[j][k].matrixASub);
-              dataArr[i].matrixB.push(1);
+              dataArr[i].matrixB.push(1000000);
             }
           }
         }
         dataArr[i].factorArr = this.calcMatrixFactor(dataArr[i].matrixA,dataArr[i].matrixB);
-        for (let j=1;j<5;j++) {
-          dataArr[i].factorArr[j] = dataArr[i].factorArr[j]/dataArr[i].factorArr[0];
-        }
-        dataArr[i].factorArr[0] = 1;
+
+        // for (let j=1;j<5;j++) {
+        //   dataArr[i].factorArr[j] = dataArr[i].factorArr[j]/dataArr[i].factorArr[0];
+        // }
+        // dataArr[i].factorArr[0] = 1;
       }
       console.log(dataArr[0].matrixA);
       console.log(dataArr[0].factorArr);
