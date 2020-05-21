@@ -64,15 +64,15 @@
     <h2>合刀计算器</h2>
     <div>
       <span>剩余血量 </span>
-      <input v-model="combineParas.remainHealth">
+      <input v-model="combineParas.remainHealth" type="number">
     </div>
     <div>
       <span>刀一伤害 </span>
-      <input v-model="combineParas.damageA">
+      <input v-model="combineParas.damageA" type="number">
     </div>
     <div>
       <span>刀二伤害 </span>
-      <input v-model="combineParas.damageB">
+      <input v-model="combineParas.damageB" type="number">
     </div>
     <div v-show="combineRes.length===2">
       <span>一先二尾 </span>
@@ -82,6 +82,9 @@
       <span>二先一尾 </span>
       <span>{{combineRes[1]}}秒</span>
     </div>
+
+    <h2 style="margin-top: 20px">进度计算器</h2>
+    <span>开发中...</span>
 
     <h2 style="margin-top: 20px">总伤害查询</h2>
     <span class="btn" @click="shiftDamageFigure">点击显示图表</span>
@@ -94,6 +97,55 @@
     <div v-for="(historyDate) in historyDateObj.dateArr" style="margin-bottom: 5px">
       <span class="btn" @click="shiftHistoryLogDone(historyDate-1)">第{{historyDate}}天已出：{{actionLogByDay(historyDate).doneNum}}</span>
       <span class="btn" @click="shiftHistoryLogTodo(historyDate-1)">第{{historyDate}}天未出：{{actionLogByDay(historyDate).todoNum}}</span>
+    </div>
+  </div>
+
+  <div class="exp-calc">
+    <h2>经验计算器</h2>
+    <div>
+      <span>当前等级 </span>
+      <input v-model="expCalcParas.curLvl" type="number">
+    </div>
+    <div>
+      <span>当前经验 </span>
+      <input v-model="expCalcParas.curExp" type="number">
+    </div>
+    <div>
+      <span>目标等级 </span>
+      <input v-model="expCalcParas.tarLvl" type="number">
+    </div>
+    <div>
+      <span>需要经验 </span>
+      <span>{{calcExpRequire[0]}}</span>
+    </div>
+    <div>
+      <span>升级回体 </span>
+      <span>{{calcExpRequire[1]}}</span>
+    </div>
+    <div style="height: 1px;background: black;width: 100%;margin: 5px 0"></div>
+    <div>日回：240</div>
+    <div>
+      <span>日常：{{spiritGetParas.dailyQuestDouble?400:200}} </span>
+      <input type="checkbox" v-model="spiritGetParas.dailyQuestDouble">
+      <span>双倍奖励</span>
+    </div>
+    <div>
+      <span>宿舍：</span>
+      <select v-model="spiritGetParas.tableLvl">
+        <option :value="tableData.lvl" v-for="tableData in guildHomeData.spiritTable">{{tableData.lvl}}级点心桌{{tableData.spirit}}</option>
+      </select>
+      <select v-model="spiritGetParas.FoodNum">
+        <option :value="foodData.num" v-for="foodData in guildHomeData.dungeonFood">{{foodData.num}}个点心{{foodData.spirit}}</option>
+      </select>
+    </div>
+    <div>
+      <span>碎石</span>
+      <input v-model="spiritGetParas.stone" type="number">
+      <span>管</span>
+    </div>
+    <div>
+      <span>日产体力 </span>
+      <span>{{calcSpiritGet}}</span>
     </div>
   </div>
 

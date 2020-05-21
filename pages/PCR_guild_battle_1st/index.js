@@ -5,6 +5,8 @@ let vm = new Vue({
     mobParas: [],
     combineRule: [],
     actionData: [],
+    playerLvlData: [],
+    guildHomeData: {},
 
     loadingMask: true,
 
@@ -23,6 +25,18 @@ let vm = new Vue({
     },
     historyDateObj: {},
     damageFigurePara: [],
+
+    expCalcParas: {
+      curLvl: "",
+      curExp: "",
+      tarLvl: "",
+    },
+    spiritGetParas: {
+      dailyQuestDouble: false,
+      tableLvl: 10,
+      FoodNum: 3,
+      stone: "",
+    },
 
     popupFlags: {
       damageFigure: false,
@@ -71,6 +85,46 @@ let vm = new Vue({
         return flag;
       },
       set: function () {}
+    },
+
+    calcExpRequire: function () {
+      const {curLvl, curExp, tarLvl} = this.expCalcParas;
+      const flag1 = curLvl==parseInt(curLvl);
+      const flag2 = curExp==parseInt(curExp);
+      const flag3 = tarLvl==parseInt(tarLvl);
+      const flag4 = curLvl < tarLvl && this.playerLvlData[curLvl].exp > curExp;
+      const flag5 = curLvl >= 1 && tarLvl <= 85 && curExp >= 0;
+      if (flag1 && flag2 && flag3 && flag4 && flag5) {
+        const playerLvlData = this.playerLvlData;
+        let expSum = -curExp;
+        let spiritRecover = 0;
+        for (let i=curLvl;i<tarLvl;i++) {
+          i = parseInt(i);
+          expSum += playerLvlData[i].exp;
+          spiritRecover += playerLvlData[i+1].spirit;
+        }
+        return [expSum, spiritRecover];
+      }
+      else {
+        return ["--", "--"];
+      }
+    },
+
+    calcSpiritGet: function () {
+      let sum = 0;
+      sum+=240;
+      sum+=this.spiritGetParas.dailyQuestDouble?400:200;
+      sum+=this.guildHomeData.spiritTable[this.spiritGetParas.tableLvl-1].spirit;
+      sum+=this.guildHomeData.dungeonFood[this.spiritGetParas.FoodNum].spirit;
+      if (this.spiritGetParas.stone==="") {}
+      else if (this.spiritGetParas.stone!=parseInt(this.spiritGetParas.stone)) {
+        sum = "--"
+      }
+      else if (this.spiritGetParas.stone <= 30 && this.spiritGetParas.stone >= 0) {
+        sum += this.spiritGetParas.stone*120;
+      }
+      else {sum = "--"}
+      return sum;
     }
   },
 
@@ -117,6 +171,12 @@ let vm = new Vue({
       this.mobParas = DATA_mobParas;
       this.combineRule = DATA_combineRule;
       this.actionData = DATA_actionData;
+      this.guildHomeData = {
+        spiritTable: DATA_spiritTable,
+        dungeonFood: DATA_dungeonFood,
+      };
+
+      this.processPlayerLvlData();
 
       this.genSit = {
         curDay: Math.ceil((this.time.curTime - this.time.startTime)/1000/3600/24),
@@ -255,6 +315,20 @@ let vm = new Vue({
         }
       }
       return actionLog;
+    },
+
+    processPlayerLvlData: function () {
+      const dataArr = DATA_playerLvlData;
+      for (let i=53;i<65;i++) {
+        dataArr[i] = {lvl: i, exp: 1770, spirit: dataArr[i-1].spirit+1};
+      }
+      for (let i=65;i<76;i++) {
+        dataArr[i] = {lvl: i, exp: 2655, spirit: dataArr[i-1].spirit+1};
+      }
+      for (let i=76;i<86;i++) {
+        dataArr[i] = {lvl: i, exp: 3540, spirit: dataArr[i-1].spirit+1};
+      }
+      this.playerLvlData = dataArr;
     },
 
     playerTotalDamageByDay: function (dateArr) {

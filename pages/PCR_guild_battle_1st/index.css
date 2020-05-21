@@ -6,7 +6,7 @@ div, span, p {
 
 #index-body {
   background-image: url(https://img.nga.178.com/attachments/mon_202005/14/-4my65Q5-5nxjZvT3cS1hc-u0.jpg);
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
   display: flex;
@@ -69,7 +69,7 @@ div, span, p {
     top: 0; }
   to {
     top: 0; } }
-.gen-sit-box, .combine-calc, .history-log {
+.gen-sit-box, .combine-calc, .history-log, .exp-calc {
   width: 340px;
   height: 350px;
   background: rgba(255, 255, 255, 0.7);
@@ -83,14 +83,14 @@ div, span, p {
   box-shadow: black 10px 10px 10px;
   border-radius: 20px;
   border: #999999 solid 2px; }
-  .gen-sit-box div, .combine-calc div, .history-log div {
+  .gen-sit-box div, .combine-calc div, .history-log div, .exp-calc div {
     margin: 2px 0; }
-  .gen-sit-box .btn, .combine-calc .btn, .history-log .btn {
+  .gen-sit-box .btn, .combine-calc .btn, .history-log .btn, .exp-calc .btn {
     border: 1px solid black;
     padding: 1px 2px;
     font-size: 15px;
     text-align: center; }
-  .gen-sit-box .btn:hover, .combine-calc .btn:hover, .history-log .btn:hover {
+  .gen-sit-box .btn:hover, .combine-calc .btn:hover, .history-log .btn:hover, .exp-calc .btn:hover {
     background: black;
     color: white;
     box-shadow: rgba(255, 0, 0, 0.6) 0 0 10px;
