@@ -30,6 +30,7 @@ let vm = new Vue({
       curLvl: "",
       curExp: "",
       tarLvl: "",
+      wipeMaxLvlUpSpirit: true,
     },
     spiritGetParas: {
       dailyQuestDouble: false,
@@ -88,7 +89,7 @@ let vm = new Vue({
     },
 
     calcExpRequire: function () {
-      const {curLvl, curExp, tarLvl} = this.expCalcParas;
+      const {curLvl, curExp, tarLvl, wipeMaxLvlUpSpirit} = this.expCalcParas;
       const flag1 = curLvl==parseInt(curLvl);
       const flag2 = curExp==parseInt(curExp) || curExp=== "";
       const flag3 = tarLvl==parseInt(tarLvl);
@@ -104,6 +105,7 @@ let vm = new Vue({
           expSum += playerLvlData[i].exp;
           spiritRecover += playerLvlData[i+1].spirit;
         }
+        if (wipeMaxLvlUpSpirit) {spiritRecover -= playerLvlData[tarLvl].spirit}
         return [expSum, spiritRecover];
       }
       else {

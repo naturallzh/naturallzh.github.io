@@ -121,6 +121,8 @@
     <div>
       <span>升级回体 </span>
       <span style="color: #fb5280;font-weight: bold">{{calcExpRequire[1]}}</span>
+      <input type="checkbox" v-model="expCalcParas.wipeMaxLvlUpSpirit" v-show="calcExpRequire[0]!=='--'">
+      <span v-if="calcExpRequire[0]!=='--'">不算末次回体<span style="color: #fb5280;font-weight: bold">{{playerLvlData[expCalcParas.tarLvl].spirit}}</span>点</span>
     </div>
     <div style="height: 1px;background: black;width: 100%;margin: 5px 0"></div>
     <div>日回：240</div>
