@@ -90,13 +90,14 @@ let vm = new Vue({
     calcExpRequire: function () {
       const {curLvl, curExp, tarLvl} = this.expCalcParas;
       const flag1 = curLvl==parseInt(curLvl);
-      const flag2 = curExp==parseInt(curExp);
+      const flag2 = curExp==parseInt(curExp) || curExp=== "";
       const flag3 = tarLvl==parseInt(tarLvl);
       const flag4 = curLvl < tarLvl && this.playerLvlData[curLvl].exp > curExp;
       const flag5 = curLvl >= 1 && tarLvl <= 85 && curExp >= 0;
       if (flag1 && flag2 && flag3 && flag4 && flag5) {
         const playerLvlData = this.playerLvlData;
         let expSum = -curExp;
+        if (curExp === "") {expSum = 0}
         let spiritRecover = 0;
         for (let i=curLvl;i<tarLvl;i++) {
           i = parseInt(i);
