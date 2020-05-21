@@ -128,6 +128,17 @@ let vm = new Vue({
       }
       else {sum = "--"}
       return sum;
+    },
+
+    predictLvlDays: function () {
+      const expRequire = this.calcExpRequire[0];
+      const spiritRecover = this.calcExpRequire[1];
+      const expPerDay = this.calcSpiritGet;
+      const flag = expRequire==parseInt(expRequire) && spiritRecover==parseInt(spiritRecover) && expPerDay==parseInt(expPerDay)
+      if (flag) {
+        return Math.ceil((expRequire-spiritRecover) / expPerDay)
+      }
+      else {return false}
     }
   },
 

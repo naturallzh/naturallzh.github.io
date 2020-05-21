@@ -147,7 +147,8 @@
     </div>
     <div>
       <span>日产体力 </span>
-      <span style="color: #fb5280;font-weight: bold">{{calcSpiritGet}}</span>
+      <span style="color: #fb5280;font-weight: bold;margin-right: 5px">{{calcSpiritGet}}</span>
+      <span v-show="predictLvlDays">预估需要<span style="color: #fb5280;font-weight: bold">{{predictLvlDays}}</span>天</span>
     </div>
   </div>
 
