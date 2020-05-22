@@ -43,8 +43,8 @@
       <span style="position: relative;" v-if="time.endTime-time.curTime>0">剩余时间：{{ms2timeStr(time.endTime-time.curTime)}}</span>
       <span style="position: relative;" v-if="time.endTime-time.curTime<=0">已结束 排名：4680</span>
     </div>
-    <div>当前周目：{{mobParas[genSit.curBossIdx-1].round}}</div>
-    <div>当前Boss：{{mobParas[genSit.curBossIdx-1].bossNum}}号 ~ {{mobParas[genSit.curBossIdx-1].name}} ~ 总第{{genSit.curBossIdx}}号</div>
+    <div>当前周目：{{mobData[genSit.curBossIdx-1].round}}</div>
+    <div>当前Boss：{{mobData[genSit.curBossIdx-1].bossNum}}号 ~ {{mobData[genSit.curBossIdx-1].name}} ~ 总第{{genSit.curBossIdx}}号</div>
     <div style="position: relative">
       <div style="position: absolute;background: rgba(128,128,128,0.35);height: 100%;width: 100%"></div>
       <div style="position: absolute;background: limegreen;height: 100%" :style="'width:'+(genSit.remainHealthPer)+'%'"></div>
@@ -66,13 +66,13 @@
 
   <transition name="showFigure">
     <div class="today-detail" @click="shiftHistoryLogDone(null)" v-show="popupFlags.historyLogDone">
-      <div class="mob-box" v-for="(mobData,mobIdx) in actionLogByDay(historyDateObj.curSelect+1).done" @click.stop>
-        <div class="title">{{mobParas[mobData.bossIdx-1].round}}周目 {{mobParas[mobData.bossIdx-1].bossNum}}号 {{mobParas[mobData.bossIdx-1].name}} 总第{{mobParas[mobData.bossIdx-1].bossIdx}}号 {{mobData.log.length}}刀</div>
-        <div class="log-item" v-for="(logItem,logIdx) in mobData.log">
-          <div style="position: absolute;height: 100%;background: rgba(255,0,0,0.4);z-index: 0" :style="'width:'+(logItem.damage/mobData.maxDamage*100)+'%'"></div>
-          <span style="margin-left: 5px">{{logItem.name}}</span>
-          <span v-if="logItem.desc">{{logItem.desc}}</span>
-          <span style="margin-right: 5px">{{logItem.damage}}</span>
+      <div class="mob-box" v-for="(logItem,mobIdx) in actionLogByDay(historyDateObj.curSelect+1).done" @click.stop>
+        <div class="title">{{mobData[logItem.bossIdx-1].round}}周目 {{mobData[logItem.bossIdx-1].bossNum}}号 {{mobData[logItem.bossIdx-1].name}} 总第{{mobData[logItem.bossIdx-1].bossIdx}}号 {{logItem.log.length}}刀</div>
+        <div class="log-item" v-for="(logItem2,logIdx) in logItem.log">
+          <div style="position: absolute;height: 100%;background: rgba(255,0,0,0.4);z-index: 0" :style="'width:'+(logItem2.damage/logItem.maxDamage*100)+'%'"></div>
+          <span style="margin-left: 5px">{{logItem2.name}}</span>
+          <span v-if="logItem2.desc">{{logItem2.desc}}</span>
+          <span style="margin-right: 5px">{{logItem2.damage}}</span>
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@
         <div class="display-item" v-for="(playerData) in damageFigureData">
           <div class="name-box">{{playerData.name}}</div>
           <div class="damage-bar" v-for="(damageItem) in playerData.detail"
-            :style="'width:'+(damageFigureData[0].total===0?0:(damageItem.damage/damageFigureData[0].total*80))+'%;'+mobParas[damageItem.bossIdx-1].bgC">
+            :style="'width:'+(damageFigureData[0].total===0?0:(damageItem.damage/damageFigureData[0].total*80))+'%;'+mobData[damageItem.bossIdx-1].bgC">
             {{damageItem.damage}}
           </div>
           <div style="margin-left: 20px">{{playerData.total}}</div>

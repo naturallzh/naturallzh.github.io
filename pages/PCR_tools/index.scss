@@ -6,6 +6,14 @@ div, span, p {
 	user-select: none;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+input[type="number"]{
+	-moz-appearance: textfield;
+}
+
 #index-body {
 	background-image: url(https://img.nga.178.com/attachments/mon_202005/14/-4my65Q5-5nxjZvT3cS1hc-u0.jpg);
 	background-size: cover;

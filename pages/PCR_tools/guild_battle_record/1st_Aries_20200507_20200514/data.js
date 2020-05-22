@@ -31,7 +31,7 @@ const DATA_nameMap = [
 	{name: "老公", id: 1271928496391},
 ];
 
-const DATA_mobParas = [
+const DATA_mobData = [
 	{bossIdx: 1, health: 6000000, scoreFactor: 1, name: "龙", round: 1, bossNum: 1, bgC: "background: #300"},
 	{bossIdx: 2, health: 8000000, scoreFactor: 1, name: "鸟", round: 1, bossNum: 2, bgC: "background: #c00"},
 	{bossIdx: 3, health: 10000000, scoreFactor: 1.1, name: "花", round: 1, bossNum: 3, bgC: "background: #600"},

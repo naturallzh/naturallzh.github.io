@@ -2,7 +2,7 @@ let vm = new Vue({
   el: '#index-body',
   data: {
     nameMap: [],
-    mobParas: [],
+    mobData: [],
     actionData: [],
 
     loadingMask: true,
@@ -27,7 +27,7 @@ let vm = new Vue({
   },
 
   computed: {
-        damageFigureData :function () {
+    damageFigureData :function () {
       return this.playerTotalDamageByDay(this.damageFigurePara);
     },
 
@@ -82,8 +82,10 @@ let vm = new Vue({
   methods: {
 
     initData: function () {
+      if (getQueryString("title")) {document.title = getQueryString("title");}
+
       this.nameMap = DATA_nameMap;
-      this.mobParas = DATA_mobParas;
+      this.mobData = DATA_mobData;
       this.actionData = DATA_actionData;
 
       this.genSit = {
@@ -107,7 +109,7 @@ let vm = new Vue({
     // 检查输入(人名和伤害)
     checkData: function () {
       const nameMap = this.nameMap;
-      const mobParas = this.mobParas;
+      const mobData = this.mobData;
       const actionData = this.actionData;
 
       for (let i=0; i<actionData.length; i++) {
@@ -135,7 +137,7 @@ let vm = new Vue({
           }
         }
         actionData[i].maxDamage = maxDamage;
-        const remainHealth = (mobParas[curBossIdx-1].health-healthSum);
+        const remainHealth = (mobData[curBossIdx-1].health-healthSum);
         if (remainHealth <= 0) {
           if (remainHealth === 0 && actionData[i].day>1) {
             actionData[i].log[actionData[i].log.length-1].desc = "尾刀";
@@ -150,9 +152,9 @@ let vm = new Vue({
         }
       }
       this.genSit.curBossIdx = curBossIdx;
-      this.genSit.remainHealth = mobParas[curBossIdx-1].health-healthSum;
-      this.genSit.remainHealthPer = (this.genSit.remainHealth/mobParas[curBossIdx-1].health*100).toFixed(2);
-      console.log("boss-" + curBossIdx + ": " + (mobParas[curBossIdx-1].health-healthSum));
+      this.genSit.remainHealth = mobData[curBossIdx-1].health-healthSum;
+      this.genSit.remainHealthPer = (this.genSit.remainHealth/mobData[curBossIdx-1].health*100).toFixed(2);
+      console.log("boss-" + curBossIdx + ": " + (mobData[curBossIdx-1].health-healthSum));
       console.log("mob health check finish");
       console.log("%==============================%");
 
@@ -227,7 +229,7 @@ let vm = new Vue({
 
     playerTotalDamageByDay: function (dateArr) {
       const nameMap = this.nameMap;
-      const mobParas = this.mobParas;
+      const mobData = this.mobData;
       const actionData = this.actionData;
 
       const dateArr2Num = [];
@@ -340,7 +342,7 @@ let vm = new Vue({
       if (arr.length===1) {return arr[0]}
       let res = 0;
       for (let j=0;j<arr.length;j++) {
-          res += arr[0][j] * this.calcCofactor(arr, 0, j);
+        res += arr[0][j] * this.calcCofactor(arr, 0, j);
       }
       return res;
     },

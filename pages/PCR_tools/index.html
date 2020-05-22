@@ -54,8 +54,19 @@
       <span style="color: #fb5280;font-weight: bold;margin-right: 5px">{{combineRes[1]}}</span>秒
     </div>
 
-    <h2 style="margin-top: 20px">进度计算器</h2>
-    <span>开发中...</span>
+    <h2 style="margin-top: 10px">进度计算器</h2>
+    <select v-model="progressParas.guildBattleIdx" style="margin: 3px 0">
+      <option :value="dataItem.idx" v-for="dataItem in mobData">{{dataItem.desc}}</option>
+    </select>
+    <div>
+      <input v-model="progressParas.round" type="number" style="width: 10%">周目
+      <input v-model="progressParas.bossNum" type="number" style="width: 10%">王
+      <input v-model="progressParas.remainHealth" type="number" style="width: 25%">血量剩余
+    </div>
+    <div>
+      得分 <input v-model="progressScore" type="number">
+      <span class="btn" @click="calcProgress" style="display: none">反推进度</span>
+    </div>
   </div>
 
   <div class="exp-calc">
@@ -112,7 +123,7 @@
     <div>
       <span>日产体力 </span>
       <span style="color: #fb5280;font-weight: bold;margin-right: 5px">{{calcSpiritGet}}</span>
-      <span v-show="predictLvlDays">预估需要<span style="color: #fb5280;font-weight: bold">{{predictLvlDays}}</span>天</span>
+      <span>预估需要<span style="color: #fb5280;font-weight: bold">{{predictLvlDays}}</span>天</span>
     </div>
   </div>
 

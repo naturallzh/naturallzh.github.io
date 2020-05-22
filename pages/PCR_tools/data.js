@@ -74,7 +74,24 @@ const DATA_dungeonFood = [
 	{num: 3, spirit: 144},
 ];
 
-const DATA_mobParas = [
+const DATA_combineRule = [
+	{factor:1, refund: 10},
+	{factor:1.1, refund: 29},
+	{factor:1.2, refund: 35},
+	{factor:1.3, refund: 41},
+	{factor:1.4, refund: 46},
+	{factor:1.5, refund: 50},
+	{factor:1.6, refund: 54},
+	{factor:1.7, refund: 58},
+	{factor:1.8, refund: 60},
+	{factor:1.9, refund: 63},
+	{factor:2, refund: 65},
+	{factor:3, refund: 80},
+	{factor:4, refund: 88},
+	{factor:4.3, refund: 90},
+];
+
+const DATA_mobData_Aries = [
 	{bossIdx: 1, health: 6000000, scoreFactor: 1, name: "龙", round: 1, bossNum: 1, bgC: "background: #300"},
 	{bossIdx: 2, health: 8000000, scoreFactor: 1, name: "鸟", round: 1, bossNum: 2, bgC: "background: #c00"},
 	{bossIdx: 3, health: 10000000, scoreFactor: 1.1, name: "花", round: 1, bossNum: 3, bgC: "background: #600"},
@@ -100,21 +117,4 @@ const DATA_mobParas = [
 	{bossIdx: 23, health: 10000000, scoreFactor: 1.5, name: "花", round: 5, bossNum: 3, bgC: "background: #622"},
 	{bossIdx: 24, health: 12000000, scoreFactor: 1.7, name: "熊", round: 5, bossNum: 4, bgC: "background: #f22"},
 	{bossIdx: 25, health: 20000000, scoreFactor: 2, name: "羊", round: 5, bossNum: 5, bgC: "background: #922"},
-];
-
-const DATA_combineRule = [
-	{factor:1, refund: 10},
-	{factor:1.1, refund: 29},
-	{factor:1.2, refund: 35},
-	{factor:1.3, refund: 41},
-	{factor:1.4, refund: 46},
-	{factor:1.5, refund: 50},
-	{factor:1.6, refund: 54},
-	{factor:1.7, refund: 58},
-	{factor:1.8, refund: 60},
-	{factor:1.9, refund: 63},
-	{factor:2, refund: 65},
-	{factor:3, refund: 80},
-	{factor:4, refund: 88},
-	{factor:4.3, refund: 90},
 ];

@@ -1,7 +1,7 @@
 let vm = new Vue({
   el: '#index-body',
   data: {
-    mobParas: [],
+    mobData: [],
     combineRule: [],
     playerLvlData: [],
     guildHomeData: {},
@@ -12,6 +12,13 @@ let vm = new Vue({
       remainHealth: "",
       damageA: "",
       damageB: "",
+    },
+
+    progressParas: {
+      guildBattleIdx: 1,
+      round: 1,
+      bossNum: 1,
+      remainHealth: 6000000,
     },
 
     expCalcParas: {
@@ -108,8 +115,56 @@ let vm = new Vue({
       if (flag) {
         return Math.ceil((expRequire - spiritRecover) / (expPerDay + (this.spiritGetParas.dailyQuestExpDouble?700:350)))
       }
-      else {return false}
+      else {return "--"}
+    },
+
+    progressScore: {
+      get: function () {
+        let {guildBattleIdx, round, bossNum, remainHealth} = this.progressParas;
+        guildBattleIdx = parseInt(guildBattleIdx);
+        round = parseInt(round);
+        bossNum = parseInt(bossNum);
+        remainHealth = parseInt(remainHealth);
+
+        const bossIdx = (round-1)*5 + bossNum;
+        const mobData = this.mobData[guildBattleIdx-1].data;
+        if (remainHealth > mobData[bossIdx-1].health) {
+          this.progressParas.remainHealth = mobData[bossIdx-1].health;
+        }
+
+        let score = 0;
+        for (let i=0;i<bossIdx-1;i++) {
+          score += mobData[i].health * mobData[i].scoreFactor;
+        }
+        score += (mobData[bossIdx-1].health-remainHealth) * mobData[bossIdx-1].scoreFactor
+        return Math.floor(score);
+      },
+      set: function (val) {
+        let bossIdx = 1;
+        const mobData = this.mobData[this.progressParas.guildBattleIdx-1].data;
+        let score = parseInt(val);
+        let remainHealth = 0;
+
+        for (let i=0;i<mobData.length;i++) {
+          if (score<mobData[i].health * mobData[i].scoreFactor) {
+            remainHealth = Math.floor(mobData[i].health - score/mobData[i].scoreFactor);
+            break;
+          }
+          else {
+            bossIdx++;
+            score -= mobData[i].health * mobData[i].scoreFactor;
+          }
+        }
+        if (bossIdx>25) {bossIdx=25}
+        this.progressParas= {
+          guildBattleIdx: this.progressParas.guildBattleIdx,
+          round: Math.ceil(bossIdx/5),
+          bossNum: bossIdx - (Math.ceil(bossIdx/5)-1)*5,
+          remainHealth: remainHealth,
+        }
+      }
     }
+
   },
 
   beforeCreate () {},
@@ -128,7 +183,6 @@ let vm = new Vue({
   methods: {
 
     initData: function () {
-      this.mobParas = DATA_mobParas;
       this.combineRule = DATA_combineRule;
       this.guildHomeData = {
         spiritTable: DATA_spiritTable,
@@ -136,6 +190,7 @@ let vm = new Vue({
       };
 
       this.processPlayerLvlData();
+      this.processMobData();
     },
 
     processPlayerLvlData: function () {
@@ -152,8 +207,25 @@ let vm = new Vue({
       this.playerLvlData = dataArr;
     },
 
+    processMobData: function () {
+      const dataArr = [];
+      dataArr[0] = {
+        idx: 1,
+        desc: '白羊座 20200507~20200514',
+        data: DATA_mobData_Aries
+      };
+
+      this.mobData = dataArr;
+    },
+
+    calcProgress: function () {},
+
+    inputCheck: function () {},
+
     gotoAries: function () {
-      window.open("./guild_battle_record/1st_Aries_20200507_20200514/index.html")
+      let url = "./guild_battle_record/1st_Aries_20200507_20200514/index.html";
+      url += "?title=白羊座 20200507~20200514";
+      window.open(url);
     }
 
   }
