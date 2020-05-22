@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <title>每日一刀甜心刀 休闲健康睡饱饱</title>
-  <link rel="shortcut icon" href="./favicon.ico">
-  <link rel="stylesheet" type="text/css" href="../../lib/init.css"/>
-  <link rel="stylesheet" type="text/css" href="../../lib/base.css"/>
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../../../../lib/init.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../../lib/base.css"/>
 
-  <link rel="stylesheet" type="text/css" href="index.css"/>
+  <link rel="stylesheet" type="text/css" href="../guild_battle_record.css"/>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
       <div style="position: absolute;background: rgba(128,128,128,0.35);height: 100%;width: 100%"></div>
       <div style="position: absolute;background: limegreen;height: 100%" :style="'width:'+((time.endTime-time.curTime)/(time.endTime-time.startTime)*100)+'%'"></div>
       <span style="position: relative;" v-if="time.endTime-time.curTime>0">剩余时间：{{ms2timeStr(time.endTime-time.curTime)}}</span>
-      <span style="position: relative;" v-if="time.endTime-time.curTime<=0">已结束</span>
+      <span style="position: relative;" v-if="time.endTime-time.curTime<=0">已结束 排名：4680</span>
     </div>
     <div>当前周目：{{mobParas[genSit.curBossIdx-1].round}}</div>
     <div>当前Boss：{{mobParas[genSit.curBossIdx-1].bossNum}}号 ~ {{mobParas[genSit.curBossIdx-1].name}} ~ 总第{{genSit.curBossIdx}}号</div>
@@ -50,111 +50,17 @@
       <div style="position: absolute;background: limegreen;height: 100%" :style="'width:'+(genSit.remainHealthPer)+'%'"></div>
       <span style="position: relative;">剩余血量：{{genSit.remainHealth}} ~ {{genSit.remainHealthPer}}%</span>
     </div>
-    <div style="margin: 5px 0">
-      <span>已出刀数：{{actionLogByDay(genSit.curDay).doneNum}}</span>
-      <span class="btn" @click="shiftHistoryLogDone(genSit.curDay-1)">详情点击</span>
-    </div>
-    <div>
-      <span>未出刀数：{{actionLogByDay(genSit.curDay).todoNum}}</span>
-      <span class="btn" @click="shiftHistoryLogTodo(genSit.curDay-1)">详情点击</span>
-    </div>
-  </div>
-
-  <div class="combine-calc">
-    <h2>合刀计算器</h2>
-    <div>
-      <span>剩余血量 </span>
-      <input v-model="combineParas.remainHealth" type="number">
-    </div>
-    <div>
-      <span>刀一伤害 </span>
-      <input v-model="combineParas.damageA" type="number">
-    </div>
-    <div>
-      <span>刀二伤害 </span>
-      <input v-model="combineParas.damageB" type="number">
-    </div>
-    <div v-show="combineRes.length===2">
-      <span>一先二尾 </span>
-      <span>{{combineRes[0]}}秒</span>
-    </div>
-    <div v-show="combineRes.length===2">
-      <span>二先一尾 </span>
-      <span>{{combineRes[1]}}秒</span>
-    </div>
-
-    <h2 style="margin-top: 20px">进度计算器</h2>
-    <span>开发中...</span>
-
     <h2 style="margin-top: 20px">总伤害查询</h2>
     <span class="btn" @click="shiftDamageFigure">点击显示图表</span>
   </div>
 
-  <div class="gen-sit-box" v-if="genSit">
+  <div class="history-log" v-if="genSit">
     <h2>历史记录</h2>
     <div>第一天没有详细记录每刀伤害</div>
     <div>实际上90刀出满了</div>
     <div v-for="(historyDate) in historyDateObj.dateArr" style="margin-bottom: 5px">
       <span class="btn" @click="shiftHistoryLogDone(historyDate-1)">第{{historyDate}}天已出：{{actionLogByDay(historyDate).doneNum}}</span>
       <span class="btn" @click="shiftHistoryLogTodo(historyDate-1)">第{{historyDate}}天未出：{{actionLogByDay(historyDate).todoNum}}</span>
-    </div>
-  </div>
-
-  <div class="exp-calc">
-    <h2>经验计算器</h2>
-    <div>
-      <span>当前等级 </span>
-      <input v-model="expCalcParas.curLvl" type="number">
-    </div>
-    <div>
-      <span>当前经验 </span>
-      <input v-model="expCalcParas.curExp" type="number">
-    </div>
-    <div>
-      <span>目标等级 </span>
-      <input v-model="expCalcParas.tarLvl" type="number">
-    </div>
-    <div>
-      <span>需要经验 </span>
-      <span style="color: #fb5280;font-weight: bold">{{calcExpRequire[0]}}</span>
-    </div>
-    <div>
-      <span>升级回体 </span>
-      <span style="color: #fb5280;font-weight: bold">{{calcExpRequire[1]}}</span>
-      <input type="checkbox" v-model="expCalcParas.wipeMaxLvlUpSpirit" v-show="calcExpRequire[0]!=='--'">
-      <span v-if="calcExpRequire[0]!=='--'">不算末次回体<span style="color: #fb5280;font-weight: bold">{{playerLvlData[expCalcParas.tarLvl].spirit}}</span>点</span>
-    </div>
-    <div style="height: 1px;background: black;width: 100%;margin: 5px 0"></div>
-    <div>
-      <span style="margin-right: 5px">日回：240</span>
-      <span>日常体力：{{spiritGetParas.dailyQuestSpiritDouble?400:200}} </span>
-      <input type="checkbox" v-model="spiritGetParas.dailyQuestSpiritDouble">
-      <span>双倍</span>
-    </div>
-    <div>
-      <span style="margin-right: 5px">点赞：10</span>
-      <span>日常经验：{{spiritGetParas.dailyQuestExpDouble?700:350}} </span>
-      <input type="checkbox" v-model="spiritGetParas.dailyQuestExpDouble">
-      <span>双倍</span>
-    </div>
-    <div>
-      <span>宿舍：</span>
-      <select v-model="spiritGetParas.tableLvl">
-        <option :value="tableData.lvl" v-for="tableData in guildHomeData.spiritTable">{{tableData.lvl}}级点心桌{{tableData.spirit}}</option>
-      </select>
-      <select v-model="spiritGetParas.FoodNum">
-        <option :value="foodData.num" v-for="foodData in guildHomeData.dungeonFood">{{foodData.num}}个食物{{foodData.spirit}}</option>
-      </select>
-    </div>
-    <div>
-      <span>碎石</span>
-      <input v-model="spiritGetParas.stone" type="number">
-      <span>管</span>
-    </div>
-    <div>
-      <span>日产体力 </span>
-      <span style="color: #fb5280;font-weight: bold;margin-right: 5px">{{calcSpiritGet}}</span>
-      <span v-show="predictLvlDays">预估需要<span style="color: #fb5280;font-weight: bold">{{predictLvlDays}}</span>天</span>
     </div>
   </div>
 
@@ -212,8 +118,8 @@
 </div>
 </body>
 
-<script type="text/javascript" src="../../lib/vue.js"></script>
-<script type="text/javascript" src="../../lib/base.js"></script>
+<script type="text/javascript" src="../../../../lib/vue.js"></script>
+<script type="text/javascript" src="../../../../lib/base.js"></script>
 
 <script type="text/javascript" src="data.js"></script>
 <script type="text/javascript" src="index.js"></script>

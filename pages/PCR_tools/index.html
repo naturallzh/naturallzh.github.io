@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>每日一刀甜心刀 休闲健康睡饱饱</title>
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../../lib/init.css"/>
+  <link rel="stylesheet" type="text/css" href="../../lib/base.css"/>
+
+  <link rel="stylesheet" type="text/css" href="index.css"/>
+</head>
+
+<body>
+<div id="index-body" v-cloak>
+
+  <transition name="showFigure">
+    <div class="loadingMask" v-if="loadingMask">
+      <div class="circle-image-1"></div>
+      <div class="circle-image-2"></div>
+      <div style="font-size: 200%;margin-bottom: 20px;position: relative">
+        载入中<span class="dot-1">.</span><span class="dot-2">.</span><span class="dot-3">.</span>
+      </div>
+      <span style="position: relative">初次载入可能较慢 请耐心等待</span>
+      <span style="position: relative">如长时间没有响应 可ctrl+f5强制刷新页面</span>
+    </div>
+  </transition>
+
+  <a style="position: fixed;bottom: 10px;background: rgba(255, 255, 255, 0.7);border-radius: 10px;border: #999999 solid 2px;box-shadow: black 3px 3px 3px;padding: 0 5px"
+    href="https://github.com/naturallzh/PCR_guild_battle" target="_blank">
+    访问Github仓库
+  </a>
+
+  <div class="combine-calc">
+    <h2>合刀计算器</h2>
+    <div>
+      <span>剩余血量 </span>
+      <input v-model="combineParas.remainHealth" type="number">
+    </div>
+    <div>
+      <span>刀一伤害 </span>
+      <input v-model="combineParas.damageA" type="number">
+    </div>
+    <div>
+      <span>刀二伤害 </span>
+      <input v-model="combineParas.damageB" type="number">
+    </div>
+    <div>
+      <span>一先二尾 </span>
+      <span style="color: #fb5280;font-weight: bold;margin-right: 5px">{{combineRes[0]}}</span>秒
+    </div>
+    <div>
+      <span>二先一尾 </span>
+      <span style="color: #fb5280;font-weight: bold;margin-right: 5px">{{combineRes[1]}}</span>秒
+    </div>
+
+    <h2 style="margin-top: 20px">进度计算器</h2>
+    <span>开发中...</span>
+  </div>
+
+  <div class="exp-calc">
+    <h2>经验计算器</h2>
+    <div>
+      <span>当前等级 </span>
+      <input v-model="expCalcParas.curLvl" type="number">
+    </div>
+    <div>
+      <span>当前经验 </span>
+      <input v-model="expCalcParas.curExp" type="number">
+    </div>
+    <div>
+      <span>目标等级 </span>
+      <input v-model="expCalcParas.tarLvl" type="number">
+    </div>
+    <div>
+      <span>需要经验 </span>
+      <span style="color: #fb5280;font-weight: bold">{{calcExpRequire[0]}}</span>
+    </div>
+    <div>
+      <span>升级回体 </span>
+      <span style="color: #fb5280;font-weight: bold">{{calcExpRequire[1]}}</span>
+      <input type="checkbox" v-model="expCalcParas.wipeMaxLvlUpSpirit" v-show="calcExpRequire[0]!=='--'">
+      <span v-if="calcExpRequire[0]!=='--'">不算末次回体<span style="color: #fb5280;font-weight: bold">{{playerLvlData[expCalcParas.tarLvl].spirit}}</span>点</span>
+    </div>
+    <div style="height: 1px;background: black;width: 100%;margin: 5px 0"></div>
+    <div>
+      <span style="margin-right: 5px">日回：240</span>
+      <span>日常体力：{{spiritGetParas.dailyQuestSpiritDouble?400:200}} </span>
+      <input type="checkbox" v-model="spiritGetParas.dailyQuestSpiritDouble">
+      <span>双倍</span>
+    </div>
+    <div>
+      <span style="margin-right: 5px">点赞：10</span>
+      <span>日常经验：{{spiritGetParas.dailyQuestExpDouble?700:350}} </span>
+      <input type="checkbox" v-model="spiritGetParas.dailyQuestExpDouble">
+      <span>双倍</span>
+    </div>
+    <div>
+      <span>宿舍：</span>
+      <select v-model="spiritGetParas.tableLvl">
+        <option :value="tableData.lvl" v-for="tableData in guildHomeData.spiritTable">{{tableData.lvl}}级点心桌{{tableData.spirit}}</option>
+      </select>
+      <select v-model="spiritGetParas.FoodNum">
+        <option :value="foodData.num" v-for="foodData in guildHomeData.dungeonFood">{{foodData.num}}个食物{{foodData.spirit}}</option>
+      </select>
+    </div>
+    <div>
+      <span>碎石</span>
+      <input v-model="spiritGetParas.stone" type="number">
+      <span>管</span>
+    </div>
+    <div>
+      <span>日产体力 </span>
+      <span style="color: #fb5280;font-weight: bold;margin-right: 5px">{{calcSpiritGet}}</span>
+      <span v-show="predictLvlDays">预估需要<span style="color: #fb5280;font-weight: bold">{{predictLvlDays}}</span>天</span>
+    </div>
+  </div>
+
+  <div class="guild-battle-record">
+    <h2 style="margin-bottom: 5px">团队战记录</h2>
+    <div class="btn" @click="gotoAries">
+      <div>20200507~20200514 白羊座</div>
+      <div>已结束 排名4680</div>
+    </div>
+  </div>
+
+</div>
+</body>
+
+<script type="text/javascript" src="../../lib/vue.js"></script>
+<script type="text/javascript" src="../../lib/base.js"></script>
+
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</html>
