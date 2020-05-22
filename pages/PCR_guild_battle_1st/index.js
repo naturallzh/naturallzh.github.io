@@ -33,7 +33,8 @@ let vm = new Vue({
       wipeMaxLvlUpSpirit: true,
     },
     spiritGetParas: {
-      dailyQuestDouble: false,
+      dailyQuestSpiritDouble: false,
+      dailyQuestExpDouble: false,
       tableLvl: 10,
       FoodNum: 3,
       stone: "",
@@ -116,7 +117,7 @@ let vm = new Vue({
     calcSpiritGet: function () {
       let sum = 0;
       sum+=240;
-      sum+=this.spiritGetParas.dailyQuestDouble?400:200;
+      sum+=this.spiritGetParas.dailyQuestSpiritDouble?400:200;
       sum+=this.guildHomeData.spiritTable[this.spiritGetParas.tableLvl-1].spirit;
       sum+=this.guildHomeData.dungeonFood[this.spiritGetParas.FoodNum].spirit;
       if (this.spiritGetParas.stone==="") {}
@@ -127,7 +128,7 @@ let vm = new Vue({
         sum += this.spiritGetParas.stone*120;
       }
       else {sum = "--"}
-      return sum;
+      return sum+10;
     },
 
     predictLvlDays: function () {
@@ -136,7 +137,7 @@ let vm = new Vue({
       const expPerDay = this.calcSpiritGet;
       const flag = expRequire==parseInt(expRequire) && spiritRecover==parseInt(spiritRecover) && expPerDay==parseInt(expPerDay)
       if (flag) {
-        return Math.ceil((expRequire-spiritRecover) / expPerDay)
+        return Math.ceil((expRequire - spiritRecover) / (expPerDay + (this.spiritGetParas.dailyQuestExpDouble?700:350)))
       }
       else {return false}
     }

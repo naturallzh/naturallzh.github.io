@@ -125,11 +125,17 @@
       <span v-if="calcExpRequire[0]!=='--'">不算末次回体<span style="color: #fb5280;font-weight: bold">{{playerLvlData[expCalcParas.tarLvl].spirit}}</span>点</span>
     </div>
     <div style="height: 1px;background: black;width: 100%;margin: 5px 0"></div>
-    <div>日回：240</div>
     <div>
-      <span>日常：{{spiritGetParas.dailyQuestDouble?400:200}} </span>
-      <input type="checkbox" v-model="spiritGetParas.dailyQuestDouble">
-      <span>双倍奖励</span>
+      <span style="margin-right: 5px">日回：240</span>
+      <span>日常体力：{{spiritGetParas.dailyQuestSpiritDouble?400:200}} </span>
+      <input type="checkbox" v-model="spiritGetParas.dailyQuestSpiritDouble">
+      <span>双倍</span>
+    </div>
+    <div>
+      <span style="margin-right: 5px">点赞：10</span>
+      <span>日常经验：{{spiritGetParas.dailyQuestExpDouble?700:350}} </span>
+      <input type="checkbox" v-model="spiritGetParas.dailyQuestExpDouble">
+      <span>双倍</span>
     </div>
     <div>
       <span>宿舍：</span>
