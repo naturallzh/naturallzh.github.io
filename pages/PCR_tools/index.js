@@ -49,9 +49,12 @@ let vm = new Vue({
       const flag4 = (parseInt(damageA) + parseInt(damageB)) > parseInt(remainHealth);
       const flag5 = parseInt(remainHealth)>0 && parseInt(damageA)>0 && parseInt(damageB)>0;
       if (flag1 && flag2 && flag3 && flag4 && flag5) {
-        const num1 = parseInt(damageB)/(parseInt(remainHealth)-parseInt(damageA));
-        const num2 = parseInt(damageA)/(parseInt(remainHealth)-parseInt(damageB));
-        res = [calcRefund(num1),calcRefund(num2)];
+        // const num1 = parseInt(damageB)/(parseInt(remainHealth)-parseInt(damageA));
+        // const num2 = parseInt(damageA)/(parseInt(remainHealth)-parseInt(damageB));
+        // res = [calcRefund(num1),calcRefund(num2)];
+        const num1 = Math.ceil(100 - ((parseInt(remainHealth)-parseInt(damageA)) / parseInt(damageB)) * 90);
+        const num2 = Math.ceil(100 - ((parseInt(remainHealth)-parseInt(damageB)) / parseInt(damageA)) * 90);
+        res = [num1, num2];
       }
 
       function calcRefund(num) {
@@ -66,12 +69,13 @@ let vm = new Vue({
     },
 
     calcExpRequire: function () {
-      const {curLvl, curExp, tarLvl, wipeMaxLvlUpSpirit} = this.expCalcParas;
-      const flag1 = curLvl==parseInt(curLvl);
+      let {curLvl, curExp, tarLvl, wipeMaxLvlUpSpirit} = this.expCalcParas;
+      const flag1 = curLvl==parseInt(curLvl); flag1?curLvl=parseInt(curLvl):'';
       const flag2 = curExp==parseInt(curExp) || curExp=== "";
-      const flag3 = tarLvl==parseInt(tarLvl);
+      const flag3 = tarLvl==parseInt(tarLvl); flag3?tarLvl=parseInt(tarLvl):'';
       const flag4 = curLvl < tarLvl && this.playerLvlData[curLvl].exp > curExp;
-      const flag5 = curLvl >= 1 && tarLvl <= 85 && curExp >= 0;
+      const flag5 = curLvl >= 1 && tarLvl <= 100 && curExp >= 0;
+      // console.log(flag1, flag2, flag3, flag4, flag5);
       if (flag1 && flag2 && flag3 && flag4 && flag5) {
         const playerLvlData = this.playerLvlData;
         let expSum = -curExp;
@@ -127,7 +131,10 @@ let vm = new Vue({
         remainHealth = parseInt(remainHealth);
 
         const bossIdx = (round-1)*5 + bossNum;
-        const mobData = this.mobData[guildBattleIdx-1].data;
+        let mobData = this.mobData[guildBattleIdx-1].data;
+        while (bossIdx > mobData.length) {
+          mobData = this.extendMobData(mobData);
+        }
         if (remainHealth > mobData[bossIdx-1].health) {
           this.progressParas.remainHealth = mobData[bossIdx-1].health;
         }
@@ -141,21 +148,30 @@ let vm = new Vue({
       },
       set: function (val) {
         let bossIdx = 1;
-        const mobData = this.mobData[this.progressParas.guildBattleIdx-1].data;
+        let mobData = this.mobData[this.progressParas.guildBattleIdx-1].data;
         let score = parseInt(val);
         let remainHealth = 0;
 
-        for (let i=0;i<mobData.length;i++) {
-          if (score<mobData[i].health * mobData[i].scoreFactor) {
-            remainHealth = Math.floor(mobData[i].health - score/mobData[i].scoreFactor);
-            break;
-          }
-          else {
-            bossIdx++;
-            score -= mobData[i].health * mobData[i].scoreFactor;
-          }
+        let i=0;
+        while (score >= mobData[i].health * mobData[i].scoreFactor) {
+          bossIdx++;
+          score -= mobData[i].health * mobData[i].scoreFactor;
+          i++;
+          mobData = this.extendMobData(mobData);
         }
-        if (bossIdx>25) {bossIdx=25}
+        remainHealth = Math.floor(mobData[i].health - score/mobData[i].scoreFactor);
+
+        // for (let i=0;i<mobData.length;i++) {
+        //   if (score<mobData[i].health * mobData[i].scoreFactor) {
+        //     remainHealth = Math.floor(mobData[i].health - score/mobData[i].scoreFactor);
+        //     break;
+        //   }
+        //   else {
+        //     bossIdx++;
+        //     score -= mobData[i].health * mobData[i].scoreFactor;
+        //   }
+        // }
+        if (bossIdx>65) {bossIdx=65}
         this.progressParas= {
           guildBattleIdx: this.progressParas.guildBattleIdx,
           round: Math.ceil(bossIdx/5),
@@ -201,7 +217,7 @@ let vm = new Vue({
       for (let i=65;i<76;i++) {
         dataArr[i] = {lvl: i, exp: 2655, spirit: dataArr[i-1].spirit+1};
       }
-      for (let i=76;i<86;i++) {
+      for (let i=76;i<101;i++) {
         dataArr[i] = {lvl: i, exp: 3540, spirit: dataArr[i-1].spirit+1};
       }
       this.playerLvlData = dataArr;
@@ -216,6 +232,13 @@ let vm = new Vue({
       };
 
       this.mobData = dataArr;
+    },
+    extendMobData: function(mobData) {
+      const newArr = mobData.slice(-5,-4);
+      newArr[0].bossIdx += 5;
+      newArr[0].round ++;
+
+      return mobData.concat(newArr);
     },
 
     calcProgress: function () {},
