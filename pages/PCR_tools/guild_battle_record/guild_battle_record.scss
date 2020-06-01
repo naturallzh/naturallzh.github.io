@@ -180,8 +180,10 @@ div, span, p {
 			.name-box {
 				width: 100px;
 				margin: 0 5px;
+				flex-shrink: 0;
 			}
 			.damage-bar {
+				flex-shrink: 1;
 				color: white;
 				height: 70%;
 				background: red;

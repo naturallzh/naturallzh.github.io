@@ -249,6 +249,11 @@ let vm = new Vue({
       let url = "./guild_battle_record/1st_Aries_20200507_20200514/index.html";
       url += "?title=白羊座 20200507~20200514";
       window.open(url);
+    },
+    gotoTaurus: function () {
+      let url = "./guild_battle_record/2nd_Taurus_20200602_20200607/index.html";
+      url += "?title=金牛座 20200602~20200607";
+      window.open(url);
     }
 
   }

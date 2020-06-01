@@ -3,4 +3,27 @@ html, body {
 
 #BLANK-PAGE-body {
   min-height: 100%;
-  background: #084fb2; }
+  background: #084fb2;
+  display: flex; }
+
+.base-style {
+  margin: 50px;
+  width: 512px;
+  height: 512px;
+  background: black;
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.gradient-text {
+  text-align: left;
+  line-height: 150px;
+  font-size: 130px;
+  font-weight: bolder;
+  position: relative; }
+
+.gradient-text-one {
+  background-image: -webkit-linear-gradient(bottom, #dec07d, #8f6835, #e5d89c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
