@@ -66,6 +66,7 @@ const DATA_actionData = [
 		bossIdx: 1,
 		log: [
 			{name: "打个大西瓜", damage: 832272, time: new Date(2020,5,2,7,29)},
+			{name: "爱丽丝", damage: 810161, time: new Date(2020,5,2,7,54)},
 		]
 	},
 ];
