@@ -136,6 +136,8 @@ const DATA_actionData = [
 			{name: "何等的寂寞", damage: 737683, time: new Date(2020,5,2,17,5)},
 			{name: "灼眼的Saber", damage: 532329, time: new Date(2020,5,2,17,12)},
 			{name: "迪卢木多", damage: 650190, time: new Date(2020,5,2,17,14)},
+			{name: "迪卢木多", damage: 784988, time: new Date(2020,5,2,17,35)},
+			{name: "黑椿", damage: 767963, time: new Date(2020,5,2,17,35)},
 		]
 	},
 ];
