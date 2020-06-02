@@ -39,15 +39,15 @@
     <div>当前北京时间：{{processDateStr(time.curTime)}}</div>
     <div style="position: relative">
       <div style="position: absolute;background: rgba(128,128,128,0.35);height: 100%;width: 100%"></div>
-      <div style="position: absolute;background: limegreen;height: 100%" :style="'width:'+((time.endTime-time.curTime)/(time.endTime-time.startTime)*100)+'%'"></div>
+      <div style="position: absolute;background: limegreen;height: 100%" :style="'width:'+((time.endTime-time.curTime)/(time.endTime-time.startTime)*100)+'%;background:'+processColor((time.endTime-time.curTime)/(time.endTime-time.startTime))"></div>
       <span style="position: relative;" v-if="time.endTime-time.curTime>0">剩余时间：{{ms2timeStr(time.endTime-time.curTime)}}</span>
-      <span style="position: relative;" v-if="time.endTime-time.curTime<=0">已结束 排名：4680</span>
+      <span style="position: relative;" v-if="time.endTime-time.curTime<=0">已结束</span>
     </div>
     <div>当前周目：{{mobData[genSit.curBossIdx-1].round}}</div>
     <div>当前Boss：{{mobData[genSit.curBossIdx-1].bossNum}}号 ~ {{mobData[genSit.curBossIdx-1].name}} ~ 总第{{genSit.curBossIdx}}号</div>
     <div style="position: relative">
       <div style="position: absolute;background: rgba(128,128,128,0.35);height: 100%;width: 100%"></div>
-      <div style="position: absolute;background: limegreen;height: 100%" :style="'width:'+(genSit.remainHealthPer)+'%'"></div>
+      <div style="position: absolute;height: 100%" :style="'width:'+(genSit.remainHealthPer)+'%;background:'+processColor(genSit.remainHealthPer/100)"></div>
       <span style="position: relative;">剩余血量：{{genSit.remainHealth}} ~ {{genSit.remainHealthPer}}%</span>
     </div>
     <h2 style="margin-top: 20px">总伤害查询</h2>
