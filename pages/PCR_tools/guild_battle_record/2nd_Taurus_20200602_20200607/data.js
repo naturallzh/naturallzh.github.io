@@ -151,6 +151,9 @@ const DATA_actionData = [
 			{name: "金色之泪", damage: 430496, time: new Date(2020,5,2,19,53)},
 			{name: "Otaku", damage: 463257, time: new Date(2020,5,2,19,56)},
 			{name: "Otaku", damage: 385019, time: new Date(2020,5,2,20,3)},
+			{name: "金色之泪", damage: 437082, time: new Date(2020,5,2,20,22)},
+			{name: "打个大西瓜", damage: 588731, time: new Date(2020,5,2,20,28)},
+			{name: "香浓朱古力", damage: 416882, time: new Date(2020,5,2,20,36)},
 		]
 	},
 ];

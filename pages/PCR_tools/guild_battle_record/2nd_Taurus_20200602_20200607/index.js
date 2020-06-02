@@ -8,7 +8,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,5,2,20,15),
+      updateTime: new Date(2020,5,2,20,39),
       startTime: new Date(2020,5,2,5),
       curTime: new Date(),
       endTime: new Date(2020,5,7,23,59,59),
@@ -103,7 +103,7 @@ let vm = new Vue({
       };
       for (let i=1;i<=this.genSit.curDay;i++) {
         this.historyDateObj.dateArr[i-1] = i;
-        this.damageFigurePara[i-1] = true;
+        this.damageFigurePara[i-1] = false;
       }
       this.damageFigurePara[this.genSit.curDay-1] = true;
     },
