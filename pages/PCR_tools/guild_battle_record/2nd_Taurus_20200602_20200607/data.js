@@ -71,6 +71,7 @@ const DATA_actionData = [
 			{name: "何等的寂寞", damage: 800108, time: new Date(2020,5,2,8,36)},
 			{name: "初心如故", damage: 887215, time: new Date(2020,5,2,8,53)},
 			{name: "keiko", damage: 765331, time: new Date(2020,5,2,9,25)},
+			{name: "戏言君", damage: 811612, time: new Date(2020,5,2,9,36)},
 		]
 	},
 ];
