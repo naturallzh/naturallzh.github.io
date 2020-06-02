@@ -118,6 +118,13 @@ const DATA_actionData = [
 		bossIdx: 4,
 		log: [
 			{name: "宋寂", damage: 691928, time: new Date(2020,5,2,15,40)},
+			{name: "宋寂", damage: 454624, time: new Date(2020,5,2,15,54)},
+			{name: "keiko", damage: 545490, time: new Date(2020,5,2,16,8)},
+			{name: "向井蓝", damage: 43665, time: new Date(2020,5,2,16,11)},
+			{name: "初心如故", damage: 458479, time: new Date(2020,5,2,16,12)},
+			{name: "向井蓝", damage: 692253, time: new Date(2020,5,2,16,13)},
+			{name: "向井蓝", damage: 389871, time: new Date(2020,5,2,16,16)},
+			{name: "Otaku", damage: 729897, time: new Date(2020,5,2,16,17)},
 		]
 	},
 ];
