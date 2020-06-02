@@ -82,6 +82,9 @@ const DATA_actionData = [
 			{name: "池霜", damage: 213358, time: new Date(2020,5,2,9,48)},
 			{name: "宋寂", damage: 810335, time: new Date(2020,5,2,10,1)},
 			{name: "金色之泪", damage: 628181, time: new Date(2020,5,2,10,20)},
+			{name: "机智的阿斗", damage: 773552, time: new Date(2020,5,2,10,26)},
+			{name: "八云蓝", damage: 795531, time: new Date(2020,5,2,10,44)},
+			{name: "初心如故", damage: 800454, time: new Date(2020,5,2,10,48)},
 		]
 	},
 ];
