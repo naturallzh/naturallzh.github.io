@@ -146,6 +146,11 @@ const DATA_actionData = [
 		log: [
 			{name: "长星夜烁", damage: 572726, time: new Date(2020,5,2,19,38)},
 			{name: "香浓朱古力", damage: 562276, time: new Date(2020,5,2,19,43)},
+			{name: "福尔康", damage: 408309, time: new Date(2020,5,2,19,48)},
+			{name: "长星夜烁", damage: 377015, time: new Date(2020,5,2,19,49)},
+			{name: "金色之泪", damage: 430496, time: new Date(2020,5,2,19,53)},
+			{name: "Otaku", damage: 463257, time: new Date(2020,5,2,19,56)},
+			{name: "Otaku", damage: 385019, time: new Date(2020,5,2,20,3)},
 		]
 	},
 ];
