@@ -93,4 +93,11 @@ const DATA_actionData = [
 			{name: "我群最菜", damage: 488246, time: new Date(2020,5,2,12,33)},
 		]
 	},
+	{
+		day: 1,
+		bossIdx: 3,
+		log: [
+			{name: "灼眼的Saber", damage: 743502, time: new Date(2020,5,2,12,39)},
+		]
+	},
 ];
