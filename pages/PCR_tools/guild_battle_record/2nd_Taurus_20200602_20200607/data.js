@@ -128,6 +128,14 @@ const DATA_actionData = [
 			{name: "手手", damage: 674275, time: new Date(2020,5,2,16,24)},
 			{name: "八云蓝", damage: 579871, time: new Date(2020,5,2,16,27)},
 			{name: "咸鱼", damage: 546426, time: new Date(2020,5,2,16,28)},
+			{name: "咸鱼", damage: 712823, time: new Date(2020,5,2,16,33)},
+			{name: "机智的阿斗", damage: 587485, time: new Date(2020,5,2,16,48)},
+			{name: "爱丽丝", damage: 605952, time: new Date(2020,5,2,16,52)},
+			{name: "机智的阿斗", damage: 732702, time: new Date(2020,5,2,16,55)},
+			{name: "好好先生", damage: 699907, time: new Date(2020,5,2,16,57)},
+			{name: "何等的寂寞", damage: 737683, time: new Date(2020,5,2,17,5)},
+			{name: "灼眼的Saber", damage: 532329, time: new Date(2020,5,2,17,12)},
+			{name: "迪卢木多", damage: 650190, time: new Date(2020,5,2,17,14)},
 		]
 	},
 ];

@@ -63,11 +63,11 @@
   </div>
 
   <transition name="showFigure">
-    <div class="today-detail" @click="shiftHistoryLogDone(null)" v-show="popupFlags.historyLogDone">
+    <div class="today-detail" @click="shiftHistoryLogDone(null)" v-show="popupFlags.historyLogDone" @mouseover="highlightLog('')">
       <div class="mob-box" v-for="(logItem,mobIdx) in actionLogByDay(historyDateObj.curSelect+1).done" @click.stop>
         <div class="title">{{mobData[logItem.bossIdx-1].round}}周目 {{mobData[logItem.bossIdx-1].bossNum}}号 {{mobData[logItem.bossIdx-1].name}} 总第{{mobData[logItem.bossIdx-1].bossIdx}}号 {{logItem.log.length}}刀</div>
-        <div class="log-item" v-for="(logItem2,logIdx) in logItem.log">
-          <div style="position: absolute;height: 100%;background: rgba(255,0,0,0.4);z-index: 0" :style="'width:'+(logItem2.damage/logItem.maxDamage*100)+'%'"></div>
+        <div class="log-item" v-for="(logItem2,logIdx) in logItem.log" @mouseover.stop="highlightLog(logItem2.name)">
+          <div style="position: absolute;height: 100%;z-index: 0" :style="'width:'+(logItem2.damage/logItem.maxDamage*100)+'%;'+(logItem2.name===highlightLogName?'background: rgba(0,255,0,0.4);':'background: rgba(255,0,0,0.4);')"></div>
           <div style="position: absolute;height: 100%;background: rgba(0,0,255,0.4);z-index: 0" :style="'width:'+(logItem2.realDamage/logItem.maxDamage*100)+'%'" v-if="logItem2.realDamage"></div>
           <span style="margin-left: 5px">{{logItem2.name}}</span>
           <span v-if="logItem2.desc">{{logItem2.desc}}</span>
