@@ -140,4 +140,12 @@ const DATA_actionData = [
 			{name: "黑椿", damage: 767963, time: new Date(2020,5,2,17,35)},
 		]
 	},
+	{
+		day: 1,
+		bossIdx: 5,
+		log: [
+			{name: "长星夜烁", damage: 572726, time: new Date(2020,5,2,19,38)},
+			{name: "香浓朱古力", damage: 562276, time: new Date(2020,5,2,19,43)},
+		]
+	},
 ];
