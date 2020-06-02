@@ -98,6 +98,18 @@ const DATA_actionData = [
 		bossIdx: 3,
 		log: [
 			{name: "灼眼的Saber", damage: 743502, time: new Date(2020,5,2,12,39)},
+			{name: "手手", damage: 782983, time: new Date(2020,5,2,12,41)},
+			{name: "好好先生", damage: 729984, time: new Date(2020,5,2,13,19)},
+			{name: "我群最菜", damage: 296870, time: new Date(2020,5,2,13,29)},
+			{name: "手手", damage: 852730, time: new Date(2020,5,2,13,49)},
+			{name: "我群最菜", damage: 778776, time: new Date(2020,5,2,13,55)},
+			{name: "我群最菜", damage: 721199, time: new Date(2020,5,2,13,58)},
+			{name: "福尔康", damage: 784922, time: new Date(2020,5,2,14,21)},
+			{name: "长星夜烁", damage: 782826, time: new Date(2020,5,2,14,22)},
+			{name: "黑椿", damage: 705111, time: new Date(2020,5,2,14,24)},
+			{name: "八云蓝", damage: 754947, time: new Date(2020,5,2,14,31)},
+			{name: "福尔康", damage: 761019, time: new Date(2020,5,2,14,32)},
+			{name: "黑椿", damage: 692325, time: new Date(2020,5,2,14,32)},
 		]
 	},
 ];
