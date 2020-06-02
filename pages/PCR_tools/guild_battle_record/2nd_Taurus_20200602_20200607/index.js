@@ -8,7 +8,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,5,2,23,8),
+      updateTime: new Date(2020,5,3,7,55),
       startTime: new Date(2020,5,2,5),
       curTime: new Date(),
       endTime: new Date(2020,5,7,23,59,59),
@@ -312,8 +312,14 @@ let vm = new Vue({
     // 根据进度百分比(剩余时间、血量等)计算rgb字符串 100%为绿 0%为红
     processColor: function (perc) {
       let rgbStr = "rgb(";
-      rgbStr += parseInt((1-perc) * 255) + ",";
-      rgbStr += parseInt(perc * 255) + ",0)";
+      if (perc>=0.5) {
+        perc = (1-perc) * 2;
+        rgbStr += perc*255 + ",255,0)";
+      }
+      else {
+        perc = perc * 2;
+        rgbStr += "255," + perc*255 + ",0)";
+      }
       return rgbStr;
     },
 
