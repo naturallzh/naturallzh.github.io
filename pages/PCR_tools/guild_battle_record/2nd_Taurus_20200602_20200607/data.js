@@ -247,6 +247,17 @@ const DATA_actionData = [
 			{name: "好好先生", damage: 447022, time: new Date(2020, 5, 3, 20, 30)},
 			{name: "长星夜烁", damage: 451863, time: new Date(2020, 5, 3, 20, 36)},
 			{name: "宋寂", damage: 401216, time: new Date(2020, 5, 3, 20, 36)},
+			{name: "魂魄妖梦", damage: 410968, time: new Date(2020, 5, 3, 20, 40)},
+			{name: "未曾设想", damage: 499047, time: new Date(2020, 5, 3, 20, 41)},
+			{name: "打个大西瓜", damage: 559827, time: new Date(2020, 5, 3, 20, 42)},
+			{name: "福尔康", damage: 520060, time: new Date(2020, 5, 3, 20, 44)},
+			{name: "夜雨纷扬", damage: 540813, time: new Date(2020, 5, 3, 20, 48)},
+			{name: "池霜", damage: 645045, time: new Date(2020, 5, 3, 20, 48)},
+			{name: "何等的寂寞", damage: 480475, time: new Date(2020, 5, 3, 20, 56)},
+			{name: "金色之泪", damage: 442429, time: new Date(2020, 5, 3, 21, 5)},
+			{name: "Otaku", damage: 391633, time: new Date(2020, 5, 3, 21, 5)},
+			{name: "迪卢木多", damage: 568585, time: new Date(2020, 5, 3, 21, 8)},
+			{name: "爱丽丝", damage: 432334, time: new Date(2020, 5, 3, 21, 14)},
 		]
 	}
 ];
