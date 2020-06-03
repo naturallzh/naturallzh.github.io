@@ -273,5 +273,10 @@ const DATA_actionData = [
 			{name: "金色之泪", damage: 322001, time: new Date(2020, 5, 3, 21, 53)},
 			{name: "宋寂", damage: 358591, time: new Date(2020, 5, 3, 21, 53)},
 			{name: "机智的阿斗", damage: 321255, time: new Date(2020, 5, 3, 21, 59)},
+			{name: "戏言君", damage: 491441, time: new Date(2020, 5, 3, 22, 3)},
+			{name: "魂魄妖梦", damage: 321537, time: new Date(2020, 5, 3, 22, 3)},
+			{name: "灼眼的Saber", damage: 405598, time: new Date(2020, 5, 3, 22, 5)},
+			{name: "Otaku", damage: 514988, time: new Date(2020, 5, 3, 22, 6)},
+			{name: "好好先生", damage: 489262, time: new Date(2020, 5, 3, 22, 8)},
 		]
 	}];
