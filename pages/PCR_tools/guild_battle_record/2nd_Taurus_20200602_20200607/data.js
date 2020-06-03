@@ -204,6 +204,46 @@ const DATA_actionData = [
 			{name: "香浓朱古力", damage: 345751, time: new Date(2020, 5, 3, 13, 22)},
 			{name: "打个大西瓜", damage: 381522, time: new Date(2020, 5, 3, 13, 37)},
 			{name: "46黑桐", damage: 384987, time: new Date(2020, 5, 3, 14, 31)},
+			{name: "keiko", damage: 353713, time: new Date(2020, 5, 3, 15, 48)},
+			{name: "我群最菜", damage: 336706, time: new Date(2020, 5, 3, 16, 29)},
+			{name: "戏言君", damage: 332608, time: new Date(2020, 5, 3, 17, 58)},
+			{name: "宋寂", damage: 375936, time: new Date(2020, 5, 3, 18, 3)},
+			{name: "好好先生", damage: 359851, time: new Date(2020, 5, 3, 18, 52)},
+			{name: "爱丽丝", damage: 484657, time: new Date(2020, 5, 3, 19, 6)},
+			{name: "灼眼的Saber", damage: 418099, time: new Date(2020, 5, 3, 19, 14)},
+			{name: "迪卢木多", damage: 391858, time: new Date(2020, 5, 3, 19, 16)},
+			{name: "Otaku", damage: 348368, time: new Date(2020, 5, 3, 19, 23)},
+			{name: "黑椿", damage: 226996, time: new Date(2020, 5, 3, 19, 30)},
+		]
+	},
+	{
+		day: 2,
+		bossIdx: 7,
+		log: [
+			{name: "黑椿", damage: 177832, time: new Date(2020, 5, 3, 19, 33)},
+			{name: "何等的寂寞", damage: 899112, time: new Date(2020, 5, 3, 19, 33)},
+			{name: "初心如故", damage: 863734, time: new Date(2020, 5, 3, 19, 33)},
+			{name: "戏言君", damage: 806635, time: new Date(2020, 5, 3, 19, 34)},
+			{name: "我群最菜", damage: 844115, time: new Date(2020, 5, 3, 19, 36)},
+			{name: "迪卢木多", damage: 864603, time: new Date(2020, 5, 3, 19, 37)},
+			{name: "灼眼的Saber", damage: 787807, time: new Date(2020, 5, 3, 19, 39)},
+			{name: "池霜", damage: 878008, time: new Date(2020, 5, 3, 19, 42)},
+			{name: "手手", damage: 862389, time: new Date(2020, 5, 3, 19, 42)},
+			{name: "长星夜烁", damage: 840904, time: new Date(2020, 5, 3, 19, 54)},
+			{name: "咸鱼", damage: 174861, time: new Date(2020, 5, 3, 19, 58)},
+		]
+	},
+	{
+		day: 2,
+		bossIdx: 8,
+		log: [
+			{name: "咸鱼", damage: 190596, time: new Date(2020, 5, 3, 20, 1)},
+			{name: "手手", damage: 593791, time: new Date(2020, 5, 3, 20, 4)},
+			{name: "我群最菜", damage: 450106, time: new Date(2020, 5, 3, 20, 9)},
+			{name: "机智的阿斗", damage: 517525, time: new Date(2020, 5, 3, 20, 18)},
+			{name: "46黑桐", damage: 617920, time: new Date(2020, 5, 3, 20, 19)},
+			{name: "香浓朱古力", damage: 400264, time: new Date(2020, 5, 3, 20, 22)},
+			{name: "八云蓝", damage: 438481, time: new Date(2020, 5, 3, 20, 23)},
 		]
 	}
 ];
