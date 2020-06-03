@@ -259,5 +259,12 @@ const DATA_actionData = [
 			{name: "迪卢木多", damage: 568585, time: new Date(2020, 5, 3, 21, 8)},
 			{name: "爱丽丝", damage: 432334, time: new Date(2020, 5, 3, 21, 14)},
 		]
-	}
-];
+	},
+	{
+		day: 2,
+		bossIdx: 9,
+		log: [
+			{name: "机智的阿斗", damage: 564042, time: new Date(2020, 5, 3, 21, 30)},
+			{name: "46黑桐", damage: 551100, time: new Date(2020, 5, 3, 21, 34)},
+		]
+	}];
