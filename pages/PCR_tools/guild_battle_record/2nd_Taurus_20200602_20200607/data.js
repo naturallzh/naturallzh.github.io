@@ -266,5 +266,12 @@ const DATA_actionData = [
 		log: [
 			{name: "机智的阿斗", damage: 564042, time: new Date(2020, 5, 3, 21, 30)},
 			{name: "46黑桐", damage: 551100, time: new Date(2020, 5, 3, 21, 34)},
+			{name: "未曾设想", damage: 500626, time: new Date(2020, 5, 3, 21, 44)},
+			{name: "金色之泪", damage: 393702, time: new Date(2020, 5, 3, 21, 45)},
+			{name: "未曾设想", damage: 313506, time: new Date(2020, 5, 3, 21, 52)},
+			{name: "魂魄妖梦", damage: 489574, time: new Date(2020, 5, 3, 21, 52)},
+			{name: "金色之泪", damage: 322001, time: new Date(2020, 5, 3, 21, 53)},
+			{name: "宋寂", damage: 358591, time: new Date(2020, 5, 3, 21, 53)},
+			{name: "机智的阿斗", damage: 321255, time: new Date(2020, 5, 3, 21, 59)},
 		]
 	}];
