@@ -289,5 +289,15 @@ const DATA_actionData = [
 			{name: "一起学猫叫", damage: 464606, time: new Date(2020, 5, 3, 22, 28)},
 			{name: "初心如故", damage: 482568, time: new Date(2020, 5, 3, 22, 28)},
 			{name: "咸鱼", damage: 539347, time: new Date(2020, 5, 3, 22, 33)},
+			{name: "keiko", damage: 487850, time: new Date(2020, 5, 3, 22, 37)},
+			{name: "向井蓝", damage: 416994, time: new Date(2020, 5, 3, 22, 47)},
 		]
-	}];
+	},
+	{
+		day: 2,
+		bossIdx: 10,
+		log: [
+			{name: "向井蓝", damage: 28027, time: new Date(2020, 5, 3, 22, 48)},
+		]
+	}
+];
