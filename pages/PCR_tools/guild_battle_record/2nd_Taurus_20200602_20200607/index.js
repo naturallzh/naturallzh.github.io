@@ -8,7 +8,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,5,3,13,44),
+      updateTime: new Date(2020,5,3,15,1),
       startTime: new Date(2020,5,2,5),
       curTime: new Date(),
       endTime: new Date(2020,5,7,23,59,59),
@@ -19,7 +19,7 @@ let vm = new Vue({
     historyDateObj: {},
     damageFigurePara: [],
 
-    highlightLogName: '机智的阿斗',   // 高亮详细战斗log的名字字符串
+    highlightLogName: '',   // 高亮详细战斗log的名字字符串
 
     popupFlags: {
       damageFigure: false,

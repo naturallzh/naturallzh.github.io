@@ -203,6 +203,7 @@ const DATA_actionData = [
 			{name: "初心如故", damage: 368103, time: new Date(2020, 5, 3, 13, 6)},
 			{name: "香浓朱古力", damage: 345751, time: new Date(2020, 5, 3, 13, 22)},
 			{name: "打个大西瓜", damage: 381522, time: new Date(2020, 5, 3, 13, 37)},
+			{name: "46黑桐", damage: 384987, time: new Date(2020, 5, 3, 14, 31)},
 		]
 	}
 ];
