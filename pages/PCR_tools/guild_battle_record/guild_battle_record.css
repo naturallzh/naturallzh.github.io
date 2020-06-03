@@ -69,7 +69,7 @@ div, span, p {
     top: 0; }
   to {
     top: 0; } }
-.gen-sit-box, .history-log {
+.gen-sit-box, .history-log, .boss-note {
   width: 340px;
   height: 350px;
   background: rgba(255, 255, 255, 0.7);
@@ -83,18 +83,23 @@ div, span, p {
   box-shadow: black 10px 10px 10px;
   border-radius: 20px;
   border: #999999 solid 2px; }
-  .gen-sit-box div, .history-log div {
+  .gen-sit-box div, .history-log div, .boss-note div {
     margin: 2px 0; }
-  .gen-sit-box .btn, .history-log .btn {
+  .gen-sit-box .btn, .history-log .btn, .boss-note .btn {
     border: 1px solid black;
     padding: 1px 2px;
     font-size: 15px;
     text-align: center; }
-  .gen-sit-box .btn:hover, .history-log .btn:hover {
+  .gen-sit-box .btn:hover, .history-log .btn:hover, .boss-note .btn:hover {
     background: black;
     color: white;
     box-shadow: rgba(255, 0, 0, 0.6) 0 0 10px;
     transition: all 0.3s; }
+
+.boss-note {
+  max-height: 90%;
+  min-height: 350px;
+  height: auto; }
 
 .today-detail {
   position: fixed;

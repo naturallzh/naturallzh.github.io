@@ -62,6 +62,17 @@
     </div>
   </div>
 
+  <div class="boss-note">
+    <h2>攻略作业</h2>
+    <h4 style="border-bottom: 1px solid black">三王 猪</h4>
+    <div class="btn" @click="gotoUrl('https://www.bilibili.com/video/BV1ja4y1v7r6')">布丁3 狗3 狼5 妈3 深月3 53W</div>
+    <div class="btn" @click="gotoUrl('https://www.bilibili.com/video/BV1JK411p75c')">黑骑5 狗5 狼3 妈3 深月3 63W</div>
+    <div class="btn" @click="gotoUrl('https://www.bilibili.com/video/BV19A411q7rq')">黑骑5 狗4 狼3 猫剑5 深月3 60W</div>
+    <div class="btn" @click="gotoUrl('https://www.bilibili.com/video/BV1Qf4y127Jx?p=5')">布丁2 狼5 忍3 深月3 亚里沙5 47W</div>
+    <div class="btn" @click="gotoUrl('https://www.bilibili.com/video/BV1hD4y1D7fV')">望4 狼5 猫剑4 深月3 暴击弓3 50W</div>
+    <image-view url="pic/note-1.jpg"></image-view>
+  </div>
+
   <transition name="showFigure">
     <div class="today-detail" @click="shiftHistoryLogDone(null)" v-show="popupFlags.historyLogDone" @mouseover="highlightLog('')">
       <div class="mob-box" v-for="(logItem,mobIdx) in actionLogByDay(historyDateObj.curSelect+1).done" @click.stop>
@@ -119,6 +130,7 @@
 
 <script type="text/javascript" src="../../../../lib/vue.js"></script>
 <script type="text/javascript" src="../../../../lib/base.js"></script>
+<script type="text/javascript" src="../../../../components/image_view.js"></script>
 
 <script type="text/javascript" src="data.js"></script>
 <script type="text/javascript" src="index.js"></script>

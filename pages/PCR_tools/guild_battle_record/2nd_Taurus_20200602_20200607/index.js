@@ -8,7 +8,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,5,3,7,55),
+      updateTime: new Date(2020,5,3,13,31),
       startTime: new Date(2020,5,2,5),
       curTime: new Date(),
       endTime: new Date(2020,5,7,23,59,59),
@@ -326,6 +326,10 @@ let vm = new Vue({
     highlightLog: function(nameStr) {
       this.highlightLogName = nameStr;
       //this.$forceUpdate();
+    },
+
+    gotoUrl: function (urlStr) {
+      window.open(urlStr);
     },
 
     shiftHistoryLogDone: function (date) {
