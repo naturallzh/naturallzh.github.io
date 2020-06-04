@@ -415,6 +415,16 @@ const DATA_actionData = [
 		bossIdx: 12,
 		log: [
 			{name: "福尔康", damage: 114675, time: new Date(2020, 5, 4, 23, 13)},
+			{name: "迪卢木多", damage: 541884, time: new Date(2020, 5, 4, 23, 24)},
+			{name: "长星夜烁", damage: 315578, time: new Date(2020, 5, 4, 23, 25)},
+			{name: "未曾设想", damage: 512568, time: new Date(2020, 5, 4, 23, 26)},
+			{name: "咸鱼", damage: 508442, time: new Date(2020, 5, 4, 23, 31)},
+			{name: "未曾设想", damage: 332004, time: new Date(2020, 5, 4, 23, 43)},
+			{name: "Alpha", damage: 353263, time: new Date(2020, 5, 4, 23, 44)},
+			{name: "爱丽丝", damage: 478599, time: new Date(2020, 5, 4, 23, 52)},
+			{name: "一起学猫叫", damage: 307857, time: new Date(2020, 5, 4, 23, 52)},
+			{name: "爱丽丝", damage: 319947, time: new Date(2020, 5, 5, 0, 2)},
+			{name: "一起学猫叫", damage: 309435, time: new Date(2020, 5, 5, 0, 6)},
 		]
 	},
 ];
