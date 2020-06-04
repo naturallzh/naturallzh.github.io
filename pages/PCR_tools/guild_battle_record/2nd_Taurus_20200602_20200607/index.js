@@ -8,7 +8,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,5,5,0,21),
+      updateTime: new Date(2020,5,5,1,0),
       startTime: new Date(2020,5,2,5),
       curTime: new Date(),
       endTime: new Date(2020,5,7,23,59,59),
@@ -129,8 +129,10 @@ let vm = new Vue({
       let curBossIdx = 1;
       for (let i=0; i<actionData.length; i++) {
         let maxDamage = 0;
+        let totalDamage = 0;
         for (let j=0; j<actionData[i].log.length; j++) {
           healthSum += actionData[i].log[j].damage;
+          totalDamage += actionData[i].log[j].damage;
           if (actionData[i].log[j].damage>maxDamage) {
             maxDamage = actionData[i].log[j].damage;
           }
@@ -147,11 +149,13 @@ let vm = new Vue({
           else if (remainHealth < 0) {
             actionData[i].log[actionData[i].log.length-1].desc = "合刀";
             actionData[i].log[actionData[i].log.length-1].realDamage = actionData[i].log[actionData[i].log.length-1].damage + remainHealth;
+            totalDamage += remainHealth;
           }
           console.log("boss-" + curBossIdx + ": " + remainHealth);
           healthSum = 0;
           curBossIdx++;
         }
+        actionData[i].totalDamage = totalDamage;
       }
       this.genSit.curBossIdx = curBossIdx;
       this.genSit.remainHealth = mobData[curBossIdx-1].health-healthSum;
