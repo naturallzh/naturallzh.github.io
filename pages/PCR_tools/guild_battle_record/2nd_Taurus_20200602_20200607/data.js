@@ -314,5 +314,12 @@ const DATA_actionData = [
 			{name: "以摸多", damage: 270682, time: new Date(2020, 5, 4, 0, 47)},
 			{name: "以摸多", damage: 200562, time: new Date(2020, 5, 4, 1, 1)},
 		]
+	},
+	{
+		day: 3,
+		bossIdx: 10,
+		log: [
+			{name: "戏言君", damage: 210328, time: new Date(2020, 5, 4, 18, 6)},
+		]
 	}
 ];
