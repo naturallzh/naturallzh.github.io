@@ -8,7 +8,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,5,5,20,53),
+      updateTime: new Date(2020,5,5,22,41),
       startTime: new Date(2020,5,2,5),
       curTime: new Date(),
       endTime: new Date(2020,5,7,23,59,59),
