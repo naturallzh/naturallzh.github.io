@@ -438,6 +438,10 @@ const DATA_actionData = [
 		log: [
 			{name: "keiko", damage: 527850, time: new Date(2020, 5, 5, 8, 9)},
 			{name: "手手", damage: 537682, time: new Date(2020, 5, 5, 10, 7)},
+			{name: "打个大西瓜", damage: 579044, time: new Date(2020, 5, 5, 11, 28)},
+			{name: "爱丽丝", damage: 470550, time: new Date(2020, 5, 5, 11, 37)},
+			{name: "46黑桐", damage: 598205, time: new Date(2020, 5, 5, 11, 42)},
+			{name: "戏言君", damage: 506257, time: new Date(2020, 5, 5, 11, 45)},
 		]
 	},
 ];
