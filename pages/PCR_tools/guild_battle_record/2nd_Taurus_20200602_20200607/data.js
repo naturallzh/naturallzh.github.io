@@ -429,6 +429,14 @@ const DATA_actionData = [
 			{name: "以摸多", damage: 321373, time: new Date(2020, 5, 5, 0, 13)},
 			{name: "手手", damage: 542176, time: new Date(2020, 5, 5, 0, 19)},
 			{name: "香浓朱古力", damage: 325816, time: new Date(2020, 5, 5, 0, 26)},
+			{name: "戏言君", damage: 196569, time: new Date(2020, 5, 5, 1, 33)},
+		]
+	},
+	{
+		day: 4,
+		bossIdx: 12,
+		log: [
+			{name: "keiko", damage: 527850, time: new Date(2020, 5, 5, 8, 9)},
 		]
 	},
 ];
