@@ -483,7 +483,7 @@ const DATA_actionData = [
 	},
 	{
 		day: 4,
-		bossIdx: 14,
+		bossIdx: 15,
 		log: [
 			{name: "好好先生", damage: 95453, time: new Date(2020, 5, 5, 19, 48)},
 			{name: "长星夜烁", damage: 233175, time: new Date(2020, 5, 5, 19, 50)},
