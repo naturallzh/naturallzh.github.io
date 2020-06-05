@@ -437,6 +437,7 @@ const DATA_actionData = [
 		bossIdx: 12,
 		log: [
 			{name: "keiko", damage: 527850, time: new Date(2020, 5, 5, 8, 9)},
+			{name: "手手", damage: 537682, time: new Date(2020, 5, 5, 10, 7)},
 		]
 	},
 ];
