@@ -476,6 +476,22 @@ const DATA_actionData = [
 			{name: "向井蓝", damage: 374991, time: new Date(2020, 5, 5, 18, 51)},
 			{name: "一起学猫叫", damage: 312928, time: new Date(2020, 5, 5, 19, 13)},
 			{name: "灼眼的Saber", damage: 404820, time: new Date(2020, 5, 5, 19, 15)},
+			{name: "长星夜烁", damage: 335586, time: new Date(2020, 5, 5, 19, 45)},
+			{name: "黑椿", damage: 425818, time: new Date(2020, 5, 5, 19, 47)},
+			{name: "好好先生", damage: 394670, time: new Date(2020, 5, 5, 19, 48)},
 		]
 	},
+	{
+		day: 4,
+		bossIdx: 14,
+		log: [
+			{name: "好好先生", damage: 95453, time: new Date(2020, 5, 5, 19, 48)},
+			{name: "长星夜烁", damage: 233175, time: new Date(2020, 5, 5, 19, 50)},
+			{name: "灼眼的Saber", damage: 251335, time: new Date(2020, 5, 5, 19, 56)},
+			{name: "好好先生", damage: 256495, time: new Date(2020, 5, 5, 19, 57)},
+			{name: "八云蓝", damage: 280891, time: new Date(2020, 5, 5, 20, 1)},
+			{name: "戏言君", damage: 242492, time: new Date(2020, 5, 5, 20, 14)},
+			{name: "何等的寂寞", damage: 271312, time: new Date(2020, 5, 5, 20, 18)},
+		]
+	}
 ];
