@@ -461,6 +461,7 @@ const DATA_actionData = [
 			{name: "Otaku", damage: 455593, time: new Date(2020, 5, 5, 13, 51)},
 			{name: "戏言君", damage: 529874, time: new Date(2020, 5, 5, 14, 13)},
 			{name: "机智的阿斗", damage: 238841, time: new Date(2020, 5, 5, 14, 14)},
+			{name: "keiko", damage: 486341, time: new Date(2020, 5, 5, 14, 26)},
 		]
 	},
 ];
