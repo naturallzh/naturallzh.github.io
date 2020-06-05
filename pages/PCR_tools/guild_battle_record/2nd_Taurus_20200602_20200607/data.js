@@ -463,6 +463,14 @@ const DATA_actionData = [
 			{name: "机智的阿斗", damage: 238841, time: new Date(2020, 5, 5, 14, 14)},
 			{name: "keiko", damage: 486341, time: new Date(2020, 5, 5, 14, 26)},
 			{name: "手手", damage: 548310, time: new Date(2020, 5, 5, 15, 0)},
+			{name: "初心如故", damage: 339040, time: new Date(2020, 5, 5, 16, 34)},
+			{name: "一起学猫叫", damage: 532299, time: new Date(2020, 5, 5, 16, 56)},
+			{name: "打个大西瓜", damage: 381774, time: new Date(2020, 5, 5, 17, 4)},
+			{name: "爱丽丝", damage: 383817, time: new Date(2020, 5, 5, 17, 15)},
+			{name: "迪卢木多", damage: 591181, time: new Date(2020, 5, 5, 17, 24)},
+			{name: "Alpha", damage: 403334, time: new Date(2020, 5, 5, 17, 50)},
+			{name: "何等的寂寞", damage: 550456, time: new Date(2020, 5, 5, 17, 55)},
+			{name: "宋寂", damage: 331215, time: new Date(2020, 5, 5, 18, 6)},
 		]
 	},
 ];
