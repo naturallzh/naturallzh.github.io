@@ -391,7 +391,7 @@ const DATA_actionData = [
 	},
 	{
 		day: 3,
-		bossIdx: 11,
+		bossIdx: 12,
 		log: [
 			{name: "金色之泪", damage: 455413, time: new Date(2020, 5, 4, 22, 43)},
 			{name: "未曾设想", damage: 767070, time: new Date(2020, 5, 4, 22, 43)},
@@ -412,7 +412,7 @@ const DATA_actionData = [
 	},
 	{
 		day: 3,
-		bossIdx: 12,
+		bossIdx: 13,
 		log: [
 			{name: "福尔康", damage: 114675, time: new Date(2020, 5, 4, 23, 13)},
 			{name: "迪卢木多", damage: 541884, time: new Date(2020, 5, 4, 23, 24)},
@@ -434,7 +434,7 @@ const DATA_actionData = [
 	},
 	{
 		day: 4,
-		bossIdx: 12,
+		bossIdx: 13,
 		log: [
 			{name: "keiko", damage: 527850, time: new Date(2020, 5, 5, 8, 9)},
 			{name: "手手", damage: 537682, time: new Date(2020, 5, 5, 10, 7)},
@@ -442,6 +442,25 @@ const DATA_actionData = [
 			{name: "爱丽丝", damage: 470550, time: new Date(2020, 5, 5, 11, 37)},
 			{name: "46黑桐", damage: 598205, time: new Date(2020, 5, 5, 11, 42)},
 			{name: "戏言君", damage: 506257, time: new Date(2020, 5, 5, 11, 45)},
+			{name: "福尔康", damage: 571623, time: new Date(2020, 5, 5, 12, 26)},
+			{name: "夜雨纷扬", damage: 495949, time: new Date(2020, 5, 5, 12, 44)},
+		]
+	},
+	{
+		day: 4,
+		bossIdx: 14,
+		log: [
+			{name: "夜雨纷扬", damage: 37515, time: new Date(2020, 5, 5, 12, 45)},
+			{name: "福尔康", damage: 441220, time: new Date(2020, 5, 5, 12, 47)},
+			{name: "46黑桐", damage: 591377, time: new Date(2020, 5, 5, 13, 5)},
+			{name: "八云蓝", damage: 402807, time: new Date(2020, 5, 5, 13, 15)},
+			{name: "我群最菜", damage: 432394, time: new Date(2020, 5, 5, 13, 20)},
+			{name: "初心如故", damage: 448986, time: new Date(2020, 5, 5, 13, 39)},
+			{name: "池霜", damage: 521532, time: new Date(2020, 5, 5, 13, 42)},
+			{name: "咸鱼", damage: 515319, time: new Date(2020, 5, 5, 13, 48)},
+			{name: "Otaku", damage: 455593, time: new Date(2020, 5, 5, 13, 51)},
+			{name: "戏言君", damage: 529874, time: new Date(2020, 5, 5, 14, 13)},
+			{name: "机智的阿斗", damage: 238841, time: new Date(2020, 5, 5, 14, 14)},
 		]
 	},
 ];
