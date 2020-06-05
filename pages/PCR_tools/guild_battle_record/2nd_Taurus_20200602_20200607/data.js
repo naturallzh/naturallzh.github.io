@@ -471,6 +471,10 @@ const DATA_actionData = [
 			{name: "Alpha", damage: 403334, time: new Date(2020, 5, 5, 17, 50)},
 			{name: "何等的寂寞", damage: 550456, time: new Date(2020, 5, 5, 17, 55)},
 			{name: "宋寂", damage: 331215, time: new Date(2020, 5, 5, 18, 6)},
+			{name: "福尔康", damage: 307483, time: new Date(2020, 5, 5, 18, 33)},
+			{name: "以摸多", damage: 393695, time: new Date(2020, 5, 5, 18, 46)},
+			{name: "向井蓝", damage: 374991, time: new Date(2020, 5, 5, 18, 51)},
+			{name: "一起学猫叫", damage: 312928, time: new Date(2020, 5, 5, 19, 13)},
 		]
 	},
 ];
