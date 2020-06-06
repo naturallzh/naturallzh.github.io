@@ -617,6 +617,35 @@ const DATA_actionData = [
 			{name: "向井蓝", damage: 472758, time: new Date(2020, 5, 6, 14, 52)},
 			{name: "手手", damage: 530935, time: new Date(2020, 5, 6, 14, 59)},
 			{name: "爱丽丝", damage: 513474, time: new Date(2020, 5, 6, 15, 0)},
+			{name: "Alpha", damage: 352007, time: new Date(2020, 5, 6, 15, 5)},
+			{name: "池霜", damage: 573063, time: new Date(2020, 5, 6, 15, 10)},
+			{name: "keiko", damage: 523368, time: new Date(2020, 5, 6, 15, 11)},
+			{name: "机智的阿斗", damage: 521878, time: new Date(2020, 5, 6, 15, 18)},
+			{name: "Otaku", damage: 515174, time: new Date(2020, 5, 6, 16, 3)},
+			{name: "我群最菜", damage: 526638, time: new Date(2020, 5, 6, 16, 15)},
+			{name: "香浓朱古力", damage: 424947, time: new Date(2020, 5, 6, 16, 55)},
+			{name: "戏言君", damage: 250696, time: new Date(2020, 5, 6, 17, 6)},
+		]
+	},
+	{
+		day: 5,
+		bossIdx: 19,
+		log: [
+			{name: "戏言君", damage: 57198, time: new Date(2020, 5, 6, 17, 8)},
+			{name: "初心如故", damage: 532806, time: new Date(2020, 5, 6, 17, 10)},
+			{name: "灼眼的Saber", damage: 442571, time: new Date(2020, 5, 6, 17, 10)},
+			{name: "戏言君", damage: 520347, time: new Date(2020, 5, 6, 17, 14)},
+			{name: "Otaku", damage: 369618, time: new Date(2020, 5, 6, 17, 14)},
+			{name: "福尔康", damage: 553588, time: new Date(2020, 5, 6, 17, 19)},
+			{name: "未曾设想", damage: 559444, time: new Date(2020, 5, 6, 17, 19)},
+			{name: "keiko", damage: 455355, time: new Date(2020, 5, 6, 17, 21)},
+			{name: "黑椿", damage: 488536, time: new Date(2020, 5, 6, 17, 27)},
+			{name: "香浓朱古力", damage: 532222, time: new Date(2020, 5, 6, 17, 35)},
+			{name: "八云蓝", damage: 529855, time: new Date(2020, 5, 6, 17, 38)},
+			{name: "好好先生", damage: 540537, time: new Date(2020, 5, 6, 18, 16)},
+			{name: "打个大西瓜", damage: 327191, time: new Date(2020, 5, 6, 18, 35)},
+			{name: "手手", damage: 571055, time: new Date(2020, 5, 6, 18, 54)},
+			{name: "初心如故", damage: 307563, time: new Date(2020, 5, 6, 18, 31)},
 		]
 	}
 ];
