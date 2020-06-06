@@ -43,20 +43,20 @@ const DATA_mobData = [
 	{bossIdx: 9, health: 12000000, scoreFactor: 1.7, name: "鹿", round: 2, bossNum: 4, bgC: "background: #900"},
 	{bossIdx: 10, health: 20000000, scoreFactor: 2, name: "牛", round: 2, bossNum: 5, bgC: "background: #f00"},
 	{bossIdx: 11, health: 6000000, scoreFactor: 1.2, name: "龙", round: 3, bossNum: 1, bgC: "background: #311"},
-	{bossIdx: 12, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 3, bossNum: 2, bgC: "background: #c11"},
-	{bossIdx: 13, health: 10000000, scoreFactor: 1.5, name: "猪", round: 3, bossNum: 3, bgC: "background: #611"},
-	{bossIdx: 14, health: 12000000, scoreFactor: 1.7, name: "鹿", round: 3, bossNum: 4, bgC: "background: #f11"},
-	{bossIdx: 15, health: 20000000, scoreFactor: 2, name: "牛", round: 3, bossNum: 5, bgC: "background: #911"},
+	{bossIdx: 12, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 3, bossNum: 2, bgC: "background: #611"},
+	{bossIdx: 13, health: 10000000, scoreFactor: 1.5, name: "猪", round: 3, bossNum: 3, bgC: "background: #c11"},
+	{bossIdx: 14, health: 12000000, scoreFactor: 1.7, name: "鹿", round: 3, bossNum: 4, bgC: "background: #911"},
+	{bossIdx: 15, health: 20000000, scoreFactor: 2, name: "牛", round: 3, bossNum: 5, bgC: "background: #f11"},
 	{bossIdx: 16, health: 6000000, scoreFactor: 1.2, name: "龙", round: 4, bossNum: 1, bgC: "background: #311"},
-	{bossIdx: 17, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 4, bossNum: 2, bgC: "background: #c11"},
-	{bossIdx: 18, health: 10000000, scoreFactor: 1.5, name: "猪", round: 4, bossNum: 3, bgC: "background: #611"},
-	{bossIdx: 19, health: 12000000, scoreFactor: 1.7, name: "鹿", round: 4, bossNum: 4, bgC: "background: #f11"},
-	{bossIdx: 20, health: 20000000, scoreFactor: 2, name: "牛", round: 4, bossNum: 5, bgC: "background: #911"},
+	{bossIdx: 17, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 4, bossNum: 2, bgC: "background: #611"},
+	{bossIdx: 18, health: 10000000, scoreFactor: 1.5, name: "猪", round: 4, bossNum: 3, bgC: "background: #c11"},
+	{bossIdx: 19, health: 12000000, scoreFactor: 1.7, name: "鹿", round: 4, bossNum: 4, bgC: "background: #911"},
+	{bossIdx: 20, health: 20000000, scoreFactor: 2, name: "牛", round: 4, bossNum: 5, bgC: "background: #f11"},
 	{bossIdx: 21, health: 6000000, scoreFactor: 1.2, name: "龙", round: 5, bossNum: 1, bgC: "background: #322"},
-	{bossIdx: 22, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 5, bossNum: 2, bgC: "background: #c22"},
-	{bossIdx: 23, health: 10000000, scoreFactor: 1.5, name: "猪", round: 5, bossNum: 3, bgC: "background: #622"},
-	{bossIdx: 24, health: 12000000, scoreFactor: 1.7, name: "鹿", round: 5, bossNum: 4, bgC: "background: #f22"},
-	{bossIdx: 25, health: 20000000, scoreFactor: 2, name: "牛", round: 5, bossNum: 5, bgC: "background: #922"},
+	{bossIdx: 22, health: 8000000, scoreFactor: 1.2, name: "鸟", round: 5, bossNum: 2, bgC: "background: #622"},
+	{bossIdx: 23, health: 10000000, scoreFactor: 1.5, name: "猪", round: 5, bossNum: 3, bgC: "background: #c22"},
+	{bossIdx: 24, health: 12000000, scoreFactor: 1.7, name: "鹿", round: 5, bossNum: 4, bgC: "background: #922"},
+	{bossIdx: 25, health: 20000000, scoreFactor: 2, name: "牛", round: 5, bossNum: 5, bgC: "background: #f22"},
 ];
 
 const DATA_actionData = [
@@ -540,6 +540,34 @@ const DATA_actionData = [
 			{name: "Alpha", damage: 311458, time: new Date(2020, 5, 5, 22, 28)},
 			{name: "我群最菜", damage: 0, time: new Date(2020, 5, 5, 22, 29)},
 			{name: "打个大西瓜", damage: 288531, time: new Date(2020, 5, 5, 22, 41)},
+		]
+	},
+	{
+		day: 5,
+		bossIdx: 15,
+		log: [
+			{name: "46黑桐", damage: 264556, time: new Date(2020, 5, 6, 8, 8)},
+			{name: "何等的寂寞", damage: 231787, time: new Date(2020, 5, 6, 8, 50)},
+			{name: "池霜", damage: 285086, time: new Date(2020, 5, 6, 9, 1)},
+			{name: "好好先生", damage: 296871, time: new Date(2020, 5, 6, 9, 11)},
+			{name: "迪卢木多", damage: 267511, time: new Date(2020, 5, 6, 10, 57)},
+			{name: "向井蓝", damage: 220615, time: new Date(2020, 5, 6, 11, 5)},
+			{name: "机智的阿斗", damage: 289905, time: new Date(2020, 5, 6, 11, 10)},
+			{name: "咸鱼", damage: 248290, time: new Date(2020, 5, 6, 11, 14)},
+			{name: "手手", damage: 283566, time: new Date(2020, 5, 6, 11, 19)},
+			{name: "Alpha", damage: 244605, time: new Date(2020, 5, 6, 11, 26)},
+			{name: "魂魄妖梦", damage: 226546, time: new Date(2020, 5, 6, 11, 33)},
+			{name: "我群最菜", damage: 248560, time: new Date(2020, 5, 6, 11, 34)},
+			{name: "宋寂", damage: 266058, time: new Date(2020, 5, 6, 11, 52)},
+			{name: "金色之泪", damage: 189814, time: new Date(2020, 5, 6, 12, 0)},
+			{name: "金色之泪", damage: 9310, time: new Date(2020, 5, 6, 12, 2)},
+		]
+	},
+	{
+		day: 5,
+		bossIdx: 16,
+		log: [
+			{name: "金色之泪", damage: 229865, time: new Date(2020, 5, 6, 12, 5)},
 		]
 	}
 ];
