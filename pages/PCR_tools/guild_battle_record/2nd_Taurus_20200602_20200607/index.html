@@ -62,7 +62,12 @@
     </div>
   </div>
 
-  <div class="boss-note">
+  <div class="detail-data">
+    <h2>数据统计</h2>
+    <div class="btn" @click="shiftDamageByBossFigure()">玩家伤害统计：按不同BOSS</div>
+  </div>
+
+  <div class="boss-note" style="display: none">
     <h2>攻略作业</h2>
     <h4 style="border-bottom: 1px solid black">三王 猪</h4>
     <div class="btn" @click="gotoUrl('https://www.bilibili.com/video/BV1ja4y1v7r6')">布丁3 狗3 狼5 妈3 深月3 53W</div>
@@ -123,6 +128,24 @@
             {{damageItem.damage}}
           </div>
           <div style="margin-left: 20px">{{playerData.total}}</div>
+        </div>
+      </div>
+    </div>
+  </transition>
+
+  <transition name="showFigure">
+    <div class="damage-figure" style="display: flex" v-show="popupFlags.damageByBoss" @click="shiftDamageByBossFigure">
+      <div class="figure-box" @click.stop v-show="popupFlags.damageByBoss">
+        <div style="display: flex;align-items: center;margin-bottom: 10px">
+          <div v-for="(bossItem) in [0,1,2,3,4]" style="display: flex;align-items: center;margin-right: 10px" @click="processDamageByBoss(bossItem)">
+            <input type="radio" name="bossName" :checked="bossItem===0">
+            <span style="margin-right: 5px">{{bossItem+1}}王</span>
+          </div>
+        </div>
+        <div class="display-item" v-for="(playerData) in damageByBoss">
+          <div class="name-box">{{playerData.name}}</div>
+          <div class="damage-bar" :style="'width:'+(damageByBoss[0].damage===0?0:(playerData.damage/damageByBoss[0].damage*80))+'%'"></div>
+          <div style="margin-left: 20px">{{playerData.damage}}</div>
         </div>
       </div>
     </div>

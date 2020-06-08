@@ -21,10 +21,13 @@ let vm = new Vue({
 
     highlightLogName: '',   // 高亮详细战斗log的名字字符串
 
+    damageByBoss: [],   // 每名玩家的伤害总计——按不同BOSS
+
     popupFlags: {
       damageFigure: false,
       historyLogDone: false,
       historyLogTodo: false,
+      damageByBoss: true,
     },
   },
 
@@ -64,6 +67,7 @@ let vm = new Vue({
 
     this.initData();
     this.checkData();
+    this.processDamageByBoss(0);
   },
 
   beforeMount () {},
@@ -103,7 +107,7 @@ let vm = new Vue({
       };
       for (let i=1;i<=this.genSit.curDay;i++) {
         this.historyDateObj.dateArr[i-1] = i;
-        this.damageFigurePara[i-1] = false;
+        this.damageFigurePara[i-1] = true;
       }
       this.damageFigurePara[this.genSit.curDay-1] = true;
     },
@@ -332,6 +336,50 @@ let vm = new Vue({
       //this.$forceUpdate();
     },
 
+    processDamageByBoss: function (bossNum) {
+      const nameMap = this.nameMap;
+      const mobData = this.mobData;
+      const actionData = this.actionData;
+      const dataArr = [];
+
+      for (let i=0;i<nameMap.length;i++) {
+        dataArr[i] = {name: nameMap[i].name, damage: 0};
+      }
+      for (let i=0;i<actionData.length;i++) {
+        if (bossNum !== (actionData[i].bossIdx-1)%5) {continue;}
+        for (let j=0;j<actionData[i].log.length;j++) {
+          for (let k=0;k<dataArr.length;k++) {
+            if (dataArr[k].name === actionData[i].log[j].name) {
+              dataArr[k].damage += actionData[i].log[j].realDamage?actionData[i].log[j].realDamage:actionData[i].log[j].damage;
+              break;
+            }
+          }
+        }
+      }
+
+      let resArr = [];
+      resArr[0] = dataArr[0];
+      for (let i=1;i<dataArr.length;i++) {
+        if (dataArr[i].damage > resArr[0].damage) {
+          resArr = [dataArr[i]].concat(resArr);
+        }
+        else if (dataArr[i].damage < resArr[resArr.length-1].damage) {
+          resArr.push(dataArr[i]);
+        }
+        else {
+          for (let j=0;j<resArr.length-1;j++) {
+            if (dataArr[i].damage <= resArr[j].damage && dataArr[i].damage >= resArr[j+1].damage) {
+              resArr.splice(j+1,0,dataArr[i]);
+              break;
+            }
+          }
+        }
+      }
+      // console.log(resArr);
+      this.damageByBoss = resArr;
+      // return resArr;
+    },
+
     gotoUrl: function (urlStr) {
       window.open(urlStr);
     },
@@ -346,6 +394,9 @@ let vm = new Vue({
     },
     shiftDamageFigure: function () {
       this.popupFlags.damageFigure = !this.popupFlags.damageFigure;
+    },
+    shiftDamageByBossFigure: function () {
+      this.popupFlags.damageByBoss = !this.popupFlags.damageByBoss;
     },
 
     // 计算代数余子式
