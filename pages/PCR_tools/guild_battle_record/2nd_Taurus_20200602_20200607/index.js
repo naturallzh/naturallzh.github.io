@@ -27,7 +27,7 @@ let vm = new Vue({
       damageFigure: false,
       historyLogDone: false,
       historyLogTodo: false,
-      damageByBoss: true,
+      damageByBoss: false,
     },
   },
 
