@@ -65,6 +65,7 @@ const DATA_spiritTable = [
 	{lvl:8, spirit: 152, lvlRequest: 70},
 	{lvl:9, spirit: 160, lvlRequest: 75},
 	{lvl:10, spirit: 168, lvlRequest: 80},
+	{lvl:11, spirit: 176, lvlRequest: 90},
 ];
 
 const DATA_dungeonFood = [
