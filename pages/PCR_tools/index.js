@@ -30,7 +30,7 @@ let vm = new Vue({
     spiritGetParas: {
       dailyQuestSpiritDouble: false,
       dailyQuestExpDouble: false,
-      tableLvl: 10,
+      tableLvl: 11,
       FoodNum: 3,
       stone: "",
     },
