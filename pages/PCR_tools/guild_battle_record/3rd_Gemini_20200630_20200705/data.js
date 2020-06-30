@@ -68,6 +68,7 @@ const DATA_actionData = [
 			{name: "何等的寂寞", damage: 1207045, time: [2020,5,30,5,35]},
 			{name: "以摸多", damage: 941615, time: [2020,5,30,7,7]},
 			{name: "打个大西瓜", damage: 1066506, time: [2020,5,30,7,23]},
+			{name: "keiko", damage: 999675, time: [2020,5,30,9,1]},
 		]
 	},
 ];
