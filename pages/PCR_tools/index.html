@@ -55,7 +55,7 @@
     </div>
 
     <h2 style="margin-top: 10px">进度计算器</h2>
-    <select v-model="progressParas.guildBattleIdx" style="margin: 3px 0">
+    <select v-model="progressParas.guildBattleIdx" style="margin: 3px 0;display: none">
       <option :value="dataItem.idx" v-for="dataItem in mobData">{{dataItem.desc}}</option>
     </select>
     <div>
