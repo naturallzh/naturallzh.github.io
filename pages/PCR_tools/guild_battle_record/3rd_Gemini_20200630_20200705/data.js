@@ -206,4 +206,11 @@ const DATA_actionData = [
 			{name: "迪卢木多", damage: 445586, time: '2020,6,1,1,6'},
 		]
 	},
+	{
+		day: 2,
+		bossIdx: 8,
+		log: [
+			{name: "爱丽丝", damage: 620846, time: '2020,6,1,14,20'},
+		]
+	},
 ];
