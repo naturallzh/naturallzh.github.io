@@ -223,6 +223,11 @@ const DATA_actionData = [
 		bossIdx: 9,
 		log: [
 			{name: "戏言君", damage: 227517, time: '2020,6,1,18,21'},
+			{name: "机智的阿斗", damage: 683022, time: '2020,6,1,18,27'},
+			{name: "欧派果奶", damage: 739473, time: '2020,6,1,18,28'},
+			{name: "八云蓝", damage: 696262, time: '2020,6,1,18,30'},
+			{name: "池霜", damage: 762740, time: '2020,6,1,18,35'},
+			{name: "手手", damage: 968985, time: '2020,6,1,18,45'},
 		]
 	},
 ];
