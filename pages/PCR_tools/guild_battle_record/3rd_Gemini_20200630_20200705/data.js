@@ -332,6 +332,23 @@ const DATA_actionData = [
 			{name: "常磐丁香", damage: 393279, time: '2020,6,1,22,39'},
 			{name: "黑喵", damage: 358021, time: '2020,6,1,22,43'},
 			{name: "戏言君", damage: 321759, time: '2020,6,1,22,44'},
+			{name: "好好先生", damage: 295033, time: '2020,6,1,23,17'},
+		]
+	},
+	{
+		day: 2,
+		bossIdx: 14,
+		log: [
+			{name: "好好先生", damage: 257000, time: '2020,6,1,23,18'},
+			{name: "长星夜烁", damage: 523634, time: '2020,6,1,23,21'},
+			{name: "keiko", damage: 466373, time: '2020,6,2,1,15'},
+		]
+	},
+	{
+		day: 3,
+		bossIdx: 14,
+		log: [
+			{name: "何等的寂寞", damage: 624744, time: '2020,6,2,6,17'},
 		]
 	},
 ];
