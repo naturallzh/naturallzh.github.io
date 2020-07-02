@@ -411,6 +411,8 @@ const DATA_actionData = [
 			{name: "魂魄妖梦", damage: 925887, time: '2020,6,2,19,41'},
 			{name: "打个大西瓜", damage: 909581, time: '2020,6,2,19,47'},
 			{name: "咸鱼", damage: 804046, time: '2020,6,2,19,49'},
+			{name: "黑喵", damage: 841689, time: '2020,6,2,19,58'},
+			{name: "幽蓝", damage: 950094, time: '2020,6,2,19,58'},
 		]
 	},
 ];
