@@ -391,6 +391,12 @@ const DATA_actionData = [
 			{name: "宋寂", damage: 683148, time: '2020,6,2,15,5'},
 			{name: "我群最菜", damage: 775528, time: '2020,6,2,15,18'},
 			{name: "夜雨纷扬", damage: 731382, time: '2020,6,2,15,23'},
+			{name: "香浓朱古力", damage: 452481, time: '2020,6,2,15,32'},
+			{name: "好好先生", damage: 698614, time: '2020,6,2,15,58'},
+			{name: "八云蓝", damage: 763965, time: '2020,6,2,16,10'},
+			{name: "池霜", damage: 784986, time: '2020,6,2,16,34'},
+			{name: "福尔康", damage: 680746, time: '2020,6,2,16,38'},
+			{name: "Otaku", damage: 670862, time: '2020,6,2,17,56'},
 		]
 	},
 ];
