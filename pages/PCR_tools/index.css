@@ -102,3 +102,10 @@ input[type="number"] {
     color: white;
     box-shadow: rgba(255, 0, 0, 0.6) 0 0 10px;
     transition: all 0.3s; }
+
+.showFigure-enter-active, .showFigure-leave-active {
+  transition: all 0.5s; }
+
+.showFigure-enter, .showFigure-leave-to {
+  height: 40%;
+  opacity: 0; }
