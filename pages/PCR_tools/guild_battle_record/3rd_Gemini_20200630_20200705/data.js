@@ -366,4 +366,12 @@ const DATA_actionData = [
 			{name: "我群最菜", damage: 2813, time: '2020,6,2,12,29'},
 		]
 	},
+	{
+		day: 3,
+		bossIdx: 15,
+		log: [
+			{name: "欧派果奶", damage: 659101, time: '2020,6,2,12,45'},
+			{name: "初心如故", damage: 718082, time: '2020,6,2,12,56'},
+		]
+	},
 ];
