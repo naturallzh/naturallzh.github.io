@@ -399,6 +399,18 @@ const DATA_actionData = [
 			{name: "Otaku", damage: 670862, time: '2020,6,2,17,56'},
 			{name: "一起学猫叫", damage: 748968, time: '2020,6,2,19,8'},
 			{name: "长星夜烁", damage: 720687, time: '2020,6,2,19,19'},
+			{name: "手手", damage: 770085, time: '2020,6,2,19,20'},
+			{name: "长星夜烁", damage: 412712, time: '2020,6,2,19,27'},
+		]
+	},
+	{
+		day: 3,
+		bossIdx: 16,
+		log: [
+			{name: "长星夜烁", damage: 43904, time: '2020,6,2,19,28'},
+			{name: "魂魄妖梦", damage: 925887, time: '2020,6,2,19,41'},
+			{name: "打个大西瓜", damage: 909581, time: '2020,6,2,19,47'},
+			{name: "咸鱼", damage: 804046, time: '2020,6,2,19,49'},
 		]
 	},
 ];
