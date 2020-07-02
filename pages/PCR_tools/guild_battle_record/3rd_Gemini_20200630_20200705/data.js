@@ -349,6 +349,8 @@ const DATA_actionData = [
 		bossIdx: 14,
 		log: [
 			{name: "何等的寂寞", damage: 624744, time: '2020,6,2,6,17'},
+			{name: "欧派果奶", damage: 730468, time: '2020,6,2,6,41'},
+			{name: "打个大西瓜", damage: 534564, time: '2020,6,2,6,58'},
 		]
 	},
 ];
