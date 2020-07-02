@@ -349,8 +349,12 @@ const DATA_actionData = [
 		bossIdx: 14,
 		log: [
 			{name: "何等的寂寞", damage: 624744, time: '2020,6,2,6,17'},
-			{name: "欧派果奶", damage: 730468, time: '2020,6,2,6,41'},
-			{name: "打个大西瓜", damage: 534564, time: '2020,6,2,6,58'},
+			{name: "欧派果奶", damage: 730468, time: '2020,6,2,7,41'},
+			{name: "打个大西瓜", damage: 534564, time: '2020,6,2,7,58'},
+			{name: "手手", damage: 910136, time: '2020,6,2,8,8'},
+			{name: "手手", damage: 773680, time: '2020,6,2,8,27'},
+			{name: "Otaku", damage: 710070, time: '2020,6,2,8,38'},
+			{name: "咸鱼", damage: 617413, time: '2020,6,2,8,48'},
 		]
 	},
 ];
