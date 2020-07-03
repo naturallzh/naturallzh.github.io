@@ -472,6 +472,16 @@ const DATA_actionData = [
 			{name: "黑喵", damage: 497818, time: '2020,6,2,23,34'},
 			{name: "戏言君", damage: 815740, time: '2020,6,2,23,35'},
 			{name: "一起学猫叫", damage: 603127, time: '2020,6,2,23,39'},
+			{name: "戏言君", damage: 747159, time: '2020,6,2,23,54'},
+		]
+	},
+	{
+		day: 4,
+		bossIdx: 19,
+		log: [
+			{name: "手手", damage: 759099, time: '2020,6,3,6,37'},
+			{name: "手手", damage: 889230, time: '2020,6,3,6,44'},
+			{name: "欧派果奶", damage: 798487, time: '2020,6,3,7,17'},
 		]
 	},
 ];
