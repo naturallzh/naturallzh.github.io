@@ -605,6 +605,19 @@ const DATA_actionData = [
 		bossIdx: 25,
 		log: [
 			{name: "以摸多", damage: 109276, time: '2020,6,3,23,1'},
+			{name: "以摸多", damage: 793278, time: '2020,6,3,23,9'},
+			{name: "一起学猫叫", damage: 513111, time: '2020,6,3,23,16'},
+			{name: "一起学猫叫", damage: 410523, time: '2020,6,3,23,19'},
+			{name: "好好先生", damage: 500632, time: '2020,6,3,23,38'},
+			{name: "戏言君", damage: 455119, time: '2020,6,3,23,38'},
+			{name: "我群最菜", damage: 434573, time: '2020,6,3,23,54'},
+		]
+	},
+	{
+		day: 5,
+		bossIdx: 25,
+		log: [
+			{name: "欧派果奶", damage: 812177, time: '2020,6,4,7,42'},
 		]
 	},
 ];
