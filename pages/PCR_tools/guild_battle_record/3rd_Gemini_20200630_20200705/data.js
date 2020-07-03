@@ -593,6 +593,18 @@ const DATA_actionData = [
 			{name: "八云蓝", damage: 613301, time: '2020,6,3,22,44'},
 			{name: "Otaku", damage: 732625, time: '2020,6,3,22,45'},
 			{name: "魂魄妖梦", damage: 538681, time: '2020,6,3,22,45'},
+			{name: "宋寂", damage: 581332, time: '2020,6,3,22,47'},
+			{name: "何等的寂寞", damage: 813287, time: '2020,6,3,22,52'},
+			{name: "池霜", damage: 605416, time: '2020,6,3,22,55'},
+			{name: "幽蓝", damage: 526866, time: '2020,6,3,22,58'},
+			{name: "以摸多", damage: 588110, time: '2020,6,3,23,0'},
+		]
+	},
+	{
+		day: 4,
+		bossIdx: 25,
+		log: [
+			{name: "以摸多", damage: 109276, time: '2020,6,3,23,1'},
 		]
 	},
 ];
