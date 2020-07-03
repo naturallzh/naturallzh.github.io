@@ -569,6 +569,30 @@ const DATA_actionData = [
 			{name: "keiko", damage: 643455, time: '2020,6,3,22,14'},
 			{name: "机智的阿斗", damage: 652185, time: '2020,6,3,22,15'},
 			{name: "Otaku", damage: 655234, time: '2020,6,3,22,16'},
+			{name: "欧派果奶", damage: 663695, time: '2020,6,3,22,28'},
+			{name: "福尔康", damage: 643008, time: '2020,6,3,22,28'},
+			{name: "长星夜烁", damage: 629196, time: '2020,6,3,22,31'},
+			{name: "迪卢木多", damage: 155757, time: '2020,6,3,22,33'},
+		]
+	},
+	{
+		day: 4,
+		bossIdx: 24,
+		log: [
+			{name: "长星夜烁", damage: 501087, time: '2020,6,3,22,37'},
+			{name: "灼眼的Saber", damage: 720556, time: '2020,6,3,22,37'},
+			{name: "迪卢木多", damage: 584781, time: '2020,6,3,22,38'},
+			{name: "宋寂", damage: 693704, time: '2020,6,3,22,38'},
+			{name: "黑椿", damage: 677007, time: '2020,6,3,22,39'},
+			{name: "常磐丁香", damage: 577550, time: '2020,6,3,22,39'},
+			{name: "魂魄妖梦", damage: 874599, time: '2020,6,3,22,39'},
+			{name: "爱丽丝", damage: 617267, time: '2020,6,3,22,40'},
+			{name: "夜雨纷扬", damage: 679433, time: '2020,6,3,22,43'},
+			{name: "机智的阿斗", damage: 698214, time: '2020,6,3,22,44'},
+			{name: "keiko", damage: 511844, time: '2020,6,3,22,44'},
+			{name: "八云蓝", damage: 613301, time: '2020,6,3,22,44'},
+			{name: "Otaku", damage: 732625, time: '2020,6,3,22,45'},
+			{name: "魂魄妖梦", damage: 538681, time: '2020,6,3,22,45'},
 		]
 	},
 ];
