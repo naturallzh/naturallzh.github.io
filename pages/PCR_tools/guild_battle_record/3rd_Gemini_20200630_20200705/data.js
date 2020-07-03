@@ -500,6 +500,7 @@ const DATA_actionData = [
 			{name: "一起学猫叫", damage: 770131, time: '2020,6,3,12,58'},
 			{name: "黑椿", damage: 754370, time: '2020,6,3,13,21'},
 			{name: "福尔康", damage: 426317, time: '2020,6,3,15,39'},
+			{name: "香浓朱古力", damage: 698957, time: '2020,6,3,16,33'},
 		]
 	},
 ];
