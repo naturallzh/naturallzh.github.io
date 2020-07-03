@@ -482,6 +482,15 @@ const DATA_actionData = [
 			{name: "手手", damage: 759099, time: '2020,6,3,6,37'},
 			{name: "手手", damage: 889230, time: '2020,6,3,6,44'},
 			{name: "欧派果奶", damage: 798487, time: '2020,6,3,7,17'},
+			{name: "咸鱼", damage: 594449, time: '2020,6,3,7,20'},
+			{name: "打个大西瓜", damage: 626799, time: '2020,6,3,7,21'},
+		]
+	},
+	{
+		day: 4,
+		bossIdx: 20,
+		log: [
+			{name: "打个大西瓜", damage: 297872, time: '2020,6,3,7,22'},
 		]
 	},
 ];
