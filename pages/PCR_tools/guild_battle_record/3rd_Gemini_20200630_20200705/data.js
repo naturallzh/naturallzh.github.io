@@ -618,6 +618,7 @@ const DATA_actionData = [
 		bossIdx: 25,
 		log: [
 			{name: "欧派果奶", damage: 812177, time: '2020,6,4,7,42'},
+			{name: "灼眼的Saber", damage: 605591, time: '2020,6,4,8,18'},
 		]
 	},
 ];
