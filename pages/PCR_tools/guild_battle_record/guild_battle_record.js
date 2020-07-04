@@ -88,6 +88,14 @@ function checkData () {
 			console.log("boss-" + curBossIdx + ": " + remainHealth);
 			healthSum = 0;
 			curBossIdx++;
+			// bossIdx 扩容
+			if (curBossIdx===mobData.length) {
+				mobData[curBossIdx] = {bossIdx: curBossIdx+1, health: 6000000, scoreFactor: 1.2, name: "龙", round: curBossIdx/5+1, bossNum: 1, bgC: "background: #322"}
+				mobData[curBossIdx+1] = {bossIdx: curBossIdx+2, health: 8000000, scoreFactor: 1.2, name: "鸟", round: curBossIdx/5+1, bossNum: 2, bgC: "background: #622"}
+				mobData[curBossIdx+2] = {bossIdx: curBossIdx+3, health: 10000000, scoreFactor: 1.5, name: "花", round: curBossIdx/5+1, bossNum: 3, bgC: "background: #c22"}
+				mobData[curBossIdx+3] = {bossIdx: curBossIdx+4, health: 12000000, scoreFactor: 1.7, name: "巨", round: curBossIdx/5+1, bossNum: 4, bgC: "background: #922"}
+				mobData[curBossIdx+4] = {bossIdx: curBossIdx+5, health: 20000000, scoreFactor: 2, name: "双", round: curBossIdx/5+1, bossNum: 5, bgC: "background: #f22"}
+			}
 		}
 		actionData[i].totalDamage = totalDamage;
 	}
