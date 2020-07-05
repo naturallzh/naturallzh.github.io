@@ -740,6 +740,18 @@ const DATA_actionData = [
 			{name: "魂魄妖梦", damage: 405647, time: '2020,6,4,22,19'},
 			{name: "迪卢木多", damage: 650881, time: '2020,6,4,22,29'},
 			{name: "迪卢木多", damage: 471303, time: '2020,6,4,23,1'},
+			{name: "香浓朱古力", damage: 542293, time: '2020,6,5,1,58'},
+			{name: "黑喵", damage: 387573, time: '2020,6,5,3,0'},
+		]
+	},
+	{
+		day: 6,
+		bossIdx: 30,
+		log: [
+			{name: "黑椿", damage: 741786, time: '2020,6,5,6,3'},
+			{name: "福尔康", damage: 440903, time: '2020,6,5,7,34'},
+			{name: "初心如故", damage: 746046, time: '2020,6,5,8,8'},
+			{name: "初心如故", damage: 741471, time: '2020,6,5,8,10'},
 		]
 	},
 ];
