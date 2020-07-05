@@ -37,7 +37,7 @@ function initData () {
 	};
 	for (let i=1;i<=this.genSit.curDay;i++) {
 		this.historyDateObj.dateArr[i-1] = i;
-		this.damageFigurePara[i-1] = false;
+		this.damageFigurePara[i-1] = true;
 	}
 	this.damageFigurePara[this.genSit.curDay-1] = true;
 }
