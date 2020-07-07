@@ -76,6 +76,7 @@
       <div class="btn" @click="genCert">生成报告</div>
     </div>
     <div style="font-size: 70%;color: gray">*识别码为团员独有编号，请向"一起学猫叫"申请</div>
+    <div style="font-size: 70%;color: gray">**可以使用908056预览格式</div>
   </div>
 
   <transition name="showFigure">
@@ -157,40 +158,40 @@
   </transition>
 
   <transition name="showFigure">
-  <div class="cert-box" v-if="popupFlags.leaveCert" @click="closeCert">
-    <div class="cert-page" @click.stop>
-      <div class="name">{{certData.name}}</div>
-      <div class="year">{{certData.battleInfo[0]}}</div>
-      <div class="mon">{{certData.battleInfo[1]}}</div>
-      <div class="battle-name">{{certData.battleInfo[2]}}</div>
-      <div class="guild-name">{{certData.battleInfo[3]}}</div>
+    <div class="cert-box" v-show="popupFlags.leaveCert" @click="closeCert()">
+      <div class="cert-page" @click.stop>
+        <div class="name">{{certData.name}}</div>
+        <div class="year">{{certData.battleInfo[0]}}</div>
+        <div class="mon">{{certData.battleInfo[1]}}</div>
+        <div class="battle-name">{{certData.battleInfo[2]}}</div>
+        <div class="guild-name">{{certData.battleInfo[3]}}</div>
+        <div class="sign"></div>
 
-      <div class="action-box">
-        <div class="sub-box" v-for="(certItem,certIdx) in certData.actionData">
-          <div class="title">{{certItem.title}}</div>
-          {{certItem.value}}
-          <div v-if="certIdx===3" style="font-size: 70%;color: gray;margin-left: 5px">*该数量计入总出刀数</div>
-        </div>
-      </div>
-      <div class="figure-box">
-        <div class="bar-box">
-          <div class="sub-box" v-for="(certDamageBarItem,certDamageBarIdx) in certData.damageData">
-            <div class="title">{{certDamageBarIdx+1}}王:</div>
-            <div class="bar" :style="'width:'+(certDamageBarItem/certData.bossMaxDamage*65)+'%'"></div>
-            <div class="text">{{certDamageBarItem}}</div>
+        <div class="action-box">
+          <div class="sub-box" v-for="(certItem,certIdx) in certData.actionData">
+            <div class="title">{{certItem.title}}</div>
+            {{certItem.value}}
+            <div v-if="certIdx===3" style="font-size: 70%;color: gray;margin-left: 5px">*该数量计入总出刀数</div>
           </div>
         </div>
-        <div class="pie-box">
-          <div class="colorWheel"></div>
+        <div class="figure-box">
+          <div class="bar-box">
+            <div class="sub-box" v-for="(certDamageBarItem,certDamageBarIdx) in certData.damageData">
+              <div class="title">{{certDamageBarIdx+1}}王:</div>
+              <div class="bar" :style="'width:'+(certDamageBarItem/certData.bossMaxDamage*65)+'%'"></div>
+              <div class="text">{{certDamageBarItem}}</div>
+            </div>
+          </div>
+          <div class="pie-box" id="pie"></div>
         </div>
       </div>
     </div>
-  </div>
   </transition>
 
 </div>
 </body>
 
+<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
 <script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
 <!--<script type="text/javascript" src="../../../../lib/vue.js"></script>-->
 <script type="text/javascript" src="../../../../lib/base.js"></script>

@@ -34,7 +34,11 @@ let vm = new Vue({
     },
 
     certId: "",     // 离职证明的ID
-    certData: {},   // 离职证明相关数据
+    certData: {
+      battleInfo: [],
+      actionData: [],
+      damageData: []
+    },   // 离职证明相关数据
   },
 
   computed: {
@@ -98,7 +102,11 @@ let vm = new Vue({
       const certData = {};
 
       const flag1 = (this.certId.length!==6) || (this.certId!=parseInt(this.certId));
-      const lastNum = 999999 - parseInt(this.certId);
+      let lastNum = "";
+      for (let i=0;i<6;i++) {
+        lastNum += 9-parseInt(this.certId[5-i]);
+      }
+      lastNum = parseInt(lastNum);
       let flag2 = true;
       let idx;
       for (let i=0;i<nameMap.length;i++) {
@@ -130,6 +138,8 @@ let vm = new Vue({
             certData.damageData[(actionData[i].bossIdx-1)%5] += actionData[i].log[j].damage;
             if (actionData[i].log[j].desc === "尾刀" || actionData[i].log[j].desc === "合刀") {
               certData.actionData[0].value--;
+            }
+            if (actionData[i].log[j].desc === "合刀") {
               certData.actionData[4].value -= actionData[i].log[j].damage;
               certData.actionData[4].value += actionData[i].log[j].realDamage;
               certData.damageData[(actionData[i].bossIdx-1)%5] -= actionData[i].log[j].damage;
@@ -150,6 +160,32 @@ let vm = new Vue({
       }
 
       this.certData = certData;
+
+      const myChart = echarts.init(document.getElementById('pie'));
+      let myChartData = [];
+      for (let i=0;i<5;i++) {
+        if (certData.damageData[i]>0) {
+          myChartData.push({value:certData.damageData[i], name:(i+1)+'王'})
+        }
+      }
+      myChart.setOption({
+        series : [
+          {
+            name: '访问来源',
+            type: 'pie',    // 设置图表类型为饼图
+            radius: '85%',  // 饼图的半径，外半径为可视区尺寸（容器高宽中较小一项）的 55% 长度。
+            data: myChartData,   // 数据数组，name 为数据项名称，value 为数据项值
+            hoverAnimation: false,
+            legendHoverLink: false,
+            label: {
+              position: 'inside',
+              formatter: '{b}: {d}%'
+            },
+          }
+        ]
+      })
+
+      const pubKey = navigator.plugins.length + navigator.userAgent.length;
     }
   }
 });
