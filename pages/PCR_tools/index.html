@@ -127,7 +127,7 @@
   </div>
 
   <div class="guild-battle-record">
-    <h2 style="margin-bottom: 5px">团队战记录</h2>
+    <h2 style="margin-bottom: 0px">团队战记录</h2>
     <div class="btn" @click="gotoGemini">
       <div>20200630~20200705 双子座</div>
       <div>统计中</div>
@@ -141,12 +141,13 @@
       <div>已结束 排名：4680</div>
     </div>
 
-    <h2 style="margin:10px 0 5px">外部公会离职证明生成</h2>
+    <h2 style="margin:5px 0">外部公会离职证明生成</h2>
     <div style="display: flex;justify-content: space-between">
-      <input style="width: 70%;margin-right: 10px;display: none" v-model="certVeriCode" placeholder="6位数字验证码">
+      <input style="width: 70%;margin-right: 10px;" v-model="certVeriCode" placeholder="10位数字验证码">
       <div class="btn" style="flex-grow: 1" @click="gotoLeaveCert()">前往页面</div>
     </div>
-    <div style="font-size: 70%;color: gray;display: none">*验证码请向"一起学猫叫"索取</div>
+    <div style="font-size: 70%;color: gray;text-decoration:line-through">*验证码请向"一起学猫叫"索取 请提供号码:{{pubKey}}</div>
+    <div style="font-size: 70%;color: gray">**暂时无需验证码 可以直接前往页面</div>
   </div>
 
 </div>

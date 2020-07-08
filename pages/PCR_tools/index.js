@@ -37,7 +37,8 @@ let vm = new Vue({
 
     popupFlags: {},
 
-    certVeriCode: "3321", // 前往外部公会离职页面的验证码
+    pubKey: '', // 索取验证码时提供的id
+    certVeriCode: "", // 前往外部公会离职页面的验证码
   },
 
   computed: {
@@ -193,6 +194,8 @@ let vm = new Vue({
   beforeMount () {},
   mounted () {
     this.loadingMask = false;
+
+    this.pubKey = navigator.plugins.length + navigator.userAgent.length;
   },
 
   destroyed () {
@@ -263,11 +266,32 @@ let vm = new Vue({
       window.open(url);
     },
     gotoLeaveCert: function () {
-      const pubKey = navigator.plugins.length + navigator.userAgent.length;
-      console.log(pubKey);
+      const dateObj = new Date();
+      let pubKey = this.pubKey + "";
+      const d = addZero(dateObj.getDate());
+      const h = addZero(dateObj.getHours());
+      const m = addZero(dateObj.getMinutes());
+      // pubKey逆序再填充至4位后(pubKey本来有几位就填充9-几)插入m d h的空格中，再用9999999999去减 共10位
+      // 8号 11:35 pubKey 128 => 1647918883
+      pubKey = pubKey.split('').reverse().join('');
+      while (pubKey.length<4) {
+        pubKey += 9-pubKey.length;
+        // 3位填充一个6，2位填充76
+      }
+      let code = pubKey[0] + m + pubKey[1] + d + pubKey[2] + h + pubKey[3];
+      code = 9999999999 - parseInt(code) + "";
+
+      console.log("certVeriCode: " + code);
+      console.log("input   Code: " + this.certVeriCode);
+
       let url = "leave_cert.html";
       url += "?code="+this.certVeriCode;
       window.open(url);
+
+      function addZero(num) {
+        if (num<10) {return '0'+num}
+        else {return num+''}
+      }
     }
 
   }

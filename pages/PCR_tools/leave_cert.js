@@ -17,7 +17,7 @@ let vm = new Vue({
     },   // 离职证明相关数据
     showCert: false,
 
-    certVeriCode: "", // 前往外部公会离职页面的验证码
+    inputCode: "", // 前往外部公会离职页面的验证码
   },
 
   computed: {
@@ -30,6 +30,7 @@ let vm = new Vue({
   beforeMount () {},
   mounted () {
     this.loadingMask = false;
+    this.init();
   },
 
   destroyed () {
@@ -38,11 +39,31 @@ let vm = new Vue({
   methods: {
     init: function () {
       if (getQueryString("code")) {
-        this.certVeriCode = getQueryString("code");
+        this.inputCode = getQueryString("code");
       }
-      const pubKey = navigator.plugins.length + navigator.userAgent.length;
-      console.log(pubKey)
-      console.log(this.certVeriCode)
+
+      const dateObj = new Date();
+      let pubKey = navigator.plugins.length + navigator.userAgent.length + "";
+      const d = addZero(dateObj.getDate());
+      const h = addZero(dateObj.getHours());
+      const m = addZero(dateObj.getMinutes());
+      // pubKey逆序再填充至4位后(pubKey本来有几位就填充9-几)插入m d h的空格中，再用9999999999去减 共10位
+      // 8号 11:35 pubKey 128 => 1647918883
+      pubKey = pubKey.split('').reverse().join('');
+      while (pubKey.length<4) {
+        pubKey += 9-pubKey.length;
+        // 3位填充一个6，2位填充76
+      }
+      let code = pubKey[0] + m + pubKey[1] + d + pubKey[2] + h + pubKey[3];
+      code = 9999999999 - parseInt(code) + "";
+
+      console.log("input   Code: " + this.inputCode);
+      console.log("certVeriCode: " + code);
+
+      function addZero(num) {
+        if (num<10) {return '0'+num}
+        else {return num+''}
+      }
     },
 
     closeCert: function () {this.showCert = false},
@@ -54,8 +75,8 @@ let vm = new Vue({
 
       const flag1 = certData.name.length > 0
       const flag2 = certData.battleInfo[3].length > 0
-      const flag3 = (certData.actionData[2].value == parseInt(certData.actionData[2].value)) && parseInt(certData.actionData[2].value)>=0
-      const flag4 = (certData.actionData[3].value == parseInt(certData.actionData[3].value)) && parseInt(certData.actionData[3].value)>=0
+      const flag3 = (certData.actionData[2].value == parseInt(certData.actionData[2].value)) && parseInt(certData.actionData[2].value)>=0 && parseInt(certData.actionData[2].value)<=18
+      const flag4 = (certData.actionData[3].value == parseInt(certData.actionData[3].value)) && parseInt(certData.actionData[3].value)>=0 && parseInt(certData.actionData[3].value)<=18-parseInt(certData.actionData[2].value)
       let flag5 = true;
       for (let i=0;i<5;i++) {
         const flag = (certData.damageData[i] == parseInt(certData.damageData[i])) && parseInt(certData.damageData[i])>=0
