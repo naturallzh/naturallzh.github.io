@@ -36,6 +36,8 @@ let vm = new Vue({
     },
 
     popupFlags: {},
+
+    certVeriCode: "3321", // 前往外部公会离职页面的验证码
   },
 
   computed: {
@@ -258,6 +260,13 @@ let vm = new Vue({
     gotoGemini: function () {
       let url = "./guild_battle_record/3rd_Gemini_20200630_20200705/index.html";
       url += "?title=双子座 20200630~20200705";
+      window.open(url);
+    },
+    gotoLeaveCert: function () {
+      const pubKey = navigator.plugins.length + navigator.userAgent.length;
+      console.log(pubKey);
+      let url = "leave_cert.html";
+      url += "?code="+this.certVeriCode;
       window.open(url);
     }
 

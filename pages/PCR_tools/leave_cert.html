@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>每日一刀甜心刀 休闲健康睡饱饱</title>
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../../lib/init.css"/>
+  <link rel="stylesheet" type="text/css" href="../../lib/base.css"/>
+
+  <link rel="stylesheet" type="text/css" href="leave_cert.css"/>
+</head>
+
+<body>
+<div id="index-body" v-cloak>
+
+  <transition name="showFigure">
+    <div class="loadingMask" v-if="loadingMask">
+      <div class="circle-image-1"></div>
+      <div class="circle-image-2"></div>
+      <div style="font-size: 200%;margin-bottom: 20px;position: relative">
+        载入中<span class="dot-1">.</span><span class="dot-2">.</span><span class="dot-3">.</span>
+      </div>
+      <span style="position: relative">初次载入可能较慢 请耐心等待</span>
+      <span style="position: relative">如长时间没有响应 可ctrl+f5强制刷新页面</span>
+    </div>
+  </transition>
+
+  <a style="position: fixed;bottom: 50px;background: rgba(255, 255, 255, 0.7);border-radius: 10px;border: #999999 solid 2px;box-shadow: black 3px 3px 3px;padding: 0 5px"
+    href="https://naturallzh.github.io/pages/PCR_tools/index.html" target="_blank">
+    返回首页
+  </a>
+
+  <div class="data-table">
+    <h2>数据表格</h2>
+    <input v-model="certData.name" placeholder="成员姓名 超过7个汉字可能会导致显示问题">
+    <input v-model="certData.battleInfo[3]" placeholder="公会名称 超过7个汉字可能会导致显示问题">
+    <input v-model="certData.actionData[2].value" placeholder="漏刀 忘记出刀的数量 不包含系统吞刀">
+    <input v-model="certData.actionData[3].value" placeholder="掉/吞刀 出刀了 但是被系统吞刀的数量">
+    <input v-model="certData.damageData[idx]" :placeholder="idx+1+'王伤害 扣除合刀溢出量'" v-for="(item,idx) in certData.damageData">
+    <div class="btn" @click="genCert()">生成报告</div>
+  </div>
+
+  <transition name="showFigure">
+    <div class="cert-box" v-show="showCert" @click="closeCert()">
+      <div class="cert-page" @click.stop>
+        <div class="name">{{certData.name}}</div>
+        <div class="year">{{certData.battleInfo[0]}}</div>
+        <div class="mon">{{certData.battleInfo[1]}}</div>
+        <div class="battle-name">{{certData.battleInfo[2]}}</div>
+        <div class="guild-name">{{certData.battleInfo[3]}}</div>
+
+        <div class="action-box">
+          <div class="sub-box" v-for="(certItem,certIdx) in certData.actionData">
+            <div class="title">{{certItem.title}}</div>
+            {{certItem.value}}
+            <div v-if="certIdx===3" style="font-size: 70%;color: gray;margin-left: 5px">*该数量计入总出刀数</div>
+          </div>
+        </div>
+        <div class="figure-box">
+          <div class="bar-box">
+            <div class="sub-box" v-for="(certDamageBarItem,certDamageBarIdx) in certData.damageData">
+              <div class="title">{{certDamageBarIdx+1}}王:</div>
+              <div class="bar" :style="'width:'+(certDamageBarItem/certData.bossMaxDamage*65)+'%'"></div>
+              <div class="text">{{certDamageBarItem}}</div>
+            </div>
+          </div>
+          <div class="pie-box" id="pie"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+
+</div>
+</body>
+
+<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+<script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
+<!--<script type="text/javascript" src="../../../../lib/vue.js"></script>-->
+<script type="text/javascript" src="../../lib/base.js"></script>
+
+<script type="text/javascript" src="leave_cert.js"></script>
+</html>

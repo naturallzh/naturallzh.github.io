@@ -65,7 +65,6 @@
     </div>
     <div>
       得分 <input v-model="progressScore" type="number">
-      <span class="btn" @click="calcProgress" style="display: none">反推进度</span>
     </div>
   </div>
 
@@ -141,6 +140,13 @@
       <div>20200507~20200514 白羊座</div>
       <div>已结束 排名：4680</div>
     </div>
+
+    <h2 style="margin:10px 0 5px">外部公会离职证明生成</h2>
+    <div style="display: flex;justify-content: space-between">
+      <input style="width: 70%;margin-right: 10px;display: none" v-model="certVeriCode" placeholder="6位数字验证码">
+      <div class="btn" style="flex-grow: 1" @click="gotoLeaveCert()">前往页面</div>
+    </div>
+    <div style="font-size: 70%;color: gray;display: none">*验证码请向"一起学猫叫"索取</div>
   </div>
 
 </div>

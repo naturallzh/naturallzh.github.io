@@ -33,7 +33,7 @@ let vm = new Vue({
       leaveCert: false,
     },
 
-    certId: "",     // 离职证明的ID
+    certId: "",     // 离职证明的识别码
     certData: {
       battleInfo: [],
       actionData: [],
@@ -184,8 +184,7 @@ let vm = new Vue({
           }
         ]
       })
-
-      const pubKey = navigator.plugins.length + navigator.userAgent.length;
     }
+
   }
 });
