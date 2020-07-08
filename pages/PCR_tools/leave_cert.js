@@ -92,12 +92,13 @@ let vm = new Vue({
         }
       }
       else {
-        alert("输入有误")
+        alert("输入有误");
         return
       }
 
       this.showCert = true;
 
+      certData.actionData[4].value = 0;
       certData.actionData[0].value = 18 - certData.actionData[2].value;
       certData.actionData[1].value = (certData.actionData[0].value/3/totalDayNum*100).toFixed(2) + "%";
       for (let i=0;i<certData.damageData.length;i++) {
