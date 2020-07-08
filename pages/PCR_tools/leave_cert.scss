@@ -200,7 +200,12 @@ input[type="number"]{
 					align-items: center;
 					.title {width: 15%}
 					.bar {height: 60%;background: red}
-					.text {font-size: 70%;margin-left: 3px}
+					.text {
+						display: flex;
+						flex-direction: column;
+						font-size: 70%;
+						margin-left: 3px;
+					}
 				}
 			}
 			.pie-box {

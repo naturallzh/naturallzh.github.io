@@ -217,6 +217,16 @@ input[type="number"] {
     width: 636px;
     height: 900px;
     position: relative; }
+    .cert-box .cert-page .sample {
+      font-size: 50px;
+      color: red;
+      padding: 10px 30px;
+      border: 5px solid red;
+      position: absolute;
+      left: 150px;
+      top: 100px;
+      transform: rotate(-40deg);
+      z-index: 10; }
     .cert-box .cert-page .name {
       position: absolute;
       left: 95px;
@@ -282,6 +292,8 @@ input[type="number"] {
             height: 60%;
             background: red; }
           .cert-box .cert-page .figure-box .bar-box .sub-box .text {
+            display: flex;
+            flex-direction: column;
             font-size: 70%;
             margin-left: 3px; }
       .cert-box .cert-page .figure-box .pie-box {

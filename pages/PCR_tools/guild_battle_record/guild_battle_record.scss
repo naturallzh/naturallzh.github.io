@@ -238,6 +238,17 @@ input[type="number"]{
 		width: 636px;
 		height: 900px;
 		position: relative;
+		.sample {
+			font-size: 50px;
+			color: red;
+			padding: 10px 30px;
+			border: 5px solid red;
+			position: absolute;
+			left: 150px;
+			top: 100px;
+			transform: rotate(-40deg);
+			z-index: 10;
+		}
 		.name {
 			position: absolute;
 			left: 95px;
@@ -299,7 +310,12 @@ input[type="number"]{
 					align-items: center;
 					.title {width: 15%}
 					.bar {height: 60%;background: red}
-					.text {font-size: 70%;margin-left: 3px}
+					.text {
+						display: flex;
+						flex-direction: column;
+						font-size: 70%;
+						margin-left: 3px;
+					}
 				}
 			}
 			.pie-box {

@@ -194,6 +194,8 @@ input[type="number"] {
             height: 60%;
             background: red; }
           .cert-box .cert-page .figure-box .bar-box .sub-box .text {
+            display: flex;
+            flex-direction: column;
             font-size: 70%;
             margin-left: 3px; }
       .cert-box .cert-page .figure-box .pie-box {

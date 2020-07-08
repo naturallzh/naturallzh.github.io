@@ -18,6 +18,7 @@ let vm = new Vue({
     showCert: false,
 
     inputCode: "", // 前往外部公会离职页面的验证码
+    bgColorArr: ['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae'],
   },
 
   computed: {
@@ -113,9 +114,7 @@ let vm = new Vue({
       const myChart = echarts.init(document.getElementById('pie'));
       let myChartData = [];
       for (let i=0;i<5;i++) {
-        if (certData.damageData[i]>0) {
-          myChartData.push({value:certData.damageData[i], name:(i+1)+'王'})
-        }
+        myChartData.push({value:certData.damageData[i], name:(i+1)+'王'})
       }
       myChart.setOption({
         series : [
@@ -128,7 +127,15 @@ let vm = new Vue({
             legendHoverLink: false,
             label: {
               position: 'inside',
-              formatter: '{b}: {d}%'
+              //formatter: '{b}: {d}%'
+              formatter(v) {
+                if (v.percent===0) {
+                  return "";
+                }
+                else {
+                  return v.name +": "+ v.percent + '%';
+                }
+              }
             },
           }
         ]

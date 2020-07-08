@@ -61,8 +61,11 @@
           <div class="bar-box">
             <div class="sub-box" v-for="(certDamageBarItem,certDamageBarIdx) in certData.damageData">
               <div class="title">{{certDamageBarIdx+1}}王:</div>
-              <div class="bar" :style="'width:'+(certDamageBarItem/certData.bossMaxDamage*65)+'%'"></div>
-              <div class="text">{{certDamageBarItem}}</div>
+              <div class="bar" :style="'width:'+(certDamageBarItem/certData.bossMaxDamage*65)+'%;background:'+bgColorArr[certDamageBarIdx]"></div>
+              <div class="text">
+                <div>{{certDamageBarItem}}</div>
+                <div>{{(certDamageBarItem/certData.actionData[4].value*100).toFixed(2)}}%</div>
+              </div>
             </div>
           </div>
           <div class="pie-box" id="pie"></div>

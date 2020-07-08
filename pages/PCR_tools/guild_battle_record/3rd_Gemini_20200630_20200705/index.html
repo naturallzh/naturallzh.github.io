@@ -160,6 +160,7 @@
   <transition name="showFigure">
     <div class="cert-box" v-show="popupFlags.leaveCert" @click="closeCert()">
       <div class="cert-page" @click.stop>
+        <div class="sample">样本</div>
         <div class="name">{{certData.name}}</div>
         <div class="year">{{certData.battleInfo[0]}}</div>
         <div class="mon">{{certData.battleInfo[1]}}</div>
@@ -178,8 +179,11 @@
           <div class="bar-box">
             <div class="sub-box" v-for="(certDamageBarItem,certDamageBarIdx) in certData.damageData">
               <div class="title">{{certDamageBarIdx+1}}王:</div>
-              <div class="bar" :style="'width:'+(certDamageBarItem/certData.bossMaxDamage*65)+'%'"></div>
-              <div class="text">{{certDamageBarItem}}</div>
+              <div class="bar" :style="'width:'+(certDamageBarItem/certData.bossMaxDamage*65)+'%;background:'+bgColorArr[certDamageBarIdx]"></div>
+              <div class="text">
+                <div>{{certDamageBarItem}}</div>
+                <div>{{(certDamageBarItem/certData.actionData[4].value*100).toFixed(2)}}%</div>
+              </div>
             </div>
           </div>
           <div class="pie-box" id="pie"></div>
