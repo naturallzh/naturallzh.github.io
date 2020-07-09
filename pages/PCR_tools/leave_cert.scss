@@ -145,12 +145,23 @@ input[type="number"]{
 	align-items: center;
 	justify-content: center;
 	.cert-page {
-		background-image: url(https://img.nga.178.com/attachments/mon_202007/07/-4my65Q5-cgmsZ18T3cSho-p0.jpg);
+		background-image: url(cert_bg.jpg);
 		background-size: cover;
 		background-repeat: no-repeat;
 		width: 636px;
 		height: 900px;
 		position: relative;
+		.bg-low-def1 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-image: url(cert_bg_low_def.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+			z-index: -1;
+		}
 		.name {
 			position: absolute;
 			left: 95px;

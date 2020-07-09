@@ -45,6 +45,7 @@
   <transition name="showFigure">
     <div class="cert-box" v-show="showCert" @click="closeCert()">
       <div class="cert-page" @click.stop>
+        <div class="bg-low-def1"></div>
         <div class="name">{{certData.name}}</div>
         <div class="year">{{certData.battleInfo[0]}}</div>
         <div class="mon">{{certData.battleInfo[1]}}</div>

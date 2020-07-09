@@ -12,7 +12,7 @@ input[type="number"] {
   -moz-appearance: textfield; }
 
 #index-body {
-  background-image: url(https://img.nga.178.com/attachments/mon_202005/14/-4my65Q5-5nxjZvT3cS1hc-u0.jpg);
+  background-image: url(bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -22,6 +22,16 @@ input[type="number"] {
   padding: 50px;
   box-sizing: border-box;
   flex-wrap: wrap; }
+  #index-body .bg-low-def {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(bg_low_def.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    z-index: -3; }
   #index-body .loadingMask {
     width: 100%;
     height: 100%;
