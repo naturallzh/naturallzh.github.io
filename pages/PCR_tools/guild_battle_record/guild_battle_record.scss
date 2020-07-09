@@ -248,10 +248,9 @@ input[type="number"]{
 		height: 50px;
 		border-radius: 50%;
 		background: white;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-right: 20px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
 	}
 	.cert-page {
 		background-image: url(../cert_bg.jpg);

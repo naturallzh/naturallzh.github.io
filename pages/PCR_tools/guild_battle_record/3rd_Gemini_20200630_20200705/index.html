@@ -160,7 +160,11 @@
 
   <transition name="showFigure">
     <div class="cert-box" v-show="popupFlags.leaveCert" @click="closeCert()">
-      <a class="download-btn" :download="'离职证明 '+certData.name+'@'+certData.battleInfo[3]" @click.stop @touchmove.prevent :href="certPicUrl">下载</a>
+      <div style="margin-right: 20px;position: relative">
+        <a class="download-btn" id="download-btn" @click.stop></a>
+        <div class="download-btn" style="background: transparent;display: flex;align-items: center;justify-content: center;" @click.stop="downCert()">下载</div>
+      </div>
+
       <div class="cert-page" @click.stop id="cert-page">
         <div class="bg-low-def1" v-if="popupFlags.certLowDefBg"></div>
         <div class="sample" v-if="certId==='908056'">样本</div>

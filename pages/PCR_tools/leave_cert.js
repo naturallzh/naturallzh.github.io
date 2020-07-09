@@ -20,7 +20,6 @@ let vm = new Vue({
 
     inputCode: "", // 前往外部公会离职页面的验证码
     bgColorArr: ['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae'],
-    certPicUrl: '',
   },
 
   computed: {
@@ -39,7 +38,7 @@ let vm = new Vue({
     loadCertLowDef.src = "cert_bg.jpg";
     let timer = setInterval(()=>{
       if (loadCertLowDef.complete) {
-        console.log('pic complete');
+        // console.log('pic complete');
         vm.showLowDefBg = false;
         clearInterval(timer);
       }
@@ -153,17 +152,16 @@ let vm = new Vue({
           }
         ]
       });
+    },
 
-      //html2canvas
-      setTimeout(()=>{
-        html2canvas(document.getElementById("cert-page")).then(function(canvas) {
-          // const imgUri = canvas.toDataURL();
-          // document.body.append('<a href='+imgUri+' download="下载的图片">保存图片</a>');
-          vm.certPicUrl = canvas.toDataURL();
-          //console.log(this.certPicUrl);
-        });
-      },100);
-
+    downCert: function () {
+      const btn = document.getElementById('download-btn');
+      html2canvas(document.getElementById("cert-page")).then(function(canvas) {
+        btn.href = canvas.toDataURL();
+        btn.download='离职证明 '+vm.certData.name+'@'+vm.certData.battleInfo[3];
+        btn.click();
+      });
     }
+
   }
 });
