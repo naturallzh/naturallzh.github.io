@@ -15,6 +15,17 @@ input[type="number"]{
 }
 
 #index-body {
+	.bg-low-def {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: url(bg_low_def.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 100%;
+		width: 100%;
+		z-index: -3;
+	}
 	//background-image: url(https://img.nga.178.com/attachments/mon_202005/14/-4my65Q5-5nxjZvT3cS1hc-u0.jpg);
 	background-image: url(bg.jpg);
 	background-size: cover;
