@@ -220,6 +220,15 @@ input[type="number"] {
   display: flex;
   align-items: center;
   justify-content: center; }
+  .cert-box .download-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px; }
   .cert-box .cert-page {
     background-image: url(../cert_bg.jpg);
     background-size: cover;
@@ -236,7 +245,7 @@ input[type="number"] {
       background-repeat: no-repeat;
       height: 100%;
       width: 100%;
-      z-index: -1; }
+      z-index: -3; }
     .cert-box .cert-page .sample {
       font-size: 50px;
       color: red;

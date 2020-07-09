@@ -44,8 +44,9 @@
 
   <transition name="showFigure">
     <div class="cert-box" v-show="showCert" @click="closeCert()">
-      <div class="cert-page" @click.stop>
-        <div class="bg-low-def1"></div>
+      <a class="download-btn" :download="'离职证明 '+certData.name+'@'+certData.battleInfo[3]" @click.stop @touchmove.prevent :href="certPicUrl">下载</a>
+      <div class="cert-page" @click.stop id="cert-page">
+        <div class="bg-low-def1" v-if="showLowDefBg"></div>
         <div class="name">{{certData.name}}</div>
         <div class="year">{{certData.battleInfo[0]}}</div>
         <div class="mon">{{certData.battleInfo[1]}}</div>
@@ -79,6 +80,7 @@
 </div>
 </body>
 
+<script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
 <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
 <script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
 <!--<script type="text/javascript" src="../../../../lib/vue.js"></script>-->

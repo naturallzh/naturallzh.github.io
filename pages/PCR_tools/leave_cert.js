@@ -16,9 +16,11 @@ let vm = new Vue({
       damageData: ['','','','','']
     },   // 离职证明相关数据
     showCert: false,
+    showLowDefBg: true,
 
     inputCode: "", // 前往外部公会离职页面的验证码
     bgColorArr: ['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae'],
+    certPicUrl: '',
   },
 
   computed: {
@@ -32,6 +34,16 @@ let vm = new Vue({
   mounted () {
     this.loadingMask = false;
     this.init();
+
+    let loadCertLowDef = new Image();
+    loadCertLowDef.src = "cert_bg.jpg";
+    let timer = setInterval(()=>{
+      if (loadCertLowDef.complete) {
+        console.log('pic complete');
+        vm.showLowDefBg = false;
+        clearInterval(timer);
+      }
+    },100);
   },
 
   destroyed () {
@@ -125,6 +137,7 @@ let vm = new Vue({
             data: myChartData,   // 数据数组，name 为数据项名称，value 为数据项值
             hoverAnimation: false,
             legendHoverLink: false,
+            animation: false,
             label: {
               position: 'inside',
               //formatter: '{b}: {d}%'
@@ -139,7 +152,17 @@ let vm = new Vue({
             },
           }
         ]
-      })
+      });
+
+      //html2canvas
+      setTimeout(()=>{
+        html2canvas(document.getElementById("cert-page")).then(function(canvas) {
+          // const imgUri = canvas.toDataURL();
+          // document.body.append('<a href='+imgUri+' download="下载的图片">保存图片</a>');
+          vm.certPicUrl = canvas.toDataURL();
+          //console.log(this.certPicUrl);
+        });
+      },100);
 
     }
   }
