@@ -72,15 +72,6 @@ let vm = new Vue({
     this.loadingMask = false;
 
     //this.genCert();
-    let loadCertLowDef = new Image();
-    loadCertLowDef.src = "../../cert_bg.jpg";
-    let timer = setInterval(()=>{
-      if (loadCertLowDef.complete) {
-        // console.log('pic complete');
-        vm.popupFlags.certLowDefBg = false;
-        clearInterval(timer);
-      }
-    },100);
   },
 
   destroyed () {

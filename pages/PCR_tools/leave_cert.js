@@ -33,16 +33,6 @@ let vm = new Vue({
   mounted () {
     this.loadingMask = false;
     this.init();
-
-    let loadCertLowDef = new Image();
-    loadCertLowDef.src = "cert_bg.jpg";
-    let timer = setInterval(()=>{
-      if (loadCertLowDef.complete) {
-        // console.log('pic complete');
-        vm.showLowDefBg = false;
-        clearInterval(timer);
-      }
-    },100);
   },
 
   destroyed () {
