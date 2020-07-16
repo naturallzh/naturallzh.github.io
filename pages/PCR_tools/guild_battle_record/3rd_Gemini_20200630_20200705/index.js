@@ -71,6 +71,17 @@ let vm = new Vue({
   mounted () {
     this.loadingMask = false;
 
+    const bgImg = new Image();
+    bgImg.src = "../cert_bg.jpg";
+    let bgLoadTimer = setInterval(()=>{
+      if(bgImg.complete)
+      {
+        clearInterval(bgLoadTimer);
+        //this.popupFlags.certLowDefBg = false;
+        console.log('加载完毕');
+      }
+    },100);
+
     //this.genCert();
   },
 
