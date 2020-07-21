@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>每日一刀甜心刀 休闲健康睡饱饱</title>
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../../lib/init.css"/>
+  <link rel="stylesheet" type="text/css" href="../../lib/base.css"/>
+
+  <link rel="stylesheet" type="text/css" href="event_timeline.css"/>
+</head>
+
+<body>
+<div id="event-timeline-body" v-cloak>
+  <div class="bg-low-def"></div>
+
+  <transition name="showFigure">
+    <div class="loadingMask" v-if="loadingMask">
+      <div class="circle-image-1"></div>
+      <div class="circle-image-2"></div>
+      <div style="font-size: 200%;margin-bottom: 20px;position: relative">
+        载入中<span class="dot-1">.</span><span class="dot-2">.</span><span class="dot-3">.</span>
+      </div>
+      <span style="position: relative">初次载入可能较慢 请耐心等待</span>
+      <span style="position: relative">如长时间没有响应 可ctrl+f5强制刷新页面</span>
+    </div>
+  </transition>
+
+  <a style="position: fixed;bottom: 50px;background: rgba(255, 255, 255, 0.7);border-radius: 10px;border: #999999 solid 2px;box-shadow: black 3px 3px 3px;padding: 0 5px"
+    href="https://naturallzh.github.io/pages/PCR_tools/index.html" target="_blank">
+    返回首页
+  </a>
+
+</div>
+</body>
+
+<script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
+<!--<script type="text/javascript" src="../../../../lib/vue.js"></script>-->
+<script type="text/javascript" src="../../lib/base.js"></script>
+
+<script type="text/javascript" src="event_timeline.js"></script>
+</html>
