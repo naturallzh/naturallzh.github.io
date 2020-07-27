@@ -129,6 +129,10 @@
 
   <div class="guild-battle-record">
     <h2 style="margin-bottom: 0px">团队战记录</h2>
+    <div class="btn" @click="gotoCancer">
+      <div>20200728~20200802 巨蟹座</div>
+      <div>未开始</div>
+    </div>
     <div class="btn" @click="gotoGemini">
       <div>20200630~20200705 双子座</div>
       <div>已结束 排名：1984</div>
@@ -141,7 +145,9 @@
       <div>20200507~20200514 白羊座</div>
       <div>已结束 排名：4680</div>
     </div>
+  </div>
 
+  <div class="guild-battle-record">
     <h2 style="margin:5px 0">外部公会离职证明生成</h2>
     <div style="display: flex;justify-content: space-between">
       <input style="width: 70%;margin-right: 10px;" v-model="certVeriCode" placeholder="10位数字验证码">

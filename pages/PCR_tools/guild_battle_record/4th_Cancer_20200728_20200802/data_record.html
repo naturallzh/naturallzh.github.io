@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>巨蟹座伤害记录</title>
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../../../../lib/init.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../../lib/base.css"/>
+
+  <link rel="stylesheet" type="text/css" href="data_record.css"/>
+</head>
+
+<body>
+<div id="data-record-body" v-cloak>
+
+  <transition name="showFigure">
+    <div class="loadingMask" v-if="loadingMask">
+      <div class="circle-image-1"></div>
+      <div class="circle-image-2"></div>
+      <div style="font-size: 200%;margin-bottom: 20px;position: relative">
+        载入中<span class="dot-1">.</span><span class="dot-2">.</span><span class="dot-3">.</span>
+      </div>
+      <span style="position: relative">初次载入可能较慢 请耐心等待</span>
+      <span style="position: relative">如长时间没有响应 可ctrl+f5强制刷新页面</span>
+    </div>
+  </transition>
+
+  <a style="position: fixed;bottom: 50px;right:100px;background: rgba(255, 255, 255, 0.7);border-radius: 10px;border: #999999 solid 2px;box-shadow: black 3px 3px 3px;padding: 0 5px"
+    href="https://naturallzh.github.io/pages/PCR_tools/index.html" target="_blank">
+    返回首页
+  </a>
+
+  <div class="float-btn btn" style="top: 80px" @click="collapseAll">全部折叠</div>
+  <div class="float-btn btn" style="bottom: 340px" @click="editValue(-1,-1)">增加一刀数据</div>
+  <div class="float-btn btn" style="bottom: 260px" @click="addTitleBox">增加新的一天或新BOSS起点</div>
+  <div class="float-btn btn" style="bottom: 150px" @click="resetData">将本地数据置为服务器版本</div>
+  <div class="float-btn btn" style="bottom: 100px" @click="openOutputStrWin">导出字符串</div>
+
+  <div class="title-box" v-for="(dataItem1,dataIdx1) in actionData">
+    <div class="title" @click="collapseListBox(dataIdx1)">第{{dataItem1.day}}天，总第{{dataItem1.bossIdx}}号BOSS，共{{dataItem1.log.length}}刀，{{showListBox[dataIdx1]?'展开':'折叠'}}状态</div>
+    <transition name="showFigure">
+    <div class="list-box" v-show="showListBox[dataIdx1]">
+      <div class="list-item" v-for="(dataItem2,dataIdx2) in dataItem1.log">
+        <div class="item-value" style="width: 150px">{{dataItem2.name}}</div>
+        <div class="item-value" style="width: 120px">{{dataItem2.damage}}</div>
+        <div class="item-value" style="width: 260px">{{timeStamp2timeStr(dataItem2.time)}}</div>
+        <div class="btn" style="margin-left: 10px" @click="editValue(dataIdx1, dataIdx2)">编辑</div>
+      </div>
+    </div>
+    </transition>
+  </div>
+
+  <transition name="showFigure">
+    <div class="edit-bg" v-if="popupFlags.addTitleBoxWin">
+      <div class="edit-item">
+        <div class="left">第<input v-model="inputParaTitleBox.day" type="number">天</div>
+      </div>
+      <div class="edit-item">
+        <div class="left">总第<input v-model="inputParaTitleBox.bossIdx" type="number">号BOSS</div>
+      </div>
+      <div class="edit-item">
+        <div class="btn" @click="closeTitleWin">取消</div>
+        <div class="btn" @click="confirmAddTitleBox">确定</div>
+      </div>
+    </div>
+  </transition>
+
+  <transition name="showFigure">
+    <div class="edit-bg" v-if="popupFlags.editWin">
+      <div class="edit-item">
+        <div class="left">姓名</div>
+        <div class="right">
+          <select v-model="inputDamageItem.name">
+            <option v-for="(nameItem) in nameMap" :value="nameItem.name">{{nameItem.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="edit-item">
+        <div class="left">伤害</div>
+        <div class="right">
+          <input v-model="inputDamageItem.damage">
+        </div>
+      </div>
+      <div class="edit-item">
+        <div class="left">日期</div>
+        <div class="right">
+          <input v-model="inputDamageItem.dateStr" type="date">
+        </div>
+      </div>
+      <div class="edit-item">
+        <div class="left">时</div>
+        <div class="right">
+          <input v-model="inputDamageItem.H">
+        </div>
+      </div>
+      <div class="edit-item">
+        <div class="left">分</div>
+        <div class="right">
+          <input v-model="inputDamageItem.M">
+        </div>
+      </div>
+      <div class="edit-item">
+        <div class="btn" @click="closeEditWin">取消</div>
+        <div class="btn" @click="confirmEdit">确定</div>
+      </div>
+    </div>
+  </transition>
+
+  <transition name="showFigure">
+    <div class="edit-bg" v-if="popupFlags.outputStrWin" @click="closeOutputStrWin">
+      <input :value="localStorage.getItem('data_cancer')" style="width: 600px;height: 30px;text-wrap: normal" @click.stop id="outputStr">
+    </div>
+  </transition>
+
+</div>
+</body>
+
+<script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
+<!--<script type="text/javascript" src="../../../../lib/vue.js"></script>-->
+<script type="text/javascript" src="../../../../lib/base.js"></script>
+<script type="text/javascript" src="../../../../components/image_view.js"></script>
+
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="../guild_battle_record.js"></script>
+<script type="text/javascript" src="data_record.js"></script>
+</html>

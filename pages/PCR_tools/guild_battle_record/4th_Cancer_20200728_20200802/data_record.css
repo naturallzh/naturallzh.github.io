@@ -1,0 +1,150 @@
+html, body {
+  height: 100%;
+  background: lightblue; }
+
+div, span, p {
+  user-select: none; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none; }
+
+input[type="number"] {
+  -moz-appearance: textfield; }
+
+#data-record-body {
+  display: flex;
+  padding: 50px;
+  box-sizing: border-box;
+  overflow: auto;
+  flex-direction: column; }
+  #data-record-body .btn {
+    border: 1px solid black;
+    padding: 1px 2px;
+    font-size: 15px;
+    text-align: center;
+    background: white; }
+  #data-record-body .btn:hover {
+    background: black;
+    color: white;
+    box-shadow: rgba(255, 0, 0, 0.6) 0 0 10px;
+    transition: all 0.3s; }
+  #data-record-body .loadingMask {
+    width: 100%;
+    height: 100%;
+    background: #878787;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white; }
+    #data-record-body .loadingMask .circle-image-1 {
+      width: 25%;
+      height: 0;
+      padding-bottom: 25%;
+      position: absolute;
+      background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.8));
+      border-radius: 50%;
+      animation-name: loadingCircle;
+      animation-duration: 5s;
+      animation-iteration-count: infinite; }
+    #data-record-body .loadingMask .circle-image-2 {
+      width: 20%;
+      height: 0;
+      padding-bottom: 20%;
+      position: absolute;
+      background: #878787;
+      border-radius: 50%; }
+    #data-record-body .loadingMask .dot-1, #data-record-body .loadingMask .dot-2, #data-record-body .loadingMask .dot-3 {
+      position: relative;
+      animation-name: dotJumping;
+      animation-duration: 2s;
+      animation-iteration-count: infinite; }
+    #data-record-body .loadingMask .dot-2 {
+      animation-delay: 400ms; }
+    #data-record-body .loadingMask .dot-3 {
+      animation-delay: 800ms; }
+
+@keyframes loadingCircle {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
+@keyframes dotJumping {
+  from {
+    top: 0; }
+  30% {
+    top: -10px; }
+  60% {
+    top: 0; }
+  to {
+    top: 0; } }
+.showFigure-enter-active, .showFigure-leave-active {
+  transition: all 0.5s; }
+
+.showFigure-enter, .showFigure-leave-to {
+  height: 40%;
+  opacity: 0; }
+
+.title-box {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px; }
+  .title-box .title {
+    background: lightcoral;
+    width: 600px;
+    margin-top: 3px; }
+  .title-box .list-box {
+    display: flex;
+    flex-direction: column; }
+    .title-box .list-box .list-item {
+      margin: 5px 0;
+      display: flex; }
+      .title-box .list-box .list-item .item-value {
+        height: 25px;
+        background: white;
+        border: 1px solid black;
+        border-left: inherit;
+        padding: 0 5px; }
+      .title-box .list-box .list-item .item-value:first-child {
+        border-left: 1px solid black; }
+    .title-box .list-box .list-item:hover {
+      box-shadow: red -6px 0 3px 3px; }
+
+.float-btn {
+  position: fixed;
+  right: 100px;
+  width: 100px; }
+
+.edit-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .edit-bg .edit-item {
+    width: 300px;
+    height: 35px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    border: 1px solid black;
+    background: white; }
+    .edit-bg .edit-item .right {
+      width: 70%; }
+      .edit-bg .edit-item .right input, .edit-bg .edit-item .right select, .edit-bg .edit-item .right option {
+        width: 100%;
+        height: 22px;
+        text-align: right;
+        font-size: 16px; }

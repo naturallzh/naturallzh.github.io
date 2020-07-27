@@ -11,7 +11,7 @@ let vm = new Vue({
 
     time: {
       updateTime: new Date(2020,6,20,9,20),
-      startTime: new Date(2020,6,28,5),
+      startTime: new Date(2020,6,27,5),
       curTime: new Date(),
       endTime: new Date(2020,7,2,23,59,59),
       countdownTimer: null,
@@ -91,7 +91,56 @@ let vm = new Vue({
 
   methods: {
 
-    initData: initData,
+    initData: function () {
+      if (new Date() > this.time.endTime) {
+        this.time.curTime = this.time.endTime;
+      }
+      else {
+        this.time.countdownTimer = setInterval(()=>{
+          if (new Date() > this.time.endTime) {
+            this.time.curTime = this.time.endTime;
+            clearInterval(this.time.countdownTimer);
+          }
+          else {
+            this.time.curTime = new Date();
+          }
+        },498);
+      }
+
+      if (getQueryString("title")) {document.title = getQueryString("title");}
+
+      this.nameMap = DATA_nameMap;
+      this.mobData = DATA_mobData;
+      if (localStorage.getItem('data_cancer')) {
+        const lenLocal = (localStorage.getItem('data_cancer')).length;
+        const lenData = (JSON.stringify(DATA_actionData)).length;
+        if (lenLocal+8<=lenData) {
+          localStorage.setItem('data_cancer',JSON.stringify(DATA_actionData));
+        }
+      }
+      else {
+        localStorage.setItem('data_cancer',JSON.stringify(DATA_actionData));
+      }
+      this.actionData = JSON.parse(localStorage.getItem('data_cancer'));
+      //this.actionData = DATA_actionData;
+
+      this.genSit = {
+        curDay: Math.ceil((this.time.curTime - this.time.startTime)/1000/3600/24),
+        curBossIdx: this.actionData[this.actionData.length-1].bossIdx,
+        remainHealth: "",
+        remainHealthPer: "",
+      };
+
+      this.historyDateObj = {
+        curSelect: 0,
+        dateArr: [],
+      };
+      for (let i=1;i<=this.genSit.curDay;i++) {
+        this.historyDateObj.dateArr[i-1] = i;
+        this.damageFigurePara[i-1] = true;
+      }
+      this.damageFigurePara[this.genSit.curDay-1] = true;
+    },
     checkData: checkData,
     processDateStr: processDateStr,
     ms2timeStr: ms2timeStr,
@@ -213,6 +262,10 @@ let vm = new Vue({
         btn.download='离职证明 '+vm.certData.name+'@'+vm.certData.battleInfo[3];
         btn.click();
       });
+    },
+
+    gotoDataRecord: function () {
+      window.open('data_record.html');
     }
 
   }

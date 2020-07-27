@@ -45,7 +45,7 @@
     <div>当前北京时间：{{processDateStr(time.curTime)}}</div>
     <div style="position: relative">
       <div style="position: absolute;background: rgba(128,128,128,0.35);height: 100%;width: 100%"></div>
-      <div style="position: absolute;background: limegreen;height: 100%" :style="'width:'+((time.endTime-time.curTime)/(time.endTime-time.startTime)*100)+'%;background:'+processColor((time.endTime-time.curTime)/(time.endTime-time.startTime))"></div>
+      <div style="max-width:100%;position: absolute;background: limegreen;height: 100%" :style="'width:'+((time.endTime-time.curTime)/(time.endTime-time.startTime)*100)+'%;background:'+processColor((time.endTime-time.curTime)/(time.endTime-time.startTime))"></div>
       <span style="position: relative;" v-if="time.endTime-time.curTime>0">剩余时间：{{ms2timeStr(time.endTime-time.curTime)}}</span>
       <span style="position: relative;" v-if="time.endTime-time.curTime<=0">已结束 排名：1984</span>
     </div>
@@ -71,13 +71,15 @@
   <div class="detail-data">
     <h2>数据统计</h2>
     <div class="btn" @click="shiftDamageByBossFigure()">玩家伤害统计：按不同BOSS</div>
+    <h2>数据录入</h2>
+    <div class="btn" @click="gotoDataRecord">前往页面</div>
     <h2 style="margin-top: 20px;display: none">离职证明</h2>
-    <div style="display: flex;justify-content: space-between">
+    <div style="display: flex;justify-content: space-between;display: none">
       <input style="width: 70%" v-model="certId" placeholder="6位数字识别码">
       <div class="btn" @click="genCert">生成报告</div>
     </div>
-    <div style="font-size: 70%;color: gray">*识别码为团员独有编号，请向"一起学猫叫"申请</div>
-    <div style="font-size: 70%;color: gray">**可以使用908056预览格式</div>
+    <div style="font-size: 70%;color: gray;display: none">*识别码为团员独有编号，请向"一起学猫叫"申请</div>
+    <div style="font-size: 70%;color: gray;display: none">**可以使用908056预览格式</div>
   </div>
 
   <transition name="showFigure">

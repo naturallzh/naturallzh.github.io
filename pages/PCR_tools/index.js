@@ -265,6 +265,11 @@ let vm = new Vue({
       url += "?title=双子座 20200630~20200705";
       window.open(url);
     },
+    gotoCancer: function () {
+      let url = "./guild_battle_record/4th_Cancer_20200728_20200802/index.html";
+      url += "?title=巨蟹座 20200728~20200802";
+      window.open(url);
+    },
     gotoLeaveCert: function () {
       const dateObj = new Date();
       let pubKey = this.pubKey + "";
