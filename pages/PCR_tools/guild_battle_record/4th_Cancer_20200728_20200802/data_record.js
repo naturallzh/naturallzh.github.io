@@ -149,8 +149,8 @@ let vm = new Vue({
         itemObj.name = '';
         itemObj.damage = 0;
         itemObj.dateStr = '2020-'+this.addZero(today.getMonth()+1)+'-'+this.addZero(today.getDate());
-        itemObj.H = today.getHours();
-        itemObj.M = today.getMinutes();
+        itemObj.H = 5;
+        itemObj.M = 0;
         this.inputDamageItem = itemObj;
       }
       this.openEditWin();
