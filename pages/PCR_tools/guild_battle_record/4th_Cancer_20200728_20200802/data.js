@@ -120,4 +120,14 @@ const DATA_actionData = [
 			{name: "福尔康", damage: 1072396, time: '2020,6,28,17,39'},
 		]
 	},
+	{
+		day: 1,
+		bossIdx: 5,
+		log: [
+			{name: "福尔康", damage: 23125, time: '2020,6,28,17,43'},
+			{name: "初心如故", damage: 878530, time: '2020,6,28,17,46'},
+			{name: "福尔康", damage: 855587, time: '2020,6,28,17,59'},
+			{name: "一起学猫叫", damage: 827548, time: '2020,6,28,17,59'},
+		]
+	},
 ];
