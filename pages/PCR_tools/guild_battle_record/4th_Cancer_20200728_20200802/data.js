@@ -143,6 +143,7 @@ const DATA_actionData = [
 			{name: "keiko", damage: 746735, time: '2020,6,28,18,57'},
 			{name: "手手", damage: 901394, time: '2020,6,28,18,59'},
 			{name: "夜雨纷扬", damage: 805089, time: '2020,6,28,19,7'},
+			{name: "红豆沙", damage: 878546, time: '2020,6,28,19,8'},
 		]
 	},
 ];
