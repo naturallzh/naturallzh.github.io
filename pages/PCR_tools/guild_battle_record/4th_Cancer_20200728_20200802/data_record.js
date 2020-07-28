@@ -80,8 +80,9 @@ let vm = new Vue({
 
       this.nameMap = DATA_nameMap;
       for (let i=0;i<this.actionData.length;i++) {
-        this.showListBox[i] = true;
+        this.showListBox[i] = false;
       }
+      this.showListBox[this.showListBox.length-1] = true;
     },
 
     addTitleBox: function () {
