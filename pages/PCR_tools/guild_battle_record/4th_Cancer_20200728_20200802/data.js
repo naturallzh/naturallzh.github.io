@@ -156,6 +156,42 @@ const DATA_actionData = [
 		bossIdx: 6,
 		log: [
 			{name: "迪卢木多", damage: 177310, time: '2020,6,28,19,28'},
+			{name: "幽蓝", damage: 1041005, time: '2020,6,28,19,37'},
+			{name: "橙子", damage: 1045017, time: '2020,6,28,19,40'},
+			{name: "坑神", damage: 1010933, time: '2020,6,28,19,44'},
+			{name: "lala", damage: 989561, time: '2020,6,28,19,47'},
+			{name: "长星夜烁", damage: 1095213, time: '2020,6,28,19,49'},
+			{name: "红豆沙", damage: 1046414, time: '2020,6,28,19,51'},
+		]
+	},
+	{
+		day: 1,
+		bossIdx: 7,
+		log: [
+			{name: "灼眼的Saber", damage: 1158636, time: '2020,6,28,19,53'},
+			{name: "长星夜烁", damage: 1193845, time: '2020,6,28,19,54'},
+			{name: "常磐丁香", damage: 1151382, time: '2020,6,28,19,55'},
+			{name: "幽蓝", damage: 1027615, time: '2020,6,28,19,56'},
+			{name: "坑神", damage: 1055785, time: '2020,6,28,19,57'},
+			{name: "lala", damage: 1078428, time: '2020,6,28,19,58'},
+			{name: "风月", damage: 1122600, time: '2020,6,28,20,17'},
+			{name: "lala", damage: 783119, time: '2020,6,28,20,19'},
+		]
+	},
+	{
+		day: 1,
+		bossIdx: 8,
+		log: [
+			{name: "lala", damage: 429716, time: '2020,6,28,20,23'},
+			{name: "坑神", damage: 499932, time: '2020,6,28,20,40'},
+			{name: "红豆沙", damage: 284118, time: '2020,6,28,20,44'},
+			{name: "红豆沙", damage: 565499, time: '2020,6,28,21,8'},
+			{name: "金色之泪", damage: 671802, time: '2020,6,28,21,27'},
+			{name: "Otaku", damage: 847057, time: '2020,6,28,21,29'},
+			{name: "宋寂", damage: 636937, time: '2020,6,28,21,30'},
+			{name: "夜雨纷扬", damage: 857868, time: '2020,6,28,21,34'},
+			{name: "常磐丁香", damage: 765754, time: '2020,6,28,21,43'},
+			{name: "灼眼的Saber", damage: 866094, time: '2020,6,28,22,2'},
 		]
 	},
 ];
