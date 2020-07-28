@@ -92,6 +92,7 @@ const DATA_actionData = [
 		bossIdx: 3,
 		log: [
 			{name: "黑椿", damage: 108514, time: '2020,6,28,13,9'},
+			{name: "池霜", damage: 1211037, time: '2020,6,28,15,1'},
 		]
 	},
 ];
