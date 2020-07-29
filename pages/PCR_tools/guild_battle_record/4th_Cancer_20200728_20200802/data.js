@@ -329,6 +329,18 @@ const DATA_actionData = [
 			{name: "我群最菜", damage: 966355, time: '2020,6,29,23,16'},
 			{name: "keiko", damage: 960114, time: '2020,6,29,23,16'},
 			{name: "何等的寂寞", damage: 1127245, time: '2020,6,29,23,17'},
+			{name: "风月", damage: 1016287, time: '2020,6,29,23,19'},
+			{name: "常磐丁香", damage: 916238, time: '2020,6,29,23,19'},
+			{name: "魂魄妖梦", damage: 964604, time: '2020,6,29,23,20'},
+			{name: "手手", damage: 1202579, time: '2020,6,29,23,21'},
+			{name: "夜雨纷扬", damage: 977155, time: '2020,6,29,23,22'},
+		]
+	},
+	{
+		day: 2,
+		bossIdx: 14,
+		log: [
+			{name: "夜雨纷扬", damage: 14692, time: '2020,6,29,23,24'},
 		]
 	}
 ];
