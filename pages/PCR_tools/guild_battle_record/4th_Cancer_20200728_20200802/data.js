@@ -303,6 +303,11 @@ const DATA_actionData = [
 		bossIdx: 13,
 		log: [
 			{name: "戏言君", damage: 409118, time: '2020,6,29,22,16'},
+			{name: "黑椿", damage: 0, time: '2020,6,29,22,20'},
+			{name: "我群最菜", damage: 884620, time: '2020,6,29,22,21'},
+			{name: "迪卢木多", damage: 815762, time: '2020,6,29,22,25'},
+			{name: "宋寂", damage: 745561, time: '2020,6,29,22,28'},
+			{name: "风月", damage: 843589, time: '2020,6,29,22,31'},
 		]
 	}
 ];
