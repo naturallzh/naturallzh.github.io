@@ -341,6 +341,7 @@ const DATA_actionData = [
 		bossIdx: 14,
 		log: [
 			{name: "夜雨纷扬", damage: 14692, time: '2020,6,29,23,24'},
+			{name: "迪卢木多", damage: 468404, time: '2020,6,29,23,37'},
 		]
 	}
 ];
