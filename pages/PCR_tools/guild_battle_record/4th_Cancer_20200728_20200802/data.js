@@ -261,6 +261,24 @@ const DATA_actionData = [
 			{name: "池霜", damage: 542045, time: '2020,6,29,17,40'},
 			{name: "Otaku", damage: 529314, time: '2020,6,29,18,51'},
 			{name: "红豆沙", damage: 517698, time: '2020,6,29,18,53'},
+			{name: "Otaku", damage: 656018, time: '2020,6,29,19,42'},
+			{name: "池霜", damage: 681657, time: '2020,6,29,20,30'},
+			{name: "红豆沙", damage: 504119, time: '2020,6,29,20,37'},
+			{name: "手手", damage: 739818, time: '2020,6,29,20,42'},
+			{name: "橙子", damage: 677323, time: '2020,6,29,20,49'},
+			{name: "坑神", damage: 577512, time: '2020,6,29,21,2'},
+			{name: "灼眼的Saber", damage: 567508, time: '2020,6,29,21,14'},
+			{name: "以摸多", damage: 323518, time: '2020,6,29,21,14'},
+		]
+	},
+	{
+		day: 2,
+		bossIdx: 11,
+		log: [
+			{name: "以摸多", damage: 390437, time: '2020,6,29,21,16'},
+			{name: "幽蓝", damage: 1030676, time: '2020,6,29,21,21'},
+			{name: "常磐丁香", damage: 1087275, time: '2020,6,29,21,24'},
+			{name: "初心如故", damage: 820693, time: '2020,6,29,21,26'},
 		]
 	}
 ];
