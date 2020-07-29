@@ -338,10 +338,26 @@ const DATA_actionData = [
 	},
 	{
 		day: 2,
-		bossIdx: 14,
+		bossIdx: 15,
 		log: [
 			{name: "夜雨纷扬", damage: 14692, time: '2020,6,29,23,24'},
 			{name: "迪卢木多", damage: 468404, time: '2020,6,29,23,37'},
+			{name: "香浓朱古力", damage: 487335, time: '2020,6,29,23,41'},
+			{name: "好好先生", damage: 469473, time: '2020,6,29,23,46'},
+			{name: "长星夜烁", damage: 522842, time: '2020,6,29,23,50'},
+			{name: "福尔康", damage: 478316, time: '2020,6,29,23,54'},
+			{name: "福尔康", damage: 565539, time: '2020,6,30,0,2'},
+			{name: "一起学猫叫", damage: 342437, time: '2020,6,30,0,7'},
+			{name: "lala", damage: 375979, time: '2020,6,30,0,15'},
+		]
+	},
+	{
+		day: 3,
+		bossIdx: 15,
+		log: [
+			{name: "黑椿", damage: 512131, time: '2020,6,30,5,30'},
+			{name: "手手", damage: 551922, time: '2020,6,30,6,27'},
+			{name: "初心如故", damage: 502385, time: '2020,6,30,6,49'},
 		]
 	}
 ];
