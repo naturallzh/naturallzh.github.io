@@ -293,6 +293,16 @@ const DATA_actionData = [
 			{name: "橙子", damage: 1104206, time: '2020,6,29,21,56'},
 			{name: "坑神", damage: 1222113, time: '2020,6,29,21,59'},
 			{name: "灼眼的Saber", damage: 1145997, time: '2020,6,29,22,3'},
+			{name: "以摸多", damage: 1154899, time: '2020,6,29,22,7'},
+			{name: "幽蓝", damage: 1144898, time: '2020,6,29,22,14'},
+			{name: "戏言君", damage: 1152384, time: '2020,6,29,22,14'},
+		]
+	},
+	{
+		day: 2,
+		bossIdx: 13,
+		log: [
+			{name: "戏言君", damage: 409118, time: '2020,6,29,22,16'},
 		]
 	}
 ];
