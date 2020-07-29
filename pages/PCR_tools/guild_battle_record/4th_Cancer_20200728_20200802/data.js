@@ -212,5 +212,17 @@ const DATA_actionData = [
 			{name: "长星夜烁", damage: 477619, time: '2020,6,28,20,41'},
 			{name: "迪卢木多", damage: 944712, time: '2020,6,28,20,50'},
 		]
+	},
+	{
+		day: 2,
+		bossIdx: 9,
+		log: [
+			{name: "黑椿", damage: 1036140, time: '2020,6,29,5,15'},
+			{name: "黑椿", damage: 899114, time: '2020,6,29,5,25'},
+			{name: "何等的寂寞", damage: 930975, time: '2020,6,29,6,35'},
+			{name: "宋寂", damage: 969610, time: '2020,6,29,6,48'},
+			{name: "打个大西瓜", damage: 1029135, time: '2020,6,29,7,51'},
+			{name: "Otaku", damage: 930073, time: '2020,6,29,8,9'},
+		]
 	}
 ];
