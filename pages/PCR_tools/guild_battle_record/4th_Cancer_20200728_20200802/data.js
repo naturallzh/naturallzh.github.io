@@ -390,6 +390,10 @@ const DATA_actionData = [
 		bossIdx: 16,
 		log: [
 			{name: "以摸多", damage: 471677, time: '2020,6,30,15,43'},
+			{name: "lala", damage: 1029579, time: '2020,6,30,15,24'},
+			{name: "以摸多", damage: 1126434, time: '2020,6,30,15,39'},
+			{name: "初心如故", damage: 1013674, time: '2020,6,30,15,46'},
+			{name: "一起学猫叫", damage: 1091562, time: '2020,6,30,15,47'},
 		]
 	}
 ];
