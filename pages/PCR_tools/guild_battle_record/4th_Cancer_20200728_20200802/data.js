@@ -381,6 +381,15 @@ const DATA_actionData = [
 			{name: "福尔康", damage: 590642, time: '2020,6,30,14,3'},
 			{name: "幽蓝", damage: 667412, time: '2020,6,30,14,8'},
 			{name: "池霜", damage: 662383, time: '2020,6,30,14,15'},
+			{name: "迪卢木多", damage: 627094, time: '2020,6,30,15,38'},
+			{name: "以摸多", damage: 602337, time: '2020,6,30,15,38'},
+		]
+	},
+	{
+		day: 3,
+		bossIdx: 16,
+		log: [
+			{name: "以摸多", damage: 471677, time: '2020,6,30,15,43'},
 		]
 	}
 ];
