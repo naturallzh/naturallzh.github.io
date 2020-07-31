@@ -600,6 +600,31 @@ const DATA_actionData = [
 			{name: "lala", damage: 546130, time: '2020,6,31,21,38'},
 			{name: "我群最菜", damage: 712560, time: '2020,6,31,21,43'},
 			{name: "魂魄妖梦", damage: 514606, time: '2020,6,31,21,52'},
+			{name: "风月", damage: 505014, time: '2020,6,31,21,55'},
+		]
+	},
+	{
+		day: 4,
+		bossIdx: 26,
+		log: [
+			{name: "风月", damage: 66991, time: '2020,6,31,21,56'},
+			{name: "常磐丁香", damage: 1057389, time: '2020,6,31,21,59'},
+			{name: "打个大西瓜", damage: 830875, time: '2020,6,31,21,59'},
+			{name: "池霜", damage: 962994, time: '2020,6,31,22,0'},
+			{name: "何等的寂寞", damage: 1059695, time: '2020,6,31,22,17'},
+			{name: "长星夜烁", damage: 717278, time: '2020,6,31,22,18'},
+			{name: "keiko", damage: 990385, time: '2020,6,31,22,44'},
+			{name: "lala", damage: 559640, time: '2020,6,31,22,45'},
+		]
+	},
+	{
+		day: 4,
+		bossIdx: 27,
+		log: [
+			{name: "lala", damage: 377127, time: '2020,6,31,22,46'},
+			{name: "池霜", damage: 1288145, time: '2020,6,31,22,48'},
+			{name: "keiko", damage: 1049686, time: '2020,6,31,22,50'},
+			{name: "初心如故", damage: 1028894, time: '2020,6,31,22,55'},
 		]
 	}
 ];
