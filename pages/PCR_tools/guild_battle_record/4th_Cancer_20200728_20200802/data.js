@@ -548,6 +548,10 @@ const DATA_actionData = [
 		bossIdx: 23,
 		log: [
 			{name: "打个大西瓜", damage: 239023, time: '2020,6,31,13,37'},
+			{name: "常磐丁香", damage: 1294511, time: '2020,6,31,13,40'},
+			{name: "手手", damage: 1364304, time: '2020,6,31,13,43'},
+			{name: "迪卢木多", damage: 1227512, time: '2020,6,31,13,53'},
+			{name: "何等的寂寞", damage: 1179321, time: '2020,6,31,14,1'},
 		]
 	}
 ];
