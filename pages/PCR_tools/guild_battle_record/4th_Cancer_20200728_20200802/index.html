@@ -103,7 +103,17 @@
   <transition name="showFigure">
     <div class="today-detail" @click="shiftHistoryLogTodo(null)" v-show="popupFlags.historyLogTodo">
       <div class="mob-box" @click.stop>
-        <div class="log-item" v-for="(todoItem,todoIdx) in actionLogByDay(historyDateObj.curSelect+1).todo" v-if="todoItem.todoNum!==0">
+        <div class="log-item" v-for="(todoItem,todoIdx) in actionLogByDay(historyDateObj.curSelect+1).todo" v-if="todoItem.todoNum===3">
+          <div style="position: absolute;height: 100%;background: rgba(50,205,50,0.3);z-index: 0" :style="'width:'+(todoItem.todoNum*100/3)+'%'"></div>
+          <span style="margin-left: 5px">{{todoItem.name}}</span>
+          <span style="margin-right: 5px">{{todoItem.todoNum}}</span>
+        </div>
+        <div class="log-item" v-for="(todoItem,todoIdx) in actionLogByDay(historyDateObj.curSelect+1).todo" v-if="todoItem.todoNum===2">
+          <div style="position: absolute;height: 100%;background: rgba(50,205,50,0.3);z-index: 0" :style="'width:'+(todoItem.todoNum*100/3)+'%'"></div>
+          <span style="margin-left: 5px">{{todoItem.name}}</span>
+          <span style="margin-right: 5px">{{todoItem.todoNum}}</span>
+        </div>
+        <div class="log-item" v-for="(todoItem,todoIdx) in actionLogByDay(historyDateObj.curSelect+1).todo" v-if="todoItem.todoNum===1||todoItem.todoNum<0">
           <div style="position: absolute;height: 100%;background: rgba(50,205,50,0.3);z-index: 0" :style="'width:'+(todoItem.todoNum*100/3)+'%'"></div>
           <span style="margin-left: 5px">{{todoItem.name}}</span>
           <span style="margin-right: 5px">{{todoItem.todoNum}}</span>
