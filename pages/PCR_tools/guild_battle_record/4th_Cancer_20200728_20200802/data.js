@@ -633,6 +633,26 @@ const DATA_actionData = [
 		log: [
 			{name: "初心如故", damage: 1167197, time: '2020,7,1,8,7'},
 			{name: "打个大西瓜", damage: 1176196, time: '2020,7,1,8,10'},
+			{name: "金色之泪", damage: 1213574, time: '2020,7,1,9,38'},
+			{name: "以摸多", damage: 1105797, time: '2020,7,1,9,40'},
+		]
+	},
+	{
+		day: 5,
+		bossIdx: 28,
+		log: [
+			{name: "以摸多", damage: 298242, time: '2020,7,1,9,41'},
+			{name: "Otaku", damage: 750141, time: '2020,7,1,9,57'},
+			{name: "福尔康", damage: 825387, time: '2020,7,1,10,2'},
+			{name: "宋寂", damage: 775709, time: '2020,7,1,10,12'},
+			{name: "夜雨纷扬", damage: 837735, time: '2020,7,1,10,13'},
+			{name: "幽蓝", damage: 786828, time: '2020,7,1,10,19'},
+			{name: "常磐丁香", damage: 756633, time: '2020,7,1,10,40'},
+			{name: "黑椿", damage: 824444, time: '2020,7,1,10,45'},
+			{name: "金色之泪", damage: 813090, time: '2020,7,1,10,46'},
+			{name: "lala", damage: 663689, time: '2020,7,1,11,12'},
+			{name: "坑神", damage: 778473, time: '2020,7,1,11,14'},
+			{name: "何等的寂寞", damage: 772974, time: '2020,7,1,11,35'},
 		]
 	}
 ];
