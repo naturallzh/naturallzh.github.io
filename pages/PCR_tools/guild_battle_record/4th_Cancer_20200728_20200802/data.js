@@ -626,5 +626,13 @@ const DATA_actionData = [
 			{name: "keiko", damage: 1049686, time: '2020,6,31,22,50'},
 			{name: "初心如故", damage: 1028894, time: '2020,6,31,22,55'},
 		]
+	},
+	{
+		day: 5,
+		bossIdx: 27,
+		log: [
+			{name: "初心如故", damage: 1167197, time: '2020,7,1,8,7'},
+			{name: "打个大西瓜", damage: 1176196, time: '2020,7,1,8,10'},
+		]
 	}
 ];
