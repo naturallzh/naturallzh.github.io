@@ -758,6 +758,18 @@ const DATA_actionData = [
 			{name: "魂魄妖梦", damage: 792168, time: '2020,7,1,22,0'},
 			{name: "魂魄妖梦", damage: 530624, time: '2020,7,1,22,16'},
 			{name: "长星夜烁", damage: 657596, time: '2020,7,1,22,43'},
+			{name: "一起学猫叫", damage: 827417, time: '2020,7,1,23,5'},
+			{name: "风月", damage: 724412, time: '2020,7,1,23,9'},
+			{name: "宋寂", damage: 589358, time: '2020,7,1,23,12'},
+		]
+	},
+	{
+		day: 5,
+		bossIdx: 34,
+		log: [
+			{name: "宋寂", damage: 200340, time: '2020,7,1,23,12'},
+			{name: "一起学猫叫", damage: 942075, time: '2020,7,1,23,17'},
+			{name: "一起学猫叫", damage: 674873, time: '2020,7,1,23,28'},
 		]
 	}
 ];
