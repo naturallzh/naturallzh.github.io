@@ -815,6 +815,15 @@ const DATA_actionData = [
 			{name: "坑神", damage: 818614, time: '2020,7,2,15,23'},
 			{name: "灼眼的Saber", damage: 740526, time: '2020,7,2,15,24'},
 			{name: "Otaku", damage: 779592, time: '2020,7,2,15,31'},
+			{name: "lala", damage: 537883, time: '2020,7,2,15,46'},
+			{name: "戏言君", damage: 687040, time: '2020,7,2,15,52'},
+			{name: "八云蓝", damage: 740135, time: '2020,7,2,15,58'},
+			{name: "魂魄妖梦", damage: 646324, time: '2020,7,2,16,25'},
+			{name: "以摸多", damage: 683919, time: '2020,7,2,16,27'},
+			{name: "迪卢木多", damage: 746980, time: '2020,7,2,16,51'},
+			{name: "福尔康", damage: 627532, time: '2020,7,2,16,55'},
+			{name: "宋寂", damage: 715110, time: '2020,7,2,17,10'},
+			{name: "一起学猫叫", damage: 690243, time: '2020,7,2,17,12'},
 		]
 	}
 ];
