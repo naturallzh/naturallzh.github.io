@@ -4,7 +4,7 @@ let vm = new Vue({
     loadingMask: true,
     certData: {
       name: '',
-      battleInfo: [2020,7,'双子',''],
+      battleInfo: [2020,8,'巨蟹',''],
       actionData: [
         {title:"总出刀:",value:0},
         {title:"出勤率:",value:0},
