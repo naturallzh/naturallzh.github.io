@@ -778,6 +778,11 @@ const DATA_actionData = [
 		log: [
 			{name: "手手", damage: 1218386, time: '2020,7,2,6,0'},
 			{name: "以摸多", damage: 1205849, time: '2020,7,2,10,55'},
+			{name: "何等的寂寞", damage: 1006078, time: '2020,7,2,11,0'},
+			{name: "魂魄妖梦", damage: 1138203, time: '2020,7,2,11,23'},
+			{name: "Otaku", damage: 1199465, time: '2020,7,2,11,24'},
+			{name: "迪卢木多", damage: 1245272, time: '2020,7,2,11,26'},
+			{name: "八云蓝", damage: 1135423, time: '2020,7,2,11,30'},
 		]
 	}
 ];
