@@ -72,7 +72,7 @@ let vm = new Vue({
     this.loadingMask = false;
 
     const bgImg = new Image();
-    bgImg.src = "../cert_bg.jpg";
+    bgImg.src = "../../cert_bg.jpg";
     let bgLoadTimer = setInterval(()=>{
       if(bgImg.complete)
       {

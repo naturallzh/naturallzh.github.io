@@ -274,7 +274,7 @@ input[type="number"] {
       left: 162px;
       top: 268px; }
     .cert-box .cert-page .sign {
-      background-image: url(https://img.nga.178.com/attachments/mon_202007/07/-4my65Q5-2mq5K6ToS3w-11.png);
+      background-image: url("../sign.png");
       background-size: cover;
       background-repeat: no-repeat;
       width: 140px;
