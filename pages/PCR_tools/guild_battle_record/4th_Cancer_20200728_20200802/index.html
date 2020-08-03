@@ -156,8 +156,8 @@
     <div class="damage-figure" style="display: flex" v-show="popupFlags.damageByBoss" @click="shiftDamageByBossFigure">
       <div class="figure-box" @click.stop v-show="popupFlags.damageByBoss">
         <div style="display: flex;align-items: center;margin-bottom: 10px">
-          <div v-for="(bossItem) in [0,1,2,3,4]" style="display: flex;align-items: center;margin-right: 10px" @click="processDamageByBoss(bossItem)">
-            <input type="radio" name="bossName" :checked="bossItem===0">
+          <div v-for="(bossItem) in [0,1,2,3,4]" style="display: flex;align-items: center;margin-right: 10px">
+            <input type="radio" name="bossName" :checked="bossItem===0" @click="processDamageByBoss(bossItem)">
             <span style="margin-right: 5px">{{bossItem+1}}王</span>
           </div>
         </div>
