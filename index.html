@@ -4,13 +4,29 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <link rel="stylesheet" type="text/css" href="lib/init.css"/>
+  <link rel="stylesheet" type="text/css" href="lib/base.css"/>
+  <link rel="stylesheet" type="text/css" href="components/components.css"/>
+  <link rel="stylesheet" href="//unpkg.com/view-design/dist/styles/iview.css">
+
+  <link rel="stylesheet" type="text/css" href="index.css"/>
 </head>
 
-<body></body>
+<body>
+<div id="index-body" v-cloak>
+  <div class="bg-cover" :style="isLoading?'':'background:transparent'"></div>
+  <page-loading :is-loading="isLoading"></page-loading>
+  <back2main></back2main>
+  <video loop="loop" autoplay="autoplay" muted="muted" poster="//static.biligame.com/pcr/gw/pc/images/kv/bg.jpg" class="bg-video">
+    <source src="//static.biligame.com/pcr/gw/pc/images/vbg.mp4?6f28534f" type="audio/mp4">
+    <source src="//static.biligame.com/pcr/gw/pc/images/vbg.webm?9980dfe1" type="video/webm">
+  </video>
+</div>
+</body>
 
-<script>
-  window.onload = function(){
-    window.location.href = 'pages/index.html';
-  }
-</script>
+<script src="//vuejs.org/js/vue.min.js"></script>
+<script src="//unpkg.com/view-design/dist/iview.min.js"></script>
+
+<script type="text/javascript" src="components/components.js"></script>
+<script type="text/javascript" src="index.js"></script>
 </html>
