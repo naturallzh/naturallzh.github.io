@@ -30,7 +30,7 @@ let vm = new Vue({
     spiritGetParas: {
       dailyQuestSpiritDouble: false,
       dailyQuestExpDouble: false,
-      tableLvl: 11,
+      tableLvl: 12,
       FoodNum: 3,
       stone: "",
     },
@@ -77,7 +77,7 @@ let vm = new Vue({
       const flag2 = curExp==parseInt(curExp) || curExp=== "";
       const flag3 = tarLvl==parseInt(tarLvl); flag3?tarLvl=parseInt(tarLvl):'';
       const flag4 = curLvl < tarLvl && this.playerLvlData[curLvl].exp > curExp;
-      const flag5 = curLvl >= 1 && tarLvl <= 100 && curExp >= 0;
+      const flag5 = curLvl >= 1 && tarLvl <= 101 && curExp >= 0;
       // console.log(flag1, flag2, flag3, flag4, flag5);
       if (flag1 && flag2 && flag3 && flag4 && flag5) {
         const playerLvlData = this.playerLvlData;
