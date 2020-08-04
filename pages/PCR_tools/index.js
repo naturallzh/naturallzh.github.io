@@ -222,7 +222,7 @@ let vm = new Vue({
       for (let i=65;i<76;i++) {
         dataArr[i] = {lvl: i, exp: 2655, spirit: dataArr[i-1].spirit+1};
       }
-      for (let i=76;i<101;i++) {
+      for (let i=76;i<=101;i++) {
         dataArr[i] = {lvl: i, exp: 3540, spirit: dataArr[i-1].spirit+1};
       }
       this.playerLvlData = dataArr;
