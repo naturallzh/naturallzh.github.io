@@ -117,6 +117,19 @@ const DATA_actionData = [
 			{name: "flysnow", damage: 1213483, time: '2020,7,24,17,51'},
 			{name: "好好先生", damage: 1136923, time: '2020,7,24,17,54'},
 			{name: "keiko", damage: 1101194, time: '2020,7,24,17,55'},
+			{name: "橙子", damage: 110103, time: '2020,7,24,18,3'},
+		]
+	},
+	{
+		day: 1,
+		bossIdx: 5,
+		log: [
+			{name: "橙子", damage: 973439, time: '2020,7,24,18,6'},
+			{name: "长星夜烁", damage: 1233055, time: '2020,7,24,18,11'},
+			{name: "香浓朱古力", damage: 1359398, time: '2020,7,24,18,16'},
+			{name: "终将成为你", damage: 1295424, time: '2020,7,24,18,16'},
+			{name: "Otaku", damage: 1306085, time: '2020,7,24,18,16'},
+			{name: "夜雨纷扬", damage: 1350078, time: '2020,7,24,18,18'},
 		]
 	},
 ];
