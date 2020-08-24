@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>每日一刀甜心刀 休闲健康睡饱饱</title>
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../../../../lib/init.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../../lib/base.css"/>
+
+  <link rel="stylesheet" type="text/css" href="../guild_battle_record.css"/>
+</head>
+
+<body>
+<div id="index-body" v-cloak>
+  <div class="bg-low-def"></div>
+
+  <transition name="showFigure">
+    <div class="loadingMask" v-if="loadingMask">
+      <div class="circle-image-1"></div>
+      <div class="circle-image-2"></div>
+      <div style="font-size: 200%;margin-bottom: 20px;position: relative">
+        载入中<span class="dot-1">.</span><span class="dot-2">.</span><span class="dot-3">.</span>
+      </div>
+      <span style="position: relative">初次载入可能较慢 请耐心等待</span>
+      <span style="position: relative">如长时间没有响应 可ctrl+f5强制刷新页面</span>
+    </div>
+  </transition>
+
+  <a style="position: fixed;bottom: 50px;background: rgba(255, 255, 255, 0.7);border-radius: 10px;border: #999999 solid 2px;box-shadow: black 3px 3px 3px;padding: 0 5px"
+    href="https://naturallzh.github.io/pages/PCR_tools/index.html" target="_blank">
+    返回首页
+  </a>
+
+  <a style="position: fixed;bottom: 10px;background: rgba(255, 255, 255, 0.7);border-radius: 10px;border: #999999 solid 2px;box-shadow: black 3px 3px 3px;padding: 0 5px"
+    href="https://github.com/naturallzh/PCR_guild_battle" target="_blank">
+    访问Github仓库
+  </a>
+
+  <div class="gen-sit-box" v-if="genSit">
+    <h2>状态概览</h2>
+    <div>活动开始时间：{{processDateStr(time.startTime)}}</div>
+    <div>活动结束时间：{{processDateStr(time.endTime)}}</div>
+    <div>最后更新时间：{{processDateStr(time.updateTime)}}</div>
+    <div>当前北京时间：{{processDateStr(time.curTime)}}</div>
+    <div style="position: relative">
+      <div style="position: absolute;background: rgba(128,128,128,0.35);height: 100%;width: 100%"></div>
+      <div style="max-width:100%;position: absolute;background: limegreen;height: 100%" :style="'width:'+((time.endTime-time.curTime)/(time.endTime-time.startTime)*100)+'%;background:'+processColor((time.endTime-time.curTime)/(time.endTime-time.startTime))"></div>
+      <span style="position: relative;" v-if="time.endTime-time.curTime>0">剩余时间：{{ms2timeStr(time.endTime-time.curTime)}}</span>
+      <span style="position: relative;" v-if="time.endTime-time.curTime<=0">已结束 排名：统计中</span>
+    </div>
+    <div>当前周目：{{mobData[genSit.curBossIdx-1].round}}</div>
+    <div>当前Boss：{{mobData[genSit.curBossIdx-1].bossNum}}号 ~ {{mobData[genSit.curBossIdx-1].name}} ~ 总第{{genSit.curBossIdx}}号</div>
+    <div style="position: relative">
+      <div style="position: absolute;background: rgba(128,128,128,0.35);height: 100%;width: 100%"></div>
+      <div style="position: absolute;height: 100%" :style="'width:'+(genSit.remainHealthPer)+'%;background:'+processColor(genSit.remainHealthPer/100)"></div>
+      <span style="position: relative;">剩余血量：{{genSit.remainHealth}} ~ {{genSit.remainHealthPer}}%</span>
+    </div>
+    <h2 style="margin-top: 20px">总伤害查询</h2>
+    <span class="btn" @click="shiftDamageFigure">点击显示图表</span>
+  </div>
+
+  <div class="history-log" v-if="genSit">
+    <h2>历史记录</h2>
+    <div v-for="(historyDate) in historyDateObj.dateArr" style="margin: 5px 0">
+      <span class="btn" @click="shiftHistoryLogDone(historyDate-1)">第{{historyDate}}天已出：{{actionLogByDay(historyDate).doneNum}}</span>
+      <span class="btn" @click="shiftHistoryLogTodo(historyDate-1)">第{{historyDate}}天未出：{{actionLogByDay(historyDate).todoNum}}</span>
+    </div>
+  </div>
+
+  <div class="detail-data">
+    <h2>数据统计</h2>
+    <div class="btn" @click="shiftDamageByBossFigure()">玩家伤害统计：按不同BOSS</div>
+<!--    <h2 style="margin-top: 20px;">离职证明</h2>-->
+<!--    <div style="display: flex;justify-content: space-between">-->
+<!--      <input style="width: 70%" v-model="certId" placeholder="6位数字识别码">-->
+<!--      <div class="btn" @click="genCert">生成报告</div>-->
+<!--    </div>-->
+<!--    <div style="font-size: 70%;color: gray;">*识别码为团员独有编号，请向"一起学猫叫"申请</div>-->
+<!--    <div style="font-size: 70%;color: gray;">**可以使用908056预览格式</div>-->
+  </div>
+
+  <transition name="showFigure">
+    <div class="today-detail" @click="shiftHistoryLogDone(null)" v-show="popupFlags.historyLogDone" @mouseover="highlightLog('')">
+      <div class="mob-box" v-for="(logItem,mobIdx) in actionLogByDay(historyDateObj.curSelect+1).done" @click.stop>
+        <div class="title">
+          <div>{{mobData[logItem.bossIdx-1].round}}周目 {{mobData[logItem.bossIdx-1].bossNum}}号 {{mobData[logItem.bossIdx-1].name}} 总第{{mobData[logItem.bossIdx-1].bossIdx}}号</div>
+          <div>{{logItem.log.length}}刀 {{logItem.totalDamage}}伤害</div>
+        </div>
+        <div class="log-item" v-for="(logItem2,logIdx) in logItem.log" @mouseover.stop="highlightLog(logItem2.name)">
+          <div style="position: absolute;height: 100%;z-index: 0" :style="'width:'+(logItem2.damage/logItem.maxDamage*100)+'%;'+(logItem2.name===highlightLogName?'background: rgba(0,255,0,0.4);':'background: rgba(255,0,0,0.4);')"></div>
+          <div style="position: absolute;height: 100%;background: rgba(0,0,255,0.4);z-index: 0" :style="'width:'+(logItem2.realDamage/logItem.maxDamage*100)+'%'" v-if="logItem2.realDamage"></div>
+          <span style="margin-left: 5px">{{logItem2.name}}</span>
+          <span v-if="logItem2.desc">{{logItem2.desc}}</span>
+          <span style="margin-right: 5px">{{logItem2.damage}}<span v-if="logItem2.realDamage">({{logItem2.realDamage}})</span></span>
+        </div>
+      </div>
+    </div>
+  </transition>
+
+  <transition name="showFigure">
+    <div class="today-detail" @click="shiftHistoryLogTodo(null)" v-show="popupFlags.historyLogTodo">
+      <div class="mob-box" @click.stop>
+        <div class="log-item" v-for="(todoItem,todoIdx) in actionLogByDay(historyDateObj.curSelect+1).todo" v-if="todoItem.todoNum===3">
+          <div style="position: absolute;height: 100%;background: rgba(50,205,50,0.3);z-index: 0" :style="'width:'+(todoItem.todoNum*100/3)+'%'"></div>
+          <span style="margin-left: 5px">{{todoItem.name}}</span>
+          <span style="margin-right: 5px">{{todoItem.todoNum}}</span>
+        </div>
+        <div class="log-item" v-for="(todoItem,todoIdx) in actionLogByDay(historyDateObj.curSelect+1).todo" v-if="todoItem.todoNum===2">
+          <div style="position: absolute;height: 100%;background: rgba(50,205,50,0.3);z-index: 0" :style="'width:'+(todoItem.todoNum*100/3)+'%'"></div>
+          <span style="margin-left: 5px">{{todoItem.name}}</span>
+          <span style="margin-right: 5px">{{todoItem.todoNum}}</span>
+        </div>
+        <div class="log-item" v-for="(todoItem,todoIdx) in actionLogByDay(historyDateObj.curSelect+1).todo" v-if="todoItem.todoNum===1||todoItem.todoNum<0">
+          <div style="position: absolute;height: 100%;background: rgba(50,205,50,0.3);z-index: 0" :style="'width:'+(todoItem.todoNum*100/3)+'%'"></div>
+          <span style="margin-left: 5px">{{todoItem.name}}</span>
+          <span style="margin-right: 5px">{{todoItem.todoNum}}</span>
+        </div>
+        <div class="log-item" v-for="(doneItem) in actionLogByDay(historyDateObj.curSelect+1).todo" v-if="doneItem.todoNum===0">
+          <div style="position: absolute;height: 100%;background: rgba(128,128,128,0.3);z-index: 0;width: 100%"></div>
+          <span style="margin-left: 5px">{{doneItem.name}}</span>
+          <span style="margin-right: 5px">已出完</span>
+        </div>
+      </div>
+    </div>
+  </transition>
+
+  <transition name="showFigure">
+    <div class="damage-figure" style="display: flex" v-show="popupFlags.damageFigure" @click="shiftDamageFigure">
+      <div class="figure-box" @click.stop v-show="popupFlags.damageFigure">
+        <div>伤害值只有极其有限的参考价值，不能作为任何评判标准！</div>
+        <div>颜色鲜红的那部分伤害在某种程度上"含金量"更高，暗红的反之。同样只有极其有限的参考价值！</div>
+        <div style="display: flex;align-items: center">
+          <div v-for="(dateItem) in historyDateObj.dateArr" style="display: flex;align-items: center;margin-right: 10px">
+            <input type="checkbox" v-model="damageFigurePara[dateItem-1]">
+            <span>第{{dateItem}}天</span>
+          </div>
+          <input type="checkbox" v-model="damageFigureSelectAll" @click="selectDamageFigureAll">
+          <span>全选</span>
+        </div>
+        <div class="display-item" v-for="(playerData) in damageFigureData">
+          <div class="name-box">{{playerData.name}}</div>
+          <div class="damage-bar" v-for="(damageItem) in playerData.detail"
+            :style="'width:'+(damageFigureData[0].total===0?0:(damageItem.damage/damageFigureData[0].total*80))+'%;'+mobData[damageItem.bossIdx-1].bgC">
+            {{damageItem.damage}}
+          </div>
+          <div style="margin-left: 20px">{{playerData.total}}</div>
+        </div>
+      </div>
+    </div>
+  </transition>
+
+  <transition name="showFigure">
+    <div class="damage-figure" style="display: flex" v-show="popupFlags.damageByBoss" @click="shiftDamageByBossFigure">
+      <div class="figure-box" @click.stop v-show="popupFlags.damageByBoss">
+        <div style="display: flex;align-items: center;margin-bottom: 10px">
+          <div v-for="(bossItem) in [0,1,2,3,4]" style="display: flex;align-items: center;margin-right: 10px">
+            <input type="radio" name="bossName" :checked="bossItem===0" @click="processDamageByBoss(bossItem)">
+            <span style="margin-right: 5px">{{bossItem+1}}王</span>
+          </div>
+        </div>
+        <div class="display-item" v-for="(playerData) in damageByBoss">
+          <div class="name-box">{{playerData.name}}</div>
+          <div class="damage-bar" :style="'width:'+(damageByBoss[0].damage===0?0:(playerData.damage/damageByBoss[0].damage*80))+'%'"></div>
+          <div style="margin-left: 20px">{{playerData.damage}}</div>
+        </div>
+      </div>
+    </div>
+  </transition>
+
+  <transition name="showFigure">
+    <div class="cert-box" v-show="popupFlags.leaveCert" @click="closeCert()">
+      <div style="margin-right: 20px;position: relative">
+        <a class="download-btn" id="download-btn" @click.stop></a>
+        <div class="download-btn" style="background: transparent;display: flex;align-items: center;justify-content: center;" @click.stop="downCert()">下载</div>
+      </div>
+
+      <div class="cert-page" @click.stop id="cert-page">
+        <div class="bg-low-def1" v-if="popupFlags.certLowDefBg"></div>
+        <div class="sample" v-if="certId==='908056'">样本</div>
+        <div class="name">{{certData.name}}</div>
+        <div class="year">{{certData.battleInfo[0]}}</div>
+        <div class="mon">{{certData.battleInfo[1]}}</div>
+        <div class="battle-name">{{certData.battleInfo[2]}}</div>
+        <div class="guild-name">{{certData.battleInfo[3]}}</div>
+        <div class="sign"></div>
+
+        <div class="action-box">
+          <div class="sub-box" v-for="(certItem,certIdx) in certData.actionData">
+            <div class="title">{{certItem.title}}</div>
+            {{certItem.value}}
+            <div v-if="certIdx===3" style="font-size: 70%;color: gray;margin-left: 5px">*该数量计入总出刀数</div>
+          </div>
+        </div>
+        <div class="figure-box">
+          <div class="bar-box">
+            <div class="sub-box" v-for="(certDamageBarItem,certDamageBarIdx) in certData.damageData">
+              <div class="title">{{certDamageBarIdx+1}}王:</div>
+              <div class="bar" :style="'width:'+(certDamageBarItem/certData.bossMaxDamage*65)+'%;background:'+bgColorArr[certDamageBarIdx]"></div>
+              <div class="text">
+                <div>{{certDamageBarItem}}</div>
+                <div>{{(certDamageBarItem/certData.actionData[4].value*100).toFixed(2)}}%</div>
+              </div>
+            </div>
+          </div>
+          <div class="pie-box" id="pie"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+
+</div>
+</body>
+
+<script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+<script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
+<!--<script type="text/javascript" src="../../../../lib/vue.js"></script>-->
+<script type="text/javascript" src="../../../../lib/base.js"></script>
+<script type="text/javascript" src="../../../../components/image_view.js"></script>
+
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="../guild_battle_record.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</html>
