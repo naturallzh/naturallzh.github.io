@@ -155,4 +155,17 @@ const DATA_actionData = [
 			{name: "橙子", damage: 1098556, time: '2020,7,24,21,14'},
 		]
 	},
+	{
+		day: 1,
+		bossIdx: 7,
+		log: [
+			{name: "橙子", damage: 671561, time: '2020,7,24,21,20'},
+			{name: "手手", damage: 1221146, time: '2020,7,24,21,20'},
+			{name: "灼眼的Saber", damage: 1226317, time: '2020,7,24,21,28'},
+			{name: "以摸多", damage: 1201039, time: '2020,7,24,21,29'},
+			{name: "Otaku", damage: 1210724, time: '2020,7,24,21,30'},
+			{name: "打个大西瓜", damage: 1270230, time: '2020,7,24,21,32'},
+			{name: "常磐丁香", damage: 1237862, time: '2020,7,24,21,32'},
+		]
+	},
 ];
