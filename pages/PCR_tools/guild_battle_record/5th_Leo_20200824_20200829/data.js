@@ -102,4 +102,11 @@ const DATA_actionData = [
 			{name: "我群最菜", damage: 952610, time: '2020,7,24,17,3'},
 		]
 	},
+	{
+		day: 1,
+		bossIdx: 4,
+		log: [
+			{name: "我群最菜", damage: 339167, time: '2020,7,24,17,5'},
+		]
+	},
 ];
