@@ -170,10 +170,20 @@ const DATA_actionData = [
 	},
 	{
 		day: 1,
-		bossIdx: 7,
+		bossIdx: 8,
 		log: [
 			{name: "常磐丁香", damage: 14186, time: '2020,7,24,21,34'},
 			{name: "手手", damage: 799536, time: '2020,7,24,21,59'},
+			{name: "陈睿", damage: 789827, time: '2020,7,24,22,6'},
+			{name: "戏言君", damage: 980960, time: '2020,7,24,22,11'},
+			{name: "以摸多", damage: 916987, time: '2020,7,24,22,21'},
+			{name: "八云蓝", damage: 833721, time: '2020,7,24,22,23'},
+			{name: "兰斯咕哒子", damage: 921085, time: '2020,7,24,22,29'},
+			{name: "flysnow", damage: 804136, time: '2020,7,24,22,35'},
+			{name: "常磐丁香", damage: 925169, time: '2020,7,24,22,37'},
+			{name: "一起学猫叫", damage: 891190, time: '2020,7,24,22,50'},
+			{name: "打个大西瓜", damage: 888858, time: '2020,7,24,22,55'},
+			{name: "好好先生", damage: 815236, time: '2020,7,24,22,56'},
 		]
 	},
 ];
