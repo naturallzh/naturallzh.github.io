@@ -270,6 +270,11 @@ let vm = new Vue({
       url += "?title=巨蟹座 20200728~20200802";
       window.open(url);
     },
+    gotoLeo: function () {
+      let url = "./guild_battle_record/5th_Leo_20200824_20200829/index.html";
+      url += "?title=狮子座 20200824~20200829";
+      window.open(url);
+    },
     gotoLeaveCert: function () {
       const dateObj = new Date();
       let pubKey = this.pubKey + "";

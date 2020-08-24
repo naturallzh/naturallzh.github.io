@@ -168,4 +168,12 @@ const DATA_actionData = [
 			{name: "常磐丁香", damage: 1237862, time: '2020,7,24,21,32'},
 		]
 	},
+	{
+		day: 1,
+		bossIdx: 7,
+		log: [
+			{name: "常磐丁香", damage: 14186, time: '2020,7,24,21,34'},
+			{name: "手手", damage: 799536, time: '2020,7,24,21,59'},
+		]
+	},
 ];
