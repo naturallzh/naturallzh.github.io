@@ -253,4 +253,18 @@ const DATA_actionData = [
 			{name: "一起学猫叫", damage: 1234178, time: '2020,7,25,20,49'},
 		]
 	},
+	{
+		day: 2,
+		bossIdx: 12,
+		log: [
+			{name: "一起学猫叫", damage: 135158, time: '2020,7,25,20,50'},
+			{name: "福尔康", damage: 1216891, time: '2020,7,25,20,54'},
+			{name: "MA", damage: 1237382, time: '2020,7,25,20,55'},
+			{name: "flysnow", damage: 1147118, time: '2020,7,25,20,56'},
+			{name: "陈睿", damage: 987643, time: '2020,7,25,20,56'},
+			{name: "灼眼的Saber", damage: 1072215, time: '2020,7,25,20,58'},
+			{name: "打个大西瓜", damage: 1227809, time: '2020,7,25,20,59'},
+			{name: "Otaku", damage: 975784, time: '2020,7,25,21,6'},
+		]
+	},
 ];
