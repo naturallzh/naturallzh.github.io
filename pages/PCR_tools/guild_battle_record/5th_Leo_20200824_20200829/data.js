@@ -226,6 +226,7 @@ const DATA_actionData = [
 		log: [
 			{name: "初心如故", damage: 886062, time: '2020,7,25,7,48'},
 			{name: "打个大西瓜", damage: 1081061, time: '2020,7,25,8,37'},
+			{name: "以摸多", damage: 807004, time: '2020,7,25,12,29'},
 		]
 	},
 ];
