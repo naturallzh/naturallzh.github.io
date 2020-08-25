@@ -184,6 +184,48 @@ const DATA_actionData = [
 			{name: "一起学猫叫", damage: 891190, time: '2020,7,24,22,50'},
 			{name: "打个大西瓜", damage: 888858, time: '2020,7,24,22,55'},
 			{name: "好好先生", damage: 815236, time: '2020,7,24,22,56'},
+			{name: "keiko", damage: 419109, time: '2020,7,24,23,13'},
+		]
+	},
+	{
+		day: 1,
+		bossIdx: 9,
+		log: [
+			{name: "戏言君", damage: 993373, time: '2020,7,24,23,18'},
+			{name: "何等的寂寞", damage: 975288, time: '2020,7,24,23,23'},
+			{name: "Michael", damage: 1016175, time: '2020,7,24,23,30'},
+			{name: "MA", damage: 979348, time: '2020,7,24,23,30'},
+			{name: "一起学猫叫", damage: 995875, time: '2020,7,24,23,35'},
+			{name: "终将成为你", damage: 935041, time: '2020,7,25,0,6'},
+			{name: "戏言君", damage: 895597, time: '2020,7,25,0,7'},
+			{name: "终将成为你", damage: 1006980, time: '2020,7,25,0,8'},
+			{name: "一起学猫叫", damage: 704454, time: '2020,7,25,0,9'},
+			{name: "flysnow", damage: 831143, time: '2020,7,25,0,21'},
+			{name: "福尔康", damage: 903540, time: '2020,7,25,0,30'},
+			{name: "我群最菜", damage: 896510, time: '2020,7,25,0,31'},
+			{name: "好好先生", damage: 866676, time: '2020,7,25,0,45'},
+		]
+	},
+	{
+		day: 1,
+		bossIdx: 10,
+		log: [
+			{name: "好好先生", damage: 52134, time: '2020,7,25,0,47'},
+			{name: "MA", damage: 977403, time: '2020,7,25,0,52'},
+			{name: "keiko", damage: 322834, time: '2020,7,25,0,56'},
+			{name: "池霜", damage: 919834, time: '2020,7,25,0,57'},
+			{name: "以摸多", damage: 697900, time: '2020,7,25,1,4'},
+			{name: "keiko", damage: 984743, time: '2020,7,25,1,23'},
+			{name: "Michael", damage: 916132, time: '2020,7,25,1,30'},
+			{name: "Michael", damage: 800555, time: '2020,7,25,3,39'},
+		]
+	},
+	{
+		day: 2,
+		bossIdx: 10,
+		log: [
+			{name: "初心如故", damage: 886062, time: '2020,7,25,7,48'},
+			{name: "打个大西瓜", damage: 1081061, time: '2020,7,25,8,37'},
 		]
 	},
 ];
