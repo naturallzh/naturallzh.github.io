@@ -433,6 +433,7 @@ const DATA_actionData = [
 		bossIdx: 21,
 		log: [
 			{name: "一起学猫叫", damage: 63781, time: '2020,7,26,15,51'},
+			{name: "终将成为你", damage: 1269292, time: '2020,7,26,16,2'},
 		]
 	},
 ];
