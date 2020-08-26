@@ -486,6 +486,30 @@ const DATA_actionData = [
 			{name: "初心如故", damage: 1043184, time: '2020,7,26,19,20'},
 			{name: "橙子", damage: 1011134, time: '2020,7,26,19,27'},
 			{name: "幽蓝", damage: 1079962, time: '2020,7,26,20,4'},
+			{name: "手手", damage: 977458, time: '2020,7,26,20,17'},
+			{name: "Michael", damage: 1002821, time: '2020,7,26,20,18'},
+		]
+	},
+	{
+		day: 3,
+		bossIdx: 25,
+		log: [
+			{name: "Michael", damage: 597817, time: '2020,7,26,20,20'},
+			{name: "初心如故", damage: 895371, time: '2020,7,26,20,24'},
+			{name: "灼眼的Saber", damage: 951348, time: '2020,7,26,20,26'},
+			{name: "八云蓝", damage: 924767, time: '2020,7,26,20,29'},
+			{name: "常磐丁香", damage: 1088624, time: '2020,7,26,20,29'},
+			{name: "灼眼的Saber", damage: 927504, time: '2020,7,26,20,29'},
+			{name: "幽蓝", damage: 932968, time: '2020,7,26,20,34'},
+			{name: "flysnow", damage: 719284, time: '2020,7,26,20,37'},
+			{name: "陈睿", damage: 935104, time: '2020,7,26,20,40'},
+			{name: "香浓朱古力", damage: 1032005, time: '2020,7,26,20,43'},
+			{name: "我群最菜", damage: 1001754, time: '2020,7,26,20,43'},
+			{name: "橙子", damage: 1042668, time: '2020,7,26,20,54'},
+			{name: "香浓朱古力", damage: 1175053, time: '2020,7,26,21,3'},
+			{name: "Michael", damage: 1069670, time: '2020,7,26,21,3'},
+			{name: "MA", damage: 1088265, time: '2020,7,26,21,6'},
+			{name: "长星夜烁", damage: 1079863, time: '2020,7,26,21,11'},
 		]
 	},
 ];
