@@ -343,4 +343,52 @@ const DATA_actionData = [
 			{name: "keiko", damage: 881214, time: '2020,7,25,23,26'},
 		]
 	},
+	{
+		day: 2,
+		bossIdx: 17,
+		log: [
+			{name: "Michael", damage: 1221499, time: '2020,7,25,23,30'},
+			{name: "终将成为你", damage: 1101968, time: '2020,7,25,23,32'},
+			{name: "香浓朱古力", damage: 1075422, time: '2020,7,25,23,34'},
+			{name: "黑椿", damage: 1143861, time: '2020,7,25,23,34'},
+			{name: "戏言君", damage: 1125881, time: '2020,7,25,23,37'},
+			{name: "keiko", damage: 350370, time: '2020,7,25,23,37'},
+			{name: "我群最菜", damage: 1058472, time: '2020,7,25,23,37'},
+			{name: "夜雨纷扬", damage: 1091690, time: '2020,7,25,23,40'},
+		]
+	},
+	{
+		day: 2,
+		bossIdx: 18,
+		log: [
+			{name: "夜雨纷扬", damage: 61161, time: '2020,7,25,23,45'},
+			{name: "手手", damage: 888896, time: '2020,7,25,23,50'},
+			{name: "金色之泪", damage: 790069, time: '2020,7,25,23,52'},
+			{name: "池霜", damage: 920320, time: '2020,7,25,23,54'},
+			{name: "好好先生", damage: 807747, time: '2020,7,26,0,24'},
+			{name: "打个大西瓜", damage: 612067, time: '2020,7,26,0,50'},
+			{name: "keiko", damage: 701992, time: '2020,7,26,0,50'},
+			{name: "keiko", damage: 979272, time: '2020,7,26,1,5'},
+			{name: "一起学猫叫", damage: 467079, time: '2020,7,26,1,36'},
+		]
+	},
+	{
+		day: 3,
+		bossIdx: 18,
+		log: [
+			{name: "兰斯咕哒子", damage: 905234, time: '2020,7,26,6,35'},
+			{name: "手手", damage: 964399, time: '2020,7,26,7,9'},
+			{name: "初心如故", damage: 898414, time: '2020,7,26,8,7'},
+			{name: "幽蓝", damage: 903949, time: '2020,7,26,8,56'},
+			{name: "八云蓝", damage: 1003350, time: '2020,7,26,8,57'},
+		]
+	},
+	{
+		day: 3,
+		bossIdx: 19,
+		log: [
+			{name: "八云蓝", damage: 987912, time: '2020,7,26,8,59'},
+			{name: "陈睿", damage: 971666, time: '2020,7,26,9,2'},
+		]
+	},
 ];
