@@ -554,6 +554,7 @@ const DATA_actionData = [
 		log: [
 			{name: "打个大西瓜", damage: 803324, time: '2020,7,27,12,57'},
 			{name: "福尔康", damage: 989509, time: '2020,7,27,13,2'},
+			{name: "香浓朱古力", damage: 930454, time: '2020,7,27,13,9'},
 		]
 	},
 ];
