@@ -589,6 +589,14 @@ const DATA_actionData = [
 		bossIdx: 30,
 		log: [
 			{name: "金色之泪", damage: 32688, time: '2020,7,27,16,21'},
+			{name: "flysnow", damage: 998458, time: '2020,7,27,16,31'},
+			{name: "陈睿", damage: 962949, time: '2020,7,27,16,33'},
+			{name: "幽蓝", damage: 1070273, time: '2020,7,27,16,33'},
+			{name: "初心如故", damage: 896901, time: '2020,7,27,16,36'},
+			{name: "兰斯咕哒子", damage: 968179, time: '2020,7,27,16,39'},
+			{name: "我群最菜", damage: 995857, time: '2020,7,27,16,41'},
+			{name: "以摸多", damage: 982114, time: '2020,7,27,16,43'},
+			{name: "福尔康", damage: 716161, time: '2020,7,27,16,47'},
 		]
 	},
 ];
