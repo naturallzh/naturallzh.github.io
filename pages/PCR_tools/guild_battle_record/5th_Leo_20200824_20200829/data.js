@@ -612,4 +612,11 @@ const DATA_actionData = [
 			{name: "灼眼的Saber", damage: 1066034, time: '2020,7,27,18,25'},
 		]
 	},
+	{
+		day: 4,
+		bossIdx: 31,
+		log: [
+			{name: "灼眼的Saber", damage: 405409, time: '2020,7,27,18,38'},
+		]
+	},
 ];
