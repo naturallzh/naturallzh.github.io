@@ -562,6 +562,22 @@ const DATA_actionData = [
 			{name: "长星夜烁", damage: 919049, time: '2020,7,27,14,12'},
 			{name: "flysnow", damage: 929728, time: '2020,7,27,14,20'},
 			{name: "我群最菜", damage: 946861, time: '2020,7,27,15,34'},
+			{name: "以摸多", damage: 866688, time: '2020,7,27,15,54'},
+		]
+	},
+	{
+		day: 4,
+		bossIdx: 29,
+		log: [
+			{name: "以摸多", damage: 66367, time: '2020,7,27,15,55'},
+			{name: "以摸多", damage: 997122, time: '2020,7,27,15,59'},
+			{name: "终将成为你", damage: 940271, time: '2020,7,27,16,1'},
+			{name: "flysnow", damage: 982939, time: '2020,7,27,16,2'},
+			{name: "黑椿", damage: 985188, time: '2020,7,27,16,2'},
+			{name: "夜雨纷扬", damage: 1012815, time: '2020,7,27,16,3'},
+			{name: "灼眼的Saber", damage: 999549, time: '2020,7,27,16,6'},
+			{name: "MA", damage: 1073932, time: '2020,7,27,16,7'},
+			{name: "八云蓝", damage: 1074656, time: '2020,7,27,16,7'},
 		]
 	},
 ];
