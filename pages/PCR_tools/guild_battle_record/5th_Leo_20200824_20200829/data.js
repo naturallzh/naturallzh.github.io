@@ -579,6 +579,16 @@ const DATA_actionData = [
 			{name: "MA", damage: 1073932, time: '2020,7,27,16,7'},
 			{name: "八云蓝", damage: 1074656, time: '2020,7,27,16,7'},
 			{name: "福尔康", damage: 973351, time: '2020,7,27,16,9'},
+			{name: "戏言君", damage: 999926, time: '2020,7,27,16,15'},
+			{name: "初心如故", damage: 990130, time: '2020,7,27,16,19'},
+			{name: "金色之泪", damage: 948920, time: '2020,7,27,16,19'},
+		]
+	},
+	{
+		day: 4,
+		bossIdx: 30,
+		log: [
+			{name: "金色之泪", damage: 32688, time: '2020,7,27,16,21'},
 		]
 	},
 ];
