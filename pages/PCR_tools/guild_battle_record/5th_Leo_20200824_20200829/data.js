@@ -517,4 +517,19 @@ const DATA_actionData = [
 			{name: "戏言君", damage: 400766, time: '2020,7,26,21,56'},
 		]
 	},
+	{
+		day: 4,
+		bossIdx: 25,
+		log: [
+			{name: "池霜", damage: 234235, time: '2020,7,27,11,43'},
+		]
+	},
+	{
+		day: 4,
+		bossIdx: 26,
+		log: [
+			{name: "池霜", damage: 1002517, time: '2020,7,27,11,47'},
+			{name: "好好先生", damage: 1268805, time: '2020,7,27,12,1'},
+		]
+	},
 ];
