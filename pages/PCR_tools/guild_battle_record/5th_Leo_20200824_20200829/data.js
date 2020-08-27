@@ -548,4 +548,12 @@ const DATA_actionData = [
 			{name: "keiko", damage: 880994, time: '2020,7,27,12,48'},
 		]
 	},
+	{
+		day: 4,
+		bossIdx: 28,
+		log: [
+			{name: "打个大西瓜", damage: 803324, time: '2020,7,27,12,57'},
+			{name: "福尔康", damage: 989509, time: '2020,7,27,13,2'},
+		]
+	},
 ];
