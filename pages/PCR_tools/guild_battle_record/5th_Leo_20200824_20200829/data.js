@@ -661,7 +661,7 @@ const DATA_actionData = [
 		log: [
 			{name: "兰斯咕哒子", damage: 693821, time: '2020,7,27,21,48'},
 			{name: "手手", damage: 1004329, time: '2020,7,27,21,52'},
-			{name: "Micheal", damage: 0, time: '2020,7,27,21,53'},
+			{name: "Michael", damage: 0, time: '2020,7,27,21,53'},
 			{name: "迪卢木多", damage: 959149, time: '2020,7,27,21,58'},
 			{name: "长星夜烁", damage: 948096, time: '2020,7,27,22,5'},
 			{name: "一起学猫叫", damage: 784550, time: '2020,7,27,22,5'},
@@ -670,6 +670,7 @@ const DATA_actionData = [
 			{name: "打个大西瓜", damage: 881785, time: '2020,7,27,22,8'},
 			{name: "常磐丁香", damage: 1010126, time: '2020,7,27,22,9'},
 			{name: "好好先生", damage: 1034739, time: '2020,7,27,22,11'},
+			{name: "香浓朱古力", damage: 970545, time: '2020,7,27,22,51'},
 		]
 	},
 ];
