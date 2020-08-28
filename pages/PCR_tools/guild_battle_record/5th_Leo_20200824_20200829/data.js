@@ -728,6 +728,18 @@ const DATA_actionData = [
 			{name: "初心如故", damage: 1275566, time: '2020,7,28,15,45'},
 			{name: "MA", damage: 1343399, time: '2020,7,28,15,55'},
 			{name: "橙子", damage: 1289501, time: '2020,7,28,16,49'},
+			{name: "终将成为你", damage: 0, time: '2020,7,28,16,22'},
+			{name: "池霜", damage: 1447451, time: '2020,7,28,17,18'},
+			{name: "keiko", damage: 1350898, time: '2020,7,28,17,20'},
+		]
+	},
+	{
+		day: 5,
+		bossIdx: 38,
+		log: [
+			{name: "兰斯咕哒子", damage: 986975, time: '2020,7,28,17,34'},
+			{name: "flysnow", damage: 862893, time: '2020,7,28,17,36'},
+			{name: "一起学猫叫", damage: 1040549, time: '2020,7,28,17,36'},
 		]
 	},
 ];
