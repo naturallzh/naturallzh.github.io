@@ -825,6 +825,12 @@ const DATA_actionData = [
 		bossIdx: 43,
 		log: [
 			{name: "我群最菜", damage: 14112, time: '2020,7,28,21,48'},
+			{name: "初心如故", damage: 870084, time: '2020,7,28,21,55'},
+			{name: "keiko", damage: 1051403, time: '2020,7,28,21,59'},
+			{name: "Otaku", damage: 258561, time: '2020,7,28,22,1'},
+			{name: "打个大西瓜", damage: 874116, time: '2020,7,28,22,6'},
+			{name: "香浓朱古力", damage: 943573, time: '2020,7,28,22,19'},
+			{name: "迪卢木多", damage: 818907, time: '2020,7,28,22,24'},
 		]
 	},
 ];
