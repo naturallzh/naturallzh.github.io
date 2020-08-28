@@ -815,6 +815,8 @@ const DATA_actionData = [
 			{name: "迪卢木多", damage: 1216749, time: '2020,7,28,20,59'},
 			{name: "一起学猫叫", damage: 1403800, time: '2020,7,28,21,0'},
 			{name: "Michael", damage: 1530599, time: '2020,7,28,21,3'},
+			{name: "陈睿", damage: 1355917, time: '2020,7,28,21,10'},
+			{name: "MA", damage: 1239862, time: '2020,7,28,21,11'},
 		]
 	},
 ];
