@@ -10,7 +10,7 @@ let vm = new Vue({
     loadingMask: true,
 
     time: {
-      updateTime: new Date(2020,7,28,18,30),
+      updateTime: new Date(2020,7,28,20,33),
       startTime: new Date(2020,7,24,5),
       curTime: new Date(),
       endTime: new Date(2020,7,29,23,59,59),
