@@ -801,6 +801,20 @@ const DATA_actionData = [
 		bossIdx: 41,
 		log: [
 			{name: "以摸多", damage: 1139434, time: '2020,7,28,20,24'},
+			{name: "戏言君", damage: 1172270, time: '2020,7,28,20,34'},
+			{name: "迪卢木多", damage: 1209135, time: '2020,7,28,20,39'},
+			{name: "何等的寂寞", damage: 1198953, time: '2020,7,28,20,45'},
+			{name: "常磐丁香", damage: 1244451, time: '2020,7,28,20,53'},
+			{name: "一起学猫叫", damage: 1187665, time: '2020,7,28,20,53'},
+		]
+	},
+	{
+		day: 5,
+		bossIdx: 42,
+		log: [
+			{name: "迪卢木多", damage: 1216749, time: '2020,7,28,20,59'},
+			{name: "一起学猫叫", damage: 1403800, time: '2020,7,28,21,0'},
+			{name: "Michael", damage: 1530599, time: '2020,7,28,21,3'},
 		]
 	},
 ];
