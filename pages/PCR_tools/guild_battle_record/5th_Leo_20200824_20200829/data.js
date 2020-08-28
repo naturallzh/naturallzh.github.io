@@ -716,6 +716,18 @@ const DATA_actionData = [
 			{name: "黑椿", damage: 1022090, time: '2020,7,28,15,13'},
 			{name: "灼眼的Saber", damage: 1267776, time: '2020,7,28,15,14'},
 			{name: "Otaku", damage: 1170444, time: '2020,7,28,15,16'},
+			{name: "夜雨纷扬", damage: 1214706, time: '2020,7,28,15,30'},
+		]
+	},
+	{
+		day: 5,
+		bossIdx: 37,
+		log: [
+			{name: "夜雨纷扬", damage: 34707, time: '2020,7,28,15,31'},
+			{name: "金色之泪", damage: 1513421, time: '2020,7,28,15,38'},
+			{name: "初心如故", damage: 1275566, time: '2020,7,28,15,45'},
+			{name: "MA", damage: 1343399, time: '2020,7,28,15,55'},
+			{name: "橙子", damage: 1289501, time: '2020,7,28,16,49'},
 		]
 	},
 ];
