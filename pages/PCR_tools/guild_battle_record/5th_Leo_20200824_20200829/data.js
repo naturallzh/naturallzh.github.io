@@ -835,4 +835,29 @@ const DATA_actionData = [
 			{name: "迪卢木多", damage: 830900, time: '2020,7,29,0,24'},
 		]
 	},
+	{
+		day: 6,
+		bossIdx: 43,
+		log: [
+			{name: "初心如故", damage: 821905, time: '2020,7,29,7,49'},
+			{name: "兰斯咕哒子", damage: 881780, time: '2020,7,29,7,57'},
+			{name: "以摸多", damage: 998359, time: '2020,7,29,8,39'},
+			{name: "flysnow", damage: 921516, time: '2020,7,29,8,39'},
+		]
+	},
+	{
+		day: 6,
+		bossIdx: 44,
+		log: [
+			{name: "flysnow", damage: 162138, time: '2020,7,29,8,41'},
+			{name: "flysnow", damage: 976438, time: '2020,7,29,8,44'},
+			{name: "以摸多", damage: 1112997, time: '2020,7,29,8,44'},
+			{name: "好好先生", damage: 1051484, time: '2020,7,29,8,46'},
+			{name: "灼眼的Saber", damage: 950680, time: '2020,7,29,8,48'},
+			{name: "戏言君", damage: 1009047, time: '2020,7,29,8,49'},
+			{name: "陈睿", damage: 947731, time: '2020,7,29,8,55'},
+			{name: "兰斯咕哒子", damage: 1006789, time: '2020,7,29,8,56'},
+			{name: "迪卢木多", damage: 1026178, time: '2020,7,29,8,56'},
+		]
+	},
 ];
