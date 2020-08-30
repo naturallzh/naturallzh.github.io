@@ -130,7 +130,7 @@ let vm = new Vue({
       this.popupFlags.leaveCert = true;
       // console.log(nameMap[idx]);
       certData.name = nameMap[idx].name;
-      certData.battleInfo = ["2020","8","巨蟹","5g时代咋还妹来"];
+      certData.battleInfo = ["2020","8","狮子","5g时代咋还妹来"];
       certData.actionData = [
         {title:"总出刀:",value:0},
         {title:"出勤率:",value:0},
