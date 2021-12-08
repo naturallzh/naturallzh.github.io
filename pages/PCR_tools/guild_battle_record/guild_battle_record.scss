@@ -19,14 +19,16 @@ input[type="number"]{
 		position: absolute;
 		top: 0;
 		left: 0;
-		background-image: url(https://s1.ax1x.com/2020/07/10/Uu1PxA.jpg);
+		background-image: url("../bg_low_def.jpg");
+		//background-image: url(https://s1.ax1x.com/2020/07/10/Uu1PxA.jpg);
 		background-size: cover;
 		background-repeat: no-repeat;
 		height: 100%;
 		width: 100%;
 		z-index: -3;
 	}
-	background-image: url(https://s1.ax1x.com/2020/07/10/Uu1FKI.jpg);
+	background-image: url("../bg.jpg");
+	//background-image: url(https://s1.ax1x.com/2020/07/10/Uu1FKI.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 100%;
